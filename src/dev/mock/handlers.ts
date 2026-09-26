@@ -29,6 +29,28 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
     return { status: 200, data: mockCatalog }
   }
 
+  if (path.startsWith('/api/v1/source-stores/') && path.endsWith('/menu')) {
+    return {
+      status: 200,
+      data: {
+        store: { id: 'ss_store', channelId: 'ch_store', name: 'Demo store direct' },
+        menu: { id: 'menu_store_pickup', fulfillmentMode: 'pickup', deliveryExecutor: '' },
+        categories: [
+          {
+            category: { id: 'cat_store', name: 'Mains' },
+            items: [
+              {
+                id: 'si_store_burger',
+                name: 'Classic Burger',
+                price: { amountCents: 1200, currency: 'CAD' },
+              },
+            ],
+          },
+        ],
+      },
+    }
+  }
+
   return null
 }
 

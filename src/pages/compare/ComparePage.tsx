@@ -91,6 +91,13 @@ export default function ComparePage() {
 
       {error && <p className="text-sm text-red-600">{error}</p>}
 
+      {result?.compare_session_id && (
+        <p className="text-sm text-content-muted">
+          Session <code>{result.compare_session_id}</code>
+          {result.observed_at ? ` · observed ${result.observed_at}` : null}
+        </p>
+      )}
+
       {result?.recommendation && (
         <PathCard path={result.recommendation} title="Recommendation" />
       )}
