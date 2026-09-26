@@ -13,11 +13,11 @@ export interface CompareFormState {
 }
 
 const defaultForm: CompareFormState = {
-  placeId: 'pl_demo',
-  dishId: 'dish_burger',
+  placeId: 'pl_skip_sq',
+  dishId: 'dish_sq_01',
   quantity: 1,
-  lat: '43.6532',
-  lng: '-79.3832',
+  lat: '45.9636',
+  lng: '-66.6431',
   userId: '',
 }
 
