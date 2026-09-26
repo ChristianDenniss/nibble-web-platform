@@ -16,7 +16,7 @@ export default function AuthLayout({ children }: AuthLayoutProps) {
       <header className="border-b border-border bg-surface/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center px-5">
           <Link to={paths.home} className="flex items-center gap-2.5">
-            <AppLogo className="h-8 w-8" />
+            <AppLogo className="h-8 w-auto" />
             <span className="text-base font-semibold tracking-tight">Nibble</span>
           </Link>
         </div>

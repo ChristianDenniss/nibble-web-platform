@@ -32,30 +32,27 @@
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   BRAND TOKENS — Nibble board
-   Soft pink is the brand signal (logo, selected wash, price highlights).
-   Raspberry is the readable primary for actions. Surfaces stay warm white.
-   --brand-hue / --brand-l-mid remain for HuePicker; the default scale is pinned.
-   --brand-300  soft pink  #F4A7B9
-   --brand-500  raspberry  #B84A68  (bg-brand, primary actions)
+  BRAND TOKENS — Nibble board
+  Golden yellow is the brand signal; deeper gold keeps accent text readable.
+  --brand-hue / --brand-l-mid remain for HuePicker; the default scale is pinned.
+  --brand-500  golden yellow  #FFC400  (bg-brand, primary actions)
 ───────────────────────────────────────────────────────────────────────────── */
 :root {
-  --brand-hue:   347;
+  --brand-hue:   46;
   --brand-l-mid: 81%;
-  --nibble-pink:      #F4A7B9;
-  --nibble-raspberry: #B84A68;
+  --nibble-yellow:    #FFC400;
   --nibble-sage:      #A8C3A0;
-  --logo-color:  var(--nibble-pink);
-  --brand-50:    #FFF5F7;
-  --brand-100:   #FCECEF;
-  --brand-200:   #F8D4DC;
-  --brand-300:   #F4A7B9;
-  --brand-400:   #E8879E;
-  --brand-500:   #B84A68;
-  --brand-600:   #9E3D58;
-  --brand-700:   #7A2F44;
-  --brand-800:   #5A2333;
-  --brand-900:   #3D1823;
+  --logo-color:  var(--nibble-yellow);
+  --brand-50:    #FFFCF2;
+  --brand-100:   #FFF5D6;
+  --brand-200:   #FFE9A3;
+  --brand-300:   #FFDA66;
+  --brand-400:   #FFCC33;
+  --brand-500:   #FFC400;
+  --brand-600:   #D9A600;
+  --brand-700:   #A87F00;
+  --brand-800:   #705500;
+  --brand-900:   #3D2E00;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -63,7 +60,7 @@
 ───────────────────────────────────────────────────────────────────────────── */
 :root, .light {
   /* Page background - outermost shell, AppLayout wrapper */
-  --surface-page:     #FFF9FA;
+  --surface-page:     #FFFCF2;
   /* Default card/panel background - most cards, modals, drawers */
   --surface-base:     #ffffff;
   /* Slightly elevated surface - dropdowns, popovers, raised cards */
@@ -71,7 +68,7 @@
   /* Most elevated surface - tooltips, overlays, toggle knob backgrounds */
   --surface-elevated: #ffffff;
   /* Recessed/inset surface - inputs, code blocks, zebra rows, skeleton pulses */
-  --surface-inset:    #FCECEF;
+  --surface-inset:    #FFF5D6;
 
   /* Primary text - headings, body, important labels */
   --text-primary:     #211C1E;
@@ -83,16 +80,16 @@
   --text-muted:       #756A6E;
 
   /* Default border - card edges, dividers, input outlines */
-  --border-base:      #F0D8DE;
+  --border-base:      #F0E4BF;
   /* Strong border - focused inputs, hover outlines, prominent dividers */
-  --border-strong:    #E4C4CC;
+  --border-strong:    #E3D39F;
 
   /* Accent - brand-colored interactive elements (links, active nav, focus rings) */
-  --accent:           var(--brand-500);
+  --accent:           var(--brand-800);
 
   /* On-brand / on-accent - text/icon color for use on bg-brand or bg-accent fills */
-  --on-brand:         #FFF9FA;
-  --on-accent:        #FFF9FA;
+  --on-brand:         #211C1E;
+  --on-accent:        #211C1E;
 
   /* Overlay scrim - modal / drawer backdrop */
   --overlay-scrim:    rgba(0, 0, 0, 0.5);
@@ -125,7 +122,7 @@
   --chart-orange:  #fb923c;
   --chart-pink:    #f472b6;
 
-  --surface-brand-hover-tint: color-mix(in srgb, var(--brand-500) 3%, transparent);
+  --surface-brand-hover-tint: color-mix(in srgb, var(--brand-500) 5%, transparent);
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -412,4 +409,91 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 @keyframes chart-frame-fade-in {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+@keyframes food-doodle-float {
+  0%, 100% { translate: 0 0; }
+  50% { translate: 0 -10px; }
+}
+
+.food-doodle {
+  position: absolute;
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  line-height: 1;
+  opacity: 0.48;
+  user-select: none;
+  animation: food-doodle-float 7s ease-in-out infinite;
+}
+
+.food-doodle--pizza {
+  top: 13%;
+  left: 9%;
+  rotate: -14deg;
+  animation-delay: -1.5s;
+}
+
+.food-doodle--burger {
+  top: 22%;
+  right: 10%;
+  rotate: 11deg;
+  animation-delay: -3.2s;
+}
+
+.food-doodle--taco {
+  bottom: 19%;
+  left: 15%;
+  rotate: -9deg;
+  animation-delay: -4.1s;
+}
+
+.food-doodle--fries {
+  right: 16%;
+  bottom: 13%;
+  rotate: 13deg;
+  animation-delay: -2.4s;
+}
+
+.food-doodle--noodles {
+  top: 52%;
+  left: 4%;
+  rotate: -8deg;
+  animation-delay: -5.2s;
+}
+
+.food-doodle--avocado {
+  top: 50%;
+  right: 4%;
+  rotate: 8deg;
+  animation-delay: -0.8s;
+}
+
+@media (max-width: 819px) {
+  .food-doodle {
+    font-size: 1.5rem;
+    opacity: 0.4;
+  }
+
+  .food-doodle--pizza {
+    top: 9%;
+    left: 5%;
+  }
+
+  .food-doodle--burger {
+    top: 9%;
+    right: 5%;
+  }
+
+  .food-doodle--taco,
+  .food-doodle--fries,
+  .food-doodle--noodles,
+  .food-doodle--avocado {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .food-doodle {
+    animation: none;
+  }
 }

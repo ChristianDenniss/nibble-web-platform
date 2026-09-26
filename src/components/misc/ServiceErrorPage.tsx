@@ -35,7 +35,7 @@ export default function ServiceErrorPage({ kind, error, onReload }: Props) {
   return (
     <div className="flex min-h-screen items-center justify-center bg-page px-6 py-16">
       <div className="flex w-full max-w-lg flex-col items-center text-center">
-        <AppLogo className="mb-10 h-28 w-28 -rotate-6" />
+        <AppLogo className="mb-10 h-28 w-auto -rotate-6" />
         <h1 className="text-2xl font-semibold text-content tracking-tight">{title}</h1>
         <p className="mt-3 text-sm text-content-secondary leading-relaxed">{body}</p>
         <Button variant="primary" className="mt-8" onClick={onReload ?? (() => window.location.reload())}>

@@ -32,7 +32,7 @@ export default function Header() {
     <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-5">
         <Link to={paths.home} className="flex shrink-0 items-center gap-2">
-          <AppLogo className="h-8 w-8" />
+          <AppLogo className="h-8 w-auto" />
           <span className="hidden text-base font-semibold tracking-tight text-content small:inline">
             Nibble
           </span>

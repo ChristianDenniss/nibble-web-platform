@@ -1,9 +1,14 @@
-// Applies the persisted (or OS-preferred) theme before first paint, so there's no flash of the
-// wrong theme on load. Loaded as a same-origin external script (not inlined in index.html) so the
-// CSP's script-src can stay 'self' with no 'unsafe-inline' - see frontend/nginx.conf.
+// Force the light theme before first paint, including when an old dark preference is saved.
+// Loaded externally so the CSP can keep script-src 'self' without 'unsafe-inline'.
 (function () {
-  var t = localStorage.getItem('theme')
-  if (t === 'dark' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-    document.documentElement.classList.add('dark')
+  var root = document.documentElement
+  root.classList.remove('dark')
+  root.classList.add('light')
+  root.style.colorScheme = 'light'
+
+  try {
+    localStorage.setItem('theme', 'light')
+  } catch {
+    // The light class still applies when storage is unavailable.
   }
 })()
