@@ -36,7 +36,7 @@ export function useStorefront(): StorefrontState {
     let cancelled = false
 
     axios
-      .get<StorefrontData>('/api/storefront')
+      .get<StorefrontData>('/api/v1/storefront')
       .then((response) => {
         if (cancelled) return
         setState({ loading: false, data: response.data, error: null })
