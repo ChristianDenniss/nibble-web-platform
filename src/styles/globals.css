@@ -492,6 +492,28 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
   }
 }
 
+.nibble-map-pin {
+  background: none;
+  border: none;
+}
+
+.nibble-map-pin__mark {
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-left: 3px;
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  background: var(--color-brand);
+  border: 2px solid var(--color-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.leaflet-container {
+  font-family: inherit;
+  background: var(--color-surface-inset);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .food-doodle {
     animation: none;

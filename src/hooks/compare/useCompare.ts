@@ -16,8 +16,8 @@ const defaultForm: CompareFormState = {
   placeId: 'pl_demo',
   dishId: 'dish_burger',
   quantity: 1,
-  lat: '43.6532',
-  lng: '-79.3832',
+  lat: '45.9458',
+  lng: '-66.6414',
   userId: '',
 }
 
@@ -38,7 +38,7 @@ export function useCompare() {
         user_id: form.userId || undefined,
         fulfillment_context: {
           mode: 'delivery',
-          dropoff: { latitude: lat, longitude: lng, label: 'Compare' },
+          dropoff: { latitude: lat, longitude: lng, label: 'UNBF' },
         },
         basket: {
           lines: [{ dish_id: form.dishId, quantity: form.quantity }],

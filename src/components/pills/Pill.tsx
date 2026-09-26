@@ -4,6 +4,7 @@
  * Lives in `components/pills/`; the go-to chip for plain tag lists in bubbles and cards.
  */
 import type { ReactNode } from 'react'
+import { cn } from '@/lib/utils'
 
 interface Props {
   children: ReactNode
@@ -48,7 +49,7 @@ export default function Pill({
     ? `text-xs px-2 py-0.5 rounded-full inline-flex items-center gap-1 ${bg} ${text}`
     : `text-xs px-2.5 py-1 rounded-full border inline-flex items-center gap-1 ${bg} ${text} ${border}`
   return (
-    <Tag className={`${shape} ${interactive} ${className ?? ''}`} onClick={handleClick} title={title}>
+    <Tag className={cn(shape, interactive, className)} onClick={handleClick} title={title}>
       {icon}{children}
     </Tag>
   )

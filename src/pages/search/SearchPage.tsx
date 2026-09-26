@@ -1,56 +1,69 @@
 /**
  * SearchPage — query results for restaurants and dishes, with a jump to filters.
+ * Category landings add cuisine chips and lead with the restaurant feed.
  */
 import { useMemo } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { SlidersHorizontal } from 'lucide-react'
-import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
+import CuisineChips from '@/components/storefront/CuisineChips'
 import MenuItemCard from '@/components/storefront/MenuItemCard'
 import RestaurantCard from '@/components/storefront/RestaurantCard'
 import SectionHeader from '@/components/storefront/SectionHeader'
 import { lowestOfferCents, restaurantEta, restaurantProviders, useStorefront } from '@/hooks/storefront/useStorefront'
-import { paths } from '@/routing/paths'
+import { paths, searchPath } from '@/routing/paths'
 
 export default function SearchPage() {
   const [params] = useSearchParams()
   const q = (params.get('q') ?? '').trim().toLowerCase()
   const categorySlug = params.get('category')
+  const cuisineSlug = params.get('cuisine')
   const { loading, data, error } = useStorefront()
 
   const matches = useMemo(() => {
     if (!data) return { restaurants: [], items: [] }
     const categoryId = data.categories.find((entry) => entry.slug === categorySlug)?.id
+    const cuisineId = data.cuisines.find((entry) => entry.slug === cuisineSlug)?.id
     const cuisineName = (id: string) => data.cuisines.find((entry) => entry.id === id)?.name ?? ''
     const restaurants = data.restaurants.filter((restaurant) => {
       const hay = `${restaurant.name} ${restaurant.cuisineIds.map(cuisineName).join(' ')}`.toLowerCase()
       const textOk = !q || hay.includes(q)
       const catOk = !categorySlug || (categoryId != null && restaurant.categoryIds.includes(categoryId))
-      return textOk && catOk
+      const cuisineOk = !cuisineSlug || (cuisineId != null && restaurant.cuisineIds.includes(cuisineId))
+      return textOk && catOk && cuisineOk
     })
     const items = data.items.filter((item) => {
       if (q && !`${item.name} ${item.description}`.toLowerCase().includes(q)) return false
-      if (!categorySlug) return true
       const restaurant = data.restaurants.find((entry) => entry.id === item.restaurantId)
-      return categoryId != null && (restaurant?.categoryIds.includes(categoryId) ?? false)
+      if (categorySlug && (categoryId == null || !restaurant?.categoryIds.includes(categoryId))) return false
+      if (cuisineSlug && (cuisineId == null || !restaurant?.cuisineIds.includes(cuisineId))) return false
+      return true
     })
     return { restaurants, items }
-  }, [data, q, categorySlug])
+  }, [data, q, categorySlug, cuisineSlug])
 
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Search is unavailable" description={error ?? undefined} />
 
-  const heading = q ? `Results for “${q}”` : categorySlug ? `Category · ${categorySlug}` : 'Search'
+  const category = data.categories.find((entry) => entry.slug === categorySlug)
+  const cuisine = data.cuisines.find((entry) => entry.slug === cuisineSlug)
+  const heading = q
+    ? `Results for “${q}”`
+    : category
+      ? category.name
+      : 'Search'
+  const categoryBrowse = Boolean(categorySlug && !q)
 
   return (
     <div className="space-y-8">
-      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: heading }]} />
       <div className="flex items-center justify-between gap-3">
         <div>
           <h1 className="text-2xl font-semibold tracking-tight text-content">{heading}</h1>
           <p className="mt-1 text-sm text-content-secondary">
-            {matches.restaurants.length} restaurants · {matches.items.length} dishes
+            {matches.restaurants.length} restaurants
+            {!categoryBrowse && ` · ${matches.items.length} dishes`}
+            {cuisine && ` · ${cuisine.name}`}
           </p>
         </div>
         <Link
@@ -62,12 +75,25 @@ export default function SearchPage() {
         </Link>
       </div>
 
+      {categorySlug && (
+        <CuisineChips
+          cuisines={data.cuisines}
+          activeSlug={cuisineSlug}
+          allHref={searchPath(q || undefined, { category: categorySlug })}
+          hrefFor={(slug) => searchPath(q || undefined, {
+            category: categorySlug,
+            cuisine: slug === cuisineSlug ? undefined : slug,
+          })}
+          className="sticky top-16 z-20 -mx-5 bg-page px-5 py-2"
+        />
+      )}
+
       <section>
         <SectionHeader title="Restaurants" />
         {matches.restaurants.length === 0 ? (
           <EmptyState title="No restaurants match" description="Try another search or clear filters." />
         ) : (
-          <div className="grid grid-cols-1 gap-4 small:grid-cols-2">
+          <div className="grid grid-cols-1 gap-5 small:grid-cols-2">
             {matches.restaurants.map((restaurant) => (
               <RestaurantCard
                 key={restaurant.id}

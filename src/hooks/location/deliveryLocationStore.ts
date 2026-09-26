@@ -1,13 +1,14 @@
 /**
  * deliveryLocationStore — session delivery address (which saved address is current,
- * plus an optional GPS pin when the device location is not near a saved one).
+ * plus an optional session pin from GPS or a dropped map marker).
  * Lives in `hooks/location/`; `useStorefront` overlays this onto catalog addresses
  * so every page sees the same current flag without a write API yet.
  */
 import { useSyncExternalStore } from 'react'
 import type { SavedAddress } from '@/generated/data-model'
 
-export const SESSION_GPS_ADDRESS_ID = 'addr_session_gps'
+export const SESSION_PIN_ADDRESS_ID = 'addr_session_gps'
+export const SESSION_GPS_ADDRESS_ID = SESSION_PIN_ADDRESS_ID
 
 const STORAGE_KEY = 'nibble.deliveryLocation'
 
@@ -61,25 +62,54 @@ export function getDeliveryLocationState(): DeliveryLocationState {
   return state
 }
 
-export function selectDeliveryAddress(id: string) {
+export function selectDeliveryAddress(id: string | null) {
   setState({ ...state, selectedId: id })
 }
 
-export function setGpsDeliveryAddress(coords: { latitude: number; longitude: number }) {
+export interface SessionPinInput {
+  latitude: number
+  longitude: number
+  label?: string
+  address?: string
+  city?: string
+  region?: string
+  postalCode?: string
+}
+
+export function setSessionPin(input: SessionPinInput) {
+  const label = input.label?.trim() || 'Dropped pin'
+  const address = input.address?.trim() || label
   const sessionAddress: SavedAddress = {
-    id: SESSION_GPS_ADDRESS_ID,
-    label: 'Current location',
+    id: SESSION_PIN_ADDRESS_ID,
+    label,
     location: {
-      latitude: coords.latitude,
-      longitude: coords.longitude,
-      address: 'Current location',
-      city: '',
-      region: '',
-      postalCode: '',
+      latitude: input.latitude,
+      longitude: input.longitude,
+      address,
+      city: input.city?.trim() ?? '',
+      region: input.region?.trim() ?? '',
+      postalCode: input.postalCode?.trim() ?? '',
     },
     current: true,
   }
-  setState({ selectedId: SESSION_GPS_ADDRESS_ID, sessionAddress })
+  setState({ selectedId: SESSION_PIN_ADDRESS_ID, sessionAddress })
+}
+
+export function clearSessionPin() {
+  if (state.selectedId === SESSION_PIN_ADDRESS_ID) {
+    setState({ selectedId: null, sessionAddress: null })
+    return
+  }
+  setState({ ...state, sessionAddress: null })
+}
+
+export function setGpsDeliveryAddress(coords: { latitude: number; longitude: number }) {
+  setSessionPin({
+    latitude: coords.latitude,
+    longitude: coords.longitude,
+    label: 'Current location',
+    address: 'Current location',
+  })
 }
 
 function subscribe(onChange: () => void): () => void {

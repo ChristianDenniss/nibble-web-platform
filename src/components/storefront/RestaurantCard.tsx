@@ -1,8 +1,8 @@
 /**
- * RestaurantCard — DoorDash-style store tile: cover, name, rating, ETA, starting price, providers.
+ * RestaurantCard — store tile: cover, name, rating · ETA · starting price, providers.
  */
 import { Link } from 'react-router-dom'
-import { Clock, Star } from 'lucide-react'
+import { Star } from 'lucide-react'
 import CoverBlock from './CoverBlock'
 import Pill from '@/components/pills/Pill'
 import { coverTone } from '@/lib/coverTone'
@@ -27,38 +27,34 @@ export default function RestaurantCard({
   etaMax,
   providers = [],
 }: Props) {
+  const meta = [
+    restaurant.rating.count > 0 ? restaurant.rating.average.toFixed(1) : null,
+    etaMin != null && etaMax != null ? `${etaMin}–${etaMax} min` : null,
+    startingCents != null ? `From ${formatMoney(startingCents, currency)}` : null,
+  ].filter(Boolean)
+
   return (
-    <Link
-      to={paths.store(restaurant.id)}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:bg-surface-brand-hover"
-    >
-      <CoverBlock tone={coverTone(restaurant.id)} label={restaurant.name.slice(0, 1)} className="h-36 rounded-none" />
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <div className="flex items-start justify-between gap-2">
-          <h3 className="text-base font-semibold text-content group-hover:text-accent">{restaurant.name}</h3>
-          {restaurant.rating.count > 0 && (
-            <span className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-content-secondary">
-              <Star size={12} className="text-status-warning" />
-              {restaurant.rating.average.toFixed(1)}
-            </span>
-          )}
-        </div>
-        <p className="flex items-center gap-2 text-xs text-content-muted">
-          {etaMin != null && etaMax != null && (
-            <>
-              <Clock size={12} />
-              {etaMin}–{etaMax} min
-            </>
-          )}
-          {startingCents != null && (
-            <>
-              {etaMin != null && <span aria-hidden>·</span>}
-              <span className="font-medium text-accent">From {formatMoney(startingCents, currency)}</span>
-            </>
-          )}
-        </p>
+    <Link to={paths.store(restaurant.id)} className="group flex flex-col">
+      <div className="relative">
+        <CoverBlock
+          tone={coverTone(restaurant.id)}
+          label={restaurant.name.slice(0, 1)}
+          className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
+        />
+        {restaurant.rating.count > 0 && (
+          <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-surface px-2 py-0.5 text-xs font-semibold text-content">
+            <Star size={12} className="text-status-warning" />
+            {restaurant.rating.average.toFixed(1)}
+          </span>
+        )}
+      </div>
+      <div className="flex flex-1 flex-col gap-1.5 pt-2.5">
+        <h3 className="text-[15px] font-semibold leading-tight text-content">{restaurant.name}</h3>
+        {meta.length > 0 && (
+          <p className="text-xs text-content-muted">{meta.join(' · ')}</p>
+        )}
         {providers.length > 0 && (
-          <div className="mt-auto flex flex-wrap gap-1.5">
+          <div className="mt-auto flex flex-wrap gap-1.5 pt-0.5">
             {providers.map((provider) => (
               <Pill key={provider.id} bare>
                 {provider.name}
