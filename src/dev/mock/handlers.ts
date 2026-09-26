@@ -20,6 +20,25 @@ function pathOf(config: InternalAxiosRequestConfig): string {
   return raw.split('?')[0] ?? raw
 }
 
+const mockSourceStores = [
+  {
+    id: 'ss_store',
+    channelId: 'ch_store',
+    externalStoreId: 'ext-store-1',
+    name: 'Demo store direct',
+    location: { latitude: 45.9636, longitude: -66.6431, address: '' },
+    phone: '',
+  },
+  {
+    id: 'ss_skip',
+    channelId: 'ch_skip',
+    externalStoreId: 'ext-skip-1',
+    name: 'Demo via Skip',
+    location: { latitude: 45.9636, longitude: -66.6431, address: '' },
+    phone: '',
+  },
+]
+
 const addressRoute =
   /^\/api\/v1\/accounts\/[^/]+\/addresses\/([^/]+)(?:\/current)?$/
 
@@ -30,6 +49,13 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
   if (method === 'get') {
     if (path === '/api/v1/storefront' || path === '/api/storefront' || path === '/storefront' || path === '/v1/storefront') {
       return { status: 200, data: mockCatalog }
+    }
+
+    const channelStores = path.match(/^\/api\/v1\/channels\/([^/]+)\/source-stores$/)
+    if (channelStores) {
+      const channelId = decodeURIComponent(channelStores[1])
+      const stores = mockSourceStores.filter((store) => store.channelId === channelId)
+      return { status: 200, data: { stores } }
     }
 
     if (path.startsWith('/api/v1/source-stores/') && path.endsWith('/menu')) {
