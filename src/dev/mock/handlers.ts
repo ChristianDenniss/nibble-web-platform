@@ -25,7 +25,7 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
   const method = (config.method ?? 'get').toLowerCase()
   if (method !== 'get') return null
 
-  if (path === '/api/storefront' || path === '/storefront') {
+  if (path === '/api/v1/storefront' || path === '/api/storefront' || path === '/storefront' || path === '/v1/storefront') {
     return { status: 200, data: mockCatalog }
   }
 
