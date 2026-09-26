@@ -1,21 +1,29 @@
-import { useEffect, useState } from "react";
+import { lazy, Suspense } from 'react'
+import { Routes, Route, Outlet } from 'react-router-dom'
+import AppLayout from '@/components/layout/AppLayout'
+import PageLoader from '@/components/layout/PageLoader'
+import ErrorBoundary from '@/components/misc/ErrorBoundary'
+
+const HealthPage = lazy(() => import('@/pages/health/HealthPage'))
+
+function LayoutShell() {
+  return (
+    <AppLayout>
+      <Suspense fallback={<PageLoader />}>
+        <Outlet />
+      </Suspense>
+    </AppLayout>
+  )
+}
 
 export function App() {
-  const [message, setMessage] = useState("checking /health");
-
-  useEffect(() => {
-    fetch("/health")
-      .then((response) => {
-        if (response.status === 200) {
-          setMessage("200 success");
-          return;
-        }
-        setMessage(String(response.status));
-      })
-      .catch(() => {
-        setMessage("health check failed");
-      });
-  }, []);
-
-  return <main>{message}</main>;
+  return (
+    <ErrorBoundary>
+      <Routes>
+        <Route element={<LayoutShell />}>
+          <Route path="/" element={<HealthPage />} />
+        </Route>
+      </Routes>
+    </ErrorBoundary>
+  )
 }

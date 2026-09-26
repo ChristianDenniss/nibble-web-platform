@@ -1,0 +1,407 @@
+/* IBM Plex Sans + JetBrains Mono - matches the TrojAI platform. Loaded via a stylesheet
+   <link> in index.html (not a CSS @import here, and not a media=print/onload swap — that
+   onload is inline JS and the CSP's script-src 'self' blocks it, so the fonts never applied). */
+
+/* Tailwind v4 - processed by @tailwindcss/vite */
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Class-based dark mode - makes all dark: utilities respond to the .dark class
+   on <html> instead of the OS prefers-color-scheme media query. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   VIEWPORT TIERS — single source of truth for responsive breakpoints.
+
+   Change a number here and the WHOLE app recalibrates:
+     - Tailwind generates the `small:` / `max-small:` / `large:` variants from it.
+     - src/config/breakpoints.ts reads these same values at runtime (getComputedStyle),
+       so the useViewport() hook (isSmall/isLarge) can never drift from the CSS.
+
+   Tiers:
+     small   < 820px          phones + small tablets → use `max-small:` variants
+     medium  820px – 1919px   DEFAULT layout  → base + existing md:/lg:/2xl: (untouched)
+     large   >= 1920px        TV / wide        → `large:` variants (skeleton, not built yet)
+
+   NOTE: this is a plain `@theme` block (NOT `@theme inline`) so the values are
+   emitted as real --breakpoint-* custom properties on :root for the JS to read.
+───────────────────────────────────────────────────────────────────────────── */
+@theme {
+  --breakpoint-small: 820px;
+  --breakpoint-large: 1920px;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BRAND TOKENS
+   --brand-hue and --brand-l-mid control the entire scale.
+   --brand-l-mid is the lightness anchor (brand-400). All other stops are
+   calc() offsets from it so the whole scale shifts when the lightness picker
+   moves. clamp() keeps values in valid range.
+   --brand-500  primary (bg-brand, active states)
+   --brand-600  accent in light mode (text-accent, border-accent)
+   --brand-400  accent in dark mode  (text-accent, border-accent)
+───────────────────────────────────────────────────────────────────────────── */
+:root {
+  --brand-hue:   8;
+  --brand-l-mid: 52%;
+  --logo-color:  hsl(var(--brand-hue), 100%, clamp(0%, calc(var(--brand-l-mid) - 10%), 100%));
+  --brand-50:  hsl(var(--brand-hue), 83%, clamp(0%, calc(var(--brand-l-mid) + 44%), 100%));
+  --brand-100: hsl(var(--brand-hue), 81%, clamp(0%, calc(var(--brand-l-mid) + 38%), 100%));
+  --brand-200: hsl(var(--brand-hue), 77%, clamp(0%, calc(var(--brand-l-mid) + 28%), 100%));
+  --brand-300: hsl(var(--brand-hue), 68%, clamp(0%, calc(var(--brand-l-mid) + 15%), 100%));
+  --brand-400: hsl(var(--brand-hue), 64%, var(--brand-l-mid));
+  --brand-500: hsl(var(--brand-hue), 84%, clamp(0%, calc(var(--brand-l-mid) - 13%), 100%));
+  --brand-600: hsl(var(--brand-hue), 93%, clamp(0%, calc(var(--brand-l-mid) - 22%), 100%));
+  --brand-700: hsl(var(--brand-hue), 94%, clamp(0%, calc(var(--brand-l-mid) - 28%), 100%));
+  --brand-800: hsl(var(--brand-hue), 88%, clamp(0%, calc(var(--brand-l-mid) - 32%), 100%));
+  --brand-900: hsl(var(--brand-hue), 86%, clamp(0%, calc(var(--brand-l-mid) - 35%), 100%));
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   LIGHT THEME
+───────────────────────────────────────────────────────────────────────────── */
+:root, .light {
+  /* Page background - outermost shell, AppLayout wrapper */
+  --surface-page:     #f6f8fa;
+  /* Default card/panel background - most cards, modals, drawers */
+  --surface-base:     #ffffff;
+  /* Slightly elevated surface - dropdowns, popovers, raised cards */
+  --surface-raised:   #ffffff;
+  /* Most elevated surface - tooltips, overlays, toggle knob backgrounds */
+  --surface-elevated: #ffffff;
+  /* Recessed/inset surface - inputs, code blocks, zebra rows, skeleton pulses */
+  --surface-inset:    #f1f4f8;
+
+  /* Primary text - headings, body, important labels */
+  --text-primary:     #0f172a;
+  /* Secondary text - subheadings, descriptions, less prominent labels */
+  --text-secondary:   #334155;
+  /* Tertiary text - hints, timestamps, fine print */
+  --text-tertiary:    #71717a;
+  /* Muted text - placeholders, disabled text, pagination counts */
+  --text-muted:       #94a3b8;
+
+  /* Default border - card edges, dividers, input outlines */
+  --border-base:      #e2e8f0;
+  /* Strong border - focused inputs, hover outlines, prominent dividers */
+  --border-strong:    #cbd5e1;
+
+  /* Accent - brand-colored interactive elements (links, active nav, focus rings) */
+  --accent:           var(--brand-600);
+
+  /* On-brand / on-accent - text/icon color for use on bg-brand or bg-accent fills */
+  --on-brand:         #ffffff;
+  --on-accent:        #ffffff;
+
+  /* Overlay scrim - modal / drawer backdrop */
+  --overlay-scrim:    rgba(0, 0, 0, 0.5);
+  --overlay-scrim-sm: rgba(0, 0, 0, 0.25);
+
+  /* Shadows - fixed black, identical in both themes */
+  --shadow-sm:    0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:    0px 0px 5px 0px rgb(0 0 0/0.02), 0px 2px 10px 0px rgb(0 0 0/0.06), 0px 0px 1px 0px rgb(0 0 0/0.3);
+  --shadow-chart: 0 2px 6px rgba(0,0,0,0.35);
+
+  /* Status colors - semantic states and entity type badges */
+  --status-success:   #10b981; /* Completed runs, model events, positive outcomes */
+  --status-warning:   #f59e0b; /* Pending states, sync events, caution */
+  --status-danger:    #ef4444; /* Failed, cancelled, errors */
+  --status-info:      #3b82f6; /* Running states, dataset events, informational */
+  --status-pending:   #f59e0b; /* Pending (alias of warning) */
+  --status-running:   #3b82f6; /* Running (alias of info) */
+  --status-purple:    #8b5cf6; /* Eval run events, webhook events, classifier/dataset tags */
+  --status-orange:    #f97316; /* Cron job events */
+  --status-pink:      #ec4899; /* User entity type */
+
+  /* Chart colors - fixed, theme-invariant series colors for data-vis fills.
+     Unlike status-* (which intentionally shifts weight per theme for text/badge
+     contrast), a chart series must render as the same color in both themes. */
+  --chart-info:    #60a5fa;
+  --chart-success: #10b981;
+  --chart-warning: #fbbf24;
+  --chart-danger:  #f87171;
+  --chart-purple:  #a78bfa;
+  --chart-orange:  #fb923c;
+  --chart-pink:    #f472b6;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   DARK THEME
+───────────────────────────────────────────────────────────────────────────── */
+.dark {
+  --surface-page:     #080a14;
+  --surface-base:     #111624;
+  --surface-raised:   #161c2d;
+  --surface-elevated: #1c253a;
+  --surface-inset:    #1e253a;
+
+  --text-primary:     #e8edf8;
+  --text-secondary:   #bac4dc;
+  --text-tertiary:    #8c98b6;
+  --text-muted:       #64708e;
+
+  --border-base:      #20283e;
+  --border-strong:    #323c58;
+
+  --accent:           var(--brand-400);
+
+  /* On-brand / on-accent - same white intent works in dark mode */
+  --on-brand:         #ffffff;
+  --on-accent:        #ffffff;
+
+  /* Overlay scrim */
+  --overlay-scrim:    rgba(0, 0, 0, 0.5);
+  --overlay-scrim-sm: rgba(0, 0, 0, 0.25);
+
+  --status-success:   #10b981;
+  --status-warning:   #fbbf24;
+  --status-danger:    #f87171;
+  --status-info:      #60a5fa;
+  --status-pending:   #fbbf24;
+  --status-running:   #60a5fa;
+  --status-purple:    #a78bfa;
+  --status-orange:    #fb923c;
+  --status-pink:      #f472b6;
+
+  /* Shadows - fixed black, identical in both themes (like chart colors). Inline-style-only, not Tailwind utilities. */
+  --shadow-sm:    0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:    0px 0px 5px 0px rgb(0 0 0/0.02), 0px 2px 10px 0px rgb(0 0 0/0.06), 0px 0px 1px 0px rgb(0 0 0/0.3);
+  --shadow-chart: 0 2px 6px rgba(0,0,0,0.35);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   TAILWIND UTILITIES
+   Registers all semantic tokens as Tailwind utility classes.
+   Use ONLY these classes in component code - never use raw palette classes
+   (text-red-500, bg-blue-600, etc.) or hex values.
+
+   Surfaces:  bg-page · bg-surface · bg-surface-raised · bg-surface-elevated · bg-surface-inset
+              bg-surface-zebra (zebra rows) · bg-surface-sticky (sticky headers) · bg-surface-alt (section header tint)
+              bg-hover (interactive hover/active background) · bg-surface-brand-hover (row/card brand tint on hover)
+   Text:      text-content · text-content-secondary · text-content-tertiary · text-content-muted · text-content-faint
+   Borders:   border-border · border-border-strong
+   Brand:     bg-brand · text-accent · bg-accent · border-accent
+   Status:    text-status-{success|warning|danger|info|pending|running|purple|orange|pink}
+              bg-status-* and border-status-* also available, with opacity modifiers (e.g. /15)
+───────────────────────────────────────────────────────────────────────────── */
+@theme inline {
+  /* Surfaces */
+  --color-page:             var(--surface-page);
+  --color-surface:          var(--surface-base);
+  --color-surface-raised:   var(--surface-raised);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-inset:    var(--surface-inset);
+  --color-surface-zebra:      var(--surface-inset);                              /* alternating row tint */
+  --color-surface-sticky:     var(--surface-raised);                             /* sticky table/section headers */
+  --color-surface-alt:        var(--surface-inset);                              /* recessed section header tint */
+  --color-hover:              var(--surface-inset);                              /* interactive hover / active state */
+  --color-surface-brand-hover: color-mix(in srgb, var(--brand-500) 3%, transparent); /* row/card brand hover tint */
+
+  /* Text */
+  --color-content:           var(--text-primary);
+  --color-content-secondary: var(--text-secondary);
+  --color-content-tertiary:  var(--text-tertiary);
+  --color-content-muted:     var(--text-muted);
+  --color-content-faint:     var(--text-muted);     /* alias - faintest text, placeholders, icons */
+
+  /* Borders */
+  --color-border:        var(--border-base);
+  --color-border-strong: var(--border-strong);
+
+  /* Brand / accent */
+  --color-accent:    var(--accent);
+  --color-brand:     var(--brand-500);
+  --color-on-brand:  var(--on-brand);
+  --color-on-accent: var(--on-accent);
+  --color-overlay:   var(--overlay-scrim);
+  --color-overlay-sm: var(--overlay-scrim-sm);
+
+  /* Status - semantic states */
+  --color-status-success: var(--status-success);
+  --color-status-warning: var(--status-warning);
+  --color-status-danger:  var(--status-danger);
+  --color-status-info:    var(--status-info);
+  --color-status-pending: var(--status-pending);
+  --color-status-running: var(--status-running);
+
+  /* Status - entity type / categorical */
+  --color-status-purple:  var(--status-purple);
+  --color-status-orange:  var(--status-orange);
+  --color-status-pink:    var(--status-pink);
+
+  /* Chart - fixed data-vis series colors, identical in both themes */
+  --color-chart-info:    var(--chart-info);
+  --color-chart-success: var(--chart-success);
+  --color-chart-warning: var(--chart-warning);
+  --color-chart-danger:  var(--chart-danger);
+  --color-chart-purple:  var(--chart-purple);
+  --color-chart-orange:  var(--chart-orange);
+  --color-chart-pink:    var(--chart-pink);
+
+  --font-sans: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* shadcn/ui aliases — mapped onto the same tokens, not a second palette.
+     Do not redefine --color-accent or --color-border; the catalog already owns those. */
+  --color-background:          var(--surface-page);
+  --color-foreground:          var(--text-primary);
+  --color-card:                var(--surface-base);
+  --color-card-foreground:     var(--text-primary);
+  --color-popover:             var(--surface-elevated);
+  --color-popover-foreground:  var(--text-primary);
+  --color-primary:             var(--brand-500);
+  --color-primary-foreground:  var(--on-brand);
+  --color-secondary:           var(--surface-inset);
+  --color-secondary-foreground: var(--text-secondary);
+  --color-muted:               var(--surface-inset);
+  --color-muted-foreground:    var(--text-muted);
+  --color-accent-foreground:   var(--on-accent);
+  --color-destructive:         var(--status-danger);
+  --color-input:               var(--border-strong);
+  --color-ring:                var(--brand-500);
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 0.75rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE
+───────────────────────────────────────────────────────────────────────────── */
+body {
+  background-color: var(--surface-page);
+  color: var(--text-primary);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   HUE SLIDER
+───────────────────────────────────────────────────────────────────────────── */
+.hue-slider,
+.lightness-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 14px;
+  border-radius: 9999px;
+  outline: none;
+}
+
+.hue-slider {
+  background: linear-gradient(to right,
+    hsl(0,80%,55%), hsl(30,80%,55%), hsl(60,80%,55%), hsl(90,80%,55%),
+    hsl(120,80%,55%), hsl(150,80%,55%), hsl(180,80%,55%), hsl(210,80%,55%),
+    hsl(240,80%,55%), hsl(270,80%,55%), hsl(300,80%,55%), hsl(330,80%,55%),
+    hsl(360,80%,55%)
+  );
+}
+
+.hue-slider::-webkit-slider-thumb,
+.lightness-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface-elevated);
+  border: 2px solid var(--border-strong);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+.hue-slider::-moz-range-thumb,
+.lightness-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--surface-elevated);
+  border: 2px solid var(--border-strong);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   NATIVE DATE/TIME INPUTS
+   The calendar-picker icon (and Chromium's value text) ignores `color` and
+   only follows `color-scheme` - set it explicitly so it inverts with theme.
+───────────────────────────────────────────────────────────────────────────── */
+input[type="date"],
+input[type="time"],
+input[type="datetime-local"] {
+  color-scheme: light;
+}
+
+.dark input[type="date"],
+.dark input[type="time"],
+.dark input[type="datetime-local"] {
+  color-scheme: dark;
+}
+
+/* The picker glyph itself ignores `color`/`fill` entirely - `color-scheme` above only
+   flips it between solid black/white. Dial opacity down so it reads as muted (like
+   text-content-muted) instead of stark black-and-white in either theme. */
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator,
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   SCROLLBAR
+───────────────────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface-inset);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+
+.scrollbar-thin::-webkit-scrollbar { width: 4px; height: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 9999px; }
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+.scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+
+/* Sidebar has its own gradient background - a solid track color would paint over it,
+   so keep the track transparent and let the gradient show through behind the thumb. */
+.sidebar-gradient-scroll::-webkit-scrollbar-track { background: transparent; }
+.sidebar-gradient-scroll { scrollbar-color: var(--border-strong) transparent; }
+
+::-webkit-scrollbar-corner {
+  background: var(--surface-inset);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FOCUS - suppress mouse-click focus rings globally (preserve keyboard rings)
+───────────────────────────────────────────────────────────────────────────── */
+*:focus:not(:focus-visible) {
+  outline: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   RECHARTS - suppress focus outline on wrapper div and SVG
+───────────────────────────────────────────────────────────────────────────── */
+.recharts-wrapper,
+.recharts-surface {
+  outline: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CHART FRAME - fade-in on first mount (ChartFrame.tsx)
+───────────────────────────────────────────────────────────────────────────── */
+@keyframes chart-frame-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
