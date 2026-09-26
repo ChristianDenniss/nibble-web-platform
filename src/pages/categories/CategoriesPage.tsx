@@ -41,7 +41,7 @@ export default function CategoriesPage() {
       )}
 
       {rest.length > 0 && (
-        <div className="grid grid-cols-4 gap-3 small:grid-cols-6">
+        <div className="grid grid-cols-4 gap-3 small:grid-cols-6 xl:grid-cols-8">
           {rest.map((category) => (
             <CategoryTile
               key={category.id}
