@@ -23,16 +23,12 @@ export interface SourceMenuBrowseWire {
   }>
 }
 
-export function useSourceMenu(
-  storeId = 'ss_store',
-  fulfillmentMode = 'pickup',
-  deliveryExecutor = '',
-) {
+export function useSourceMenu() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [data, setData] = useState<SourceMenuBrowseWire | null>(null)
 
-  const load = useCallback(async () => {
+  const load = useCallback(async (storeId: string, fulfillmentMode: string, deliveryExecutor = '') => {
     setLoading(true)
     setError(null)
     try {
@@ -48,7 +44,12 @@ export function useSourceMenu(
     } finally {
       setLoading(false)
     }
-  }, [storeId, fulfillmentMode, deliveryExecutor])
+  }, [])
 
-  return { loading, error, data, load }
+  const clear = useCallback(() => {
+    setData(null)
+    setError(null)
+  }, [])
+
+  return { loading, error, data, load, clear }
 }
