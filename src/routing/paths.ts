@@ -25,6 +25,7 @@ export const paths = {
   filters: '/filters',
   health: '/health',
   compare: '/compare',
+  sourceMenu: '/source-menu',
   dev: '/dev',
 } as const
 
