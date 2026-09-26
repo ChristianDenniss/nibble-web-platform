@@ -27,6 +27,7 @@ const PrivacyPage = lazy(() => import('@/pages/legal/PrivacyPage'))
 const ProviderCategoriesPage = lazy(() => import('@/pages/providers/ProviderCategoriesPage'))
 const FilterPage = lazy(() => import('@/pages/filters/FilterPage'))
 const HealthPage = lazy(() => import('@/pages/health/HealthPage'))
+const ComparePage = lazy(() => import('@/pages/compare/ComparePage'))
 const DevPagesPage = lazy(() => import('@/pages/dev/DevPagesPage'))
 const NotFoundPage = lazy(() => import('@/pages/not-found/NotFoundPage'))
 
@@ -78,6 +79,7 @@ export function App() {
           <Route path="/providers/:providerId/categories" element={<ProviderCategoriesPage />} />
           <Route path={paths.filters} element={<FilterPage />} />
           <Route path={paths.health} element={<HealthPage />} />
+          <Route path={paths.compare} element={<ComparePage />} />
           {import.meta.env.DEV && <Route path={paths.dev} element={<DevPagesPage />} />}
           <Route path="*" element={<NotFoundPage />} />
         </Route>

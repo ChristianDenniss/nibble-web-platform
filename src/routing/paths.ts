@@ -24,6 +24,7 @@ export const paths = {
   providerCategories: (providerId: string) => `/providers/${providerId}/categories`,
   filters: '/filters',
   health: '/health',
+  compare: '/compare',
   dev: '/dev',
 } as const
 
