@@ -8,6 +8,9 @@ const CHANNELS = [
   { id: 'ch_skip', label: 'SkipTheDishes' },
   { id: 'ch_doordash', label: 'DoorDash' },
   { id: 'ch_ubereats', label: 'Uber Eats' },
+  { id: 'ch_instacart', label: 'Instacart' },
+  { id: 'ch_grubhub', label: 'Grubhub' },
+  { id: 'ch_fantuan', label: 'Fantuan' },
   { id: 'ch_merchant_web', label: 'Merchant website' },
 ]
 

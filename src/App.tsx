@@ -21,6 +21,7 @@ const OrdersPage = lazy(() => import('@/pages/orders/OrdersPage'))
 const LocationPage = lazy(() => import('@/pages/location/LocationPage'))
 const PaymentPage = lazy(() => import('@/pages/account/PaymentPage'))
 const ManageAccountPage = lazy(() => import('@/pages/account/ManageAccountPage'))
+const PreferencesPage = lazy(() => import('@/pages/account/PreferencesPage'))
 const HelpPage = lazy(() => import('@/pages/help/HelpPage'))
 const TermsPage = lazy(() => import('@/pages/legal/TermsPage'))
 const PrivacyPage = lazy(() => import('@/pages/legal/PrivacyPage'))
@@ -73,6 +74,7 @@ export function App() {
           <Route path={paths.orders} element={<OrdersPage />} />
           <Route path={paths.location} element={<LocationPage />} />
           <Route path={paths.payment} element={<PaymentPage />} />
+          <Route path={paths.preferences} element={<PreferencesPage />} />
           <Route path={paths.account} element={<ManageAccountPage />} />
           <Route path={paths.help} element={<HelpPage />} />
           <Route path={paths.terms} element={<TermsPage />} />

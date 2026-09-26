@@ -11,7 +11,7 @@ const FAQS = [
   { id: 'faq_checkout', topic: 'Ordering', question: 'Where do I pay?', answer: 'You pay on the provider site or app we send you to. We do not charge your card on this page.' },
   { id: 'faq_location', topic: 'Delivery', question: 'Why do you need my address?', answer: 'Availability, ETAs, and fees change by location. Set an address so nearby stores and offers stay accurate.' },
   { id: 'faq_account', topic: 'Account', question: 'Can I delete my account?', answer: 'Yes. Open Manage account and use the delete action. That removes saved addresses and payment labels stored here.' },
-  { id: 'faq_providers', topic: 'Providers', question: 'Which providers do you cover?', answer: 'Skip and DoorDash are in the current catalog. More providers can be added in go-data-model without changing these layouts.' },
+  { id: 'faq_providers', topic: 'Providers', question: 'Which providers do you cover?', answer: 'Skip, DoorDash, Uber Eats, Instacart, Grubhub, and Fantuan are in the current catalog. Not every provider operates in every city, so some may have no offers near you. More providers can be added in go-data-model without changing these layouts.' },
 ]
 
 export default function HelpPage() {

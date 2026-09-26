@@ -1,5 +1,5 @@
 /**
- * ProviderCategoriesPage — categories as they appear for one provider (Skip / DoorDash).
+ * ProviderCategoriesPage — categories as they appear for one provider (Skip, DoorDash, Uber Eats, …).
  */
 import { useParams } from 'react-router-dom'
 import EmptyState from '@/components/misc/EmptyState'
