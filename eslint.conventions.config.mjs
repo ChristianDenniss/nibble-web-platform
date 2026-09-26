@@ -24,7 +24,7 @@ export default [
   },
   {
     files: ["src/**/*.{ts,tsx}"],
-    ignores: ["src/hooks/**", "src/main.tsx", "src/errors/**"],
+    ignores: ["src/hooks/**", "src/main.tsx", "src/errors/**", "src/dev/**"],
     rules: {
       "no-restricted-imports": [
         "error",

@@ -1,5 +1,6 @@
-import { Activity, type LucideIcon } from 'lucide-react'
+import { HelpCircle, House, Receipt, ShoppingBag, type LucideIcon } from 'lucide-react'
 import type { NavTagVariant } from '@/components/navigation/NavTag'
+import { paths } from '@/routing/paths'
 
 interface ChildNavItem {
   label: string
@@ -29,9 +30,30 @@ export type NavItem = NavItemFlat | NavItemExpandable
 export const sidebarMenu: NavItem[] = [
   {
     type: 'item',
-    label: 'Health',
-    icon: Activity,
-    path: '/',
-    activeMatch: ['/'],
+    label: 'Home',
+    icon: House,
+    path: paths.home,
+    activeMatch: [paths.home],
+  },
+  {
+    type: 'item',
+    label: 'Categories',
+    icon: ShoppingBag,
+    path: paths.categories,
+    activeMatch: [paths.categories],
+  },
+  {
+    type: 'item',
+    label: 'Orders',
+    icon: Receipt,
+    path: paths.orders,
+    activeMatch: [paths.orders],
+  },
+  {
+    type: 'item',
+    label: 'Help',
+    icon: HelpCircle,
+    path: paths.help,
+    activeMatch: [paths.help],
   },
 ]

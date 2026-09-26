@@ -11,35 +11,44 @@ if (import.meta.env.VITE_API_URL) {
   axios.defaults.baseURL = import.meta.env.VITE_API_URL
 }
 
-if (import.meta.env.DEV) {
-  axios.interceptors.request.use((config) => {
-    console.log(`[API] → ${config.method?.toUpperCase()} ${config.url}`, config.params ?? '')
-    return config
-  })
-  axios.interceptors.response.use(
-    (res) => {
-      console.log(`[API] ← ${res.status} ${res.config.url}`, res.data)
-      return res
-    },
-    (err: AxiosError<{ error?: string; details?: unknown }>) => {
-      const status = err.response?.status ?? 'N/A'
-      const errorType = err.response?.data?.error ?? err.constructor?.name ?? 'Error'
-      const errorMessage = err.response?.data?.details
-        ? JSON.stringify(err.response.data.details)
-        : err.message
-      console.error(`[API] ✗ ${err.config?.method?.toUpperCase()} ${err.config?.url} - ${status} ${errorType}: ${errorMessage}`)
-      return Promise.reject(err)
-    },
+async function boot() {
+  if (import.meta.env.DEV && import.meta.env.VITE_MOCK !== '0') {
+    const { enableMockDev } = await import('@/dev/mock/enableMockDev')
+    enableMockDev()
+  }
+
+  if (import.meta.env.DEV) {
+    axios.interceptors.request.use((config) => {
+      console.log(`[API] → ${config.method?.toUpperCase()} ${config.url}`, config.params ?? '')
+      return config
+    })
+    axios.interceptors.response.use(
+      (res) => {
+        console.log(`[API] ← ${res.status} ${res.config.url}`, res.data)
+        return res
+      },
+      (err: AxiosError<{ error?: string; details?: unknown }>) => {
+        const status = err.response?.status ?? 'N/A'
+        const errorType = err.response?.data?.error ?? err.constructor?.name ?? 'Error'
+        const errorMessage = err.response?.data?.details
+          ? JSON.stringify(err.response.data.details)
+          : err.message
+        console.error(`[API] ✗ ${err.config?.method?.toUpperCase()} ${err.config?.url} - ${status} ${errorType}: ${errorMessage}`)
+        return Promise.reject(err)
+      },
+    )
+  }
+
+  createRoot(document.getElementById('root')!).render(
+    <StrictMode>
+      <BrowserRouter>
+        <TooltipProvider>
+          <App />
+          <AppToaster />
+        </TooltipProvider>
+      </BrowserRouter>
+    </StrictMode>,
   )
 }
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <BrowserRouter>
-      <TooltipProvider>
-        <App />
-        <AppToaster />
-      </TooltipProvider>
-    </BrowserRouter>
-  </StrictMode>,
-)
+void boot()

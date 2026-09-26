@@ -1,11 +1,11 @@
 /**
- * AppLayout — product chrome: sticky top nav and a normal scrolling document.
- * Not a dashboard shell (no left rail, no logo-width header, no brand wash overlays).
- * Lives in `components/layout/`.
+ * AppLayout — storefront chrome: sticky top bar, scrolling document, legal footer.
+ * Not a dashboard shell (no left rail). Lives in `components/layout/`.
  */
 import { useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import Header from '../navigation/Header'
+import StorefrontFooter from '../storefront/StorefrontFooter'
 import { AppLayoutProvider } from '@/context/AppLayoutContext'
 import { useViewport } from '@/hooks/utils/useViewport'
 
@@ -29,11 +29,12 @@ export default function AppLayout({ children }: AppLayoutProps) {
       mobileNavOpen,
       setMobileNavOpen,
     }}>
-      <div className="min-h-screen bg-page text-content">
+      <div className="flex min-h-screen flex-col bg-page text-content">
         <Header />
-        <main id="main-content" className="mx-auto w-full max-w-5xl px-5 py-10">
+        <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-5 py-8">
           {children}
         </main>
+        <StorefrontFooter />
       </div>
     </AppLayoutProvider>
   )
