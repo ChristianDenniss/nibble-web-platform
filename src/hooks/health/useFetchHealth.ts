@@ -19,31 +19,36 @@ export function useFetchHealth(): HealthState {
 
   useEffect(() => {
     let cancelled = false
+    let attempt = 0
+    const maxAttempts = 8
 
-    axios
-      .get<string>('/health', { validateStatus: () => true })
-      .then((response) => {
-        if (cancelled) return
-        if (response.status === 200) {
-          setState({ loading: false, ok: true, status: 200, message: '200 success' })
-          return
-        }
-        setState({
-          loading: false,
-          ok: false,
-          status: response.status,
-          message: String(response.status),
+    const probe = () => {
+      axios
+        .get<string>('/health', { validateStatus: () => true })
+        .then((response) => {
+          if (cancelled) return
+          if (response.status === 200) {
+            setState({ loading: false, ok: true, status: 200, message: '200 success' })
+            return
+          }
+          retry(String(response.status), response.status)
         })
-      })
-      .catch((err: unknown) => {
-        if (cancelled) return
-        setState({
-          loading: false,
-          ok: false,
-          status: null,
-          message: extractAxiosError(err, 'health check failed'),
+        .catch((err: unknown) => {
+          if (cancelled) return
+          retry(extractAxiosError(err, 'health check failed'), null)
         })
-      })
+    }
+
+    const retry = (message: string, status: number | null) => {
+      attempt += 1
+      if (attempt >= maxAttempts) {
+        setState({ loading: false, ok: false, status, message })
+        return
+      }
+      window.setTimeout(probe, 500)
+    }
+
+    probe()
 
     return () => {
       cancelled = true
