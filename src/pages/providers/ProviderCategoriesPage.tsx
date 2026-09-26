@@ -2,14 +2,12 @@
  * ProviderCategoriesPage — categories as they appear for one provider (Skip / DoorDash).
  */
 import { useParams } from 'react-router-dom'
-import { Store } from 'lucide-react'
-import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
-import PageTitle from '@/components/brand/PageTitle'
 import CategoryTile from '@/components/storefront/CategoryTile'
+import { isFeaturedCategory } from '@/lib/browseIcons'
 import { useStorefront } from '@/hooks/storefront/useStorefront'
-import { paths } from '@/routing/paths'
+import { searchPath } from '@/routing/paths'
 
 export default function ProviderCategoriesPage() {
   const { providerId = '' } = useParams()
@@ -30,23 +28,46 @@ export default function ProviderCategoriesPage() {
       .flatMap((restaurant) => restaurant.categoryIds),
   )
   const categories = data.categories.filter((category) => categoryIds.has(category.id))
+  const featured = categories.filter((category) => isFeaturedCategory(category.slug))
+  const rest = categories.filter((category) => !isFeaturedCategory(category.slug))
 
   return (
-    <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: provider.name }]} />
-      <PageTitle icon={<Store size={20} />} title={`${provider.name} categories`} count={categories.length} />
-      <p className="text-sm text-content-secondary">
-        These are the browse groups we currently see offers for on {provider.name}.
-      </p>
-      <div className="grid grid-cols-1 gap-4 small:grid-cols-2 xl:grid-cols-3">
-        {categories.map((category) => (
-          <CategoryTile
-            key={category.id}
-            category={category}
-            to={`${paths.search}?category=${category.slug}`}
-          />
-        ))}
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight text-content">{provider.name}</h1>
+        <p className="mt-1 text-sm text-content-secondary">
+          Browse groups we currently see offers for on {provider.name}.
+        </p>
       </div>
+
+      {featured.length > 0 && (
+        <div className="grid grid-cols-1 gap-4 small:grid-cols-3">
+          {featured.map((category) => (
+            <CategoryTile
+              key={category.id}
+              item={category}
+              to={searchPath(undefined, { category: category.slug })}
+              variant="featured"
+            />
+          ))}
+        </div>
+      )}
+
+      {rest.length > 0 && (
+        <div className="grid grid-cols-4 gap-3 small:grid-cols-6">
+          {rest.map((category) => (
+            <CategoryTile
+              key={category.id}
+              item={category}
+              to={searchPath(undefined, { category: category.slug })}
+            />
+          ))}
+        </div>
+      )}
+
+      {categories.length === 0 && (
+        <EmptyState title="No categories yet" description={`Nothing listed for ${provider.name} right now.`} />
+      )}
     </div>
   )
 }

@@ -10,7 +10,7 @@ import CountBadge from '@/components/badges/CountBadge'
 import LocationSelector from '@/components/location/LocationSelector'
 import SearchBar from '@/components/navigation/SearchBar'
 import { useAppLayout } from '@/context/AppLayoutContext'
-import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
+import { useAccountAddresses } from '@/hooks/location/useAccountAddresses'
 import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { appNav } from '@/routing/appNav'
@@ -21,6 +21,7 @@ export default function Header() {
   const open = layout?.mobileNavOpen ?? false
   const navigate = useNavigate()
   const storefront = useStorefront()
+  const { pickAddress } = useAccountAddresses(storefront.reload)
   const { locating, locate } = useDeviceLocation()
   const [query, setQuery] = useState('')
 
@@ -37,8 +38,8 @@ export default function Header() {
     <LocationSelector
       addresses={addresses}
       selected={address}
-      onSelect={(next) => selectDeliveryAddress(next.id)}
-      onUseCurrentLocation={() => locate(addresses)}
+      onSelect={(next) => { void pickAddress(next) }}
+      onUseCurrentLocation={() => { void locate(addresses, pickAddress) }}
       locating={locating}
     />
   )
@@ -46,8 +47,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-5">
-        <Link to={paths.home} className="flex shrink-0 items-center gap-2">
-          <AppLogo className="h-8 w-auto" />
+        <Link to={paths.home} aria-label="Nibble home" className="flex shrink-0 items-center gap-2">
+          <AppLogo mark="n" className="h-9 w-auto" />
           <span className="hidden text-base font-semibold tracking-tight text-content small:inline">
             Nibble
           </span>

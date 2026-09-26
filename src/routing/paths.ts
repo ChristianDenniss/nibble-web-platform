@@ -29,7 +29,12 @@ export const paths = {
   dev: '/dev',
 } as const
 
-export function searchPath(query?: string): string {
-  if (!query?.trim()) return paths.search
-  return `${paths.search}?q=${encodeURIComponent(query.trim())}`
+export function searchPath(query?: string, extras?: { category?: string; cuisine?: string }): string {
+  const params = new URLSearchParams()
+  const q = query?.trim()
+  if (q) params.set('q', q)
+  if (extras?.category) params.set('category', extras.category)
+  if (extras?.cuisine) params.set('cuisine', extras.cuisine)
+  const qs = params.toString()
+  return qs ? `${paths.search}?${qs}` : paths.search
 }

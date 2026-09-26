@@ -1,29 +1,56 @@
 /**
- * CategoryTile — large browse tile for the categories / provider-categories grids.
+ * CategoryTile — browse tile for categories and cuisines.
+ * `featured` is the large department card; `icon` is the compact carousel/grid chip.
  */
-import type { ReactNode } from 'react'
 import { Link } from 'react-router-dom'
 import CoverBlock from './CoverBlock'
+import { browseIcon } from '@/lib/browseIcons'
 import { coverTone } from '@/lib/coverTone'
-import type { Category } from '@/generated/data-model'
+import { cn } from '@/lib/utils'
 
-interface Props {
-  category: Category
-  to: string
-  icon?: ReactNode
+export interface BrowseTileItem {
+  id: string
+  slug: string
+  name: string
+  description?: string
 }
 
-export default function CategoryTile({ category, to, icon }: Props) {
+interface Props {
+  item: BrowseTileItem
+  to: string
+  variant?: 'featured' | 'icon'
+  className?: string
+}
+
+export default function CategoryTile({ item, to, variant = 'icon', className }: Props) {
+  const Icon = browseIcon(item.slug)
+
+  if (variant === 'featured') {
+    return (
+      <Link to={to} className={cn('group flex flex-col gap-2.5', className)}>
+        <CoverBlock
+          tone={coverTone(item.id)}
+          icon={<Icon size={36} strokeWidth={1.75} />}
+          className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
+        />
+        <div>
+          <h3 className="text-base font-semibold text-content">{item.name}</h3>
+          {item.description && (
+            <p className="mt-0.5 text-sm text-content-muted">{item.description}</p>
+          )}
+        </div>
+      </Link>
+    )
+  }
+
   return (
-    <Link
-      to={to}
-      className="flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-colors hover:bg-surface-brand-hover"
-    >
-      <CoverBlock tone={coverTone(category.id)} icon={icon} label={category.name.slice(0, 1)} className="h-28 rounded-none" />
-      <div className="p-4">
-        <h3 className="text-base font-semibold text-content">{category.name}</h3>
-        <p className="mt-1 text-sm text-content-muted">{category.description}</p>
-      </div>
+    <Link to={to} className={cn('group flex flex-col items-center gap-2', className)}>
+      <CoverBlock
+        tone={coverTone(item.id)}
+        icon={<Icon size={26} strokeWidth={1.75} />}
+        className="aspect-square w-full rounded-2xl transition-opacity group-hover:opacity-90"
+      />
+      <span className="text-center text-xs font-semibold leading-tight text-content">{item.name}</span>
     </Link>
   )
 }

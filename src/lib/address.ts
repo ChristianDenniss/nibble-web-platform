@@ -4,6 +4,9 @@
  */
 import type { Location, SavedAddress } from '@/generated/data-model'
 
+/** Fallback map center (UNBF, Fredericton) when the selected address has no coordinates. */
+export const DEFAULT_MAP_CENTER = { latitude: 45.9458, longitude: -66.6414 }
+
 export function formatLocation(location: Location): string {
   return [location.address, location.city, location.region, location.postalCode]
     .map((part) => part.trim())

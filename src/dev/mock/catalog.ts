@@ -15,13 +15,13 @@ import type {
   Restaurant,
 } from '@/generated/data-model'
 
-function halifax(address: string): Location {
+function fredericton(address: string): Location {
   return {
-    latitude: 44.6488,
-    longitude: -63.5752,
+    latitude: 45.9636,
+    longitude: -66.6431,
     address,
-    city: 'Halifax',
-    region: 'NS',
+    city: 'Fredericton',
+    region: 'NB',
     postalCode: '',
   }
 }
@@ -30,18 +30,18 @@ export const mockAccount: Account = {
   id: 'acct_dev',
   name: 'Alex Morgan',
   email: 'alex@example.com',
-  phone: '902-555-0148',
+  phone: '506-555-0148',
   addresses: [
     {
       id: 'addr_home',
-      label: 'Home',
-      location: { ...halifax('5423 Spring Garden Rd'), postalCode: 'B3J 1M1' },
+      label: 'UNBF',
+      location: { latitude: 45.9458, longitude: -66.6414, address: '3 Bailey Dr', city: 'Fredericton', region: 'NB', postalCode: 'E3B 5A3' },
       current: true,
     },
     {
       id: 'addr_work',
-      label: 'Work',
-      location: { ...halifax('1701 Hollis St'), postalCode: 'B3J 3M4' },
+      label: 'Downtown',
+      location: { ...fredericton('427 Queen St'), postalCode: 'E3B 1B5' },
       current: false,
     },
   ],
@@ -77,14 +77,14 @@ export const mockCuisines: Cuisine[] = [
 ]
 
 export const mockRestaurants: Restaurant[] = [
-  { id: 'rest_koi', name: 'Koi Sushi', location: halifax('1849 Granville St'), cuisineIds: ['cui_sushi'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.7, count: 1284 } },
-  { id: 'rest_slice', name: 'Harbour Slice', location: halifax('1569 Argyle St'), cuisineIds: ['cui_pizza'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 892 } },
-  { id: 'rest_stack', name: 'The Stack', location: halifax('2112 Queen St'), cuisineIds: ['cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.4, count: 2103 } },
-  { id: 'rest_salsa', name: 'Casa Salsa', location: halifax('5536 Morris St'), cuisineIds: ['cui_mexican'], categoryIds: ['cat_food'], rating: { average: 4.6, count: 674 } },
-  { id: 'rest_masala', name: 'Masala Room', location: halifax('6247 Quinpool Rd'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.8, count: 1540 } },
-  { id: 'rest_brew', name: 'North Brew', location: halifax('1546 Barrington St'), cuisineIds: ['cui_coffee', 'cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.3, count: 411 } },
-  { id: 'rest_green', name: 'Green Bowl', location: halifax('5650 Spring Garden Rd'), cuisineIds: ['cui_healthy'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 733 } },
-  { id: 'rest_scoop', name: 'Late Scoop', location: halifax('1321 South Park St'), cuisineIds: ['cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.2, count: 256 } },
+  { id: 'rest_koi', name: 'Koi Sushi', location: fredericton('410 Queen St'), cuisineIds: ['cui_sushi'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.7, count: 1284 } },
+  { id: 'rest_slice', name: 'River Slice', location: fredericton('394 King St'), cuisineIds: ['cui_pizza'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 892 } },
+  { id: 'rest_stack', name: 'The Stack', location: fredericton('480 Queen St'), cuisineIds: ['cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.4, count: 2103 } },
+  { id: 'rest_salsa', name: 'Casa Salsa', location: fredericton('366 York St'), cuisineIds: ['cui_mexican'], categoryIds: ['cat_food'], rating: { average: 4.6, count: 674 } },
+  { id: 'rest_masala', name: 'Masala Room', location: fredericton('1381 Regent St'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.8, count: 1540 } },
+  { id: 'rest_brew', name: 'Campus Brew', location: { latitude: 45.9458, longitude: -66.6414, address: 'UNB Student Union Bldg', city: 'Fredericton', region: 'NB', postalCode: 'E3B 5A3' }, cuisineIds: ['cui_coffee', 'cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.3, count: 411 } },
+  { id: 'rest_green', name: 'Green Bowl', location: fredericton('565 Prospect St'), cuisineIds: ['cui_healthy'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 733 } },
+  { id: 'rest_scoop', name: 'Late Scoop', location: fredericton('412 King St'), cuisineIds: ['cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.2, count: 256 } },
 ]
 
 export const mockItems: Item[] = [

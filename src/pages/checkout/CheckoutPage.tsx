@@ -10,13 +10,14 @@ import Button from '@/components/buttons/Button'
 import LocationSelector from '@/components/location/LocationSelector'
 import { formatMoney } from '@/lib/money'
 import { formatLocation } from '@/lib/address'
-import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
+import { useAccountAddresses } from '@/hooks/location/useAccountAddresses'
 import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths } from '@/routing/paths'
 
 export default function CheckoutPage() {
-  const { loading, data, error } = useStorefront()
+  const { loading, data, error, reload } = useStorefront()
+  const { pickAddress } = useAccountAddresses(reload)
   const { locating, locate } = useDeviceLocation()
 
   if (loading) return <PageLoader />
@@ -56,8 +57,8 @@ export default function CheckoutPage() {
             variant="inline"
             addresses={data.account.addresses}
             selected={address}
-            onSelect={(next) => selectDeliveryAddress(next.id)}
-            onUseCurrentLocation={() => locate(data.account.addresses)}
+            onSelect={(next) => { void pickAddress(next) }}
+            onUseCurrentLocation={() => { void locate(data.account.addresses, pickAddress) }}
             locating={locating}
           />
         </section>

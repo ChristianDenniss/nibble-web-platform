@@ -1,14 +1,13 @@
 /**
- * CategoriesPage — DoorDash-style category tile grid (Food, Grocery, Convenience, …).
+ * CategoriesPage — featured department tiles, compact icon grid, then cuisines.
  */
-import { ShoppingBag } from 'lucide-react'
-import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
-import PageTitle from '@/components/brand/PageTitle'
 import CategoryTile from '@/components/storefront/CategoryTile'
+import SectionHeader from '@/components/storefront/SectionHeader'
+import { isFeaturedCategory } from '@/lib/browseIcons'
 import { useStorefront } from '@/hooks/storefront/useStorefront'
-import { paths } from '@/routing/paths'
+import { paths, searchPath } from '@/routing/paths'
 
 export default function CategoriesPage() {
   const { loading, data, error } = useStorefront()
@@ -16,20 +15,57 @@ export default function CategoriesPage() {
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Categories unavailable" description={error ?? undefined} />
 
+  const featured = data.categories.filter((category) => isFeaturedCategory(category.slug))
+  const rest = data.categories.filter((category) => !isFeaturedCategory(category.slug))
+
   return (
-    <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Categories' }]} />
-      <PageTitle icon={<ShoppingBag size={20} />} title="Categories" count={data.categories.length} />
-      <p className="text-sm text-content-secondary">Browse by what you need — food, grocery, convenience, and more.</p>
-      <div className="grid grid-cols-1 gap-4 small:grid-cols-2 xl:grid-cols-3">
-        {data.categories.map((category) => (
-          <CategoryTile
-            key={category.id}
-            category={category}
-            to={`${paths.search}?category=${category.slug}`}
-          />
-        ))}
+    <div className="space-y-8">
+      <div>
+        <h1 className="text-2xl font-semibold tracking-tight text-content">Browse</h1>
+        <p className="mt-1 text-sm text-content-secondary">
+          Food, grocery, and whatever else you’re after.
+        </p>
       </div>
+
+      {featured.length > 0 && (
+        <div className="grid grid-cols-1 gap-4 small:grid-cols-3">
+          {featured.map((category) => (
+            <CategoryTile
+              key={category.id}
+              item={category}
+              to={searchPath(undefined, { category: category.slug })}
+              variant="featured"
+            />
+          ))}
+        </div>
+      )}
+
+      {rest.length > 0 && (
+        <div className="grid grid-cols-4 gap-3 small:grid-cols-6">
+          {rest.map((category) => (
+            <CategoryTile
+              key={category.id}
+              item={category}
+              to={searchPath(undefined, { category: category.slug })}
+            />
+          ))}
+        </div>
+      )}
+
+      {data.cuisines.length > 0 && (
+        <section>
+          <SectionHeader title="Cuisines" to={paths.cuisines} />
+          <div className="grid grid-cols-4 gap-3 small:grid-cols-6 xl:grid-cols-8">
+            {data.cuisines.map((cuisine) => (
+              <CategoryTile
+                key={cuisine.id}
+                item={cuisine}
+                to={paths.cuisine(cuisine.slug)}
+              />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   )
 }

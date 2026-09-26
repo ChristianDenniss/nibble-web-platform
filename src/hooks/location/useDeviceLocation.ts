@@ -7,7 +7,6 @@ import { useState } from 'react'
 import type { SavedAddress } from '@/generated/data-model'
 import {
   SESSION_GPS_ADDRESS_ID,
-  selectDeliveryAddress,
   setGpsDeliveryAddress,
 } from '@/hooks/location/deliveryLocationStore'
 import { notify } from '@/utils/notify'
@@ -47,7 +46,10 @@ function readPosition(): Promise<GeolocationCoordinates> {
 export function useDeviceLocation() {
   const [locating, setLocating] = useState(false)
 
-  async function locate(addresses: SavedAddress[]): Promise<boolean> {
+  async function locate(
+    addresses: SavedAddress[],
+    pickSaved?: (address: SavedAddress) => Promise<boolean>,
+  ): Promise<boolean> {
     setLocating(true)
     try {
       const coords = await readPosition()
@@ -57,7 +59,11 @@ export function useDeviceLocation() {
         .sort((a, b) => a.km - b.km)[0]
 
       if (nearby && nearby.km <= NEARBY_KM) {
-        selectDeliveryAddress(nearby.address.id)
+        if (pickSaved) {
+          const ok = await pickSaved(nearby.address)
+          if (ok) notify.success(`Using ${nearby.address.label || nearby.address.location.address}`)
+          return ok
+        }
         notify.success(`Using ${nearby.address.label || nearby.address.location.address}`)
         return true
       }

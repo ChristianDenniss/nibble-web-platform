@@ -1,10 +1,10 @@
 /**
- * CuisinePage — restaurants for one cuisine (e.g. sushi).
+ * CuisinePage — restaurants for one cuisine, with sibling cuisine chips.
  */
 import { useParams } from 'react-router-dom'
-import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
+import CuisineChips from '@/components/storefront/CuisineChips'
 import RestaurantCard from '@/components/storefront/RestaurantCard'
 import { lowestOfferCents, restaurantEta, restaurantProviders, useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths } from '@/routing/paths'
@@ -25,22 +25,20 @@ export default function CuisinePage() {
 
   return (
     <div className="space-y-6">
-      <Breadcrumb
-        items={[
-          { label: 'Home', href: paths.home },
-          { label: 'Cuisines', href: paths.cuisines },
-          { label: cuisine.name },
-        ]}
-      />
       <div>
-        <p className="text-sm font-medium uppercase tracking-wide text-content-muted">Cuisine</p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight text-content">{cuisine.name}</h1>
+        <h1 className="text-2xl font-semibold tracking-tight text-content">{cuisine.name}</h1>
         <p className="mt-1 text-sm text-content-secondary">{restaurants.length} nearby</p>
       </div>
+      <CuisineChips
+        cuisines={data.cuisines}
+        activeSlug={cuisine.slug}
+        hrefFor={(slug) => paths.cuisine(slug)}
+        className="sticky top-16 z-20 -mx-5 bg-page px-5 py-2"
+      />
       {restaurants.length === 0 ? (
         <EmptyState title={`No ${cuisine.name.toLowerCase()} nearby`} />
       ) : (
-        <div className="grid grid-cols-1 gap-4 small:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-3">
           {restaurants.map((restaurant) => (
             <RestaurantCard
               key={restaurant.id}

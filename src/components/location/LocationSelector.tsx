@@ -1,17 +1,18 @@
 /**
- * LocationSelector — compact trigger that opens LocationPicker (dropdown on medium+, modal on small).
- * Shows the current delivery address; picking one calls `onSelect` and closes.
+ * LocationSelector — compact trigger that opens LocationPicker in a modal (map pin
+ * dropper needs the extra room). Shows the current delivery address; picking a saved
+ * address calls `onSelect` and closes. Dropping a pin keeps the modal open so the
+ * marker can be nudged.
  * Props: `addresses`, `selected?`, `onSelect`, `onUseCurrentLocation?`, `locating?`,
  * `variant?` (`header` | `hero` | `inline`), `className?`, `placeholder?`.
  * Lives in `components/location/`; used in the header, home hero, and checkout.
  */
-import { createPortal } from 'react-dom'
-import { useState, type RefObject } from 'react'
+import { useState } from 'react'
 import { ChevronDown, MapPin } from 'lucide-react'
 import Modal from '@/components/modals/Modal'
 import LocationPicker from '@/components/location/LocationPicker'
 import { useAppLayout } from '@/context/AppLayoutContext'
-import { usePortalDropdown } from '@/hooks/utils/usePortalDropdown'
+import { useDropPin } from '@/hooks/location/useDropPin'
 import type { SavedAddress } from '@/generated/data-model'
 import { addressTriggerLabel, formatLocation } from '@/lib/address'
 import { paths } from '@/routing/paths'
@@ -58,49 +59,20 @@ export default function LocationSelector({
   placeholder = 'Set location',
 }: Props) {
   const layout = useAppLayout()
-  const isSmall = layout?.isSmall ?? false
-  const dropdown = usePortalDropdown(340, 320, false)
-  const [modalOpen, setModalOpen] = useState(false)
-
-  const overlayOpen = isSmall ? modalOpen : dropdown.open
-
-  function setOpen(next: boolean) {
-    if (next) layout?.setMobileNavOpen(false)
-    if (isSmall) setModalOpen(next)
-    else dropdown.setOpen(next)
-  }
+  const [open, setOpen] = useState(false)
+  const { dropping, drop } = useDropPin()
 
   function handleSelect(address: SavedAddress) {
     onSelect(address)
     setOpen(false)
   }
 
-  async function handleLocate() {
-    const ok = await onUseCurrentLocation?.()
-    if (ok !== false) setOpen(false)
-  }
-
-  const picker = (
-    <LocationPicker
-      addresses={addresses}
-      selectedId={selected?.id}
-      onSelect={handleSelect}
-      onUseCurrentLocation={onUseCurrentLocation ? () => { void handleLocate() } : undefined}
-      locating={locating}
-      manageTo={paths.location}
-      onManageClick={() => setOpen(false)}
-      compact
-      autoFocusSearch
-    />
-  )
-
   return (
     <div className={`relative ${variant === 'header' ? 'shrink-0' : ''}`}>
       <button
-        ref={dropdown.triggerRef as RefObject<HTMLButtonElement>}
         type="button"
         aria-haspopup="dialog"
-        aria-expanded={overlayOpen}
+        aria-expanded={open}
         aria-label={
           variant === 'inline'
             ? 'Change delivery address'
@@ -108,7 +80,10 @@ export default function LocationSelector({
               ? `Delivery address: ${formatLocation(selected.location)}`
               : 'Choose delivery address'
         }
-        onClick={() => setOpen(!overlayOpen)}
+        onClick={() => {
+          layout?.setMobileNavOpen(false)
+          setOpen((current) => !current)
+        }}
         className={`${TRIGGER[variant]} ${className}`}
       >
         <MapPin size={16} className={`shrink-0 ${variant === 'inline' ? '' : 'text-accent'}`} />
@@ -116,27 +91,33 @@ export default function LocationSelector({
         {variant !== 'inline' && (
           <ChevronDown
             size={14}
-            className={`shrink-0 text-content-muted transition-transform duration-150 ${overlayOpen ? 'rotate-180' : ''}`}
+            className={`shrink-0 text-content-muted transition-transform duration-150 ${open ? 'rotate-180' : ''}`}
           />
         )}
       </button>
 
-      {isSmall && (
-        <Modal open={modalOpen} onClose={() => setOpen(false)} title="Delivery address" size="md">
-          {picker}
-        </Modal>
-      )}
-
-      {!isSmall && dropdown.open && createPortal(
-        <div
-          ref={dropdown.dropdownRef}
-          style={dropdown.dropdownStyle}
-          className="scrollbar-thin rounded-xl border border-border bg-surface p-3 shadow-lg overflow-y-auto"
-        >
-          {picker}
-        </div>,
-        document.body,
-      )}
+      <Modal
+        open={open}
+        onClose={() => setOpen(false)}
+        title="Delivery address"
+        size="xl"
+        scrollBody={false}
+        bodyClassName="flex min-h-0 flex-1 flex-col overflow-hidden p-0"
+      >
+        <LocationPicker
+          addresses={addresses}
+          selectedId={selected?.id}
+          onSelect={handleSelect}
+          onDropPin={(coords) => { void drop(coords) }}
+          onUseCurrentLocation={onUseCurrentLocation ? () => { void onUseCurrentLocation() } : undefined}
+          locating={locating}
+          dropping={dropping}
+          manageTo={paths.location}
+          onManageClick={() => setOpen(false)}
+          flushMap
+          autoFocusSearch
+        />
+      </Modal>
     </div>
   )
 }
