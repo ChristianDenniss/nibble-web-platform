@@ -2,6 +2,7 @@ import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { extractAxiosError } from '@/errors'
 import type { CompareResponseWire } from '@/types/compare-wire'
+import { compareFiltersWire, getDefaultPreferences } from '@/hooks/account/comparePrefsStore'
 
 export interface CompareFormState {
   placeId: string
@@ -33,6 +34,7 @@ export function useCompare() {
     try {
       const lat = Number.parseFloat(form.lat)
       const lng = Number.parseFloat(form.lng)
+      const defaults = getDefaultPreferences()
       const body = {
         place_id: form.placeId,
         user_id: form.userId || undefined,
@@ -43,7 +45,8 @@ export function useCompare() {
         basket: {
           lines: [{ dish_id: form.dishId, quantity: form.quantity }],
         },
-        filters: { willing_to_use_aggregator: true },
+        filters: compareFiltersWire(defaults),
+        memberships: defaults.memberships,
       }
       const { data } = await axios.post<CompareResponseWire>('/api/v1/compare', body)
       setResult(data)

@@ -1,8 +1,8 @@
 /**
- * ProfilePage — account hub: orders, payment, manage account, help.
+ * ProfilePage — account hub: orders, payment, addresses, preferences, manage account, help.
  */
 import { Link } from 'react-router-dom'
-import { ChevronRight, CreditCard, HelpCircle, MapPin, Receipt, Settings, User } from 'lucide-react'
+import { ChevronRight, CreditCard, HelpCircle, LogOut, MapPin, Receipt, Settings, SlidersHorizontal, User } from 'lucide-react'
 import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
@@ -15,6 +15,7 @@ const LINKS = [
   { label: 'Past orders', to: paths.orders, icon: Receipt },
   { label: 'Payment', to: paths.payment, icon: CreditCard },
   { label: 'Addresses', to: paths.location, icon: MapPin },
+  { label: 'Preferences', to: paths.preferences, icon: SlidersHorizontal },
   { label: 'Manage account', to: paths.account, icon: Settings },
   { label: 'Help', to: paths.help, icon: HelpCircle },
 ]
@@ -47,7 +48,13 @@ export default function ProfilePage() {
           </li>
         ))}
       </ul>
-      <Link to={paths.login} className="inline-block text-sm font-medium text-accent">Log out / switch account</Link>
+      <Link
+        to={paths.login}
+        className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-surface transition-opacity hover:opacity-90"
+      >
+        <LogOut size={16} />
+        Log out / switch account
+      </Link>
     </div>
   )
 }

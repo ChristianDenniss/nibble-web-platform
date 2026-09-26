@@ -29,6 +29,7 @@ export default function DevPagesPage() {
     { label: 'Past orders', to: paths.orders },
     { label: 'Location', to: paths.location },
     { label: 'Payment', to: paths.payment },
+    { label: 'Preferences', to: paths.preferences },
     { label: 'Manage account', to: paths.account },
     { label: 'Help / FAQ', to: paths.help },
     { label: 'Terms', to: paths.terms },

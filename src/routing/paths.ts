@@ -19,6 +19,7 @@ export const paths = {
   terms: '/terms',
   privacy: '/privacy',
   payment: '/account/payment',
+  preferences: '/account/preferences',
   account: '/account',
   help: '/help',
   providerCategories: (providerId: string) => `/providers/${providerId}/categories`,

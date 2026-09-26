@@ -1,5 +1,5 @@
 /**
- * StorefrontFooter — legal + account links under every storefront page.
+ * StorefrontFooter — help and legal links under every storefront page.
  */
 import { Link } from 'react-router-dom'
 import { paths } from '@/routing/paths'
@@ -8,7 +8,6 @@ const LINKS = [
   { label: 'Help', to: paths.help },
   { label: 'Terms', to: paths.terms },
   { label: 'Privacy', to: paths.privacy },
-  { label: 'Account', to: paths.account },
 ]
 
 export default function StorefrontFooter() {

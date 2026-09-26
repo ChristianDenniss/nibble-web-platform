@@ -53,6 +53,10 @@ export const mockAccount: Account = {
 export const mockProviders: Provider[] = [
   { id: 'prov_skip', name: 'Skip' },
   { id: 'prov_doordash', name: 'DoorDash' },
+  { id: 'prov_ubereats', name: 'Uber Eats' },
+  { id: 'prov_instacart', name: 'Instacart' },
+  { id: 'prov_grubhub', name: 'Grubhub' },
+  { id: 'prov_fantuan', name: 'Fantuan' },
 ]
 
 export const mockCategories: Category[] = [
@@ -126,6 +130,17 @@ export const mockOffers: Offer[] = [
   { id: 'off_green_bowl_skip', restaurantId: 'rest_green', menuItemId: 'item_green_bowl', providerId: 'prov_skip', price: { amountCents: 1649, currency: 'CAD' }, estimatedMinutes: 24 },
   { id: 'off_green_bowl_dd', restaurantId: 'rest_green', menuItemId: 'item_green_bowl', providerId: 'prov_doordash', price: { amountCents: 1749, currency: 'CAD' }, estimatedMinutes: 26 },
   { id: 'off_scoop_sundae_dd', restaurantId: 'rest_scoop', menuItemId: 'item_scoop_sundae', providerId: 'prov_doordash', price: { amountCents: 799, currency: 'CAD' }, estimatedMinutes: 20 },
+  { id: 'off_koi_tuna_ue', restaurantId: 'rest_koi', menuItemId: 'item_koi_tuna', providerId: 'prov_ubereats', price: { amountCents: 1579, currency: 'CAD' }, estimatedMinutes: 30 },
+  { id: 'off_slice_pep_ue', restaurantId: 'rest_slice', menuItemId: 'item_slice_pepperoni', providerId: 'prov_ubereats', price: { amountCents: 2149, currency: 'CAD' }, estimatedMinutes: 27 },
+  { id: 'off_salsa_burrito_ue', restaurantId: 'rest_salsa', menuItemId: 'item_salsa_burrito', providerId: 'prov_ubereats', price: { amountCents: 1749, currency: 'CAD' }, estimatedMinutes: 29 },
+  { id: 'off_masala_butter_ue', restaurantId: 'rest_masala', menuItemId: 'item_masala_butter', providerId: 'prov_ubereats', price: { amountCents: 1949, currency: 'CAD' }, estimatedMinutes: 40 },
+  { id: 'off_stack_classic_ic', restaurantId: 'rest_stack', menuItemId: 'item_stack_classic', providerId: 'prov_instacart', price: { amountCents: 1729, currency: 'CAD' }, estimatedMinutes: 35 },
+  { id: 'off_brew_latte_ic', restaurantId: 'rest_brew', menuItemId: 'item_brew_latte', providerId: 'prov_instacart', price: { amountCents: 579, currency: 'CAD' }, estimatedMinutes: 25 },
+  { id: 'off_brew_cookie_ic', restaurantId: 'rest_brew', menuItemId: 'item_brew_cookie', providerId: 'prov_instacart', price: { amountCents: 379, currency: 'CAD' }, estimatedMinutes: 25 },
+  { id: 'off_scoop_sundae_ic', restaurantId: 'rest_scoop', menuItemId: 'item_scoop_sundae', providerId: 'prov_instacart', price: { amountCents: 849, currency: 'CAD' }, estimatedMinutes: 28 },
+  { id: 'off_koi_tuna_ft', restaurantId: 'rest_koi', menuItemId: 'item_koi_tuna', providerId: 'prov_fantuan', price: { amountCents: 1459, currency: 'CAD' }, estimatedMinutes: 34 },
+  { id: 'off_koi_salmon_ft', restaurantId: 'rest_koi', menuItemId: 'item_koi_salmon', providerId: 'prov_fantuan', price: { amountCents: 1849, currency: 'CAD' }, estimatedMinutes: 34 },
+  { id: 'off_koi_miso_ft', restaurantId: 'rest_koi', menuItemId: 'item_koi_miso', providerId: 'prov_fantuan', price: { amountCents: 369, currency: 'CAD' }, estimatedMinutes: 34 },
 ]
 
 export const mockCart: Cart = {
