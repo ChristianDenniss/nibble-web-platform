@@ -1,8 +1,7 @@
 /**
  * LocationSelector — compact trigger that opens LocationPicker in a modal (map pin
  * dropper needs the extra room). Shows the current delivery address; picking a saved
- * address calls `onSelect` and closes. Dropping a pin keeps the modal open so the
- * marker can be nudged.
+ * address calls `onSelect` and closes. Confirming a map pin applies the delivery location.
  * Props: `addresses`, `selected?`, `onSelect`, `onUseCurrentLocation?`, `locating?`,
  * `variant?` (`header` | `hero` | `inline`), `className?`, `placeholder?`.
  * Lives in `components/location/`; used in the header, home hero, and checkout.
