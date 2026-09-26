@@ -6,6 +6,10 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { extractAxiosError } from '@/errors'
 import type { Account, Cart, Category, Cuisine, Item, Offer, Order, Provider, Restaurant } from '@/generated/data-model'
+import {
+  useDeliveryLocationState,
+  type DeliveryLocationState,
+} from '@/hooks/location/deliveryLocationStore'
 
 export interface StorefrontData {
   account: Account
@@ -25,7 +29,27 @@ export interface StorefrontState {
   error: string | null
 }
 
+function applyDeliveryLocation(data: StorefrontData, delivery: DeliveryLocationState): StorefrontData {
+  const addresses = delivery.sessionAddress
+    ? [delivery.sessionAddress, ...data.account.addresses.filter((address) => address.id !== delivery.sessionAddress?.id)]
+    : data.account.addresses
+
+  const fallbackId = addresses.find((address) => address.current)?.id ?? addresses[0]?.id ?? null
+  const selectedId = delivery.selectedId && addresses.some((address) => address.id === delivery.selectedId)
+    ? delivery.selectedId
+    : fallbackId
+
+  return {
+    ...data,
+    account: {
+      ...data.account,
+      addresses: addresses.map((address) => ({ ...address, current: address.id === selectedId })),
+    },
+  }
+}
+
 export function useStorefront(): StorefrontState {
+  const delivery = useDeliveryLocationState()
   const [state, setState] = useState<StorefrontState>({
     loading: true,
     data: null,
@@ -55,7 +79,10 @@ export function useStorefront(): StorefrontState {
     }
   }, [])
 
-  return state
+  return {
+    ...state,
+    data: state.data ? applyDeliveryLocation(state.data, delivery) : null,
+  }
 }
 
 export function currentAddress(data: StorefrontData) {

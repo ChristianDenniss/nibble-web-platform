@@ -8,6 +8,7 @@ import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
 import PageTitle from '@/components/brand/PageTitle'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
+import { formatLocation } from '@/lib/address'
 import { paths } from '@/routing/paths'
 
 const LINKS = [
@@ -33,7 +34,7 @@ export default function ProfilePage() {
       <section className="rounded-xl border border-border bg-surface p-5">
         <p className="text-lg font-semibold text-content">{data.account.name}</p>
         <p className="mt-1 text-sm text-content-secondary">{data.account.email}</p>
-        <p className="mt-1 text-sm text-content-muted">{address ? `${address.location.address}, ${address.location.city}` : 'No address set'}</p>
+        <p className="mt-1 text-sm text-content-muted">{address ? formatLocation(address.location) : 'No address set'}</p>
       </section>
       <ul className="overflow-hidden rounded-xl border border-border bg-surface">
         {LINKS.map((item) => (

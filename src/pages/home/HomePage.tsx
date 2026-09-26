@@ -3,16 +3,20 @@
  */
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { ArrowRight, MapPin } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import AppLogo from '@/components/brand/AppLogo'
+import LocationSelector from '@/components/location/LocationSelector'
 import PageLoader from '@/components/layout/PageLoader'
 import EmptyState from '@/components/misc/EmptyState'
 import SearchBar from '@/components/navigation/SearchBar'
+import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
+import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths, searchPath } from '@/routing/paths'
 
 export default function HomePage() {
   const { loading, data, error } = useStorefront()
+  const { locating, locate } = useDeviceLocation()
   const [query, setQuery] = useState('')
   const navigate = useNavigate()
 
@@ -40,15 +44,16 @@ export default function HomePage() {
 
       <div className="relative z-10 flex w-full flex-col items-center">
         <AppLogo className="mb-6 h-24 w-auto small:h-32" />
-        <Link
-          to={paths.location}
-          className="mb-8 inline-flex max-w-full items-center gap-2 text-sm text-content-secondary transition-colors hover:text-accent"
-        >
-          <MapPin size={16} className="shrink-0 text-accent" />
-          <span className="truncate">
-            {address ? `${address.location.address}, ${address.location.city}` : 'Add your delivery location'}
-          </span>
-        </Link>
+        <LocationSelector
+          addresses={data.account.addresses}
+          selected={address}
+          onSelect={(next) => selectDeliveryAddress(next.id)}
+          onUseCurrentLocation={() => locate(data.account.addresses)}
+          locating={locating}
+          variant="hero"
+          placeholder="Add your delivery location"
+          className="mb-8"
+        />
 
         <p className="mb-3 text-sm font-medium text-accent">Good food, zero overthinking.</p>
         <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-content small:text-6xl">

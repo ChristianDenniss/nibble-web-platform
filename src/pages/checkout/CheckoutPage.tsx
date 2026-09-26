@@ -7,12 +7,17 @@ import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
 import Button from '@/components/buttons/Button'
+import LocationSelector from '@/components/location/LocationSelector'
 import { formatMoney } from '@/lib/money'
+import { formatLocation } from '@/lib/address'
+import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
+import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths } from '@/routing/paths'
 
 export default function CheckoutPage() {
   const { loading, data, error } = useStorefront()
+  const { locating, locate } = useDeviceLocation()
 
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Checkout unavailable" description={error ?? undefined} />
@@ -45,8 +50,16 @@ export default function CheckoutPage() {
             <MapPin size={16} className="text-accent" />
             Delivery
           </h2>
-          <p className="mt-3 text-sm text-content">{address ? `${address.location.address}, ${address.location.city}` : 'No address'}</p>
-          <Link to={paths.location} className="mt-2 inline-block text-sm font-medium text-accent">Change</Link>
+          <p className="mt-3 text-sm text-content">{address ? formatLocation(address.location) : 'No address'}</p>
+          <LocationSelector
+            className="mt-2"
+            variant="inline"
+            addresses={data.account.addresses}
+            selected={address}
+            onSelect={(next) => selectDeliveryAddress(next.id)}
+            onUseCurrentLocation={() => locate(data.account.addresses)}
+            locating={locating}
+          />
         </section>
         <section className="rounded-xl border border-border bg-surface p-5">
           <h2 className="flex items-center gap-2 text-sm font-semibold text-content">

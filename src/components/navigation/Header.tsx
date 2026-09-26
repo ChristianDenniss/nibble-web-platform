@@ -1,14 +1,17 @@
 /**
- * Header — storefront top bar: wordmark, location, search, cart, account.
+ * Header — storefront top bar: wordmark, location picker, search, cart, account.
  * On the small tier the search row sits under the bar and a menu lists the rest.
  */
 import { useState, type FormEvent } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { MapPin, Menu, ShoppingBag, User, X } from 'lucide-react'
+import { Menu, ShoppingBag, User, X } from 'lucide-react'
 import AppLogo from '@/components/brand/AppLogo'
 import CountBadge from '@/components/badges/CountBadge'
+import LocationSelector from '@/components/location/LocationSelector'
 import SearchBar from '@/components/navigation/SearchBar'
 import { useAppLayout } from '@/context/AppLayoutContext'
+import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
+import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { appNav } from '@/routing/appNav'
 import { paths, searchPath } from '@/routing/paths'
@@ -18,15 +21,27 @@ export default function Header() {
   const open = layout?.mobileNavOpen ?? false
   const navigate = useNavigate()
   const storefront = useStorefront()
+  const { locating, locate } = useDeviceLocation()
   const [query, setQuery] = useState('')
 
   const address = storefront.data ? currentAddress(storefront.data) : null
+  const addresses = storefront.data?.account.addresses ?? []
   const cartCount = storefront.data?.cart.lines.reduce((sum, line) => sum + line.quantity, 0) ?? 0
 
   const submitSearch = (event: FormEvent) => {
     event.preventDefault()
     navigate(searchPath(query))
   }
+
+  const locationSelector = (
+    <LocationSelector
+      addresses={addresses}
+      selected={address}
+      onSelect={(next) => selectDeliveryAddress(next.id)}
+      onUseCurrentLocation={() => locate(addresses)}
+      locating={locating}
+    />
+  )
 
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-sm">
@@ -38,13 +53,7 @@ export default function Header() {
           </span>
         </Link>
 
-        <Link
-          to={paths.location}
-          className="hidden max-w-[10rem] shrink-0 items-center gap-1.5 rounded-md px-2 py-1.5 text-sm text-content-secondary hover:bg-surface-inset hover:text-content small:flex"
-        >
-          <MapPin size={16} className="shrink-0 text-accent" />
-          <span className="truncate">{address?.label ?? address?.location.city ?? 'Set location'}</span>
-        </Link>
+        {locationSelector}
 
         <form onSubmit={submitSearch} className="hidden min-w-0 flex-1 small:block">
           <SearchBar
@@ -106,14 +115,6 @@ export default function Header() {
       {open && (
         <nav className="border-t border-border px-5 py-3 small:hidden">
           <div className="mx-auto flex max-w-6xl flex-col gap-1">
-            <Link
-              to={paths.location}
-              onClick={() => layout?.setMobileNavOpen(false)}
-              className="flex items-center gap-2 rounded-md px-3 py-2 text-sm text-content-secondary"
-            >
-              <MapPin size={16} className="text-accent" />
-              {address ? address.location.address : 'Set location'}
-            </Link>
             {appNav.map((item) => (
               <NavLink
                 key={item.path}
