@@ -3,7 +3,8 @@
  * Used for backend-down, gateway timeout, and render crashes — not per-request toasts.
  * Lives in `components/misc/`; mounted by ErrorBoundary.
  */
-import { RefreshCw } from 'lucide-react'
+import { Check, Copy, RefreshCw } from 'lucide-react'
+import { useState } from 'react'
 import AppLogo from '@/components/brand/AppLogo'
 import Button from '@/components/buttons/Button'
 import type { ServiceErrorKind } from '@/errors/classifyServiceError'
@@ -31,6 +32,19 @@ interface Props {
 
 export default function ServiceErrorPage({ kind, error, onReload }: Props) {
   const { title, body } = SERVICE_ERROR_COPY[kind]
+  const [copied, setCopied] = useState(false)
+  const errorText = error?.stack ?? error?.message ?? ''
+
+  const copyError = async () => {
+    if (!errorText) return
+    try {
+      await navigator.clipboard.writeText(errorText)
+      setCopied(true)
+      window.setTimeout(() => setCopied(false), 1800)
+    } catch {
+      setCopied(false)
+    }
+  }
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-page px-6 py-16">
@@ -43,9 +57,23 @@ export default function ServiceErrorPage({ kind, error, onReload }: Props) {
           Refresh
         </Button>
         {import.meta.env.DEV && error && (
-          <pre className="mt-8 max-h-64 w-full overflow-auto rounded-lg border border-border bg-surface-inset p-3 text-left text-xs text-content-secondary">
-            {error.stack ?? error.message}
-          </pre>
+          <div className="mt-8 w-full">
+            <div className="relative">
+              <Button
+                variant="outline"
+                size="icon"
+                className="absolute right-2 top-2 z-10"
+                aria-label={copied ? 'Error copied' : 'Copy error'}
+                title={copied ? 'Copied' : 'Copy error'}
+                onClick={() => { void copyError() }}
+              >
+                {copied ? <Check size={14} /> : <Copy size={14} />}
+              </Button>
+              <pre className="max-h-64 w-full overflow-auto rounded-lg border border-border bg-surface-inset p-3 pr-12 text-left text-xs text-content-secondary">
+                {errorText}
+              </pre>
+            </div>
+          </div>
         )}
       </div>
     </div>

@@ -37,6 +37,7 @@ const ComparePage = lazy(() => import('@/pages/compare/ComparePage'))
 const SourceMenuPage = lazy(() => import('@/pages/source/SourceMenuPage'))
 const DevPagesPage = lazy(() => import('@/pages/dev/DevPagesPage'))
 const AdminPage = lazy(() => import('@/pages/admin/AdminPage'))
+const DataPage = lazy(() => import('@/pages/data/DataPage'))
 const NotFoundPage = lazy(() => import('@/pages/not-found/NotFoundPage'))
 
 const isMockMode = import.meta.env.DEV && import.meta.env.VITE_MOCK !== '0'
@@ -104,6 +105,7 @@ export function App() {
           <Route path={paths.health} element={<HealthPage />} />
           <Route path={paths.compare} element={<ComparePage />} />
           <Route path={paths.sourceMenu} element={<SourceMenuPage />} />
+          <Route path={paths.data} element={<DataPage />} />
           {isMockMode ? (
             <Route path={paths.admin} element={<AdminPage />} />
           ) : (

@@ -31,6 +31,7 @@ export const paths = {
   sourceMenu: '/source-menu',
   dev: '/dev',
   admin: '/admin',
+  data: '/data',
 } as const
 
 export function searchPath(query?: string, extras?: { category?: string; cuisine?: string }): string {

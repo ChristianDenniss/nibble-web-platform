@@ -1,4 +1,4 @@
-import { HelpCircle, House, Receipt, ShoppingBag, type LucideIcon } from 'lucide-react'
+import { FileSearch, HelpCircle, House, Receipt, ShoppingBag, type LucideIcon } from 'lucide-react'
 import type { NavTagVariant } from '@/components/navigation/NavTag'
 import { paths } from '@/routing/paths'
 
@@ -48,6 +48,13 @@ export const sidebarMenu: NavItem[] = [
     icon: Receipt,
     path: paths.orders,
     activeMatch: [paths.orders],
+  },
+  {
+    type: 'item',
+    label: 'Captured data',
+    icon: FileSearch,
+    path: paths.data,
+    activeMatch: [paths.data],
   },
   {
     type: 'item',

@@ -19,11 +19,13 @@ interface Props {
   item: BrowseTileItem
   to: string
   variant?: 'featured' | 'icon' | 'compact'
+  invertColors?: boolean
   className?: string
 }
 
-export default function CategoryTile({ item, to, variant = 'icon', className }: Props) {
+export default function CategoryTile({ item, to, variant = 'icon', invertColors = false, className }: Props) {
   const Icon = browseIcon(item.slug)
+  const coverStyle = invertColors ? 'invert' : undefined
 
   if (variant === 'featured') {
     return (
@@ -31,7 +33,7 @@ export default function CategoryTile({ item, to, variant = 'icon', className }: 
         <CoverBlock
           tone={coverTone(item.id)}
           icon={<Icon size={36} strokeWidth={1.75} />}
-          className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
+          className={cn('h-36 rounded-2xl transition-opacity group-hover:opacity-90', coverStyle)}
         />
         <div>
           <h3 className="text-base font-semibold text-content">{item.name}</h3>
@@ -49,7 +51,7 @@ export default function CategoryTile({ item, to, variant = 'icon', className }: 
         <CoverBlock
           tone={coverTone(item.id)}
           icon={<Icon size={24} strokeWidth={1.75} />}
-          className="size-16 rounded-full transition-opacity group-hover:opacity-90"
+          className={cn('size-16 rounded-full transition-opacity group-hover:opacity-90', coverStyle)}
         />
         <span className="whitespace-nowrap text-center text-xs font-medium leading-tight text-content">{item.name}</span>
       </Link>
@@ -61,7 +63,7 @@ export default function CategoryTile({ item, to, variant = 'icon', className }: 
       <CoverBlock
         tone={coverTone(item.id)}
         icon={<Icon size={26} strokeWidth={1.75} />}
-        className="aspect-square w-full rounded-2xl transition-opacity group-hover:opacity-90"
+        className={cn('aspect-square w-full rounded-2xl transition-opacity group-hover:opacity-90', coverStyle)}
       />
       <span className="text-center text-xs font-semibold leading-tight text-content">{item.name}</span>
     </Link>

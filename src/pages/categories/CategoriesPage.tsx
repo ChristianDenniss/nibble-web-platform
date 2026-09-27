@@ -29,12 +29,13 @@ export default function CategoriesPage() {
 
       {featured.length > 0 && (
         <div className="grid grid-cols-1 gap-4 small:grid-cols-3">
-          {featured.map((category) => (
+          {featured.map((category, index) => (
             <CategoryTile
               key={category.id}
               item={category}
               to={searchPath(undefined, { category: category.slug })}
               variant="featured"
+              invertColors={index % 2 === 1}
             />
           ))}
         </div>
@@ -42,11 +43,12 @@ export default function CategoriesPage() {
 
       {rest.length > 0 && (
         <div className="grid grid-cols-4 gap-3 small:grid-cols-6 xl:grid-cols-8">
-          {rest.map((category) => (
+          {rest.map((category, index) => (
             <CategoryTile
               key={category.id}
               item={category}
               to={searchPath(undefined, { category: category.slug })}
+              invertColors={index % 2 === 1}
             />
           ))}
         </div>
@@ -56,11 +58,12 @@ export default function CategoriesPage() {
         <section>
           <SectionHeader title="Cuisines" to={paths.cuisines} />
           <div className="grid grid-cols-4 gap-3 small:grid-cols-6 xl:grid-cols-8">
-            {data.cuisines.map((cuisine) => (
+            {data.cuisines.map((cuisine, index) => (
               <CategoryTile
                 key={cuisine.id}
                 item={cuisine}
                 to={paths.cuisine(cuisine.slug)}
+                invertColors={index % 2 === 1}
               />
             ))}
           </div>

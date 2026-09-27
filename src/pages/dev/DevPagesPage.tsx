@@ -38,6 +38,7 @@ export default function DevPagesPage() {
     { label: 'Provider categories', to: paths.providerCategories(providerId) },
     { label: 'Filters', to: paths.filters },
     { label: 'Health', to: paths.health },
+    { label: 'Captured data explorer', to: paths.data },
   ]
 
   return (
