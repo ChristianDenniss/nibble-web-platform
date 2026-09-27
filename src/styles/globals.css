@@ -53,6 +53,9 @@
   --brand-700:   #A87F00;
   --brand-800:   #705500;
   --brand-900:   #3D2E00;
+  /* Live height of the sticky Header (it grows on the small tier and when the menu opens).
+     Header keeps this in sync; sticky page bars use `top-(--app-header-height)`. */
+  --app-header-height: 4rem;
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
@@ -90,6 +93,7 @@
   /* On-brand / on-accent - text/icon color for use on bg-brand or bg-accent fills */
   --on-brand:         #211C1E;
   --on-accent:        #211C1E;
+  --on-accent-white:  #ffffff;
 
   /* Overlay scrim - modal / drawer backdrop */
   --overlay-scrim:    rgba(0, 0, 0, 0.5);
@@ -149,6 +153,7 @@
 
   --on-brand:         #FFF9FA;
   --on-accent:        #211C1E;
+  --on-accent-white:  #ffffff;
 
   /* Overlay scrim */
   --overlay-scrim:    rgba(0, 0, 0, 0.5);
@@ -218,6 +223,7 @@
   --color-sage:      var(--nibble-sage);
   --color-on-brand:  var(--on-brand);
   --color-on-accent: var(--on-accent);
+  --color-on-accent-white: var(--on-accent-white);
   --color-overlay:   var(--overlay-scrim);
   --color-overlay-sm: var(--overlay-scrim-sm);
 
@@ -378,6 +384,10 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
 .scrollbar-thin::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 9999px; }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 .scrollbar-thin { scrollbar-width: thin; scrollbar-color: var(--border-strong) transparent; }
+
+/* Swipe/drag rails (carousels, chip rows, tab bars) scroll without a visible bar. */
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
 
 /* Sidebar has its own gradient background - a solid track color would paint over it,
    so keep the track transparent and let the gradient show through behind the thumb. */

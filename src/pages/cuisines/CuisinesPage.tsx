@@ -8,7 +8,7 @@ import { useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths } from '@/routing/paths'
 
 export default function CuisinesPage() {
-  const { loading, data, error } = useStorefront()
+  const { loading, data, error } = useStorefront({ lightweight: true })
 
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Cuisines unavailable" description={error ?? undefined} />

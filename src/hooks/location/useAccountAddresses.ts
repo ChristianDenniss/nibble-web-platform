@@ -1,11 +1,13 @@
 /**
- * useAccountAddresses — saved-address mutations against api-engine.
- * Session pins (GPS / map drop) stay in deliveryLocationStore until user_dropoffs write exists.
+ * useAccountAddresses — saved-address mutations against api-engine for the signed-in account.
+ * Guests only change the delivery address locally; session pins (GPS / map drop) stay in
+ * deliveryLocationStore until user_dropoffs write exists.
  */
 import { useCallback, useState } from 'react'
 import axios from 'axios'
 import { extractAxiosError } from '@/errors'
 import type { SavedAddress } from '@/generated/data-model'
+import { useAuth } from '@/hooks/auth/authStore'
 import {
   clearSessionPin,
   getDeliveryLocationState,
@@ -13,27 +15,25 @@ import {
   SESSION_PIN_ADDRESS_ID,
 } from '@/hooks/location/deliveryLocationStore'
 
-/** Matches api-engine DEFAULT_ACCOUNT_ID for local dev. */
-export const STOREFRONT_ACCOUNT_ID = 'acct_dev'
-
-function savedAddressPath(addressId: string) {
-  return `/api/v1/accounts/${encodeURIComponent(STOREFRONT_ACCOUNT_ID)}/addresses/${encodeURIComponent(addressId)}`
+function savedAddressPath(accountId: string, addressId: string) {
+  return `/api/v1/accounts/${encodeURIComponent(accountId)}/addresses/${encodeURIComponent(addressId)}`
 }
 
 export function useAccountAddresses(reloadStorefront: () => void) {
+  const accountId = useAuth().account?.id ?? null
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const pickAddress = useCallback(
     async (address: SavedAddress) => {
       setError(null)
-      if (address.id === SESSION_PIN_ADDRESS_ID) {
+      if (address.id === SESSION_PIN_ADDRESS_ID || !accountId) {
         selectDeliveryAddress(address.id)
         return true
       }
       setBusy(true)
       try {
-        await axios.put(`${savedAddressPath(address.id)}/current`)
+        await axios.put(`${savedAddressPath(accountId, address.id)}/current`)
         selectDeliveryAddress(null)
         reloadStorefront()
         return true
@@ -44,7 +44,7 @@ export function useAccountAddresses(reloadStorefront: () => void) {
         setBusy(false)
       }
     },
-    [reloadStorefront],
+    [accountId, reloadStorefront],
   )
 
   const removeAddress = useCallback(
@@ -55,9 +55,13 @@ export function useAccountAddresses(reloadStorefront: () => void) {
         reloadStorefront()
         return true
       }
+      if (!accountId) {
+        setError('Log in to manage saved addresses.')
+        return false
+      }
       setBusy(true)
       try {
-        await axios.delete(savedAddressPath(addressId))
+        await axios.delete(savedAddressPath(accountId, addressId))
         if (getDeliveryLocationState().selectedId === addressId) {
           selectDeliveryAddress(null)
         }
@@ -70,7 +74,7 @@ export function useAccountAddresses(reloadStorefront: () => void) {
         setBusy(false)
       }
     },
-    [reloadStorefront],
+    [accountId, reloadStorefront],
   )
 
   return { pickAddress, removeAddress, busy, error }

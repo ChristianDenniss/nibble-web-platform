@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ItemImage from '@/components/storefront/ItemImage'
 import { useChannelStores, type SourceStoreWire } from '@/hooks/source/useChannelStores'
 import { useSourceMenu } from '@/hooks/source/useSourceMenu'
 
@@ -139,8 +140,11 @@ export default function SourceMenuPage() {
               <h2 className="font-semibold text-content">{c.category.name}</h2>
               <ul className="mt-2 space-y-1 text-sm">
                 {c.items.map((it) => (
-                  <li key={it.id} className="flex justify-between gap-4">
-                    <span>{it.name}</span>
+                  <li key={it.id} className="flex items-center justify-between gap-4">
+                    <span className="flex items-center gap-3">
+                      <ItemImage src={it.imageURL} alt={it.name} seed={it.id} className="size-10 rounded-md text-sm" />
+                      {it.name}
+                    </span>
                     <span className="text-content-muted">
                       {it.price.currency ? formatMoney(it.price.amountCents, it.price.currency) : '—'}
                     </span>

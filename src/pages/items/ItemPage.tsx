@@ -7,8 +7,7 @@ import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
 import Button from '@/components/buttons/Button'
 import Pill from '@/components/pills/Pill'
-import CoverBlock from '@/components/storefront/CoverBlock'
-import { coverTone } from '@/lib/coverTone'
+import ItemImage from '@/components/storefront/ItemImage'
 import { formatMoney } from '@/lib/money'
 import { offersForItem, useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths } from '@/routing/paths'
@@ -38,7 +37,7 @@ export default function ItemPage() {
       />
       <div className="grid gap-6 small:grid-cols-[minmax(0,1fr)_minmax(0,20rem)]">
         <div className="space-y-4">
-          <CoverBlock tone={coverTone(item.id)} label={item.name} className="h-56" />
+          <ItemImage src={item.imageURL} alt={item.name} seed={item.id} label={item.name} className="h-72 w-full rounded-xl max-small:h-56" />
           <div>
             <p className="text-sm text-content-muted">{item.section}</p>
             <h1 className="mt-1 text-2xl font-semibold tracking-tight text-content">{item.name}</h1>

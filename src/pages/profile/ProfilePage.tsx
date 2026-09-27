@@ -1,15 +1,18 @@
 /**
  * ProfilePage — account hub: orders, payment, addresses, preferences, manage account, help.
  */
-import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { ChevronRight, CreditCard, HelpCircle, LogOut, MapPin, Receipt, Settings, SlidersHorizontal, User } from 'lucide-react'
 import Breadcrumb from '@/components/navigation/Breadcrumb'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
 import PageTitle from '@/components/brand/PageTitle'
+import { logout } from '@/hooks/auth/authStore'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
 import { formatLocation } from '@/lib/address'
 import { paths } from '@/routing/paths'
+import { notify } from '@/utils/notify'
 
 const LINKS = [
   { label: 'Past orders', to: paths.orders, icon: Receipt },
@@ -22,16 +25,28 @@ const LINKS = [
 
 export default function ProfilePage() {
   const { loading, data, error } = useStorefront()
+  const navigate = useNavigate()
+  const [signingOut, setSigningOut] = useState(false)
+
+  const signOut = async () => {
+    setSigningOut(true)
+    try {
+      await logout()
+    } catch {
+      notify.error('Could not reach the server; you are logged out on this device.')
+    }
+    navigate(paths.login, { replace: true })
+  }
 
   if (loading) return <PageLoader />
-  if (!data) return <EmptyState title="Profile unavailable" description={error ?? undefined} />
+  if (!data) return <EmptyState title="Account unavailable" description={error ?? undefined} />
 
   const address = currentAddress(data)
 
   return (
     <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Profile' }]} />
-      <PageTitle icon={<User size={20} />} title="Profile" />
+      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Account' }]} />
+      <PageTitle icon={<User size={20} />} title="Account" />
       <section className="rounded-xl border border-border bg-surface p-5">
         <p className="text-lg font-semibold text-content">{data.account.name}</p>
         <p className="mt-1 text-sm text-content-secondary">{data.account.email}</p>
@@ -48,13 +63,15 @@ export default function ProfilePage() {
           </li>
         ))}
       </ul>
-      <Link
-        to={paths.login}
-        className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-surface transition-opacity hover:opacity-90"
+      <button
+        type="button"
+        onClick={() => { void signOut() }}
+        disabled={signingOut}
+        className="inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-surface transition-opacity hover:opacity-90 disabled:opacity-60"
       >
         <LogOut size={16} />
-        Log out / switch account
-      </Link>
+        {signingOut ? 'Logging out…' : 'Log out / switch account'}
+      </button>
     </div>
   )
 }

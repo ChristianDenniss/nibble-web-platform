@@ -1,17 +1,72 @@
 /**
- * LoginPage — email / password plus SSO actions. Sign-up is a mode on this page.
+ * LoginPage — email / password plus Google and Apple sign-in. Sign-up is a mode on this page.
+ * Signed-in visitors are sent home; SSO failures come back here as `?error=<code>`.
  */
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useState, type FormEvent } from 'react'
+import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Button from '@/components/buttons/Button'
+import PageLoader from '@/components/layout/PageLoader'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Separator } from '@/components/ui/separator'
+import { extractAxiosError } from '@/errors'
+import { login, signUp, ssoStartUrl, useAuth, type SsoProvider } from '@/hooks/auth/authStore'
+import { useSsoProviders } from '@/hooks/auth/useSsoProviders'
 import { paths } from '@/routing/paths'
 
+const SSO_ERRORS: Record<string, string> = {
+  sso_unavailable: "That sign-in option isn't set up yet.",
+  sso_cancelled: 'Sign-in was cancelled.',
+  sso_expired: 'Sign-in took too long. Please try again.',
+  sso_email_unverified: "Your provider hasn't verified that email address.",
+  sso_email_missing: "Your provider didn't share an email address.",
+  sso_failed: "We couldn't sign you in. Please try again.",
+}
+
+const SSO_BUTTONS: { id: SsoProvider; label: string }[] = [
+  { id: 'google', label: 'Continue with Google' },
+  { id: 'apple', label: 'Continue with Apple' },
+]
+
 export default function LoginPage() {
+  const { status } = useAuth()
+  const providers = useSsoProviders()
+  const navigate = useNavigate()
+  const location = useLocation()
+  const [searchParams] = useSearchParams()
   const [mode, setMode] = useState<'login' | 'signup'>('login')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [submitting, setSubmitting] = useState(false)
+  const [error, setError] = useState<string | null>(() => {
+    const code = searchParams.get('error')
+    return code ? SSO_ERRORS[code] ?? SSO_ERRORS.sso_failed : null
+  })
   const isSignup = mode === 'signup'
+  const redirectTo = (location.state as { from?: string } | null)?.from ?? paths.home
+
+  if (status === 'loading') return <PageLoader />
+  if (status === 'authenticated' && !submitting) return <Navigate to={redirectTo} replace />
+
+  const submit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault()
+    setError(null)
+    setSubmitting(true)
+    try {
+      if (isSignup) await signUp(name, email, password)
+      else await login(email, password)
+      navigate(redirectTo, { replace: true })
+    } catch (err: unknown) {
+      setError(extractAxiosError(err, isSignup ? 'Could not create your account.' : 'Could not log you in.'))
+      setSubmitting(false)
+    }
+  }
+
+  const switchMode = () => {
+    setMode(isSignup ? 'login' : 'signup')
+    setError(null)
+  }
 
   return (
     <section className="w-full max-w-md rounded-xl border border-border bg-surface p-6 shadow-sm">
@@ -25,23 +80,56 @@ export default function LoginPage() {
           : 'Log in to pick up where you left off.'}
       </p>
 
-      <form className="mt-6 space-y-4" onSubmit={(event) => event.preventDefault()}>
+      {error && (
+        <p role="alert" className="mt-4 rounded-lg border border-status-danger/30 bg-status-danger/10 px-3 py-2 text-sm text-status-danger">
+          {error}
+        </p>
+      )}
+
+      <form className="mt-6 space-y-4" onSubmit={(event) => { void submit(event) }}>
         {isSignup && (
           <div className="space-y-1.5">
             <Label htmlFor="name">Name</Label>
-            <Input id="name" name="name" autoComplete="name" placeholder="Alex Morgan" />
+            <Input
+              id="name"
+              name="name"
+              autoComplete="name"
+              placeholder="Alex Morgan"
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+            />
           </div>
         )}
         <div className="space-y-1.5">
           <Label htmlFor="email">Email</Label>
-          <Input id="email" name="email" type="email" autoComplete="email" placeholder="you@example.com" />
+          <Input
+            id="email"
+            name="email"
+            type="email"
+            autoComplete="email"
+            placeholder="you@example.com"
+            required
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
         </div>
         <div className="space-y-1.5">
           <Label htmlFor="password">Password</Label>
-          <Input id="password" name="password" type="password" autoComplete={isSignup ? 'new-password' : 'current-password'} />
+          <Input
+            id="password"
+            name="password"
+            type="password"
+            autoComplete={isSignup ? 'new-password' : 'current-password'}
+            minLength={isSignup ? 8 : undefined}
+            required
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+          {isSignup && <p className="text-xs text-content-muted">At least 8 characters.</p>}
         </div>
-        <Button type="submit" className="w-full">
-          {isSignup ? 'Create account' : 'Log in'}
+        <Button type="submit" className="w-full" disabled={submitting}>
+          {submitting ? 'Please wait…' : isSignup ? 'Create account' : 'Log in'}
         </Button>
       </form>
 
@@ -52,17 +140,24 @@ export default function LoginPage() {
       </div>
 
       <div className="grid gap-2">
-        <Button type="button" variant="secondary" className="w-full">Continue with Google</Button>
-        <Button type="button" variant="secondary" className="w-full">Continue with Apple</Button>
+        {SSO_BUTTONS.map((provider) => (
+          <Button
+            key={provider.id}
+            type="button"
+            variant="secondary"
+            className="w-full"
+            disabled={!providers[provider.id] || submitting}
+            title={providers[provider.id] ? undefined : `${provider.label.replace('Continue with ', '')} sign-in isn't configured`}
+            onClick={() => window.location.assign(ssoStartUrl(provider.id))}
+          >
+            {provider.label}
+          </Button>
+        ))}
       </div>
 
       <p className="mt-6 text-center text-sm text-content-secondary">
         {isSignup ? 'Already have an account?' : 'New here?'}{' '}
-        <button
-          type="button"
-          className="font-medium text-accent hover:opacity-80"
-          onClick={() => setMode(isSignup ? 'login' : 'signup')}
-        >
+        <button type="button" className="font-medium text-accent hover:opacity-80" onClick={switchMode}>
           {isSignup ? 'Log in' : 'Create an account'}
         </button>
       </p>

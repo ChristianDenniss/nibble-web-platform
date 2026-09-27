@@ -1,137 +1,220 @@
 /**
- * HomePage — craving hero, then Skip/DoorDash-style browse rails and nearby restaurants.
+ * HomePage — promo banners, browse rails, sponsored + fastest + organic feed rails
+ * (deals, popular, recommended), then the full "All restaurants" list last.
+ * Guests see the /welcome splash once per browser session; signed-in users always land here directly.
  */
-import { useState, type FormEvent } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
-import AppLogo from '@/components/brand/AppLogo'
-import LocationSelector from '@/components/location/LocationSelector'
+import { Navigate } from 'react-router-dom'
+import PromoBannerCarousel from '@/components/home/PromoBannerCarousel'
+import RestaurantRail from '@/components/home/RestaurantRail'
 import PageLoader from '@/components/layout/PageLoader'
 import EmptyState from '@/components/misc/EmptyState'
-import SearchBar from '@/components/navigation/SearchBar'
 import BrowseScroller from '@/components/storefront/BrowseScroller'
 import CategoryTile from '@/components/storefront/CategoryTile'
 import RestaurantCard from '@/components/storefront/RestaurantCard'
 import SectionHeader from '@/components/storefront/SectionHeader'
-import { selectDeliveryAddress } from '@/hooks/location/deliveryLocationStore'
-import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
+import { useAuth } from '@/hooks/auth/authStore'
+import { resolveFeedItems, useHomeFeed } from '@/hooks/home/useHomeFeed'
+import { hasSeenSplash } from '@/hooks/onboarding/onboardingStore'
 import {
-  currentAddress,
   lowestOfferCents,
   restaurantEta,
   restaurantProviders,
+  currentAddress,
+  restaurantCoverage,
   useStorefront,
+  type StorefrontData,
 } from '@/hooks/storefront/useStorefront'
 import { paths, searchPath } from '@/routing/paths'
+import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-model'
+import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
+
+const FASTEST_LIMIT = 8
+const RAIL_CARD_CLASS = 'w-[calc(100vw-3rem)] shrink-0 snap-start small:w-72'
 
 export default function HomePage() {
-  const { loading, data, error } = useStorefront()
-  const { locating, locate } = useDeviceLocation()
-  const [query, setQuery] = useState('')
-  const navigate = useNavigate()
+  const { status } = useAuth()
+  if (status === 'loading') return <PageLoader />
+  if (status === 'guest' && !hasSeenSplash()) return <Navigate to={paths.welcome} replace />
+  return <HomeFeedView />
+}
+
+function HomeFeedView() {
+  const { loading, data, error } = useStorefront({ lightweight: true, includeRestaurants: true })
+  const { feed } = useHomeFeed()
 
   if (loading) return <PageLoader />
   if (!data) {
     return <EmptyState title="Nothing to browse yet" description={error ?? 'Storefront catalog is empty.'} />
   }
 
+  const restaurantName = (id: string) => data.restaurants.find((restaurant) => restaurant.id === id)?.name
+  const sections = feed?.sections ?? []
+  const sponsoredSections = sections.filter((section) => section.kind === 'sponsored')
+  const organicSections = sections.filter((section) => section.kind !== 'sponsored')
+  const fastest = fastestRestaurants(data, FASTEST_LIMIT)
   const address = currentAddress(data)
-  const search = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    navigate(searchPath(query))
-  }
+  const banners = (feed?.banners ?? []).filter((banner) => {
+    const restaurant = data.restaurants.find((entry) => entry.id === banner.restaurantId)
+    return !restaurant || cardCoverageStatus(data, restaurant.id) !== 'unavailable'
+  })
+  const restaurants = [...data.restaurants].sort((a, b) => {
+    const aDistance = restaurantDistanceKm(a, address) ?? Number.POSITIVE_INFINITY
+    const bDistance = restaurantDistanceKm(b, address) ?? Number.POSITIVE_INFINITY
+    const aStatus = cardCoverageStatus(data, a.id)
+    const bStatus = cardCoverageStatus(data, b.id)
+    return coverageRank(aStatus) - coverageRank(bStatus) || aDistance - bDistance
+  })
 
   return (
-    <div className="space-y-10">
-      <section className="relative isolate flex flex-col items-center overflow-hidden py-8 text-center small:py-10">
-        <div aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-          <span className="food-doodle food-doodle--pizza">🍕</span>
-          <span className="food-doodle food-doodle--burger">🍔</span>
-          <span className="food-doodle food-doodle--taco">🌮</span>
-          <span className="food-doodle food-doodle--fries">🍟</span>
-          <span className="food-doodle food-doodle--noodles">🍜</span>
-          <span className="food-doodle food-doodle--avocado">🥑</span>
-        </div>
+    <div className="space-y-8">
+      <h1 className="sr-only">Home</h1>
 
-        <div className="relative z-10 flex w-full flex-col items-center">
-          <AppLogo className="mb-6 h-24 w-auto small:h-32" />
-          <LocationSelector
-            addresses={data.account.addresses}
-            selected={address}
-            onSelect={(next) => selectDeliveryAddress(next.id)}
-            onUseCurrentLocation={() => locate(data.account.addresses)}
-            locating={locating}
-            variant="hero"
-            placeholder="Add your delivery location"
-            className="mb-8"
-          />
+      <div className="space-y-5">
+        {feed && <PromoBannerCarousel banners={banners} restaurantName={restaurantName} />}
 
-          <p className="mb-3 text-sm font-medium text-accent">Good food, zero overthinking.</p>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-content small:text-6xl">
-            What are you <span className="text-accent">craving?</span>
-          </h1>
-          <p className="mt-4 text-base text-content-secondary">Say the word. We’ll find your next bite.</p>
+        {data.categories.length > 0 && (
+          <BrowseScroller label="Categories">
+            {data.categories.map((category) => (
+              <CategoryTile
+                key={category.id}
+                item={category}
+                to={searchPath(undefined, { category: category.slug })}
+                variant="compact"
+                className="shrink-0 snap-start"
+              />
+            ))}
+          </BrowseScroller>
+        )}
 
-          <form onSubmit={search} className="mt-8 flex w-full max-w-xl gap-2">
-            <SearchBar
-              value={query}
-              onChange={setQuery}
-              placeholder="Tacos, noodles, something crispy..."
-              size="lg"
-              className="min-w-0 flex-1"
-            />
-            <button
-              type="submit"
-              aria-label="Search food"
-              className="inline-flex h-11 w-12 shrink-0 items-center justify-center rounded-lg bg-brand text-on-brand transition-colors hover:bg-brand/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
-            >
-              <ArrowRight size={18} />
-            </button>
-          </form>
-        </div>
-      </section>
+        {sponsoredSections.map((section) => (
+          <FeedRail key={section.kind} data={data} section={section} />
+        ))}
+      </div>
 
-      {data.categories.length > 0 && (
-        <BrowseScroller title="Categories" to={paths.categories}>
-          {data.categories.map((category) => (
-            <CategoryTile
-              key={category.id}
-              item={category}
-              to={searchPath(undefined, { category: category.slug })}
-              className="w-24 shrink-0 snap-start"
-            />
+      {fastest.length > 0 && (
+        <RestaurantRail title="Fastest near you">
+          {fastest.map((restaurant) => (
+            <FeedCard key={restaurant.id} data={data} restaurant={restaurant} className={RAIL_CARD_CLASS} />
           ))}
-        </BrowseScroller>
+        </RestaurantRail>
       )}
 
       {data.cuisines.length > 0 && (
-        <BrowseScroller title="Cuisines" to={paths.cuisines}>
+        <BrowseScroller label="Cuisines">
           {data.cuisines.map((cuisine) => (
             <CategoryTile
               key={cuisine.id}
               item={cuisine}
               to={paths.cuisine(cuisine.slug)}
-              className="w-24 shrink-0 snap-start"
+              variant="compact"
+              className="shrink-0 snap-start"
             />
           ))}
         </BrowseScroller>
       )}
 
-      <section>
-        <SectionHeader title="Nearby" />
-        <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-3">
-          {data.restaurants.map((restaurant) => (
-            <RestaurantCard
-              key={restaurant.id}
-              restaurant={restaurant}
-              startingCents={lowestOfferCents(data, restaurant.id)}
-              etaMin={restaurantEta(data, restaurant.id)?.min}
-              etaMax={restaurantEta(data, restaurant.id)?.max}
-              providers={restaurantProviders(data, restaurant.id)}
-            />
-          ))}
-        </div>
-      </section>
+      {organicSections.map((section) => (
+        <FeedRail key={section.kind} data={data} section={section} />
+      ))}
+
+      {data.restaurants.length > 0 && (
+        <section>
+          <SectionHeader title="All restaurants" />
+          <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-3">
+            {restaurants.map((restaurant) => (
+              <FeedCard key={restaurant.id} data={data} restaurant={restaurant} address={address} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   )
+}
+
+function FeedRail({ data, section }: { data: StorefrontData; section: HomeSection }) {
+  const items = resolveFeedItems(section.items, data.restaurants).filter(
+    ({ restaurant }) => cardCoverageStatus(data, restaurant.id) !== 'unavailable',
+  )
+  if (items.length === 0) return null
+  return (
+    <RestaurantRail
+      title={section.title}
+      subtitle={
+        section.kind === 'sponsored' ? (
+          <p className="text-xs text-content-muted">
+            Paid placements. They never change prices, compare results, or recommendations.
+          </p>
+        ) : undefined
+      }
+    >
+      {items.map(({ item, restaurant }) => (
+        <FeedCard
+          key={`${section.kind}-${item.restaurantId}`}
+          data={data}
+          restaurant={restaurant}
+          sponsored={item.sponsored}
+          reason={item.reason}
+          className={RAIL_CARD_CLASS}
+        />
+      ))}
+    </RestaurantRail>
+  )
+}
+
+/** Quickest first by the lowest provider ETA; restaurants with no ETA are left out. */
+function fastestRestaurants(data: StorefrontData, limit: number): Restaurant[] {
+  return data.restaurants
+    .flatMap((restaurant) => {
+      if (cardCoverageStatus(data, restaurant.id) === 'unavailable') return []
+      const eta = restaurantEta(data, restaurant.id)
+      return eta ? [{ restaurant, eta }] : []
+    })
+    .sort((a, b) => a.eta.min - b.eta.min || a.eta.max - b.eta.max)
+    .slice(0, limit)
+    .map(({ restaurant }) => restaurant)
+}
+
+interface FeedCardProps {
+  data: StorefrontData
+  restaurant: Restaurant
+  sponsored?: SponsoredMark | null
+  reason?: string
+  className?: string
+}
+
+function FeedCard({ data, restaurant, address, ...rest }: FeedCardProps & { address?: ReturnType<typeof currentAddress> }) {
+  const eta = restaurantEta(data, restaurant.id)
+  const coverage = cardCoverageStatus(data, restaurant.id)
+  return (
+    <RestaurantCard
+      restaurant={restaurant}
+      startingCents={lowestOfferCents(data, restaurant.id)}
+      etaMin={eta?.min}
+      etaMax={eta?.max}
+      providers={restaurantProviders(data, restaurant.id)}
+      providerStatus={providerStatuses(data, restaurant.id)}
+      distanceKm={restaurantDistanceKm(restaurant, address)}
+      coverage={coverage}
+      {...rest}
+    />
+  )
+}
+
+function cardCoverageStatus(data: StorefrontData, restaurantId: string): CoverageStatus {
+  const coverage = restaurantCoverage(data, restaurantId)
+  if (!coverage || coverage.paths.length === 0) return 'unknown'
+  if (coverage.paths.some((path) => path.status === 'covered')) return 'covered'
+  if (coverage.paths.every((path) => path.status === 'unavailable')) return 'unavailable'
+  return 'unknown'
+}
+
+function coverageRank(status: CoverageStatus): number {
+  if (status === 'covered') return 0
+  if (status === 'unknown') return 1
+  return 2
+}
+
+function providerStatuses(data: StorefrontData, restaurantId: string) {
+  const coverage = restaurantCoverage(data, restaurantId)
+  return Object.fromEntries(coverage?.paths.map((path) => [path.providerId, path.status]) ?? []) as Record<string, 'covered' | 'unavailable' | 'unknown'>
 }

@@ -9,7 +9,7 @@ const HIGHLIGHTS: LegalHighlight[] = [
   {
     icon: EyeOff,
     title: 'No selling, no ad tracking',
-    body: 'We don’t sell your information, and we don’t use advertising cookies or third-party analytics.',
+    body: 'We don’t sell your information or use advertising cookies or third-party analytics. Sponsored spots are counted by us, and advertisers only see totals.',
   },
   {
     icon: MapPin,
@@ -54,6 +54,7 @@ const SECTIONS: LegalSection[] = [
       [
         'Precise location, only when you tap “Use current location” and allow it in your browser, or when you drop a pin on the map.',
         'Outbound choices: which option you continue to (a provider link, a phone call, or directions), so we know which comparisons are useful.',
+        'Sponsored views and taps: when a spot labelled “Sponsored” is shown on your screen or tapped, we record which placement it was, whether it was a view or a tap, where it appeared (like the home page), and when. Each placement is counted as viewed at most once per browser session.',
         'Technical data: IP address, browser and device type, and request logs, used to keep the service secure and fix problems.',
       ],
     ],
@@ -78,10 +79,11 @@ const SECTIONS: LegalSection[] = [
         'Work out all-in prices and rank ordering options within the filters you set.',
         'Remember your addresses, preferences, and past compares so you don’t start over.',
         'Send price alerts you’ve asked for.',
+        'Count views and taps on sponsored spots so we can bill advertisers and report how their placements performed.',
         'Improve how we match the same restaurant and dish across providers, and fix wrong prices.',
         'Protect Nibble and our users from fraud, abuse, and security threats.',
       ],
-      'We don’t use your information to build advertising profiles, and we don’t rank options based on payments from providers.',
+      'We don’t use your information to build advertising profiles or to target sponsored spots at you, and we don’t rank options based on payments from providers.',
     ],
   },
   {
@@ -104,6 +106,7 @@ const SECTIONS: LegalSection[] = [
       'We don’t sell personal information or share it for advertising. We share it only in these cases:',
       [
         'Providers you choose: when you continue to Skip, DoorDash, or a restaurant, you go to their app, website, or phone line. Anything you give them there is covered by their privacy policy. The link may tell them you came from Nibble.',
+        'Advertisers: restaurants and brands that pay for sponsored spots receive only totals, such as how many times their placement was viewed or tapped. We never give them your name, contact details, address, or compare history.',
         'Service providers: companies that host and run our infrastructure on our behalf. They can use information only to provide those services.',
         'OpenStreetMap: pin coordinates for address lookups, and map requests, as described above.',
         'Legal reasons: when the law requires it, or to protect the rights, safety, or property of our users or Nibble.',
@@ -117,8 +120,8 @@ const SECTIONS: LegalSection[] = [
     blocks: [
       'Nibble uses your browser’s storage for things the app needs to work, not for tracking:',
       [
-        'Session storage: your current delivery location or dropped pin. It is cleared when you close the tab.',
-        'Local storage: display preferences, like layout settings.',
+        'Session storage: your current delivery location or dropped pin, and which sponsored spots you’ve already seen, so each view is counted once. It is cleared when you close the tab.',
+        'Local storage: display preferences like layout settings, your default compare preferences, and whether you’ve finished first-time setup.',
       ],
       'We don’t set advertising or cross-site tracking cookies.',
     ],
@@ -130,6 +133,7 @@ const SECTIONS: LegalSection[] = [
       [
         'Account details, saved addresses, preferences, and alerts: until you change them or delete your account.',
         'Compare history and outbound choices: while your account is active, to power your history and improve matching. After that we delete it or remove anything that identifies you.',
+        'Sponsored view and tap records: long enough to bill advertisers and settle disputes, then we keep only totals.',
         'Server logs: for a limited time, for security and debugging.',
       ],
       'Menu prices and fees we collect from providers aren’t personal information. We keep them to track how prices change over time.',

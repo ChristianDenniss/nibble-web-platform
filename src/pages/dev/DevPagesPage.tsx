@@ -16,6 +16,7 @@ export default function DevPagesPage() {
 
   const pages = [
     { label: 'Login / Sign up', to: paths.login },
+    { label: 'Welcome splash', to: paths.welcome },
     { label: 'Home / Landing', to: paths.home },
     { label: 'Search', to: `${paths.search}?q=sushi` },
     { label: 'Categories', to: paths.categories },

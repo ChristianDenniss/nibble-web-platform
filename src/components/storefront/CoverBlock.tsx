@@ -4,6 +4,7 @@
  */
 import type { ReactNode } from 'react'
 import { type CoverTone } from '@/lib/coverTone'
+import { cn } from '@/lib/utils'
 
 const TONE: Record<CoverTone, string> = {
   brand: 'bg-brand/10 text-accent',
@@ -25,7 +26,7 @@ interface Props {
 
 export default function CoverBlock({ tone, icon, label, className = 'h-36' }: Props) {
   return (
-    <div className={`flex items-center justify-center rounded-xl ${TONE[tone]} ${className}`}>
+    <div className={cn('flex items-center justify-center rounded-xl', TONE[tone], className)}>
       {icon ?? <span className="text-2xl font-semibold tracking-tight">{label}</span>}
     </div>
   )

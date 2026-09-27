@@ -10,7 +10,7 @@ import { useStorefront } from '@/hooks/storefront/useStorefront'
 import { paths, searchPath } from '@/routing/paths'
 
 export default function CategoriesPage() {
-  const { loading, data, error } = useStorefront()
+  const { loading, data, error } = useStorefront({ lightweight: true })
 
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Categories unavailable" description={error ?? undefined} />

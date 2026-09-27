@@ -1,20 +1,20 @@
 /**
- * BrowseScroller — horizontal snap-scroll rail of compact browse tiles.
+ * BrowseScroller — untitled horizontal snap-scroll rail of compact browse tiles.
+ * The tiles speak for themselves; `label` only names the rail for screen readers.
  */
 import type { ReactNode } from 'react'
-import SectionHeader from './SectionHeader'
+import { useDragScroll } from '@/hooks/utils/useDragScroll'
 
 interface Props {
-  title: string
-  to?: string
+  label: string
   children: ReactNode
 }
 
-export default function BrowseScroller({ title, to, children }: Props) {
+export default function BrowseScroller({ label, children }: Props) {
+  const dragScroll = useDragScroll<HTMLDivElement>()
   return (
-    <section>
-      <SectionHeader title={title} to={to} />
-      <div className="flex gap-3 overflow-x-auto snap-x snap-mandatory pb-1 scrollbar-none">
+    <section aria-label={label}>
+      <div ref={dragScroll} className="-mx-5 flex scroll-px-5 gap-3 overflow-x-auto overscroll-x-contain snap-x snap-mandatory px-5 pb-1 scrollbar-none">
         {children}
       </div>
     </section>

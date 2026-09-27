@@ -1,6 +1,6 @@
 /**
  * CategoryTile — browse tile for categories and cuisines.
- * `featured` is the large department card; `icon` is the compact carousel/grid chip.
+ * `featured` is the large department card; `icon` is the grid chip; `compact` is the small home rail chip.
  */
 import { Link } from 'react-router-dom'
 import CoverBlock from './CoverBlock'
@@ -18,7 +18,7 @@ export interface BrowseTileItem {
 interface Props {
   item: BrowseTileItem
   to: string
-  variant?: 'featured' | 'icon'
+  variant?: 'featured' | 'icon' | 'compact'
   className?: string
 }
 
@@ -39,6 +39,19 @@ export default function CategoryTile({ item, to, variant = 'icon', className }: 
             <p className="mt-0.5 text-sm text-content-muted">{item.description}</p>
           )}
         </div>
+      </Link>
+    )
+  }
+
+  if (variant === 'compact') {
+    return (
+      <Link to={to} className={cn('group flex min-w-16 flex-col items-center gap-1', className)}>
+        <CoverBlock
+          tone={coverTone(item.id)}
+          icon={<Icon size={24} strokeWidth={1.75} />}
+          className="size-16 rounded-full transition-opacity group-hover:opacity-90"
+        />
+        <span className="whitespace-nowrap text-center text-xs font-medium leading-tight text-content">{item.name}</span>
       </Link>
     )
   }

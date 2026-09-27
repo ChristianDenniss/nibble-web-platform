@@ -18,6 +18,7 @@ export interface SourceMenuBrowseWire {
     items: Array<{
       id: string
       name: string
+      imageURL: string
       price: { amountCents: number; currency: string }
     }>
   }>

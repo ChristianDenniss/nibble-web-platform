@@ -67,7 +67,20 @@ const SECTIONS: LegalSection[] = [
     title: 'How recommendations work',
     blocks: [
       'When you compare, we rank the ordering options you’ve allowed in your filters (for example, which apps you use, or delivery only) by estimated all-in price and eligible public deals. The winner can be an app, pickup, the drive-thru, or calling the restaurant.',
-      'We don’t rank an option higher because a provider pays us. A recommendation is information to help you decide, not a guarantee that it will be the cheapest when you order.',
+      'Compare results, rankings, and “Most popular” and “Recommended for you” lists are never influenced by payment. A provider or restaurant can’t pay to rank higher or to change a price we show. A recommendation is information to help you decide, not a guarantee that it will be the cheapest when you order.',
+    ],
+  },
+  {
+    id: 'sponsored',
+    title: 'Sponsored listings and deals',
+    blocks: [
+      'Restaurants and brands can pay to appear in dedicated spots on Nibble, such as home page banners and the “Sponsored” row. This is how we keep Nibble free.',
+      [
+        'Every paid placement is labelled “Sponsored”.',
+        'Sponsored spots are kept separate. They never change compare results, prices, all-in estimates, or which option we recommend.',
+        'Being sponsored doesn’t mean a restaurant is cheaper, better, or endorsed by Nibble.',
+        '“Deal” banners and badges show public promotions offered by a provider or restaurant. They aren’t paid placements, and the provider’s terms for the deal apply.',
+      ],
     ],
   },
   {

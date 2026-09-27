@@ -20,7 +20,7 @@ export default function OrdersPage() {
 
   return (
     <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Orders' }]} />
+      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Account', href: paths.profile }, { label: 'Orders' }]} />
       <PageTitle icon={<Receipt size={20} />} title="Past orders" count={data.orders.length} />
       {data.orders.length === 0 ? (
         <EmptyState title="No orders yet" description="Completed checkouts will show up here." />

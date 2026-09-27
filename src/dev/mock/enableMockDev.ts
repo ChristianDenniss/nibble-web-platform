@@ -8,7 +8,7 @@
  *
  * Turn it off with VITE_MOCK=0 to talk to the real API during `vite dev`.
  */
-import axios, { type AxiosResponse, type InternalAxiosRequestConfig } from 'axios'
+import axios, { AxiosError, type AxiosResponse, type InternalAxiosRequestConfig } from 'axios'
 import { isMockableRequest, resolveMock } from './handlers'
 
 let installed = false
@@ -41,8 +41,21 @@ export function enableMockDev(): void {
         request: {},
       }
 
-      return new Promise((resolve) => {
-        window.setTimeout(() => resolve(response), 80)
+      const validateStatus = cfg.validateStatus ?? ((status: number) => status >= 200 && status < 300)
+      return new Promise((resolve, reject) => {
+        window.setTimeout(() => {
+          if (validateStatus(result.status)) {
+            resolve(response)
+            return
+          }
+          reject(new AxiosError(
+            `Request failed with status code ${result.status}`,
+            result.status >= 500 ? AxiosError.ERR_BAD_RESPONSE : AxiosError.ERR_BAD_REQUEST,
+            cfg,
+            {},
+            response,
+          ))
+        }, 80)
       })
     }
 

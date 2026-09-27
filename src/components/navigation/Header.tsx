@@ -2,7 +2,7 @@
  * Header — storefront top bar: wordmark, location picker, search, cart, account.
  * On the small tier the search row sits under the bar and a menu lists the rest.
  */
-import { useState, type FormEvent } from 'react'
+import { useLayoutEffect, useRef, useState, type FormEvent } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Menu, ShoppingBag, User, X } from 'lucide-react'
 import AppLogo from '@/components/brand/AppLogo'
@@ -10,6 +10,7 @@ import CountBadge from '@/components/badges/CountBadge'
 import LocationSelector from '@/components/location/LocationSelector'
 import SearchBar from '@/components/navigation/SearchBar'
 import { useAppLayout } from '@/context/AppLayoutContext'
+import { useAuth } from '@/hooks/auth/authStore'
 import { useAccountAddresses } from '@/hooks/location/useAccountAddresses'
 import { useDeviceLocation } from '@/hooks/location/useDeviceLocation'
 import { currentAddress, useStorefront } from '@/hooks/storefront/useStorefront'
@@ -20,10 +21,22 @@ export default function Header() {
   const layout = useAppLayout()
   const open = layout?.mobileNavOpen ?? false
   const navigate = useNavigate()
-  const storefront = useStorefront()
+  const storefront = useStorefront({ lightweight: true })
+  const signedIn = useAuth().status === 'authenticated'
   const { pickAddress } = useAccountAddresses(storefront.reload)
   const { locating, locate } = useDeviceLocation()
   const [query, setQuery] = useState('')
+  const headerRef = useRef<HTMLElement>(null)
+
+  useLayoutEffect(() => {
+    const el = headerRef.current
+    if (!el) return
+    const publish = () => document.documentElement.style.setProperty('--app-header-height', `${el.offsetHeight}px`)
+    publish()
+    const observer = new ResizeObserver(publish)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   const address = storefront.data ? currentAddress(storefront.data) : null
   const addresses = storefront.data?.account.addresses ?? []
@@ -45,7 +58,7 @@ export default function Header() {
   )
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-sm">
+    <header ref={headerRef} className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur-sm">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-5">
         <Link to={paths.home} aria-label="Nibble home" className="flex shrink-0 items-center gap-2">
           <AppLogo mark="n" className="h-9 w-auto" />
@@ -75,11 +88,11 @@ export default function Header() {
             {cartCount > 0 && <CountBadge count={cartCount} size="sm" />}
           </Link>
           <Link
-            to={paths.profile}
+            to={signedIn ? paths.profile : paths.login}
             className="inline-flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium text-content-secondary hover:text-content"
           >
             <User size={18} />
-            Account
+            {signedIn ? 'Account' : 'Log in'}
           </Link>
         </nav>
 
@@ -131,18 +144,11 @@ export default function Header() {
               </NavLink>
             ))}
             <Link
-              to={paths.profile}
+              to={signedIn ? paths.profile : paths.login}
               onClick={() => layout?.setMobileNavOpen(false)}
               className="rounded-md px-3 py-2 text-sm font-medium text-content-secondary"
             >
-              Account
-            </Link>
-            <Link
-              to={paths.login}
-              onClick={() => layout?.setMobileNavOpen(false)}
-              className="rounded-md px-3 py-2 text-sm font-medium text-content-secondary"
-            >
-              Log in
+              {signedIn ? 'Account' : 'Log in'}
             </Link>
           </div>
         </nav>

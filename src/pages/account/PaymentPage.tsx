@@ -21,7 +21,7 @@ export default function PaymentPage() {
 
   return (
     <div className="space-y-6">
-      <Breadcrumb items={[{ label: 'Profile', href: paths.profile }, { label: 'Payment' }]} />
+      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Account', href: paths.profile }, { label: 'Payment' }]} />
       <PageTitle icon={<CreditCard size={20} />} title="Payment methods" count={data.account.paymentMethods.length} />
       <ul className="space-y-2">
         {data.account.paymentMethods.map((method) => (

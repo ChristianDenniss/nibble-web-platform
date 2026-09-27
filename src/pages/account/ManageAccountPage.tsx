@@ -36,7 +36,7 @@ export default function ManageAccountPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl">
-      <Breadcrumb items={[{ label: 'Profile', href: paths.profile }, { label: 'Manage account' }]} />
+      <Breadcrumb items={[{ label: 'Home', href: paths.home }, { label: 'Account', href: paths.profile }, { label: 'Manage account' }]} />
       <header className="mt-4">
         <h1 className="text-2xl font-semibold tracking-tight text-content">Manage account</h1>
         <p className="mt-1 text-sm text-content-secondary">Your contact details and account.</p>

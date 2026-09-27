@@ -19,6 +19,18 @@ const SWIPE_OFFSET_THRESHOLD   = 80
 const EDGE_SWIPE_OPEN_THRESHOLD = 36
 const EDGE_SWIPE_ZONE_PX = 56
 
+// A right-swipe starting on a horizontal rail (promo carousel, chip row, tab bar) that is
+// scrolled away from its start belongs to the rail, not the drawer.
+function insideRailThatCanScrollBack(target: EventTarget | null): boolean {
+  for (let el = target instanceof Element ? target : null; el && el !== document.body; el = el.parentElement) {
+    if (el.scrollLeft > 0 && el.scrollWidth > el.clientWidth) {
+      const { overflowX } = getComputedStyle(el)
+      if (overflowX === 'auto' || overflowX === 'scroll') return true
+    }
+  }
+  return false
+}
+
 interface MobileNavDrawerProps {
   open: boolean
   onClose: () => void
@@ -49,6 +61,7 @@ export default function MobileNavDrawer({ open, onClose, onOpen }: MobileNavDraw
     const onStart = (e: TouchEvent) => {
       const t = e.touches[0]
       if (t.clientX > EDGE_SWIPE_ZONE_PX) return
+      if (insideRailThatCanScrollBack(e.target)) return
       edgeStart.current = { x: t.clientX, y: t.clientY }
     }
     const onMove = (e: TouchEvent) => {
