@@ -38,6 +38,8 @@ const DevPagesPage = lazy(() => import('@/pages/dev/DevPagesPage'))
 const AdminPage = lazy(() => import('@/pages/admin/AdminPage'))
 const NotFoundPage = lazy(() => import('@/pages/not-found/NotFoundPage'))
 
+const isMockMode = import.meta.env.DEV && import.meta.env.VITE_MOCK !== '0'
+
 function StorefrontShell() {
   return (
     <AppLayout>
@@ -93,7 +95,11 @@ export function App() {
           <Route path={paths.health} element={<HealthPage />} />
           <Route path={paths.compare} element={<ComparePage />} />
           <Route path={paths.sourceMenu} element={<SourceMenuPage />} />
-          <Route element={<RequireAdmin />}><Route path={paths.admin} element={<AdminPage />} /></Route>
+          {isMockMode ? (
+            <Route path={paths.admin} element={<AdminPage />} />
+          ) : (
+            <Route element={<RequireAdmin />}><Route path={paths.admin} element={<AdminPage />} /></Route>
+          )}
           {import.meta.env.DEV && <Route path={paths.dev} element={<DevPagesPage />} />}
           <Route path="*" element={<NotFoundPage />} />
         </Route>

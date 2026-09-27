@@ -1,5 +1,5 @@
 /** Collected restaurant menus adapted to the upstream storefront entities. */
-import type { Account, Location, Cart, Category, Cuisine, HomeFeed, Item, Offer, Provider, Restaurant, Order } from '@/generated/data-model'
+import type { Account, Location, Cart, Category, Cuisine, DealBadge, HomeFeed, HomeFeedItem, Item, Offer, Provider, Restaurant, Order, SponsoredMark } from '@/generated/data-model'
 import catalog from '@/catalog/catalog.json'
 function fredericton(address: string): Location {
   return {
@@ -53,8 +53,52 @@ export const mockCart: Cart = { id: 'cart_local', accountId: 'local', lines: [] 
 export const mockOrders: Order[] = []
 export const mockCatalog = { account: mockAccount, providers: mockProviders, categories: mockCategories, cuisines: mockCuisines, restaurants: mockRestaurants, items: mockItems, offers: mockOffers, deals: [], cart: mockCart, orders: mockOrders }
 export type MockCatalog = typeof mockCatalog
+
+const mockSponsored: SponsoredMark = {
+  placementId: 'placement_mock_home_rail',
+  campaignId: 'campaign_mock_home',
+  advertiserName: 'Nibble featured partner',
+  label: 'Sponsored',
+}
+
+const mockDeal: DealBadge = {
+  promotionId: 'promo_mock_home',
+  channelId: 'ch_skip',
+  label: '20% off delivery',
+  fulfillmentMode: 'delivery',
+}
+
+function mockFeedItems(restaurants: Restaurant[], reason: string, extras: Pick<HomeFeedItem, 'sponsored' | 'deal'> = { sponsored: null, deal: null }): HomeFeedItem[] {
+  return restaurants.map((restaurant) => ({
+    restaurantId: restaurant.id,
+    reason,
+    ...extras,
+  }))
+}
+
 export const mockHomeFeed: HomeFeed = {
   generatedAt: '',
   banners: mockRestaurants.slice(0, 4).map(restaurant => ({ id: `menu_${restaurant.id}`, kind: 'editorial', headline: restaurant.name, body: 'Explore the menu and compare your whole cart.', imageURL: restaurant.imageURL ?? '', callToAction: 'Browse menu', restaurantId: restaurant.id, sponsored: null, deal: null })),
-  sections: [{ kind: 'popular', title: 'Explore nearby menus', items: mockRestaurants.slice(0, 6).map(restaurant => ({ restaurantId: restaurant.id, reason: restaurant.location.address, sponsored: null, deal: null })) }],
+  sections: [
+    {
+      kind: 'sponsored',
+      title: 'Featured near you',
+      items: mockFeedItems(mockRestaurants.slice(0, 3), 'Featured partner', { sponsored: mockSponsored, deal: null }),
+    },
+    {
+      kind: 'deals',
+      title: 'Popular deals in your area',
+      items: mockFeedItems(mockRestaurants.slice(3, 7), 'Limited-time offer', { sponsored: null, deal: mockDeal }),
+    },
+    {
+      kind: 'popular',
+      title: 'Most popular',
+      items: mockFeedItems(mockRestaurants.slice(0, 6), 'Popular nearby'),
+    },
+    {
+      kind: 'recommended',
+      title: 'Recommended for you',
+      items: mockFeedItems(mockRestaurants.slice(2, 8), 'Based on nearby favorites'),
+    },
+  ],
 }
