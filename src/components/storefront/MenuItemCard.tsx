@@ -4,7 +4,7 @@
  * `small` viewport, bordered cards above it.
  */
 import { Link } from 'react-router-dom'
-import CartItemAction from './CartItemAction'
+import { Plus } from 'lucide-react'
 import ItemImage from './ItemImage'
 import { formatMoney } from '@/lib/money'
 import { paths } from '@/routing/paths'
@@ -20,11 +20,12 @@ interface Props {
 
 export default function MenuItemCard({ item, storeId, priceCents, currency = 'CAD', tinted = false }: Props) {
   return (
-    <article
+    <Link
+      to={paths.item(storeId, item.id)}
       className={`group flex gap-4 border-border ${tinted ? 'bg-surface-alt' : 'bg-surface'} transition-colors hover:bg-surface-brand-hover max-small:-mx-5 max-small:border-b max-small:px-5 max-small:py-4 small:rounded-xl small:border small:p-4`}
     >
       <div className="min-w-0 flex-1">
-        <h3 className="text-[15px] font-semibold leading-snug text-content"><Link to={paths.item(storeId, item.id)}>{item.name}</Link></h3>
+        <h3 className="text-[15px] font-semibold leading-snug text-content">{item.name}</h3>
         {item.description && (
           <p className="mt-1.5 line-clamp-2 text-sm text-content-secondary">{item.description}</p>
         )}
@@ -39,8 +40,13 @@ export default function MenuItemCard({ item, storeId, priceCents, currency = 'CA
           seed={item.id}
           className="size-28 rounded-xl border border-border max-small:size-24"
         />
-        <div className="absolute -bottom-2 -right-2"><CartItemAction item={item} /></div>
+        <span
+          aria-hidden
+          className="absolute -right-2 -top-2 grid size-9 place-items-center rounded-full bg-surface text-accent shadow-md ring-1 ring-border transition-colors group-hover:bg-accent group-hover:text-on-accent-white"
+        >
+          <Plus size={20} strokeWidth={2.5} />
+        </span>
       </div>
-    </article>
+    </Link>
   )
 }

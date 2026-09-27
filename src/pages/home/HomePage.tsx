@@ -229,9 +229,8 @@ function FeedCard({ data, restaurant, address, ...rest }: FeedCardProps & { addr
       etaMax={eta?.max}
       providers={restaurantProviders(data, restaurant.id)}
       providerStatus={providerStatuses(data, restaurant.id)}
-      distanceKm={restaurantDistanceKm(restaurant, address)}
+      distanceKm={restaurantDistanceKm(restaurant, address ?? currentAddress(data))}
       coverage={coverage}
-      reason={restaurant.location.address}
       {...rest}
     />
   )
