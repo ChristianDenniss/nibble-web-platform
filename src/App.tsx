@@ -1,4 +1,5 @@
-import { lazy, Suspense } from 'react'
+import { lazy, Suspense, useCallback, useState } from 'react'
+import StartupScreen from '@/components/brand/StartupScreen'
 import { Routes, Route, Outlet } from 'react-router-dom'
 import AppLayout from '@/components/layout/AppLayout'
 import AuthLayout from '@/components/layout/AuthLayout'
@@ -59,6 +60,9 @@ function AuthShell() {
 }
 
 export function App() {
+  const [started, setStarted] = useState(false)
+  const finishStartup = useCallback(() => setStarted(true), [])
+  if (!started) return <ErrorBoundary><StartupScreen onComplete={finishStartup} /></ErrorBoundary>
   return (
     <ErrorBoundary>
       <Routes>

@@ -23,7 +23,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://www.tacoboyz.com/order-online/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -49,7 +49,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -907,7 +907,7 @@
         "count": 0
       },
       "phone": "",
-      "appURL": "https://www.harveys.ca/en/downloadtheapp.html",
+      "appURL": "",
       "hours": []
     },
     {
@@ -933,7 +933,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://www.harveys.ca/en/downloadtheapp.html",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1063,7 +1063,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://www.kfc.ca/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1089,7 +1089,7 @@
         "count": 0
       },
       "phone": "",
-      "appURL": "https://www.kfc.ca/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1115,7 +1115,7 @@
         "count": 0
       },
       "phone": "",
-      "appURL": "https://www.kfc.ca/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1323,7 +1323,7 @@
         "count": 0
       },
       "phone": "",
-      "appURL": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1427,7 +1427,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://order.montanas.ca/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -1557,7 +1557,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://osmows.order.online/business/-30028",
+      "appURL": "",
       "hours": []
     },
     {
@@ -2337,7 +2337,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://order.swisschalet.com/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -2389,7 +2389,7 @@
         "count": 0
       },
       "phone": "",
-      "appURL": "https://www.tacoboyz.com/order-online/",
+      "appURL": "",
       "hours": []
     },
     {
@@ -2753,7 +2753,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://order.wendys.com/ca/en/select-restaurant",
+      "appURL": "",
       "hours": []
     },
     {
@@ -2779,7 +2779,7 @@
         "count": 50
       },
       "phone": "",
-      "appURL": "https://order.wendys.com/ca/en/select-restaurant",
+      "appURL": "",
       "hours": []
     },
     {
@@ -249765,90 +249765,6 @@
     }
   },
   "merchantOrdering": {
-    "catalog-ss_ubereats_0a5ba1d349096949787465cf": {
-      "match": "Taco Boyz",
-      "sourceUrl": "https://www.tacoboyz.com/order-online/",
-      "orderUrl": "https://www.tacoboyz.com/order-online/",
-      "note": "Choose the matching Fredericton location. Confirm delivery availability and prices on the restaurant website."
-    },
-    "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c": {
-      "match": "McDonald",
-      "sourceUrl": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
-      "orderUrl": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
-      "note": "McDelivery in the McDonald\u2019s app. Select this restaurant and your address to see prices and available offers."
-    },
-    "catalog-ss_ubereats_a0cd59dd0bea512201819b48": {
-      "match": "Harvey",
-      "sourceUrl": "https://www.harveys.ca/en/downloadtheapp.html",
-      "orderUrl": "https://www.harveys.ca/en/downloadtheapp.html",
-      "note": "Harvey\u2019s own ordering app. Select the matching restaurant and confirm delivery prices; some coupons are pickup only."
-    },
-    "catalog-ss_ubereats_e61f77a348c6497848d3cd83": {
-      "match": "Harvey",
-      "sourceUrl": "https://www.harveys.ca/en/downloadtheapp.html",
-      "orderUrl": "https://www.harveys.ca/en/downloadtheapp.html",
-      "note": "Harvey\u2019s own ordering app. Select the matching restaurant and confirm delivery prices; some coupons are pickup only."
-    },
-    "catalog-ss_ubereats_dd4a46e4b7651804eee5e2ba": {
-      "match": "KFC",
-      "sourceUrl": "https://www.kfc.ca/",
-      "orderUrl": "https://www.kfc.ca/",
-      "note": "KFC\u2019s own ordering website and app. Select the matching restaurant, then pickup or delivery, to see local prices and rewards."
-    },
-    "catalog-ss_ubereats_9fe7f7c297b20ac7e345cbbb": {
-      "match": "KFC",
-      "sourceUrl": "https://www.kfc.ca/",
-      "orderUrl": "https://www.kfc.ca/",
-      "note": "KFC\u2019s own ordering website and app. Select the matching restaurant, then pickup or delivery, to see local prices and rewards."
-    },
-    "catalog-ss_ubereats_b1ae6f7ac1e9695023a71fb3": {
-      "match": "KFC",
-      "sourceUrl": "https://www.kfc.ca/",
-      "orderUrl": "https://www.kfc.ca/",
-      "note": "KFC\u2019s own ordering website and app. Select the matching restaurant, then pickup or delivery, to see local prices and rewards."
-    },
-    "catalog-ss_ubereats_49846df7683e641f6ac1cc0c": {
-      "match": "McDonald",
-      "sourceUrl": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
-      "orderUrl": "https://www4.mcdonalds.ca/mcdeliveryinthemcdapp/",
-      "note": "McDelivery in the McDonald\u2019s app. Select this restaurant and your address to see prices and available offers."
-    },
-    "catalog-ss_ubereats_f94e82c421c0815dd0950b87": {
-      "match": "Montana",
-      "sourceUrl": "https://www.montanas.ca/en/faq.html",
-      "orderUrl": "https://order.montanas.ca/",
-      "note": "Restaurant takeout ordering. Select the matching restaurant; delivery availability must be checked separately."
-    },
-    "catalog-ss_ubereats_bc8238a5d7db467ed41c2b0d": {
-      "match": "Osmow",
-      "sourceUrl": "https://osmows.com/",
-      "orderUrl": "https://osmows.order.online/business/-30028",
-      "note": "Restaurant ordering powered by DoorDash. Choose the matching Fredericton location; confirm fulfillment and prices."
-    },
-    "catalog-ss_ubereats_e3b1201ac6f79cb93a5eac83": {
-      "match": "Swiss Chalet",
-      "sourceUrl": "https://www.swisschalet.com/en/mobileapp.html",
-      "orderUrl": "https://order.swisschalet.com/",
-      "note": "Restaurant delivery and pickup ordering. Select the matching restaurant; confirm options and delivery charges."
-    },
-    "catalog-ss_skip_e320412680a49bc2f47fc17c": {
-      "match": "Taco Boyz",
-      "sourceUrl": "https://www.tacoboyz.com/order-online/",
-      "orderUrl": "https://www.tacoboyz.com/order-online/",
-      "note": "Choose the matching Fredericton location. Confirm delivery availability and prices on the restaurant website."
-    },
-    "catalog-ss_ubereats_8b6bfb82d30268e22a241644": {
-      "match": "Wendy",
-      "sourceUrl": "https://www.wendys.com/en-ca",
-      "orderUrl": "https://order.wendys.com/ca/en/select-restaurant",
-      "note": "Select the matching Fredericton branch. Prices, offers and delivery availability depend on your selection."
-    },
-    "catalog-ss_ubereats_768ae723aba59e73d1882fb4": {
-      "match": "Wendy",
-      "sourceUrl": "https://www.wendys.com/en-ca",
-      "orderUrl": "https://order.wendys.com/ca/en/select-restaurant",
-      "note": "Select the matching Fredericton branch. Prices, offers and delivery availability depend on your selection."
-    },
     "catalog-direct-luna-king": {
       "orderUrl": "https://www.lunapizza.ca/order-online",
       "sourceUrl": "https://www.lunapizza.ca/order-online",

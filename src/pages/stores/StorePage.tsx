@@ -3,7 +3,7 @@ import PromotionList from '@/components/storefront/PromotionList'
 import MerchantOrdering from '@/components/storefront/MerchantOrdering'
 import { useCartDraft } from '@/hooks/cart/useCartDraft'
 import { paths } from '@/routing/paths'
-import ItemImage from '@/components/storefront/ItemImage'
+import RestaurantImage from '@/components/storefront/RestaurantImage'
 /**
  * StorePage — single restaurant: cover, meta, provider availability, menu sections.
  * No breadcrumb; the info tip beside the name opens StoreInfoModal (hours + allergen disclaimer).
@@ -150,7 +150,7 @@ export default function StorePage() {
 
   return (
     <div className="space-y-6">
-      <ItemImage src={restaurant.imageURL ?? ''} alt={restaurant.name} seed={restaurant.id} className="h-48 w-full rounded-2xl" />
+      <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} className="h-48 w-full rounded-2xl" />
       <div className="flex flex-col gap-3 small:flex-row small:items-end small:justify-between">
         <div>
           <div className="flex items-center gap-2">

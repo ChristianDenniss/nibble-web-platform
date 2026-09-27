@@ -6,6 +6,22 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@layer base {
+  /* Give actionable controls a consistent hand cursor throughout the app. */
+  :where(a[href], button, summary, select, label[for],
+    input[type="button"], input[type="submit"], input[type="reset"],
+    input[type="checkbox"], input[type="radio"], input[type="file"],
+    [role="button"], [role="link"], [role="tab"], [role="menuitem"],
+    [role="checkbox"], [role="radio"], [role="switch"], [role="option"]
+  ):not(:disabled):not([aria-disabled="true"]):not([data-disabled]) {
+    cursor: pointer;
+  }
+
+  :where(button, input, select, textarea, [role]):is(:disabled, [aria-disabled="true"], [data-disabled]) {
+    cursor: not-allowed;
+  }
+}
+
 /* Class-based dark mode - makes all dark: utilities respond to the .dark class
    on <html> instead of the OS prefers-color-scheme media query. */
 @custom-variant dark (&:where(.dark, .dark *));
@@ -529,3 +545,30 @@ input[type="datetime-local"]::-webkit-calendar-picker-indicator {
     animation: none;
   }
 }
+
+/* Startup is mounted once per page load; route changes do not replay it. */
+.startup-screen { min-height: 100dvh; display: grid; place-items: center; position: relative; isolation: isolate; overflow: hidden; background: var(--color-page, #fff9f0); padding: 40px 24px; }
+.startup-content { position: relative; z-index: 1; width: min(100%, 620px); text-align: center; }
+.startup-logo { width: min(72vw, 340px); margin: 0 auto; animation: nibble-slam 1s both; }
+.startup-screen--ready .startup-logo { width: min(52vw, 220px); transition: width 450ms ease; margin-bottom: 32px; }
+.startup-choices { animation: nibble-reveal 450ms ease both; }
+.startup-doodles { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+.startup-doodle { position: absolute; color: var(--color-accent, #d66d35); opacity: .23; animation: nibble-roam 13s ease-in-out infinite alternate; }
+.startup-doodle svg { width: clamp(48px, 8vw, 110px); height: auto; }
+.startup-doodle--0 { left: 8%; top: 12%; }
+.startup-doodle--1 { right: 9%; top: 15%; animation-delay: -5s; }
+.startup-doodle--2 { left: 4%; top: 53%; animation-delay: -3s; }
+.startup-doodle--3 { right: 5%; top: 55%; animation-delay: -8s; }
+.startup-doodle--4 { left: 17%; bottom: 9%; animation-delay: -10s; }
+.startup-doodle--5 { right: 18%; bottom: 7%; animation-delay: -6s; }
+@keyframes nibble-slam {
+  0% { opacity: 0; transform: translateY(-130px) scale(2.7) rotate(-12deg); }
+  48% { opacity: 1; transform: translateY(9px) scale(.88, 1.08) rotate(2deg); }
+  65% { transform: translateY(-10px) scale(1.06, .96) rotate(-2deg); }
+  82% { transform: translateY(3px) scale(.98, 1.02); }
+  100% { transform: translateY(0) scale(1); }
+}
+@keyframes nibble-roam { from { transform: translate(-12px, -18px) rotate(-14deg); } to { transform: translate(18px, 24px) rotate(16deg); } }
+@keyframes nibble-reveal { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 640px) { .startup-doodle { opacity: .12; } .startup-doodle--2 { left: -20px; } .startup-doodle--3 { right: -20px; } }
+@media (prefers-reduced-motion: reduce) { .startup-logo, .startup-choices, .startup-doodle { animation: none; transition: none !important; } }

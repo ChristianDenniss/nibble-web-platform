@@ -24,6 +24,9 @@ export function enableMockDev(): void {
   installed = true
 
   axios.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+    // Authentication always uses the API unless explicitly isolated for UI testing.
+    const pathname = new URL(config.url ?? '/', window.location.origin).pathname
+    if (pathname.startsWith('/api/v1/auth/') && import.meta.env.VITE_AUTH_MODE !== 'mock') return config
     if (!isMockableRequest(config)) return config
 
     config.adapter = (cfg) => {

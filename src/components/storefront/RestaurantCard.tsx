@@ -5,11 +5,10 @@ import catalog from '@/catalog/catalog.json'
  */
 import { Link } from 'react-router-dom'
 import { Star } from 'lucide-react'
-import CoverBlock from './CoverBlock'
+import RestaurantImage from './RestaurantImage'
 import OrderPathStack from './OrderPathStack'
 import { useSponsoredTracking } from '@/hooks/home/useSponsoredEvents'
 import { cn } from '@/lib/utils'
-import { coverTone } from '@/lib/coverTone'
 import { formatMoney } from '@/lib/money'
 import type { CoverageStatus } from '@/lib/restaurantAvailability'
 import { paths } from '@/routing/paths'
@@ -65,24 +64,12 @@ export default function RestaurantCard({
       ref={tracking.ref}
       className={cn(
         'group relative flex flex-col',
-        coverage === 'unavailable' && 'opacity-60 grayscale',
+        coverage === 'unavailable' && !catalog.offers.some(offer => offer.restaurantId === restaurant.id) && 'opacity-60 grayscale',
         className,
       )}
     >
       <div className="relative">
-        {restaurant.imageURL ? (
-          <img
-            src={restaurant.imageURL}
-            alt=""
-            className="h-36 w-full rounded-2xl object-cover transition-opacity group-hover:opacity-90"
-          />
-        ) : (
-          <CoverBlock
-            tone={coverTone(restaurant.id)}
-            label={restaurant.name.slice(0, 1)}
-            className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
-          />
-        )}
+        <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} className="h-36 w-full rounded-2xl transition-opacity group-hover:opacity-90" />
         {sponsored && (
           <span className="absolute right-2 top-2 rounded-full bg-surface/90 px-2 py-0.5 text-[11px] font-medium text-content-secondary">
             {sponsored.label || 'Sponsored'}

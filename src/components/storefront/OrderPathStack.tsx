@@ -10,6 +10,9 @@ import { Globe, Phone } from 'lucide-react'
 import ProviderLogo from '@/components/brand/ProviderLogo'
 import type { Provider, Restaurant } from '@/generated/data-model'
 import { cn } from '@/lib/utils'
+import catalog from '@/catalog/catalog.json'
+
+const pricedProviders = new Set(catalog.offers.map(offer => `${offer.restaurantId}:${offer.providerId}`))
 
 interface Props {
   restaurant: Restaurant
@@ -20,7 +23,7 @@ interface Props {
 }
 
 type OrderPath =
-  | { key: string; kind: 'provider'; provider: Provider; status?: 'covered' | 'unavailable' | 'unknown' }
+  | { key: string; kind: 'provider'; provider: Provider; hasData?: boolean; status?: 'covered' | 'unavailable' | 'unknown' }
   | { key: 'app'; kind: 'app'; url: string }
   | { key: 'phone'; kind: 'phone'; phone: string }
 
@@ -63,7 +66,7 @@ export default function OrderPathStack({ restaurant, providers, providerStatus, 
     }
   }, [openKey])
 
-  const providerPaths: OrderPath[] = providers.map((provider) => ({ key: provider.id, kind: 'provider', provider, status: providerStatus?.[provider.id] }))
+  const providerPaths: OrderPath[] = providers.map((provider) => ({ key: provider.id, kind: 'provider', provider, hasData: pricedProviders.has(`${restaurant.id}:${provider.id}`), status: providerStatus?.[provider.id] }))
   const directPaths: OrderPath[] = [
     ...(restaurant.appURL ? [{ key: 'app', kind: 'app', url: restaurant.appURL } as const] : []),
     ...(restaurant.phone ? [{ key: 'phone', kind: 'phone', phone: restaurant.phone } as const] : []),
@@ -86,7 +89,7 @@ export default function OrderPathStack({ restaurant, providers, providerStatus, 
           'relative z-(--stack-z) shrink-0 cursor-pointer ring-2 ring-page transition-[margin,transform] duration-200 ease-out hover:z-20 hover:-translate-y-0.5 focus-visible:z-20 focus-visible:outline-none focus-visible:ring-brand',
           s.tile,
           index > 0 && s.overlap,
-          path.kind === 'provider' && path.status && path.status !== 'covered' && 'opacity-45 grayscale',
+          path.kind === 'provider' && !path.hasData && path.status && path.status !== 'covered' && 'opacity-45 grayscale',
           openKey === path.key && 'z-20 -translate-y-0.5 ring-brand',
         )}
       >
@@ -118,6 +121,7 @@ export default function OrderPathStack({ restaurant, providers, providerStatus, 
 }
 
 function labelFor(path: OrderPath, restaurantName: string): string {
+  if (path.kind === 'provider' && path.hasData) return `Menu on ${providerDisplayName(path.provider)}`
   if (path.kind === 'provider') return path.status && path.status !== 'covered'
     ? `${providerDisplayName(path.provider)} coverage unavailable or unconfirmed`
     : `Available on ${providerDisplayName(path.provider)}`
@@ -158,7 +162,9 @@ function PathDetails({ path, restaurantName, badgeTile }: { path: OrderPath; res
     return (
       <div className="flex flex-col items-start gap-2">
         <p className="text-content-secondary">
-          {path.status === 'unavailable'
+          {path.hasData
+            ? 'Menu and prices on'
+            : path.status === 'unavailable'
             ? 'This provider is out of range for the selected address.'
             : path.status === 'unknown'
               ? 'Coverage for this provider is not confirmed for the selected address.'

@@ -28,3 +28,8 @@ export function availablePromotions(promotions: Promotion[], providerIds: string
       && (!promotion.restaurantNameContains || restaurantName.toLowerCase().includes(promotion.restaurantNameContains.toLowerCase()))
   })
 }
+
+/** Only restaurant offers; acquisition must explicitly classify new public offers. */
+export function restaurantPromotions(promotions: Promotion[]) {
+  return promotions.filter(p => p.restaurantNameContains && (p.id === 'dd-wendy-bogo' || p.eligibility === 'public_restaurant'))
+}

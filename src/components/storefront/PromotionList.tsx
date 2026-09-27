@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import catalog from '@/catalog/catalog.json'
-import { availablePromotions } from '@/catalog/promotions'
+import { availablePromotions, restaurantPromotions } from '@/catalog/promotions'
 
 const names: Record<string, string> = { prov_ubereats: 'Uber Eats', prov_doordash: 'DoorDash', prov_skip: 'SkipTheDishes', prov_direct: 'Restaurant app' }
 
@@ -10,7 +10,7 @@ export default function PromotionList({ providerIds, restaurantName }: { provide
     const timer = window.setInterval(() => setNow(new Date()), 60_000)
     return () => window.clearInterval(timer)
   }, [])
-  const promotions = availablePromotions(catalog.promotions, providerIds, restaurantName, now)
+  const promotions = availablePromotions(restaurantPromotions(catalog.promotions), providerIds, restaurantName, now)
   if (!promotions.length) return null
   return <details className="mt-3 rounded-lg border border-border p-3">
     <summary className="cursor-pointer text-sm font-semibold text-accent">Offers to check ({promotions.length})</summary>
