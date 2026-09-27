@@ -29,7 +29,7 @@ export default function AppLayout({ children }: AppLayoutProps) {
       mobileNavOpen,
       setMobileNavOpen,
     }}>
-      <div className="flex min-h-screen flex-col bg-page text-content">
+      <div className="flex min-h-dvh flex-col bg-page text-content">
         <Header />
         <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-5 py-8">
           {children}

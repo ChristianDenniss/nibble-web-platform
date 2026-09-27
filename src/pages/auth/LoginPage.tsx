@@ -5,6 +5,7 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Button from '@/components/buttons/Button'
+import SsoProviderIcon from '@/components/auth/SsoProviderIcon'
 import PageLoader from '@/components/layout/PageLoader'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -143,11 +144,13 @@ export default function LoginPage() {
             type="button"
             variant="secondary"
             className="w-full"
+            aria-label={provider.label}
             disabled={!providers[provider.id] || submitting}
             title={providers[provider.id] ? undefined : `${provider.label.replace('Continue with ', '')} sign-in isn't configured`}
             onClick={() => window.location.assign(ssoStartUrl(provider.id))}
           >
-            {provider.label}
+            <SsoProviderIcon provider={provider.id} className="size-5 shrink-0" />
+            <span>{provider.label}</span>
           </Button>
         ))}
       </div>
