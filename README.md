@@ -7,3 +7,7 @@ The Nibble browser UI. Vite + React app that talks to `nibble-api-engine` over H
 Domain types live in `nibble-go-data-model`. TypeScript copies are generated (`src/generated/data-model.ts`). Do not redefine restaurants, offers, accounts, or the rest here.
 
 Brand: Nibble — pastel pink + warm white + charcoal. Tokens live in `src/styles/globals.css`.
+
+## Local presentation
+
+See [PREVIEW.md](PREVIEW.md) for startup commands, restaurant coverage, image sources, and verified cart flows.

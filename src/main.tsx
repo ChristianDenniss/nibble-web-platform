@@ -12,7 +12,7 @@ if (import.meta.env.VITE_API_URL) {
 }
 
 async function boot() {
-  if (import.meta.env.DEV && import.meta.env.VITE_MOCK !== '0') {
+  if ((import.meta.env.DEV && import.meta.env.VITE_MOCK !== '0') || import.meta.env.VITE_DEMO === '1') {
     const { enableMockDev } = await import('@/dev/mock/enableMockDev')
     enableMockDev()
   }

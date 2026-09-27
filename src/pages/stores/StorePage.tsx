@@ -1,3 +1,6 @@
+import { useCartDraft } from '@/hooks/cart/useCartDraft'
+import { paths } from '@/routing/paths'
+import ItemImage from '@/components/storefront/ItemImage'
 /**
  * StorePage — single restaurant: cover, meta, provider availability, menu sections.
  * No breadcrumb; the info tip beside the name opens StoreInfoModal (hours + allergen disclaimer).
@@ -5,15 +8,13 @@
  * and tracks whichever section is currently under it (scroll-spy), never filters.
  */
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import { Clock, Info, MapPin, Star } from 'lucide-react'
 import EmptyState from '@/components/misc/EmptyState'
 import PageLoader from '@/components/layout/PageLoader'
-import CoverBlock from '@/components/storefront/CoverBlock'
 import OrderPathStack from '@/components/storefront/OrderPathStack'
 import MenuItemCard from '@/components/storefront/MenuItemCard'
 import StoreInfoModal from '@/components/storefront/StoreInfoModal'
-import { coverTone } from '@/lib/coverTone'
 import { currentAddress, restaurantCoverage, restaurantEta, restaurantProviders, useStorefront } from '@/hooks/storefront/useStorefront'
 import { restaurantDistanceKm } from '@/lib/restaurantAvailability'
 import { useDragScroll } from '@/hooks/utils/useDragScroll'
@@ -49,6 +50,7 @@ function sectionStops(names: string[], els: Map<string, HTMLElement>, offset: nu
 
 export default function StorePage() {
   const { storeId = '' } = useParams()
+  const cart = useCartDraft()
   const { loading, data, error } = useStorefront()
   const [active, setActive] = useState<string | null>(null)
   const [infoOpen, setInfoOpen] = useState(false)
@@ -142,7 +144,7 @@ export default function StorePage() {
 
   return (
     <div className="space-y-6">
-      <CoverBlock tone={coverTone(restaurant.id)} label={restaurant.name} className="h-48" />
+      <ItemImage src={restaurant.imageURL ?? ''} alt={restaurant.name} seed={restaurant.id} className="h-48 w-full rounded-2xl" />
       <div className="flex flex-col gap-3 small:flex-row small:items-end small:justify-between">
         <div>
           <div className="flex items-center gap-2">
@@ -227,6 +229,8 @@ export default function StorePage() {
           </section>
         ))}
       </div>
+      {!!cart.lines.length && <div className="sticky bottom-4 z-30 flex items-center justify-between gap-3 rounded-xl border border-border bg-surface p-4 shadow-xl"><span className="font-semibold">{cart.lines.reduce((n, line) => n + line.quantity, 0)} items in your cart</span><Link to={paths.cart} className="rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-on-brand">Review cart</Link></div>}
+      <p className="text-xs text-content-muted">Photos are illustrative; portions and presentation may vary.</p>
       <StoreInfoModal open={infoOpen} onClose={() => setInfoOpen(false)} restaurant={restaurant} />
     </div>
   )

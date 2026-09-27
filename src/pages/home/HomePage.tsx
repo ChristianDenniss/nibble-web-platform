@@ -198,6 +198,7 @@ function FeedCard({ data, restaurant, address, ...rest }: FeedCardProps & { addr
       providerStatus={providerStatuses(data, restaurant.id)}
       distanceKm={restaurantDistanceKm(restaurant, address)}
       coverage={coverage}
+      reason={restaurant.location.address}
       {...rest}
     />
   )

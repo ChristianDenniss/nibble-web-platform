@@ -93,7 +93,7 @@ export default function PromoBannerCarousel({ banners, restaurantName }: Props) 
 function BannerCard({ banner, restaurantName }: { banner: HomeBanner; restaurantName?: string }) {
   const tracking = useSponsoredTracking<HTMLAnchorElement>(banner.sponsored, 'home')
   const isSponsored = banner.sponsored != null
-  const tag = isSponsored ? banner.sponsored?.label || 'Sponsored' : 'Deal'
+  const tag = isSponsored ? banner.sponsored?.label || 'Sponsored' : banner.deal ? 'Deal' : 'Explore'
   const to = banner.restaurantId ? paths.store(banner.restaurantId) : paths.home
 
   return (

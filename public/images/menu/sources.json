@@ -1,0 +1,122 @@
+{
+  "bigmac": {
+    "file": "/images/menu/bigmac.png",
+    "url": "https://www.mcdonalds.at/wp-content/uploads/2021/09/web-neu-1500x1500-core-big-mac-1-480x480.png",
+    "illustrative": true
+  },
+  "mcchicken": {
+    "file": "/images/menu/mcchicken.jpg",
+    "url": "https://s7d1.scene7.com/is/image/mcdonaldsstage/mcchicken-7?dpr=off&hei=480&wid=424",
+    "illustrative": true
+  },
+  "nuggets": {
+    "file": "/images/menu/nuggets.jpg",
+    "url": "https://cdn.hercampus.com/SH6M70M3/as/q2xyha-6heiqo-et3x6u/Alex_Frank-ChickenNuggets2?auto=webp&dpr=1&fit=crop&height=400&width=600",
+    "illustrative": true
+  },
+  "fries": {
+    "file": "/images/menu/fries.jpg",
+    "url": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "drink": {
+    "file": "/images/menu/drink.jpg",
+    "url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "dessert": {
+    "file": "/images/menu/dessert.jpg",
+    "url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "coffee": {
+    "file": "/images/menu/coffee.jpg",
+    "url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "wrap": {
+    "file": "/images/menu/wrap.jpg",
+    "url": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "taco-cutout": {
+    "file": "/images/menu/taco-cutout.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2017/10/taco-cutout.png",
+    "illustrative": true
+  },
+  "burrito-cutout": {
+    "file": "/images/menu/burrito-cutout.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2017/10/burrito-cutout.png",
+    "illustrative": true
+  },
+  "churros-stuffed": {
+    "file": "/images/menu/churros-stuffed.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2017/12/churros-stuffed-768x648.png",
+    "illustrative": true
+  },
+  "nachos": {
+    "file": "/images/menu/nachos.jpg",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2022/05/NACHOS-768x403.jpg",
+    "illustrative": true
+  },
+  "burrito-bowl": {
+    "file": "/images/menu/burrito-bowl.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Burrito-Bowl-768x1366.png",
+    "illustrative": true
+  },
+  "quesadilla": {
+    "file": "/images/menu/quesadilla.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Quesadilla-768x1366.png",
+    "illustrative": true
+  },
+  "taco-pocket": {
+    "file": "/images/menu/taco-pocket.png",
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Taco-Pocket-768x1366.png",
+    "illustrative": true
+  },
+  "pizza": {
+    "file": "/images/menu/pizza.jpg",
+    "url": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "burger": {
+    "file": "/images/menu/burger.jpg",
+    "url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "salad": {
+    "file": "/images/menu/salad.jpg",
+    "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "wings": {
+    "file": "/images/menu/wings.jpg",
+    "url": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "sandwich": {
+    "file": "/images/menu/sandwich.jpg",
+    "url": "https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "chicken": {
+    "file": "/images/menu/chicken.jpg",
+    "url": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "soup": {
+    "file": "/images/menu/soup.jpg",
+    "url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "fish": {
+    "file": "/images/menu/fish.jpg",
+    "url": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=85&auto=format&fit=crop",
+    "illustrative": true
+  },
+  "water": {
+    "file": "/images/menu/water.jpg",
+    "url": "https://cdn3.didevelop.com/public/cdn/533_09156af830eb29605c45534bf0cb48a3.jpg",
+    "illustrative": true
+  }
+}

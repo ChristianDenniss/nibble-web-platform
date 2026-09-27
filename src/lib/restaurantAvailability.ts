@@ -7,6 +7,7 @@ function toRadians(degrees: number): number {
 }
 
 export function distanceKm(from: Location, to: Location): number | null {
+  if ((from.latitude === 0 && from.longitude === 0) || (to.latitude === 0 && to.longitude === 0)) return null
   if (![from.latitude, from.longitude, to.latitude, to.longitude].every(Number.isFinite)) return null
   const latitudeDelta = toRadians(to.latitude - from.latitude)
   const longitudeDelta = toRadians(to.longitude - from.longitude)
