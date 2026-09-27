@@ -18,7 +18,7 @@ export function isMockDevEnabled(): boolean {
 }
 
 export function enableMockDev(): void {
-  if (!import.meta.env.DEV) return
+  if (!import.meta.env.DEV && import.meta.env.VITE_DEMO !== '1') return
   if (import.meta.env.VITE_MOCK === '0') return
   if (installed) return
   installed = true

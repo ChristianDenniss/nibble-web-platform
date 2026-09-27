@@ -1,3 +1,4 @@
+import catalog from '@/catalog/catalog.json'
 /**
  * URL matchers for the DEV mock adapter.
  * Keep this the only place that knows which /api paths the catalog can answer.
@@ -101,44 +102,8 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
     return { status: 202, data: { status: 'accepted' } }
   }
 
-  if (method === 'post' && path === '/api/v1/compare') {
-    return {
-      status: 200,
-      data: {
-        compare_session_id: 'cmp_demo_koi_2026',
-        observed_at: '2026-09-26T20:00:00Z',
-        place: { id: 'pl_demo', name: 'Koi Sushi' },
-        paths_ranked: 3,
-        recommendation: {
-          purchase_option_id: 'ppo_skip_koi', rank: 1, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'high',
-          all_in: { amount_cents: 1847, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_skip',
-          provider_id: 'prov_skip', provider_name: 'SkipTheDishes', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
-          item_subtotal: { amount_cents: 1499, currency: 'CAD' },
-          fees: [{ kind: 'delivery', amount: { amount_cents: 299, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 149, currency: 'CAD' } }],
-          discounts: [{ scope: 'provider', label: 'Skip delivery credit', amount: { amount_cents: 100, currency: 'CAD' } }],
-          delivery_cost: { amount_cents: 299, currency: 'CAD' }, service_fee: { amount_cents: 149, currency: 'CAD' }, eta_minutes: 28,
-          handoff_url: 'https://www.skipthedishes.com/',
-          rationale_bullets: ['Lowest all-in total', 'Free pickup is not available for this demo', 'High-confidence quote observed'],
-        },
-        runners_up: [
-          {
-            purchase_option_id: 'ppo_doordash_koi', rank: 3, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'high',
-            all_in: { amount_cents: 2247, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_doordash',
-            provider_id: 'prov_doordash', provider_name: 'DoorDash', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
-            item_subtotal: { amount_cents: 1649, currency: 'CAD' }, fees: [{ kind: 'delivery', amount: { amount_cents: 399, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 199, currency: 'CAD' } }], discounts: [], eta_minutes: 32,
-            handoff_url: 'https://www.doordash.com/', rationale_bullets: ['Same dish, higher menu price', 'Standard delivery estimate'],
-          },
-          {
-            purchase_option_id: 'ppo_uber_koi', rank: 2, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'medium',
-            all_in: { amount_cents: 2157, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_ubereats',
-            provider_id: 'prov_ubereats', provider_name: 'Uber Eats', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
-            item_subtotal: { amount_cents: 1579, currency: 'CAD' }, fees: [{ kind: 'delivery', amount: { amount_cents: 499, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 229, currency: 'CAD' } }], discounts: [{ scope: 'store', label: 'Koi Sushi loyalty offer', amount: { amount_cents: 150, currency: 'CAD' } }], eta_minutes: 30,
-            handoff_url: 'https://www.ubereats.com/', rationale_bullets: ['Lower menu price than DoorDash', 'Highest delivery cost today'],
-          },
-        ],
-        unavailable_paths: [],
-      },
-    }
+  if (method === 'get' && path === '/api/v1/serviceability/restaurants') {
+    return { status: 200, data: { restaurants: mockCatalog.restaurants.map(restaurant => ({ restaurantId: restaurant.id, paths: ((catalog.providerIds as Record<string, string[]>)[restaurant.id] ?? []).map(providerId => ({ providerId, sourceStoreId: `${restaurant.id}_${providerId}`, deliverable: false, status: 'unknown', reason: 'Confirm delivery availability in the provider app' })) })) } }
   }
 
   if (method === 'get') {

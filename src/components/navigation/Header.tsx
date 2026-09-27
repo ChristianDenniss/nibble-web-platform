@@ -1,3 +1,4 @@
+import { useCartDraft } from '@/hooks/cart/useCartDraft'
 /**
  * Header — storefront top bar: wordmark, location picker, search, cart, account.
  * On the small tier the search row sits under the bar and a menu lists the rest.
@@ -40,7 +41,7 @@ export default function Header() {
 
   const address = storefront.data ? currentAddress(storefront.data) : null
   const addresses = storefront.data?.account.addresses ?? []
-  const cartCount = storefront.data?.cart.lines.reduce((sum, line) => sum + line.quantity, 0) ?? 0
+  const cartCount = useCartDraft().lines.reduce((sum, line) => sum + line.quantity, 0)
 
   const submitSearch = (event: FormEvent) => {
     event.preventDefault()
