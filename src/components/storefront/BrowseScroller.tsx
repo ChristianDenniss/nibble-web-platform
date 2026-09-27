@@ -14,7 +14,7 @@ export default function BrowseScroller({ label, children }: Props) {
   const dragScroll = useDragScroll<HTMLDivElement>()
   return (
     <section aria-label={label}>
-      <div ref={dragScroll} className="-mx-5 flex scroll-px-5 gap-3 overflow-x-auto overscroll-x-contain px-5 pb-1 scrollbar-none">
+      <div ref={dragScroll} className="-mx-5 flex snap-x snap-proximity scroll-pl-5 scroll-pr-8 gap-3 overflow-x-auto overscroll-x-contain pl-5 pr-8 pb-1 scrollbar-none">
         {children}
       </div>
     </section>

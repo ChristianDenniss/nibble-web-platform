@@ -74,6 +74,9 @@ export default function LoginPage() {
 
   return (
     <section className="w-full max-w-md rounded-xl border border-border bg-surface p-6 shadow-sm">
+      <Link to={paths.home} aria-label="Back to browsing" title="Back to browsing" className="mb-3 inline-flex size-10 items-center justify-center rounded-full text-2xl font-medium text-accent hover:bg-brand/10">
+        ←
+      </Link>
       <p className="text-sm font-medium uppercase tracking-wide text-content-muted">Account</p>
       <h1 className="mt-1 text-2xl font-semibold tracking-tight text-content">
         {isSignup ? 'Create an account' : 'Welcome back'}

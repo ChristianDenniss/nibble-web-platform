@@ -78,7 +78,6 @@ function HomeFeedView() {
     ]),
   )
   const cuisineCandidates = data.cuisines
-    .filter((cuisine) => cuisine.slug !== 'bbq')
     .map((cuisine, originalOrder) => ({ cuisine, originalOrder }))
     .sort((a, b) =>
       (cuisinePopularity.get(b.cuisine.id) ?? 0) - (cuisinePopularity.get(a.cuisine.id) ?? 0)
@@ -96,9 +95,9 @@ function HomeFeedView() {
     previousCuisineTone = coverTone(next.cuisine.id)
   }
   const breakfastIndex = popularCuisines.findIndex((cuisine) => cuisine.slug === 'breakfast')
-  const displayedCuisines = breakfastIndex < 0
-    ? popularCuisines
-    : popularCuisines.slice(0, breakfastIndex + 1)
+  const homeCuisines = breakfastIndex < 0
+    ? popularCuisines.slice(0, -1)
+    : popularCuisines.slice(0, breakfastIndex)
 
   return (
     <div className="space-y-10 xl:-mx-6">
@@ -109,15 +108,15 @@ function HomeFeedView() {
 
         {data.cuisines.length > 0 && (
           <section>
-            <SectionHeader title="Cuisines" />
+            <SectionHeader title="Cuisines" to={paths.cuisines} />
             <BrowseScroller label="Cuisines">
-              {displayedCuisines.map((cuisine) => (
+              {homeCuisines.map((cuisine) => (
                 <CategoryTile
                   key={cuisine.id}
                   item={cuisine}
                   to={paths.cuisine(cuisine.slug)}
                   variant="compact"
-                  className="shrink-0"
+                  className="flex-none snap-start"
                 />
               ))}
             </BrowseScroller>
