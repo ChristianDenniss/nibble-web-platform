@@ -2,7 +2,7 @@
  * PromoBannerCarousel — top-of-home promo strip.
  * Every banner is tagged: "Sponsored" (paid placement) or "Deal" (organic promotion).
  */
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ChevronLeft, ChevronRight, Tag } from 'lucide-react'
 import { useSponsoredTracking } from '@/hooks/home/useSponsoredEvents'
@@ -18,12 +18,59 @@ interface Props {
 
 export default function PromoBannerCarousel({ banners, restaurantName }: Props) {
   const scroller = useRef<HTMLDivElement>(null)
+  const programmaticScroll = useRef(false)
   const dragScroll = useDragScroll(scroller)
+  const [canGoBack, setCanGoBack] = useState(false)
+  const [canGoForward, setCanGoForward] = useState(false)
+
+  useEffect(() => {
+    const node = scroller.current
+    if (!node) return
+
+    const updateButtons = () => {
+      setCanGoBack(node.scrollLeft > 1)
+      setCanGoForward(node.scrollLeft + node.clientWidth < node.scrollWidth - 1)
+    }
+    const onScroll = () => {
+      if (!programmaticScroll.current) updateButtons()
+    }
+    const onScrollEnd = () => {
+      programmaticScroll.current = false
+      updateButtons()
+    }
+
+    updateButtons()
+    node.addEventListener('scroll', onScroll, { passive: true })
+    node.addEventListener('scrollend', onScrollEnd)
+    const resizeObserver = new ResizeObserver(updateButtons)
+    resizeObserver.observe(node)
+    return () => {
+      node.removeEventListener('scroll', onScroll)
+      node.removeEventListener('scrollend', onScrollEnd)
+      resizeObserver.disconnect()
+    }
+  }, [banners.length])
+
   if (banners.length === 0) return null
 
-  const scrollBy = (direction: 1 | -1) => {
+  const movePage = (direction: 1 | -1) => {
     const node = scroller.current
-    if (node) node.scrollBy({ left: direction * node.clientWidth * 0.8, behavior: 'smooth' })
+    if (!node) return
+
+    const firstCard = node.firstElementChild
+    const cardWidth = firstCard?.getBoundingClientRect().width ?? 0
+    const gap = Number.parseFloat(getComputedStyle(node).columnGap) || 0
+    const step = (cardWidth + gap) * 4
+    const maxScroll = node.scrollWidth - node.clientWidth
+    const left = direction > 0 && banners.length < 8 && node.scrollLeft < 1
+      ? maxScroll
+      : node.scrollLeft + direction * step
+    const targetLeft = Math.max(0, Math.min(maxScroll, left))
+
+    programmaticScroll.current = true
+    setCanGoBack(targetLeft > 1)
+    setCanGoForward(targetLeft < maxScroll - 1)
+    node.scrollTo({ left: targetLeft, behavior: 'smooth' })
   }
 
   return (
@@ -33,11 +80,11 @@ export default function PromoBannerCarousel({ banners, restaurantName }: Props) 
           <BannerCard key={banner.id} banner={banner} restaurantName={restaurantName(banner.restaurantId)} />
         ))}
       </div>
-      {banners.length > 2 && (
-        <>
-          <ArrowButton side="left" onClick={() => scrollBy(-1)} />
-          <ArrowButton side="right" onClick={() => scrollBy(1)} />
-        </>
+      {banners.length > 4 && canGoBack && (
+        <ArrowButton side="left" onClick={() => movePage(-1)} />
+      )}
+      {banners.length > 4 && canGoForward && (
+        <ArrowButton side="right" onClick={() => movePage(1)} />
       )}
     </section>
   )
@@ -55,7 +102,7 @@ function BannerCard({ banner, restaurantName }: { banner: HomeBanner; restaurant
       to={to}
       onClick={tracking.onClick}
       className={cn(
-        'relative flex h-44 w-[85%] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-5 transition-opacity hover:opacity-95 small:w-[26rem]',
+        'relative flex h-44 w-full shrink-0 basis-full flex-col justify-between overflow-hidden rounded-2xl p-5 transition-opacity hover:opacity-95 small:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]',
         isSponsored ? 'bg-content text-surface' : 'bg-brand text-on-brand',
       )}
     >
@@ -106,11 +153,11 @@ function ArrowButton({ side, onClick }: { side: 'left' | 'right'; onClick: () =>
       aria-label={side === 'left' ? 'Previous promotions' : 'Next promotions'}
       onClick={onClick}
       className={cn(
-        'absolute top-1/2 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface text-content shadow-md transition-colors hover:bg-surface-raised small:inline-flex',
-        side === 'left' ? '-left-3' : '-right-3',
+        'absolute top-1/2 z-20 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-surface/95 text-content shadow-md backdrop-blur transition-colors hover:bg-surface-raised',
+        side === 'left' ? 'left-2' : 'right-2',
       )}
     >
-      <Icon size={18} />
+      <Icon size={22} />
     </button>
   )
 }

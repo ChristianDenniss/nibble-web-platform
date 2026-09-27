@@ -29,7 +29,7 @@ import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-mo
 import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
 
 const FASTEST_LIMIT = 8
-const RAIL_CARD_CLASS = 'w-[calc(100vw-3rem)] shrink-0 small:w-72'
+const RAIL_CARD_CLASS = 'min-w-0'
 
 export default function HomePage() {
   const { status } = useAuth()
