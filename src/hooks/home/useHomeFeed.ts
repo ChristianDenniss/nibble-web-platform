@@ -13,13 +13,23 @@ export interface HomeFeedState {
   error: string | null
 }
 
+let homeFeedRequest: Promise<{ data: HomeFeed }> | null = null
+
+function getHomeFeedRequest() {
+  homeFeedRequest ??= axios.get<HomeFeed>('/api/v1/home')
+  return homeFeedRequest
+}
+
+export function preloadHomeFeed(): void {
+  void getHomeFeedRequest()
+}
+
 export function useHomeFeed(): HomeFeedState {
   const [state, setState] = useState<HomeFeedState>({ loading: true, feed: null, error: null })
 
   useEffect(() => {
     let cancelled = false
-    axios
-      .get<HomeFeed>('/api/v1/home')
+    getHomeFeedRequest()
       .then((response) => {
         if (!cancelled) setState({ loading: false, feed: response.data, error: null })
       })

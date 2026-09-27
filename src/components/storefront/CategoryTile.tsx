@@ -47,11 +47,11 @@ export default function CategoryTile({ item, to, variant = 'icon', invertColors 
 
   if (variant === 'compact') {
     return (
-      <Link to={to} className={cn('group flex min-w-16 flex-col items-center gap-1', className)}>
+      <Link to={to} className={cn('group flex min-w-[4.25rem] flex-col items-center gap-1', className)}>
         <CoverBlock
           tone={coverTone(item.id)}
-          icon={<Icon size={24} strokeWidth={1.75} />}
-          className={cn('size-16 rounded-full transition-opacity group-hover:opacity-90', coverStyle)}
+          icon={<Icon size={26} strokeWidth={1.75} />}
+          className={cn('size-[4.25rem] rounded-full transition-opacity group-hover:opacity-90', coverStyle)}
         />
         <span className="whitespace-nowrap text-center text-xs font-medium leading-tight text-content">{item.name}</span>
       </Link>

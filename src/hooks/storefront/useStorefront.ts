@@ -55,6 +55,31 @@ interface RestaurantPageResponse {
   data: Restaurant[]
 }
 
+let storefrontRequest: Promise<{ data: StorefrontData }> | null = null
+let restaurantsRequest: Promise<{ data: RestaurantPageResponse }> | null = null
+
+function getStorefrontRequest() {
+  storefrontRequest ??= axios.get<StorefrontData>('/api/v1/storefront')
+  return storefrontRequest
+}
+
+function getRestaurantsRequest() {
+  restaurantsRequest ??= axios.get<RestaurantPageResponse>('/api/v1/restaurants', { params: { page: 1, pageSize: 100 } })
+  return restaurantsRequest
+}
+
+/** Start the home data requests while the startup screen is still visible. */
+export function preloadStorefront(): void {
+  void getStorefrontRequest()
+  void getRestaurantsRequest()
+}
+
+/** Auth changes account-scoped storefront data, so guest data must not be reused. */
+export function clearStorefrontPreload(): void {
+  storefrontRequest = null
+  restaurantsRequest = null
+}
+
 function normalizeRestaurant(restaurant: Restaurant): Restaurant {
   return {
     ...restaurant,
@@ -103,11 +128,11 @@ export function useStorefront(options: UseStorefrontOptions = {}): StorefrontSta
     let cancelled = false
     setState((current) => ({ ...current, loading: true, error: null }))
 
-    const bootstrapRequest = axios.get<StorefrontData>('/api/v1/storefront', {
-      params: options.lightweight ? { lightweight: true } : undefined,
-    })
+    const bootstrapRequest = options.lightweight
+      ? axios.get<StorefrontData>('/api/v1/storefront', { params: { lightweight: true } })
+      : getStorefrontRequest()
     const restaurantsRequest = options.includeRestaurants
-      ? axios.get<RestaurantPageResponse>('/api/v1/restaurants', { params: { page: 1, pageSize: 100 } })
+      ? getRestaurantsRequest()
       : Promise.resolve(null)
 
     Promise.all([bootstrapRequest, restaurantsRequest])

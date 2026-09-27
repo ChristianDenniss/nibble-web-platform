@@ -1,4 +1,4 @@
-import { lazy, Suspense, useCallback, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
 import StartupScreen from '@/components/brand/StartupScreen'
 import { Routes, Route, Outlet } from 'react-router-dom'
 import AppLayout from '@/components/layout/AppLayout'
@@ -8,6 +8,9 @@ import ErrorBoundary from '@/components/misc/ErrorBoundary'
 import { paths } from '@/routing/paths'
 import RequireAuth from '@/routing/RequireAuth'
 import RequireAdmin from '@/routing/RequireAdmin'
+import { useAuth } from '@/hooks/auth/authStore'
+import { preloadHomeFeed } from '@/hooks/home/useHomeFeed'
+import { preloadStorefront } from '@/hooks/storefront/useStorefront'
 
 const HomePage = lazy(() => import('@/pages/home/HomePage'))
 const LoginPage = lazy(() => import('@/pages/auth/LoginPage'))
@@ -66,11 +69,17 @@ export function App() {
   const [started, setStarted] = useState(() => {
     try { return sessionStorage.getItem('nibble.startupComplete') === '1' } catch { return false }
   })
+  const { status } = useAuth()
   const finishStartup = useCallback(() => {
     try { sessionStorage.setItem('nibble.startupComplete', '1') } catch { /* Continue without storage. */ }
     setStarted(true)
   }, [])
-  if (!started) return <ErrorBoundary><StartupScreen onComplete={finishStartup} /></ErrorBoundary>
+  useEffect(() => {
+    preloadStorefront()
+    preloadHomeFeed()
+  }, [])
+  if (status === 'loading') return <PageLoader />
+  if (status === 'guest' && !started) return <ErrorBoundary><StartupScreen onComplete={finishStartup} /></ErrorBoundary>
   return (
     <ErrorBoundary>
       <Routes>

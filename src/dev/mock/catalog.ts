@@ -46,9 +46,9 @@ export const mockProviders: Provider[] = [
 ]
 export const mockCategories: Category[] = [{ id: 'cat_food', slug: 'food', name: 'Food', description: 'Restaurants near you' }]
 export const mockCuisines: Cuisine[] = [
-  'Sushi', 'Pizza', 'Burgers', 'Mexican', 'Indian', 'Coffee', 'Healthy', 'Dessert',
-  'Chinese', 'Thai', 'Seafood', 'Sandwiches', 'Wings', 'Breakfast', 'Vegan', 'Donuts',
-  'Shawarma', 'Chicken',
+  'Burgers', 'Mexican', 'Pizza', 'Shawarma', 'Chicken', 'Sushi', 'Indian', 'Coffee',
+  'Healthy', 'Dessert', 'Chinese', 'Thai', 'Seafood', 'Sandwiches', 'Wings', 'Breakfast',
+  'Vegan', 'Donuts',
 ].map(name => ({ id: `cui_${name.toLowerCase()}`, slug: name.toLowerCase(), name }))
 export const mockRestaurants: Restaurant[] = catalog.restaurants
 export const mockItems: Item[] = catalog.items
@@ -87,7 +87,7 @@ export const mockHomeFeed: HomeFeed = {
     {
       kind: 'sponsored',
       title: 'Featured near you',
-      items: mockFeedItems(mockRestaurants.slice(0, 3), 'Featured partner', { sponsored: mockSponsored, deal: null }),
+      items: mockFeedItems(mockRestaurants.slice(0, 3), '', { sponsored: mockSponsored, deal: null }),
     },
     {
       kind: 'deals',

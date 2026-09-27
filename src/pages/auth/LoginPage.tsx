@@ -53,7 +53,9 @@ export default function LoginPage() {
   }, [ssoError])
 
   if (status === 'loading') return <PageLoader />
-  if (status === 'authenticated' && !submitting) return <Navigate to={redirectTo} replace />
+  if (status === 'authenticated' && !submitting) {
+    return <Navigate to={paths.welcome} state={{ locationRequired: true, from: redirectTo }} replace />
+  }
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -61,7 +63,7 @@ export default function LoginPage() {
     try {
       if (isSignup) await signUp(name, email, password)
       else await login(email, password)
-      navigate(redirectTo, { replace: true })
+      navigate(paths.welcome, { replace: true, state: { locationRequired: true, from: redirectTo } })
     } catch (err: unknown) {
       notify.error(extractAxiosError(err, isSignup ? 'Could not create your account.' : 'Could not log you in.'))
       setSubmitting(false)

@@ -341,7 +341,7 @@
     {
       "id": "catalog-ss_skip_e2b1be6dedfe3181f175cbe8",
       "name": "Cannon's Cross Pub",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-1897d9d79159.jpg",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -471,7 +471,7 @@
     {
       "id": "catalog-ss_doordash_37817609",
       "name": "Country fried",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-9beea61f3578.png",
       "location": {
         "latitude": 45.96038999967277,
         "longitude": -66.65584906004369,
@@ -783,7 +783,7 @@
     {
       "id": "catalog-ss_ubereats_7026de2282a35b77702a31ea",
       "name": "Gahan House Riverside",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/gahan-riverside.png",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -1433,7 +1433,7 @@
     {
       "id": "catalog-ss_doordash_32789245",
       "name": "Mosey's Southern BBQ",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-91dffec1f9e8.png",
       "location": {
         "latitude": 45.938275,
         "longitude": -66.659807,
@@ -1693,7 +1693,7 @@
     {
       "id": "catalog-ss_doordash_36209643",
       "name": "Philthy Wings",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-1091335cc74a.png",
       "location": {
         "latitude": 45.931748,
         "longitude": -66.66289,
@@ -1745,11 +1745,11 @@
     {
       "id": "catalog-ss_doordash_25576438",
       "name": "Pizza Delight",
-      "imageURL": "/images/menu/pizza.jpg",
+      "imageURL": "/images/restaurants/pizza-delight-circle.jpg",
       "location": {
         "latitude": 0,
         "longitude": 0,
-        "address": "Fredericton \u00b7 address unavailable",
+        "address": "Fredericton · address unavailable",
         "city": "Fredericton",
         "region": "NB",
         "postalCode": ""
@@ -1848,7 +1848,7 @@
     },
     {
       "id": "catalog-ss_doordash_30359691",
-      "name": "Pizza Salvator\u00e9",
+      "name": "Pizza Salvatoré",
       "imageURL": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1200,height=672,format=auto/https://doordash-static.s3.amazonaws.com/media/restaurant/cover/580e3593-02b1-4606-bd59-5bbf58410b11.png",
       "location": {
         "latitude": 45.976157,
@@ -1875,7 +1875,7 @@
     {
       "id": "catalog-ss_skip_f81d3fac29795440f44be8ab",
       "name": "Pizza Shack",
-      "imageURL": "/images/menu/pizza.jpg",
+      "imageURL": "/images/restaurants/logo-d6d70346588a.png",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -2109,7 +2109,7 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "St-Hubert (22 Trinity Ave)",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-27c8a1998cae.jpg",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -2395,7 +2395,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
       "name": "Thai Manao (Trinity Ave)",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-cbe471310b06.png",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -2837,7 +2837,7 @@
     {
       "id": "catalog-ss_doordash_24875523",
       "name": "Yassou souvlaki & donair",
-      "imageURL": "/images/menu/burger.jpg",
+      "imageURL": "/images/restaurants/logo-dfb438487911.png",
       "location": {
         "latitude": 45.940849,
         "longitude": -66.65728,
@@ -2863,7 +2863,7 @@
     {
       "id": "catalog-direct-luna-king",
       "name": "Luna Pizza (379 King Street)",
-      "imageURL": "/images/menu/pizza.jpg",
+      "imageURL": "/images/restaurants/cc7997dcda64cdb6.png",
       "location": {
         "latitude": 0,
         "longitude": 0,
@@ -3931,16 +3931,16 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_963779639c94",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Pistachio Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue20226\u2020L Large\ue201 One sip and we bet you\u2019ll be saying, \u2018what the frapp\u00e9?!\u2019 Made with\u2026",
+      "name": "Pistachio Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-359eae799f0b19123539.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_073f6dbf5a45",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Salted Caramel Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue20226\u2020L Large\ue201 One sip and we bet you\u2019ll be saying, \u2018what the frapp\u00e9?!\u2019 Made with\u2026",
+      "name": "Salted Caramel Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-2786a69d1258fcf410ec.jpeg"
     },
@@ -4131,7 +4131,7 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_d809636a23e3",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Egg \u2018N Cheese McMuffin",
+      "name": "Egg ‘N Cheese McMuffin",
       "description": "",
       "section": "All Day Breakfast",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a8c9316b994795844b11.jpeg"
@@ -4139,7 +4139,7 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_292a013f0b05",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Egg \u2018N Cheese McMuffin Extra Value Meal",
+      "name": "Egg ‘N Cheese McMuffin Extra Value Meal",
       "description": "",
       "section": "All Day Breakfast",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f1ee0917f0ddbb7efe74.jpeg"
@@ -4491,7 +4491,7 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_091c342012bd",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Coffee Frapp\u00e9 w/ Whipped Cream & Choc Drizzle",
+      "name": "Coffee Frappé w/ Whipped Cream & Choc Drizzle",
       "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-714f1eb16c4fa0fa59f4.jpeg"
@@ -4499,7 +4499,7 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_37da9a50b65a",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "VanChai Frapp\u00e9 w/ Whipped Cream & Choc Drizzle",
+      "name": "VanChai Frappé w/ Whipped Cream & Choc Drizzle",
       "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c577462b6ffab0c9c015.jpeg"
@@ -4507,16 +4507,16 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_85c699ecc08b",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20226\u2020L Large\ue201 Coffee Frapp\u00e9 is made with the great taste of 100% Arabica beans in\u2026",
+      "name": "Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-536b8f1a5a74ab7fd3ec.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_ac79cfd0165d",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Vanilla Chai Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020S Small\ue201 * \ue200cite\ue20226\u2020M Medium\ue201 * \ue200cite\ue20227\u2020L Large\ue201 Vanilla Chai Iced Frapp\u00e9 is made with the refreshingly exotic combination of vanilla\u2026",
+      "name": "Vanilla Chai Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-d623cc0365e82a9f0015.jpeg"
     },
@@ -4763,7 +4763,7 @@
     {
       "id": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c_42c86eab53de",
       "restaurantId": "catalog-ss_ubereats_b516b917b6ed6c6e5c3ba08c",
-      "name": "Toasted S\u2019mores Cookie",
+      "name": "Toasted S’mores Cookie",
       "description": "",
       "section": "Bakery & Sweets & Treats",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-551b47ded437741fcddf.jpeg"
@@ -7211,8 +7211,8 @@
     {
       "id": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8_2c69c321baa0",
       "restaurantId": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8",
-      "name": "Mixed Berry with A\u00e7a\u00ed Smoothie",
-      "description": "Enjoy the tropical taste of a\u00e7a\u00ed and real strawberry and blueberry fruit puree, blended with ice. (300 Cals)",
+      "name": "Mixed Berry with Açaí Smoothie",
+      "description": "",
       "section": "Brew Bar",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ddf20d1fda96852f439d.png"
     },
@@ -7235,8 +7235,8 @@
     {
       "id": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8_a06406b0efee",
       "restaurantId": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8",
-      "name": "Mixed Berry with A\u00e7a\u00ed Shake",
-      "description": "Enjoy the tropical taste of a\u00e7a\u00ed and real strawberry and blueberry fruit puree, blended with ice and sweet cream made with 100% Canadian dairy. (430 Cals)",
+      "name": "Mixed Berry with Açaí Shake",
+      "description": "",
       "section": "Brew Bar",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-68b609c279f3421e5711.png"
     },
@@ -7259,8 +7259,8 @@
     {
       "id": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8_a767146dec33",
       "restaurantId": "catalog-ss_ubereats_2259a671ddd4edbf20b29bf8",
-      "name": "Mixed Berry with A\u00e7a\u00ed Icer",
-      "description": "A refreshing beverage with the tropical taste of a\u00e7a\u00ed, real strawberry and blueberry fruit pur\u00e9e, served over ice. (180 Cals)",
+      "name": "Mixed Berry with Açaí Icer",
+      "description": "",
       "section": "Brew Bar",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-8f5f9ad766a45321ef8b.png"
     },
@@ -8011,8 +8011,8 @@
     {
       "id": "catalog-ss_ubereats_c06d23dc00a1aad196224fff_e72ebc2025b1",
       "restaurantId": "catalog-ss_ubereats_c06d23dc00a1aad196224fff",
-      "name": "Hummus N\u2019 Pita",
-      "description": "Homemade grinded chickpeas made in-house with a pita.",
+      "name": "Hummus N’ Pita",
+      "description": "",
       "section": "Side Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-592e8b916694eae419ec.jpeg"
     },
@@ -8715,7 +8715,7 @@
     {
       "id": "catalog-ss_ubereats_9b3e884cdcf95fc2be4b7377_7e914f1e5481",
       "restaurantId": "catalog-ss_ubereats_9b3e884cdcf95fc2be4b7377",
-      "name": "Canel\u00e9",
+      "name": "Canelé",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/chicken.jpg"
@@ -11091,16 +11091,16 @@
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_032288d288da",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
-      "name": "4 Pc. Jalape\u00f1o Cheesy Bites",
-      "description": "Jalape\u00f1o Cheesy Bites consist of crispy, golden bites filled with gooey cheddar cheese and spicy jalape\u00f1o pieces. 4 pieces included.",
+      "name": "4 Pc. Jalapeño Cheesy Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-520a0ef7c4b5e5933dba.png"
     },
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_f36e9a2bc138",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
-      "name": "8 Pc. Jalape\u00f1o Cheesy Bites",
-      "description": "Jalape\u00f1o Cheesy Bites consist of crispy, golden bites filled with gooey cheddar cheese and spicy jalape\u00f1o pieces. 8 pieces included.",
+      "name": "8 Pc. Jalapeño Cheesy Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-92854744873c46674bea.png"
     },
@@ -12188,24 +12188,24 @@
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_b01e37d24dd7",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
       "name": "Cheeseburger King Jr. Meal",
-      "description": "The Cheeseburger King Jr.\u00ae Meal includes a Cheeseburger, a choice of a kid's side, and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0d3e834807f946d76261.png"
     },
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_06e45b4e2005",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
       "name": "Hamburger King Jr. Meal",
-      "description": "The Hamburger King Jr.\u00ae Meal includes a Hamburger, a choice of a kid's side, and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e4cdc08bda5ade7ab545.png"
     },
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_f18d8d1f5feb",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
       "name": "4 Pc. Chicken Nuggets King Jr. Meal",
-      "description": "The Chicken Nuggets King Jr.\u00ae Meal features four bite-sized nuggets made with tender, seasoned white meat and lightly coated in a seasoned home-style breading. Served with a choice of a kid's side and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e0a58833b2b56eaa65ec.png"
     },
     {
@@ -12539,8 +12539,8 @@
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_9b81dfc0d0d0",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
-      "name": "HERSHEY\u2019S Chocolate Sundae",
-      "description": "Cool and creamy, the made-to-order HERSHEY\u2019S\u00ae Chocolate Sundae is prepared with velvety Vanilla Soft Serve and finished with a delicious chocolate fudge swirl.",
+      "name": "HERSHEY’S Chocolate Sundae",
+      "description": "",
       "section": "Sweets",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4a6ebc64d972e0e5f99e.png"
     },
@@ -12579,8 +12579,8 @@
     {
       "id": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081_7868855340e0",
       "restaurantId": "catalog-ss_skip_91a4ccbfc1b80e85c7e9f081",
-      "name": "HERSHEY\u2019S Sundae Pie",
-      "description": "Say hello to the HERSHEY\u2019S\u00a0Sundae Pie. One part crunchy chocolate crust and one part chocolate cr\u00e8me filling, garnished with a delicious topping of fudge drizzle and real HERSHEY\u2019S Chocolate Chips.",
+      "name": "HERSHEY’S Sundae Pie",
+      "description": "",
       "section": "Sweets",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1a61f57a75617fbb4200.png"
     },
@@ -12683,8 +12683,8 @@
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_7868855340e0",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
-      "name": "HERSHEY\u2019S Sundae Pie",
-      "description": "Say hello to the HERSHEY\u2019S\u00a0Sundae Pie. One part crunchy chocolate crust and one part chocolate cr\u00e8me filling, garnished with a delicious topping of fudge drizzle and real HERSHEY\u2019S Chocolate Chips.",
+      "name": "HERSHEY’S Sundae Pie",
+      "description": "",
       "section": "Most Ordered",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1a61f57a75617fbb4200.png"
     },
@@ -12803,7 +12803,7 @@
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_0da09729f937",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
-      "name": "Jalape\u00f1o Cheesy Bites",
+      "name": "Jalapeño Cheesy Bites",
       "description": "",
       "section": "Limited Time Only",
       "imageURL": "/images/menu/chicken.jpg"
@@ -13251,16 +13251,16 @@
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_032288d288da",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
-      "name": "4 Pc. Jalape\u00f1o Cheesy Bites",
-      "description": "Jalape\u00f1o Cheesy Bites consist of crispy, golden bites filled with gooey cheddar cheese and spicy jalape\u00f1o pieces. 4 pieces included.",
+      "name": "4 Pc. Jalapeño Cheesy Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-520a0ef7c4b5e5933dba.png"
     },
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_f36e9a2bc138",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
-      "name": "8 Pc. Jalape\u00f1o Cheesy Bites",
-      "description": "Jalape\u00f1o Cheesy Bites consist of crispy, golden bites filled with gooey cheddar cheese and spicy jalape\u00f1o pieces. 8 pieces included.",
+      "name": "8 Pc. Jalapeño Cheesy Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-92854744873c46674bea.png"
     },
@@ -13972,24 +13972,24 @@
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_b01e37d24dd7",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
       "name": "Cheeseburger King Jr. Meal",
-      "description": "The Cheeseburger King Jr.\u00ae Meal includes a Cheeseburger, a choice of a kid's side, and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0d3e834807f946d76261.png"
     },
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_06e45b4e2005",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
       "name": "Hamburger King Jr. Meal",
-      "description": "The Hamburger King Jr.\u00ae Meal includes a Hamburger, a choice of a kid's side, and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e4cdc08bda5ade7ab545.png"
     },
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_f18d8d1f5feb",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
       "name": "4 Pc. Chicken Nuggets King Jr. Meal",
-      "description": "The Chicken Nuggets King Jr.\u00ae Meal features four bite-sized nuggets made with tender, seasoned white meat and lightly coated in a seasoned home-style breading. Served with a choice of a kid's side and a small drink of your choice. Toy included.",
-      "section": "King Jr.\u00ae Kids Meals",
+      "description": "",
+      "section": "King Jr.® Kids Meals",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e0a58833b2b56eaa65ec.png"
     },
     {
@@ -14347,8 +14347,8 @@
     {
       "id": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7_9b81dfc0d0d0",
       "restaurantId": "catalog-ss_ubereats_8eeb1fd0d61243a54c720db7",
-      "name": "HERSHEY\u2019S Chocolate Sundae",
-      "description": "Cool and creamy, the made-to-order HERSHEY\u2019S\u00ae Chocolate Sundae is prepared with velvety Vanilla Soft Serve and finished with a delicious chocolate fudge swirl.",
+      "name": "HERSHEY’S Chocolate Sundae",
+      "description": "",
       "section": "Sweets",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4a6ebc64d972e0e5f99e.png"
     },
@@ -15195,8 +15195,8 @@
     {
       "id": "catalog-ss_skip_e2b1be6dedfe3181f175cbe8_aac0899f2750",
       "restaurantId": "catalog-ss_skip_e2b1be6dedfe3181f175cbe8",
-      "name": "Cannon\u2019s Barrels",
-      "description": "Chicken, salsa, cheese, spices, wrapped in a wonton.",
+      "name": "Cannon’s Barrels",
+      "description": "",
       "section": "Appetizer",
       "imageURL": "/images/menu/chicken.jpg"
     },
@@ -15427,8 +15427,8 @@
     {
       "id": "catalog-ss_skip_e2b1be6dedfe3181f175cbe8_dbf8badb84e6",
       "restaurantId": "catalog-ss_skip_e2b1be6dedfe3181f175cbe8",
-      "name": "Cannon\u2019s Rib Dinner",
-      "description": "Half rack of ribs, your choice of side, and coleslaw.",
+      "name": "Cannon’s Rib Dinner",
+      "description": "",
       "section": "Main Meals",
       "imageURL": "/images/menu/chicken.jpg"
     },
@@ -17693,7 +17693,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Choco Brownie Extreme BLIZZARD Treat",
       "description": "",
-      "section": "BLIZZARD\u00ae Treats",
+      "section": "BLIZZARD® Treats",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -17797,7 +17797,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "SMARTIES BLIZZARD Treat",
       "description": "",
-      "section": "BLIZZARD\u00ae Treats",
+      "section": "BLIZZARD® Treats",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -17821,7 +17821,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Royal REESE Brownie BLIZZARD Treat",
       "description": "",
-      "section": "BLIZZARD\u00ae Treats",
+      "section": "BLIZZARD® Treats",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -17837,7 +17837,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Pumpkin Pie BLIZZARD Treat",
       "description": "",
-      "section": "BLIZZARD\u00ae Treats",
+      "section": "BLIZZARD® Treats",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -17845,7 +17845,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "NEW! Mocha Brownie Mudslide BLIZZARD Treat",
       "description": "",
-      "section": "BLIZZARD\u00ae Treats",
+      "section": "BLIZZARD® Treats",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18051,7 +18051,7 @@
     {
       "id": "catalog-ss_ubereats_b95c97726012c3b06035ab43_f00bc74b6b0d",
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
-      "name": "MooLatt\u00e9",
+      "name": "MooLatté",
       "description": "",
       "section": "Menu",
       "imageURL": "/images/menu/chicken.jpg"
@@ -18109,7 +18109,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Choco Brownie Extreme BLIZZARD Cake",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18117,7 +18117,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "OREO BLIZZARD Cake",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18125,7 +18125,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "SKOR DQ TREATZZA PIZZA",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -18133,7 +18133,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "SMARTIES DQ TREATZZA PIZZA",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -18141,7 +18141,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Choco Brownie DQ TREATZZA PIZZA",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18149,7 +18149,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "REESE PEANUT BUTTER CUPS DQ TREATZZA PIZZA",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -18157,7 +18157,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Chocolate Chip Cookie Dough BLIZZARD Cake",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18165,7 +18165,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "REESE PEANUT BUTTER CUPS BLIZZARD Cake",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18173,7 +18173,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "Cupcakes",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -18181,7 +18181,7 @@
       "restaurantId": "catalog-ss_ubereats_b95c97726012c3b06035ab43",
       "name": "DQ Signature All Occasion Cake",
       "description": "",
-      "section": "DQ\u00ae Cakes",
+      "section": "DQ® Cakes",
       "imageURL": "/images/menu/dessert.jpg"
     },
     {
@@ -19595,8 +19595,8 @@
     {
       "id": "catalog-ss_ubereats_bcc2fd0e491c7a5d6d66c667_ecff64f20891",
       "restaurantId": "catalog-ss_ubereats_bcc2fd0e491c7a5d6d66c667",
-      "name": "Lindeman\u2019s Shiraz Cabernet (1 x 750)",
-      "description": "(14.0% ABV)",
+      "name": "Lindeman’s Shiraz Cabernet (1 x 750)",
+      "description": "",
       "section": "Red Wine",
       "imageURL": "/images/menu/chicken.jpg"
     },
@@ -21323,32 +21323,32 @@
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_503e221d92dd",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Spinach & Feta",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese, fresh spinach, and feta cheese - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Spinach & Feta",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-04752488c6516f6a40df.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_5d62169997ca",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Bacon & Jalapeno",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese, bacon crumble, and jalape\u00f1o peppers - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Bacon & Jalapeno",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-13f8cf8cfe4799c76fb0.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_bfd8d6610194",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Pepperoni",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese and pepperoni - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Pepperoni",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4f52a8e147ccd3739886.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_441e8b581346",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Philly Steak",
-      "description": "Handmade with our buttery, decadent signature pan dough. Generously stuffed with white cheddar, mozzarella, tender slices of Philly steak, onions, green peppers, and mushrooms, then topped with a rich blend of mozzarella and cheddar cheeses. Finished with a touch of garlic and Romano. Add marinara or your favourite dip for an additional charge.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Philly Steak",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-67ca3f29c1d8e3319433.jpeg"
     },
@@ -21387,32 +21387,32 @@
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_4eb289775544",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Specialty Chicken \u2013 Crispy Bacon & Tomato",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with garlic Parmesan sauce, a blend of cheese made with mozzarella and cheddar, crispy bacon and tomato.",
+      "name": "Specialty Chicken – Crispy Bacon & Tomato",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-291dfcfab28095a3cab4.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_ef6377475cbb",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Specialty Chicken \u2013 Classic Hot Buffalo",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with hot buffalo sauce, ranch, a blend of cheese made with mozzarella and cheddar, and feta.",
+      "name": "Specialty Chicken – Classic Hot Buffalo",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-055d1786561217caae61.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_4150df5c5011",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Specialty Chicken \u2013 Spicy Jalapeno - Pineapple",
-      "description": "Tender, 12-piece bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and spicy mango-habanero sauce, a blend of cheese made with mozzarella and cheddar, jalapeno and pineapple.",
+      "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ba7b8cb56d90732e952a.jpeg"
     },
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_ad86b4c1d9fe",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Specialty Chicken \u2013 Sweet BBQ Bacon",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with sweet and smoky honey BBQ sauce, a blend of cheese made with mozzarella and cheddar, and crispy bacon.",
+      "name": "Specialty Chicken – Sweet BBQ Bacon",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1b49eb2fee0cf198bf2c.jpeg"
     },
@@ -21427,8 +21427,8 @@
     {
       "id": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7_e0dc7e8d1403",
       "restaurantId": "catalog-ss_skip_dd65a034b71ffa8fd2dd94a7",
-      "name": "Specialty Chicken \u2013 Chicken Parmesan",
-      "description": "Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with hearty marinara sauce, a blend of cheese made with mozzarella, parmesan & asiago, finished with a dusting of grated parmesan.",
+      "name": "Specialty Chicken – Chicken Parmesan",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c20ddd84e125decaaa20.jpeg"
     },
@@ -21867,32 +21867,32 @@
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_503e221d92dd",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Spinach & Feta",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese, fresh spinach, and feta cheese - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Spinach & Feta",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-04752488c6516f6a40df.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_5d62169997ca",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Bacon & Jalapeno",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese, bacon crumble, and jalape\u00f1o peppers - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Bacon & Jalapeno",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-13f8cf8cfe4799c76fb0.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_bfd8d6610194",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Pepperoni",
-      "description": "Our oven-baked breadsticks are generously stuffed with mozzarella cheese and pepperoni - Covered with a blend of even more mozzarella and cheddar cheese. Seasoned with a touch of garlic and Romano.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Pepperoni",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4f52a8e147ccd3739886.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_441e8b581346",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Domino\u2019s Pizza Stuffed Cheesy Bread with Philly Steak",
-      "description": "Handmade with our buttery, decadent signature pan dough. Generously stuffed with white cheddar, mozzarella, tender slices of Philly steak, onions, green peppers, and mushrooms, then topped with a rich blend of mozzarella and cheddar cheeses. Finished with a touch of garlic and Romano. Add marinara or your favourite dip for an additional charge.",
+      "name": "Domino’s Pizza Stuffed Cheesy Bread with Philly Steak",
+      "description": "",
       "section": "Breads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-67ca3f29c1d8e3319433.jpeg"
     },
@@ -21931,32 +21931,32 @@
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_4eb289775544",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Specialty Chicken \u2013 Crispy Bacon & Tomato",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with garlic Parmesan sauce, a blend of cheese made with mozzarella and cheddar, crispy bacon and tomato.",
+      "name": "Specialty Chicken – Crispy Bacon & Tomato",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-291dfcfab28095a3cab4.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_ef6377475cbb",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Specialty Chicken \u2013 Classic Hot Buffalo",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with hot buffalo sauce, ranch, a blend of cheese made with mozzarella and cheddar, and feta.",
+      "name": "Specialty Chicken – Classic Hot Buffalo",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-055d1786561217caae61.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_4150df5c5011",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Specialty Chicken \u2013 Spicy Jalapeno - Pineapple",
-      "description": "Tender, 12-piece bites of lightly breaded, 100% whole breast white meat chicken, topped with sweet and spicy mango-habanero sauce, a blend of cheese made with mozzarella and cheddar, jalapeno and pineapple.",
+      "name": "Specialty Chicken – Spicy Jalapeno - Pineapple",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ba7b8cb56d90732e952a.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_ad86b4c1d9fe",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Specialty Chicken \u2013 Sweet BBQ Bacon",
-      "description": "Tender, 12-piece bites of breaded chicken made with 100% whole breast white meat topped with sweet and smoky honey BBQ sauce, a blend of cheese made with mozzarella and cheddar, and crispy bacon.",
+      "name": "Specialty Chicken – Sweet BBQ Bacon",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1b49eb2fee0cf198bf2c.jpeg"
     },
@@ -21971,8 +21971,8 @@
     {
       "id": "catalog-ss_ubereats_5639f10835e662c8992745fc_e0dc7e8d1403",
       "restaurantId": "catalog-ss_ubereats_5639f10835e662c8992745fc",
-      "name": "Specialty Chicken \u2013 Chicken Parmesan",
-      "description": "Tender bites of lightly breaded, 100% whole breast white meat chicken, topped with hearty marinara sauce, a blend of cheese made with mozzarella, parmesan & asiago, finished with a dusting of grated parmesan.",
+      "name": "Specialty Chicken – Chicken Parmesan",
+      "description": "",
       "section": "Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c20ddd84e125decaaa20.jpeg"
     },
@@ -22309,7 +22309,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Mario's Chicken Parmigiana",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22531,7 +22531,7 @@
     {
       "id": "catalog-ss_ubereats_4aa948d1a711c77953745320_d41995832aba",
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
-      "name": "Cheesy Baked Penne with Ros\u00e9",
+      "name": "Cheesy Baked Penne with Rosé",
       "description": "",
       "section": "Pasta",
       "imageURL": "/images/menu/chicken.jpg"
@@ -22693,7 +22693,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Baked Salmon Alfr-esto Bowl",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/salad.jpg"
     },
     {
@@ -22701,7 +22701,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Chicken Tenders",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22709,7 +22709,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Chicken & Shrimp Scampi",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22717,7 +22717,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Veal Parmigiana",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22725,7 +22725,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Hell's Kitchen Chicken",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22733,7 +22733,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Mario's Mangia Sampler",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -22741,7 +22741,7 @@
       "restaurantId": "catalog-ss_ubereats_4aa948d1a711c77953745320",
       "name": "Triple Threat Parmigiana",
       "description": "",
-      "section": "Entr\u00e9es",
+      "section": "Entrées",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -24883,7 +24883,7 @@
     {
       "id": "catalog-ss_ubereats_a6fa58a0f5407740496227a2_6fbf59b80d94",
       "restaurantId": "catalog-ss_ubereats_a6fa58a0f5407740496227a2",
-      "name": "Florida Man\u2019s Lunacy Pineapple Hot Sauce",
+      "name": "Florida Man’s Lunacy Pineapple Hot Sauce",
       "description": "",
       "section": "Hot Sauces",
       "imageURL": "/images/menu/chicken.jpg"
@@ -24907,7 +24907,7 @@
     {
       "id": "catalog-ss_ubereats_a6fa58a0f5407740496227a2_f6e035f5d773",
       "restaurantId": "catalog-ss_ubereats_a6fa58a0f5407740496227a2",
-      "name": "Bee Sting Honey n\u2019 Habanero Pepper Sauce",
+      "name": "Bee Sting Honey n’ Habanero Pepper Sauce",
       "description": "",
       "section": "Hot Sauces",
       "imageURL": "/images/menu/chicken.jpg"
@@ -24995,7 +24995,7 @@
     {
       "id": "catalog-ss_ubereats_287d50bbf08f871c49193255_67398fc8a6d6",
       "restaurantId": "catalog-ss_ubereats_287d50bbf08f871c49193255",
-      "name": "12\" Gisele\u2019s Special Pizza",
+      "name": "12\" Gisele’s Special Pizza",
       "description": "",
       "section": "12\" Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
@@ -25027,7 +25027,7 @@
     {
       "id": "catalog-ss_ubereats_287d50bbf08f871c49193255_cd8f4a3acebd",
       "restaurantId": "catalog-ss_ubereats_287d50bbf08f871c49193255",
-      "name": "12\u201d Pizza w/9\u201d Garlic Fingers",
+      "name": "12” Pizza w/9” Garlic Fingers",
       "description": "",
       "section": "Most Ordered",
       "imageURL": "/images/menu/pizza.jpg"
@@ -25187,7 +25187,7 @@
     {
       "id": "catalog-ss_ubereats_287d50bbf08f871c49193255_8a28b2a45a71",
       "restaurantId": "catalog-ss_ubereats_287d50bbf08f871c49193255",
-      "name": "9\" Gisele\u2019s Special Pizza",
+      "name": "9\" Gisele’s Special Pizza",
       "description": "",
       "section": "9\" Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
@@ -25419,7 +25419,7 @@
     {
       "id": "catalog-ss_ubereats_287d50bbf08f871c49193255_eda89cc7808f",
       "restaurantId": "catalog-ss_ubereats_287d50bbf08f871c49193255",
-      "name": "15\" Gisele\u2019s Special Pizza",
+      "name": "15\" Gisele’s Special Pizza",
       "description": "",
       "section": "15\" Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
@@ -25571,7 +25571,7 @@
     {
       "id": "catalog-ss_ubereats_287d50bbf08f871c49193255_5e8977f56b70",
       "restaurantId": "catalog-ss_ubereats_287d50bbf08f871c49193255",
-      "name": "18\" Gisele\u2019s Special Pizza",
+      "name": "18\" Gisele’s Special Pizza",
       "description": "",
       "section": "18\" Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
@@ -25685,7 +25685,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Donair Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25845,7 +25845,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Assorted Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25853,7 +25853,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Pizza Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25861,7 +25861,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "BBQ Chicken Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25869,7 +25869,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Hawaiian Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25877,7 +25877,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Italian Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -25885,7 +25885,7 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Veggie Oven Sub",
       "description": "",
-      "section": "Oven Subs\u00ae",
+      "section": "Oven Subs®",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -26396,144 +26396,144 @@
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_bab10d72f633",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Donair OVENSUB (Half)",
-      "description": "Pepperoni, donair, onions, tomatoes, sweet  sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b491b7f5544cbaa68e66.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_d53b0800ea88",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Donair OVENSUB (Full)",
-      "description": "Pepperoni, donair, onions, tomatoes, sweet  sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-cdb06eadc22229836388.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_8fa79450d51a",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Assorted OVENSUB (Half)",
-      "description": "Pepperoni, salami, ham, mushrooms, onions, green peppers, tomatoes, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b8dac7c05fc9b4a68b85.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_fbf8587ad069",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Assorted OVENSUB (Full)",
-      "description": "Pepperoni, salami, ham, mushrooms, onions, green peppers, tomatoes, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-789c8c4fc4b3d80c4833.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_ab8a9e0d9ff8",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Veggie OVENSUB (Half)",
-      "description": "Pineapple, onions, mushrooms, tomatoes, green peppers, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-cbfd4f9118ba37b6bbde.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_d6001b737ecc",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Veggie OVENSUB (Full)",
-      "description": "Pineapple, onions, mushrooms, tomatoes, green peppers, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-6d1339855ee24a82b26e.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_8377679a8754",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Philly Steak OVENSUB (Half)",
-      "description": "Philly steak topped with mushrooms, green peppers, onions, and a blend of Cheddar-Mozzarella cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b88399d0c5ab83f7e1e6.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_83c70f5c5e62",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Philly Steak OVENSUB (Full)",
-      "description": "Philly steak topped with mushrooms, green peppers, onions, and a blend of Cheddar-Mozzarella cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-609165d116680da22ae3.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_024e5c801505",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "BBQ Chicken OVENSUB (Half)",
-      "description": "Chicken, onions, tomatoes, barbeque sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-47f3b7feeb2c81a4379a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_6bdd4b174d74",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "BBQ Chicken OVENSUB (Full)",
-      "description": "Chicken, onions, tomatoes, barbeque sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b66e5e9deca8164c42ae.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_4960371b031e",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Pizza OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0b3597728e10d664c09f.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_94b96384ebaf",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Pizza OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9815b95d21732ce22c9a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_529b2c3fa4af",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Italian OVENSUB (Half)",
-      "description": "Garlic spread, golden Italian dressing, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5b01e9cda44d4441dba6.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_af743f417a3c",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Italian OVENSUB (Full)",
-      "description": "Garlic spread, golden Italian dressing, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-063da49ba026c9fe8919.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_ce13dbf4df7f",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Hawaiian OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, ham, pineapple, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0b9c26e7f4831846c986.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_8ba20aebfa8b",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Hawaiian OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, ham, pineapple, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5490e14b08d86966fb3c.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_9ab6117d5d0e",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Bacon Cheeseburger OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, onions, bacon, beef topping, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-6994695965300d963033.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_440fbeea1e6e",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "Bacon Cheeseburger OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, onions, bacon, beef topping, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ce16573aa729ab300aed.jpg"
     },
     {
@@ -26789,15 +26789,15 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Garlic Fingers",
       "description": "",
-      "section": "GlutenGone\u00ae Menu",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4c69f3e6a63d61d26e49.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_aca5c9acb565",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Grecoworks Pizza",
-      "description": "Pepperoni, salami, bacon toppings, mushrooms, and green peppers.",
-      "section": "GlutenGone\u00ae Menu",
+      "description": "",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ae45dcfe2f890044e1db.jpg"
     },
     {
@@ -26805,39 +26805,39 @@
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Mighty Meaty Pizza",
       "description": "",
-      "section": "GlutenGone\u00ae Menu",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-2070897a9057b24e7244.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_4a02cb76216f",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Veggie Pizza",
-      "description": "Tomatoes, onions, mushrooms, and green peppers.",
-      "section": "GlutenGone\u00ae Menu",
+      "description": "",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-16525d121b23f084de0a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_cb737d7150af",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Hawaiian Pizza",
-      "description": "Ham, pineapple, and bacon toppings.",
-      "section": "GlutenGone\u00ae Menu",
+      "description": "",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-d22017eac9b9a807a142.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_5542a9b237e9",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Donair Pizza",
-      "description": "Donair meat, onions, tomatoes, and Greco's donair sauce.",
-      "section": "GlutenGone\u00ae Menu",
+      "description": "",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-74e8d30afce2e9d56b7d.jpg"
     },
     {
       "id": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633_b5d6ae80213d",
       "restaurantId": "catalog-ss_ubereats_e53893e3e795d1d1a68bd633",
       "name": "12\" GlutenGone Pepperoni Duo Pizza",
-      "description": "Classic and dry cured pepperoni and extra cheese.",
-      "section": "GlutenGone\u00ae Menu",
+      "description": "",
+      "section": "GlutenGone® Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-8dbd0762262562040f61.jpg"
     },
     {
@@ -27012,128 +27012,128 @@
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_bab10d72f633",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Donair OVENSUB (Half)",
-      "description": "Pepperoni, donair, onions, tomatoes, sweet  sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b491b7f5544cbaa68e66.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_d53b0800ea88",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Donair OVENSUB (Full)",
-      "description": "Pepperoni, donair, onions, tomatoes, sweet  sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-cdb06eadc22229836388.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_8fa79450d51a",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Assorted OVENSUB (Half)",
-      "description": "Pepperoni, salami, ham, mushrooms, onions, green peppers, tomatoes, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b8dac7c05fc9b4a68b85.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_fbf8587ad069",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Assorted OVENSUB (Full)",
-      "description": "Pepperoni, salami, ham, mushrooms, onions, green peppers, tomatoes, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-789c8c4fc4b3d80c4833.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_ab8a9e0d9ff8",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Veggie OVENSUB (Half)",
-      "description": "Pineapple, onions, mushrooms, tomatoes, green peppers, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-cbfd4f9118ba37b6bbde.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_d6001b737ecc",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Veggie OVENSUB (Full)",
-      "description": "Pineapple, onions, mushrooms, tomatoes, green peppers, golden Italian dressing, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-6d1339855ee24a82b26e.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_024e5c801505",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "BBQ Chicken OVENSUB (Half)",
-      "description": "Chicken, onions, tomatoes, barbeque sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-47f3b7feeb2c81a4379a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_6bdd4b174d74",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "BBQ Chicken OVENSUB (Full)",
-      "description": "Chicken, onions, tomatoes, barbeque sauce, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b66e5e9deca8164c42ae.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_4960371b031e",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Pizza OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0b3597728e10d664c09f.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_94b96384ebaf",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Pizza OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9815b95d21732ce22c9a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_529b2c3fa4af",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Italian OVENSUB (Half)",
-      "description": "Garlic spread, golden Italian dressing, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5b01e9cda44d4441dba6.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_af743f417a3c",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Italian OVENSUB (Full)",
-      "description": "Garlic spread, golden Italian dressing, pepperoni, salami, mushrooms, green peppers, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-063da49ba026c9fe8919.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_ce13dbf4df7f",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Hawaiian OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, ham, pineapple, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0b9c26e7f4831846c986.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_8ba20aebfa8b",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Hawaiian OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, ham, pineapple, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5490e14b08d86966fb3c.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_9ab6117d5d0e",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Bacon Cheeseburger OVENSUB (Half)",
-      "description": "Garlic spread, pizza sauce, onions, bacon, beef topping, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-6994695965300d963033.jpg"
     },
     {
       "id": "catalog-ss_ubereats_7c292dea9b2486ee89305e89_440fbeea1e6e",
       "restaurantId": "catalog-ss_ubereats_7c292dea9b2486ee89305e89",
       "name": "Bacon Cheeseburger OVENSUB (Full)",
-      "description": "Garlic spread, pizza sauce, onions, bacon, beef topping, and mixed cheese.",
-      "section": "OVENSUBS\u00ae",
+      "description": "",
+      "section": "OVENSUBS®",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ce16573aa729ab300aed.jpg"
     },
     {
@@ -30013,7 +30013,7 @@
       "restaurantId": "catalog-ss_doordash_1050806",
       "name": "Thai Basil Pork",
       "description": "",
-      "section": "\ud83d\udca5This Week's Special!!\ud83d\udca5",
+      "section": "💥This Week's Special!!💥",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -30859,8 +30859,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_ea404aa55d3e",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "22\u201d Hawaiian Pizza",
-      "description": "Pizza sauce, Ham, Bacon, pineapple, and cheese.",
+      "name": "22” Hawaiian Pizza",
+      "description": "",
       "section": "22\" Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9edc1fc1a28b2bb3f17c.jpg"
     },
@@ -30947,8 +30947,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_f03e54d7579a",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "18\u201d Hawaiian Pizza",
-      "description": "Pizza sauce, Ham, Bacon, pineapple, and cheese.",
+      "name": "18” Hawaiian Pizza",
+      "description": "",
       "section": "18\" Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f6cd633db4946dcebfe7.jpg"
     },
@@ -30979,8 +30979,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_56cdbb2b00a8",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "16\u201d Hawaiian Pizza",
-      "description": "Pizza sauce, Ham, Bacon, pineapple, and cheese.",
+      "name": "16” Hawaiian Pizza",
+      "description": "",
       "section": "16\" Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b47d49b73ae4dda710bf.jpg"
     },
@@ -31067,8 +31067,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_ed7c50590788",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "12\u201d Hawaiian Pizza",
-      "description": "Pizza sauce, Ham, Bacon, pineapple, and cheese.",
+      "name": "12” Hawaiian Pizza",
+      "description": "",
       "section": "12\" Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-d17067bc7216a662f37e.jpg"
     },
@@ -31219,8 +31219,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_187f7324734d",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "9\u201d Hawaiian Pizza",
-      "description": "Pizza sauce, ham, bacon, pineapple, and cheese.",
+      "name": "9” Hawaiian Pizza",
+      "description": "",
       "section": "9\" Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7f5a647f556281a83df5.jpg"
     },
@@ -31363,8 +31363,8 @@
     {
       "id": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d_e899b33835a8",
       "restaurantId": "catalog-ss_ubereats_d1e5dc5eff8ac2018dbf023d",
-      "name": "16\u201d Pizza, 12\u201d Garlic Fingers & Apps",
-      "description": "16\" 1 Topping Pizza, 12\" Garlic Fingers and your choice of appetizer",
+      "name": "16” Pizza, 12” Garlic Fingers & Apps",
+      "description": "",
       "section": "Pizza & Garlic Finger Combos",
       "imageURL": "/images/menu/pizza.jpg"
     },
@@ -32139,7 +32139,7 @@
     {
       "id": "catalog-ss_ubereats_dd4a46e4b7651804eee5e2ba_b69520b56374",
       "restaurantId": "catalog-ss_ubereats_dd4a46e4b7651804eee5e2ba",
-      "name": "Flamin' Hot Ind. Fries\u200b",
+      "name": "Flamin' Hot Ind. Fries​",
       "description": "",
       "section": "Flamin' Hot Cheetos",
       "imageURL": "/images/menu/fries.jpg"
@@ -35460,16 +35460,16 @@
       "id": "catalog-ss_skip_71995efda1c4827d84750113_2a0b056f1f9e",
       "restaurantId": "catalog-ss_skip_71995efda1c4827d84750113",
       "name": "Caesar Dip",
-      "description": "Caesar Dip",
-      "section": "CAESAR DIPS\u00a8",
+      "description": "",
+      "section": "CAESAR DIPS¨",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7fe5bec87b7218a0dbb6.jpeg"
     },
     {
       "id": "catalog-ss_skip_71995efda1c4827d84750113_8a9c4d695dd6",
       "restaurantId": "catalog-ss_skip_71995efda1c4827d84750113",
       "name": "Crazy Sauce",
-      "description": "Tomato Dipping Sauce Seasoned with a Special Blend of Herbs and Spices",
-      "section": "CAESAR DIPS\u00a8",
+      "description": "",
+      "section": "CAESAR DIPS¨",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-341e4bf45e7c7420f1a1.jpeg"
     },
     {
@@ -36348,16 +36348,16 @@
       "id": "catalog-ss_ubereats_f49a8d3e91bcbc3831fcc972_2a0b056f1f9e",
       "restaurantId": "catalog-ss_ubereats_f49a8d3e91bcbc3831fcc972",
       "name": "Caesar Dip",
-      "description": "Caesar Dip",
-      "section": "CAESAR DIPS\u00a8",
+      "description": "",
+      "section": "CAESAR DIPS¨",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7fe5bec87b7218a0dbb6.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_f49a8d3e91bcbc3831fcc972_8a9c4d695dd6",
       "restaurantId": "catalog-ss_ubereats_f49a8d3e91bcbc3831fcc972",
       "name": "Crazy Sauce",
-      "description": "Tomato Dipping Sauce Seasoned with a Special Blend of Herbs and Spices",
-      "section": "CAESAR DIPS\u00a8",
+      "description": "",
+      "section": "CAESAR DIPS¨",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-341e4bf45e7c7420f1a1.jpeg"
     },
     {
@@ -39843,7 +39843,7 @@
     {
       "id": "catalog-ss_ubereats_d13aaf73cb7eff8bc90becf7_8ff006098768",
       "restaurantId": "catalog-ss_ubereats_d13aaf73cb7eff8bc90becf7",
-      "name": "Jos\u00e9\u2019s Double Deal",
+      "name": "José’s Double Deal",
       "description": "",
       "section": "Limited Time Offer",
       "imageURL": "/images/menu/chicken.jpg"
@@ -41747,16 +41747,16 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_963779639c94",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Pistachio Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue20226\u2020L Large\ue201 One sip and we bet you\u2019ll be saying, \u2018what the frapp\u00e9?!\u2019 Made with\u2026",
+      "name": "Pistachio Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-359eae799f0b19123539.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_073f6dbf5a45",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Salted Caramel Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue20226\u2020L Large\ue201 One sip and we bet you\u2019ll be saying, \u2018what the frapp\u00e9?!\u2019 Made with\u2026",
+      "name": "Salted Caramel Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-2786a69d1258fcf410ec.jpeg"
     },
@@ -42227,7 +42227,7 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_d809636a23e3",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Egg \u2018N Cheese McMuffin",
+      "name": "Egg ‘N Cheese McMuffin",
       "description": "",
       "section": "All Day Breakfast",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a8c9316b994795844b11.jpeg"
@@ -42235,7 +42235,7 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_292a013f0b05",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Egg \u2018N Cheese McMuffin Extra Value Meal",
+      "name": "Egg ‘N Cheese McMuffin Extra Value Meal",
       "description": "",
       "section": "All Day Breakfast",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f1ee0917f0ddbb7efe74.jpeg"
@@ -42587,7 +42587,7 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_091c342012bd",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Coffee Frapp\u00e9 w/ Whipped Cream & Choc Drizzle",
+      "name": "Coffee Frappé w/ Whipped Cream & Choc Drizzle",
       "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-714f1eb16c4fa0fa59f4.jpeg"
@@ -42595,7 +42595,7 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_37da9a50b65a",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "VanChai Frapp\u00e9 w/ Whipped Cream & Choc Drizzle",
+      "name": "VanChai Frappé w/ Whipped Cream & Choc Drizzle",
       "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c577462b6ffab0c9c015.jpeg"
@@ -42603,16 +42603,16 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_85c699ecc08b",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Coffee Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue20225\u2020S Small\ue201 * \ue200cite\ue2021\u2020M Medium\ue201 * \ue200cite\ue20226\u2020L Large\ue201 Coffee Frapp\u00e9 is made with the great taste of 100% Arabica beans in\u2026",
+      "name": "Coffee Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-536b8f1a5a74ab7fd3ec.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_ac79cfd0165d",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Vanilla Chai Frapp\u00e9",
-      "description": "Change your size * \ue200cite\ue2021\u2020S Small\ue201 * \ue200cite\ue20226\u2020M Medium\ue201 * \ue200cite\ue20227\u2020L Large\ue201 Vanilla Chai Iced Frapp\u00e9 is made with the refreshingly exotic combination of vanilla\u2026",
+      "name": "Vanilla Chai Frappé",
+      "description": "",
       "section": "Cold Drinks",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-d623cc0365e82a9f0015.jpeg"
     },
@@ -42859,7 +42859,7 @@
     {
       "id": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c_42c86eab53de",
       "restaurantId": "catalog-ss_ubereats_49846df7683e641f6ac1cc0c",
-      "name": "Toasted S\u2019mores Cookie",
+      "name": "Toasted S’mores Cookie",
       "description": "",
       "section": "Bakery & Sweets & Treats",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-551b47ded437741fcddf.jpeg"
@@ -47883,16 +47883,16 @@
     {
       "id": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12_459daba9a61e",
       "restaurantId": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12",
-      "name": "Chai Frapp\u00e9",
-      "description": "The warm, spiced flavour of chai tea blended with ice, milk and white chocolate create this frozen version of a classic chai latte.",
+      "name": "Chai Frappé",
+      "description": "",
       "section": "Blended Drinks",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12_faa61b01a8c5",
       "restaurantId": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12",
-      "name": "Frapp\u00e9",
-      "description": "Nomad\u2019s frozen coffee frapp\u00e9. Chilled and sweet, blended with a freshly pulled shot of espresso. Comes in original flavour with added flavours by request.",
+      "name": "Frappé",
+      "description": "",
       "section": "Blended Drinks",
       "imageURL": "/images/menu/chicken.jpg"
     },
@@ -47907,8 +47907,8 @@
     {
       "id": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12_d0bf5d4d7faa",
       "restaurantId": "catalog-ss_skip_dc93af0c5313b23cc0dd6c12",
-      "name": "Matcha Frapp\u00e9",
-      "description": "Premium grade matcha powder, cold milk, ice and white chocolate blended together to make a frozen version of Nomad\u2019s matcha latte.",
+      "name": "Matcha Frappé",
+      "description": "",
       "section": "Matcha",
       "imageURL": "/images/menu/chicken.jpg"
     },
@@ -49611,8 +49611,8 @@
     {
       "id": "catalog-ss_ubereats_e280e48570e1c8646d57950c_90e884d04a0c",
       "restaurantId": "catalog-ss_ubereats_e280e48570e1c8646d57950c",
-      "name": "Jalape\u00f1o Papa Bites",
-      "description": "Made with PHILADELPHIA\u00ae Cream Cheese spread on our original fresh dough, and rolled up with jalape\u00f1os for a creamy kick. Baked fresh and cut into eight rolls.",
+      "name": "Jalapeño Papa Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a71af01ae1e96882db78.jpeg"
     },
@@ -50243,8 +50243,8 @@
     {
       "id": "catalog-ss_ubereats_f4e63ac345914b3e23d08b75_90e884d04a0c",
       "restaurantId": "catalog-ss_ubereats_f4e63ac345914b3e23d08b75",
-      "name": "Jalape\u00f1o Papa Bites",
-      "description": "Made with PHILADELPHIA\u00ae Cream Cheese spread on our original fresh dough, and rolled up with jalape\u00f1os for a creamy kick. Baked fresh and cut into eight rolls.",
+      "name": "Jalapeño Papa Bites",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a71af01ae1e96882db78.jpeg"
     },
@@ -52299,7 +52299,7 @@
     {
       "id": "catalog-ss_doordash_36378925_b44bf1f35f51",
       "restaurantId": "catalog-ss_doordash_36378925",
-      "name": "Jalape\u00f1o Poppers",
+      "name": "Jalapeño Poppers",
       "description": "",
       "section": "Sides",
       "imageURL": "/images/menu/drink.jpg"
@@ -52587,7 +52587,7 @@
     {
       "id": "catalog-ss_doordash_36209643_b44bf1f35f51",
       "restaurantId": "catalog-ss_doordash_36209643",
-      "name": "Jalape\u00f1o Poppers",
+      "name": "Jalapeño Poppers",
       "description": "",
       "section": "Appetizers",
       "imageURL": "/images/menu/drink.jpg"
@@ -53804,144 +53804,144 @@
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_f32c546346aa",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Create Your Own",
-      "description": "Choose your favourite toppings",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_74f9e0deaf0b",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Nashville Hot Chicken Pizza",
-      "description": "NEW! Nashville Hot Crispy Chicken, pickles, ranch drizzle, and pizza mozzarella. Try it if you dare! Customize to remove pickles or ranch.",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-af800ec0fa63d66d70bc.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_7b2ce50e7eeb",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Cheese Lover's",
-      "description": "Extra pizza mozzarella and choose two of your favourite toppings Includes up to 2 free toppings.",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_295acfab56ff",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Margherita",
-      "description": "Pesto marinated tomatoes, parmesan and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_ad3589c5b4ec",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Hawaiian",
-      "description": "Ham, pineapple and extra pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_eda61f875e3d",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Pepperoni Lover's",
-      "description": "New and improved! All pepperoni layered on top for added crispiness, and pizza mozzarella.",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_a19f92b9cc86",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Meat Lover's",
-      "description": "Pepperoni, Italian sausage, mild sausage, beef topping, ham, bacon crumble and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_c159e2dc97c8",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Canadian",
-      "description": "Pepperoni, bacon crumble, sliced mushrooms and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_4c9290545134",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Supreme Lover's",
-      "description": "Pepperoni, mild sausage, beef topping, green pepper, sliced mushrooms, red onion and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_c275483d985d",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Veggie Lover's",
-      "description": "Sliced mushrooms, green pepper, red onion, tomato and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_942d45f73994",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Triple Crown",
-      "description": "Pepperoni, green pepper, sliced mushrooms and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_009e4f2f88a5",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Chicken Lover's",
-      "description": "Seasoned grilled chicken breast, green peppers, red onion, sliced mushroom and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_3ff8eab8c296",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Grilled Chicken Rustico",
-      "description": "Seasoned grilled chicken breast, roasted red pepper, pesto marinated tomatoes and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_fa97534a76d8",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Super Supreme Lover's",
-      "description": "Pepperoni, Italian sausage, ham, mild sausage, beef topping, green pepper, sliced mushrooms, red onion, black olives and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_f365f825e4d0",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous BBQ Chicken",
-      "description": "BBQ sauce, seasoned grilled chicken breast, red onion, green peppers, cheddar and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_8560c8b6b440",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Italian Classic",
-      "description": "Italian sausage, pepperoni, sliced mushroom, roasted red pepper and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_f56d1825a012",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Grilled Chicken Arrabbiata",
-      "description": "Seasoned grilled chicken breast, green pepper, roasted red pepper, red onion, pesto marinated tomato, chili flakes and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
       "id": "catalog-ss_ubereats_041c3ddf79bdba9aec389684_063ab4ab25b9",
       "restaurantId": "catalog-ss_ubereats_041c3ddf79bdba9aec389684",
       "name": "XL Panormous Smokey Maple Bacon",
-      "description": "Alfredo sauce, maple bacon strips, bacon strips, bacon crumble, sliced mushrooms, smoked aged cheddar and pizza mozzarella",
-      "section": "XL Panormous\u00ae Pizzas",
+      "description": "",
+      "section": "XL Panormous® Pizzas",
       "imageURL": "/images/menu/pizza.jpg"
     },
     {
@@ -54707,8 +54707,8 @@
     {
       "id": "catalog-ss_ubereats_d2ba8843cd12b7bd4c3c5d72_716c217e58a9",
       "restaurantId": "catalog-ss_ubereats_d2ba8843cd12b7bd4c3c5d72",
-      "name": "Ros\u00e9 All Day",
-      "description": "This pizza features a rich blend of creamy garlic and tomato sauce, topped with mozzarella and Parmesan cheese, and finished with a drizzle of olive oil and Italian seasoning. Served on our Ancient Grains crust, it's an indulgent recipe delivering bold flavour.",
+      "name": "Rosé All Day",
+      "description": "",
       "section": "Ancient Grains Crust Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a2e168a539295125227a.png"
     },
@@ -56091,8 +56091,8 @@
     {
       "id": "catalog-ss_ubereats_c183a2c01cd7537d47425d86_716c217e58a9",
       "restaurantId": "catalog-ss_ubereats_c183a2c01cd7537d47425d86",
-      "name": "Ros\u00e9 All Day",
-      "description": "This pizza features a rich blend of creamy garlic and tomato sauce, topped with mozzarella and Parmesan cheese, and finished with a drizzle of olive oil and Italian seasoning. Served on our Ancient Grains crust, it's an indulgent recipe delivering bold flavour.",
+      "name": "Rosé All Day",
+      "description": "",
       "section": "Ancient Grains Crust Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a2e168a539295125227a.png"
     },
@@ -56707,8 +56707,8 @@
     {
       "id": "catalog-ss_doordash_30359691_ed6a2f3080c1",
       "restaurantId": "catalog-ss_doordash_30359691",
-      "name": "B\u00e2tonnets \u00e0 l'Ail Gratin\u00e9 / Cheesy Garlic Sticks",
-      "description": "Cheesy Garlic Sticks",
+      "name": "Bâtonnets à l'Ail Gratiné / Cheesy Garlic Sticks",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7f199bc286b63db0bcdc.jpeg"
     },
@@ -56787,8 +56787,8 @@
     {
       "id": "catalog-ss_doordash_30359691_7fcee17ea95d",
       "restaurantId": "catalog-ss_doordash_30359691",
-      "name": "Sp\u00e9cial 4",
-      "description": "Enjoy 4, 7'' pizzas of your choice.",
+      "name": "Spécial 4",
+      "description": "",
       "section": "Promotions",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ecdb6ebc5c635663ab76.jpeg"
     },
@@ -56859,8 +56859,8 @@
     {
       "id": "catalog-ss_doordash_30359691_e9ec49066f6b",
       "restaurantId": "catalog-ss_doordash_30359691",
-      "name": "Salvator\u00e9's Special Pizza",
-      "description": "Sauce tomate, pepperoni, champignons, poivrons verts, fromage, oignons rouges, tomates fraiches, et bacon v\u00e9ritable. / Tomato sauce, pepperoni, mushrooms, green peppers, cheese, red onions, fresh tomatoes, and bacon.",
+      "name": "Salvatoré's Special Pizza",
+      "description": "",
       "section": "Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-13fcdf6ccb13ae9c567f.jpeg"
     },
@@ -56907,8 +56907,8 @@
     {
       "id": "catalog-ss_doordash_30359691_cfacdfbb1238",
       "restaurantId": "catalog-ss_doordash_30359691",
-      "name": "Poulet, Fromage de Ch\u00e8vre et Miel \u00c9pic\u00e9 / Chicken, Goat Cheese, and Hot Honey",
-      "description": "Sauce Alfredo, fromage mozzarella, oignons rouges, brocoli, poulet tendre et fromage de ch\u00e8vre. Servie avec un d\u00e9licieux miel \u00e9pic\u00e9 en accompagnement. / Alfredo sauce, mozzarella cheese, red onions, broccoli, tender chicken, and goat cheese. Served with a delicious spicy honey on the side.",
+      "name": "Poulet, Fromage de Chèvre et Miel Épicé / Chicken, Goat Cheese, and Hot Honey",
+      "description": "",
       "section": "Pizzas",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-16cb173f3619f8d2e0aa.jpeg"
     },
@@ -61051,8 +61051,8 @@
     {
       "id": "catalog-ss_ubereats_5030918dc595b0bf3a4b6ad4_3585f645d656",
       "restaurantId": "catalog-ss_ubereats_5030918dc595b0bf3a4b6ad4",
-      "name": "Beef Chili n\u2019 Cheese",
-      "description": "Classic beef chili & cheese sauce\r\n(250 Cals)",
+      "name": "Beef Chili n’ Cheese",
+      "description": "",
       "section": "Sides + Dirty Fries",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e3f47e32283cac6f484b.png"
     },
@@ -61667,8 +61667,8 @@
     {
       "id": "catalog-ss_skip_74c048bb56a34de540628d11_fb5ead5a988c",
       "restaurantId": "catalog-ss_skip_74c048bb56a34de540628d11",
-      "name": "Bird\u2019s Hill Burger",
-      "description": "A 4 oz Bird\u2019s Hill Farm Wagyu ground beef patty served on a rustic bun with pickles, lettuce, tomatoes, onions, and a side of fries.",
+      "name": "Bird’s Hill Burger",
+      "description": "",
       "section": "Famous Fox Burger",
       "imageURL": "/images/menu/burger.jpg"
     },
@@ -61891,7 +61891,7 @@
     {
       "id": "catalog-ss_doordash_1158915_4bcb517e4ea3",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Poitrine de poulet r\u00f4ti / Rotisserie Chicken Breast",
+      "name": "Poitrine de poulet rôti / Rotisserie Chicken Breast",
       "description": "",
       "section": "Poulet / Chicken",
       "imageURL": "/images/menu/chicken.jpg"
@@ -61907,7 +61907,7 @@
     {
       "id": "catalog-ss_doordash_1158915_9df1f8fb7a34",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Cuisse de poulet r\u00f4ti / Rotisserie Chicken Leg",
+      "name": "Cuisse de poulet rôti / Rotisserie Chicken Leg",
       "description": "",
       "section": "Poulet / Chicken",
       "imageURL": "/images/menu/chicken.jpg"
@@ -61925,7 +61925,7 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "Soupe poulet et nouilles / Chicken Noodle Soup",
       "description": "",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "/images/menu/soup.jpg"
     },
     {
@@ -61947,9 +61947,9 @@
     {
       "id": "catalog-ss_doordash_1158915_2df917e04311",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "4 b\u00e2tonnets de fromage / 4 Cheese Sticks",
+      "name": "4 bâtonnets de fromage / 4 Cheese Sticks",
       "description": "",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -61971,7 +61971,7 @@
     {
       "id": "catalog-ss_doordash_1158915_f36130d25f7d",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Wrap St-Hubert (original, tha\u00ef, C\u00e9sar, Nashville) / St-Hubert Wrap (original, thai, Caesar, Nashvill",
+      "name": "Wrap St-Hubert (original, thaï, César, Nashville) / St-Hubert Wrap (original, thai, Caesar, Nashvill",
       "description": "",
       "section": "Sandwichs / Sandwiches",
       "imageURL": "/images/menu/wrap.jpg"
@@ -61997,13 +61997,13 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "Pique-assiette / Mixed Platter",
       "description": "",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "/images/menu/coffee.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_a646b940c285",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "G\u00e2teau 75e anniversaire - Nouveau / 75th Anniversary Cake - New",
+      "name": "Gâteau 75e anniversaire - Nouveau / 75th Anniversary Cake - New",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62011,7 +62011,7 @@
     {
       "id": "catalog-ss_doordash_1158915_52f7bd04438a",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Repas Animalerie 8 morceaux - Les \u00e9conos / Zoo Meal (8 pieces) - The economeals",
+      "name": "Repas Animalerie 8 morceaux - Les éconos / Zoo Meal (8 pieces) - The economeals",
       "description": "",
       "section": "EN VEDETTE / IN THE SPOTLIGHT",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62019,7 +62019,7 @@
     {
       "id": "catalog-ss_doordash_1158915_400db5da955f",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "D\u00e9lice aux pommes - De retour / Apple Delight - It's back",
+      "name": "Délice aux pommes - De retour / Apple Delight - It's back",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/chicken.jpg"
@@ -62035,7 +62035,7 @@
     {
       "id": "catalog-ss_doordash_1158915_920960ff7daa",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Bol au poulet style Katsu - Nouveaut\u00e9 de l'\u00e9t\u00e9 / Katsu-Style Chicken Bowl - New summer arrival",
+      "name": "Bol au poulet style Katsu - Nouveauté de l'été / Katsu-Style Chicken Bowl - New summer arrival",
       "description": "",
       "section": "Bols St-Hub / St-Hub Bowls",
       "imageURL": "/images/menu/salad.jpg"
@@ -62043,7 +62043,7 @@
     {
       "id": "catalog-ss_doordash_1158915_362cc72fdef2",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Sandwich \u00e0 la salade de poulet - Les \u00e9conos / Chicken Salad Sandwich - The economeals",
+      "name": "Sandwich à la salade de poulet - Les éconos / Chicken Salad Sandwich - The economeals",
       "description": "",
       "section": "EN VEDETTE / IN THE SPOTLIGHT",
       "imageURL": "/images/menu/salad.jpg"
@@ -62053,7 +62053,7 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "6 ailes de poulet / 6 Chicken Wings",
       "description": "",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "/images/menu/wings.jpg"
     },
     {
@@ -62061,23 +62061,23 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "Salade maison / House Salad",
       "description": "",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "/images/menu/salad.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_22ebfb5951c1",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Salade C\u00e9sar St-Hubert / St-Hubert Caesar Salad",
+      "name": "Salade César St-Hubert / St-Hubert Caesar Salad",
       "description": "",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "/images/menu/salad.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_6e55c0fa921e",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "8 b\u00e2tonnets de fromage / 8 Cheese Sticks",
+      "name": "8 bâtonnets de fromage / 8 Cheese Sticks",
       "description": "",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -62085,7 +62085,7 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "16 ailes de poulet / 16 Chicken Wings",
       "description": "",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "/images/menu/wings.jpg"
     },
     {
@@ -62093,7 +62093,7 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "12 ailes de poulet / 12 Chicken Wings",
       "description": "",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "/images/menu/wings.jpg"
     },
     {
@@ -62101,13 +62101,13 @@
       "restaurantId": "catalog-ss_doordash_1158915",
       "name": "24 ailes de poulet / 24 Chicken Wings",
       "description": "",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "/images/menu/wings.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_75f90b549618",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Choix du r\u00f4tisseur / Roaster's Choice",
+      "name": "Choix du rôtisseur / Roaster's Choice",
       "description": "",
       "section": "Poulet / Chicken",
       "imageURL": "/images/menu/chicken.jpg"
@@ -62123,7 +62123,7 @@
     {
       "id": "catalog-ss_doordash_1158915_ff4d8cf8b395",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Bol St-Hub avec lani\u00e8res v\u00e9g\u00e9 croustillantes / St-Hub Bowl with crispy veggie strips",
+      "name": "Bol St-Hub avec lanières végé croustillantes / St-Hub Bowl with crispy veggie strips",
       "description": "",
       "section": "Bols St-Hub / St-Hub Bowls",
       "imageURL": "/images/menu/salad.jpg"
@@ -62131,15 +62131,15 @@
     {
       "id": "catalog-ss_doordash_1158915_928053cb8e81",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "C\u00f4tes lev\u00e9es de porc enti\u00e8res / Full Rack of Pork Ribs",
+      "name": "Côtes levées de porc entières / Full Rack of Pork Ribs",
       "description": "",
-      "section": "C\u00f4tes lev\u00e9es / Ribs",
+      "section": "Côtes levées / Ribs",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_e8c84236dea3",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Poutine aux c\u00f4tes lev\u00e9es / Rib poutine",
+      "name": "Poutine aux côtes levées / Rib poutine",
       "description": "",
       "section": "Poutines",
       "imageURL": "/images/menu/fries.jpg"
@@ -62147,25 +62147,25 @@
     {
       "id": "catalog-ss_doordash_1158915_dbb72d017f21",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Demi-c\u00f4tes lev\u00e9es de porc / Half Rack of Pork Ribs",
+      "name": "Demi-côtes levées de porc / Half Rack of Pork Ribs",
       "description": "",
-      "section": "C\u00f4tes lev\u00e9es / Ribs",
+      "section": "Côtes levées / Ribs",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_c9f450ccead8",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Demi-c\u00f4tes lev\u00e9es et cuisse / Half Rack of Ribs and Chicken Leg",
+      "name": "Demi-côtes levées et cuisse / Half Rack of Ribs and Chicken Leg",
       "description": "",
-      "section": "Combo (poulet et c\u00f4tes lev\u00e9es) / Combo (Chicken and Ribs)",
+      "section": "Combo (poulet et côtes levées) / Combo (Chicken and Ribs)",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_9a197e531ecc",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Demi-c\u00f4tes lev\u00e9es et poitrine / Half Rack of Ribs and Chicken Breast",
+      "name": "Demi-côtes levées et poitrine / Half Rack of Ribs and Chicken Breast",
       "description": "",
-      "section": "Combo (poulet et c\u00f4tes lev\u00e9es) / Combo (Chicken and Ribs)",
+      "section": "Combo (poulet et côtes levées) / Combo (Chicken and Ribs)",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
@@ -62195,15 +62195,15 @@
     {
       "id": "catalog-ss_doordash_1158915_30ef8a1a2e1f",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Wrap St-Hubert V\u00e9g\u00e9 / St-Hubert Veggie Wrap",
+      "name": "Wrap St-Hubert Végé / St-Hubert Veggie Wrap",
       "description": "",
-      "section": "Plats v\u00e9g\u00e9tariens / Vegetarian Options",
+      "section": "Plats végétariens / Vegetarian Options",
       "imageURL": "/images/menu/wrap.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_41f26a16329e",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Salade Bangkok avec lani\u00e8res v\u00e9g\u00e9 croustillantes / Bangkok Salad with crispy veggie strips",
+      "name": "Salade Bangkok avec lanières végé croustillantes / Bangkok Salad with crispy veggie strips",
       "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "/images/menu/salad.jpg"
@@ -62211,15 +62211,15 @@
     {
       "id": "catalog-ss_doordash_1158915_ade1687431d4",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Lani\u00e8res v\u00e9g\u00e9 croustillantes / Crispy Veggie Strips",
+      "name": "Lanières végé croustillantes / Crispy Veggie Strips",
       "description": "",
-      "section": "Plats v\u00e9g\u00e9tariens / Vegetarian Options",
+      "section": "Plats végétariens / Vegetarian Options",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_doordash_1158915_b3a17a81930c",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Poutine St-Hubert V\u00e9g\u00e9 / St-Hubert Veggie Poutine",
+      "name": "Poutine St-Hubert Végé / St-Hubert Veggie Poutine",
       "description": "",
       "section": "Poutines",
       "imageURL": "/images/menu/fries.jpg"
@@ -62227,7 +62227,7 @@
     {
       "id": "catalog-ss_doordash_1158915_16556a3820d3",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Salade maison avec lani\u00e8res v\u00e9g\u00e9 croustillantes / House Salad with crispy veggie strips",
+      "name": "Salade maison avec lanières végé croustillantes / House Salad with crispy veggie strips",
       "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "/images/menu/salad.jpg"
@@ -62251,7 +62251,7 @@
     {
       "id": "catalog-ss_doordash_1158915_10dc29158b11",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Salade C\u00e9sar St-Hubert avec poulet au choix / St-Hubert Caesar salad with your choice of chicken",
+      "name": "Salade César St-Hubert avec poulet au choix / St-Hubert Caesar salad with your choice of chicken",
       "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "/images/menu/salad.jpg"
@@ -62275,7 +62275,7 @@
     {
       "id": "catalog-ss_doordash_1158915_519ce3ec7611",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Le Super h\u00e9ros (Haut de cuisse) / Super Hero (Chicken Thigh)",
+      "name": "Le Super héros (Haut de cuisse) / Super Hero (Chicken Thigh)",
       "description": "",
       "section": "Menu enfants / Kid's Menu",
       "imageURL": "/images/menu/chicken.jpg"
@@ -62283,7 +62283,7 @@
     {
       "id": "catalog-ss_doordash_1158915_b563982607f7",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Wrap-\u00e0-gogo / Wrap-A-Gogo",
+      "name": "Wrap-à-gogo / Wrap-A-Gogo",
       "description": "",
       "section": "Menu enfants / Kid's Menu",
       "imageURL": "/images/menu/wrap.jpg"
@@ -62299,7 +62299,7 @@
     {
       "id": "catalog-ss_doordash_1158915_f6a0f9c4c6b1",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "G\u00e2teau aux carottes / Carrot Cake",
+      "name": "Gâteau aux carottes / Carrot Cake",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62307,7 +62307,7 @@
     {
       "id": "catalog-ss_doordash_1158915_bb7205604d20",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "G\u00e2teau au chocolat / Chocolate Cake",
+      "name": "Gâteau au chocolat / Chocolate Cake",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62347,7 +62347,7 @@
     {
       "id": "catalog-ss_doordash_1158915_011e2bcb82a1",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "G\u00e2teau vanill\u00e9 avec sauce sucre \u00e0 la cr\u00e8me / Vanilla Cake with Sugar Cream Sauce",
+      "name": "Gâteau vanillé avec sauce sucre à la crème / Vanilla Cake with Sugar Cream Sauce",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62363,7 +62363,7 @@
     {
       "id": "catalog-ss_doordash_1158915_2429d370ae8d",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Biscuit tendre \u00e0 l\u2019avoine Tag on the Go/ Tag on the Go Soft Oatmeal Cookie",
+      "name": "Biscuit tendre à l’avoine Tag on the Go/ Tag on the Go Soft Oatmeal Cookie",
       "description": "",
       "section": "Desserts",
       "imageURL": "/images/menu/dessert.jpg"
@@ -62403,7 +62403,7 @@
     {
       "id": "catalog-ss_doordash_1158915_632046063ac4",
       "restaurantId": "catalog-ss_doordash_1158915",
-      "name": "Salade de chou cr\u00e9meuse - format familial / Creamy Coleslaw - Family Size",
+      "name": "Salade de chou crémeuse - format familial / Creamy Coleslaw - Family Size",
       "description": "",
       "section": "Salade de chou / Coleslaw",
       "imageURL": "/images/menu/salad.jpg"
@@ -62419,16 +62419,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_9df1f8fb7a34",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Cuisse de poulet r\u00f4ti / Rotisserie Chicken Leg",
-      "description": "Notre poulet St-Hubert, r\u00f4ti sur la broche pendant trois heures (choix de classique, Piri-piri ou tikka masala). Ce repas comprend : 1 cuisse, 1 \u00e0-c\u00f4t\u00e9 de votre choix, 1 sauce BBQ St-Hubert, 1 pain, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Our St-Hubert chicken, roasted roasted on the spit for three hours (choice of classic, Piri-piri or tikka masala). This meal includes: 1 chicken leg, 1 side of your choice, 1 serving of St-Hubert BBQ sauce, 1 bun, 1 serving of coleslaw. Suggested serving.",
+      "name": "Cuisse de poulet rôti / Rotisserie Chicken Leg",
+      "description": "",
       "section": "Poulet / Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7823fd380adaea608c43.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_4bcb517e4ea3",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Poitrine de poulet r\u00f4ti / Rotisserie Chicken Breast",
-      "description": "Notre poulet St-Hubert, r\u00f4ti sur la broche pendant trois heures (choix de classique, Piri-piri ou tikka masala). Ce repas comprend : 1 poitrine, 1 \u00e0-c\u00f4t\u00e9 de votre choix, 1 sauce BBQ St-Hubert, 1 pain, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Our St-Hubert chicken, roasted roasted on the spit for three hours (choice of classic, Piri-piri or tikka masala). This meal includes: 1 chicken breast, 1 side of your choice, 1 serving of St-Hubert BBQ sauce, 1 bun, 1 serving of coleslaw. Suggested serving.",
+      "name": "Poitrine de poulet rôti / Rotisserie Chicken Breast",
+      "description": "",
       "section": "Poulet / Chicken",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c27e20df6540cd886081.jpeg"
     },
@@ -62443,32 +62443,32 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_aba586dceae5",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Wrap St-Hubert (original, tha\u00ef, C\u00e9sar, Nashville) / St-Hubert Wrap (original, thai, Caesar, Nashville)",
-      "description": "Poitrine de poulet grill\u00e9e ou filets de poitrine de poulet croustillants (classiques ou \u00e9pic\u00e9s Nashville), bacon, fromage suisse, laitue et mayonnaise dans une tortilla. Nouveau: offert en version originale ou avec sauce au choix (C\u00e9sar ou thaie). Ce repas comprend : 1 \u00e0-c\u00f4t\u00e9 de votre choix, 1 sauce BBQ St-Hubert, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Grilled chicken breast or crispy chicken breast fillets (classic or spicy Nashville), bacon, Swiss cheese, lettuce, and mayonnaise in a tortilla. New: Original version or add your choice of sauce (Caesar or Thai). This meal includes: 1 side of your choice, 1 serving of St-Hubert BBQ sauce, 1 serving of coleslaw. Suggested serving.",
+      "name": "Wrap St-Hubert (original, thaï, César, Nashville) / St-Hubert Wrap (original, thai, Caesar, Nashville)",
+      "description": "",
       "section": "Sandwichs / Sandwiches",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-90f89c5fca4c06952f13.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_920960ff7daa",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Bol au poulet style Katsu - Nouveaut\u00e9 de l'\u00e9t\u00e9 / Katsu-Style Chicken Bowl - New summer arrival",
-      "description": "Poitrine de poulet assaisonn\u00e9e croustillante, concombre marin\u00e9, marinade soja-s\u00e9same, edamames, kimchi et oignons verts, servis sur des nouilles orientales froides, le tout arros\u00e9 de sauce gochujang et de mayonnaise \u00e9pic\u00e9e. Pour un temps limit\u00e9. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Crispy seasoned chicken breast, pickled cucumber, soy-sesame marinade, edamame, kimchi and green onions,  served over cold oriental noodles and drizzled with gochujang sauce and spicy mayonnaise. For a limited time. Suggested serving.",
+      "name": "Bol au poulet style Katsu - Nouveauté de l'été / Katsu-Style Chicken Bowl - New summer arrival",
+      "description": "",
       "section": "Bols St-Hub / St-Hub Bowls",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-d398c738a8d1a5595344.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_a646b940c285",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "G\u00e2teau 75e anniversaire - Nouveau / 75th Anniversary Cake - New",
-      "description": "Pour c\u00e9l\u00e9brer, on vous a pr\u00e9par\u00e9 une vraie f\u00eate pour les papilles, un g\u00e2teau regroupant 7 de nos desserts iconiques : Millefeuille, G\u00e2teau vanill\u00e9, Mousse \u00e0 l'\u00e9rable, Chocomousse, Brownie, Tarte au sucre et G\u00e2teau au fromage. Pour un temps limit\u00e9. Pr\u00e9sentation sugg\u00e9r\u00e9e. / To celebrate this milestone, we\u2019ve got a gift for your taste buds, a cake featuring 7 of our iconic desserts : Millefeuille, Vanilla cake, Maple mousse, Chocomousse, Brownie, Sugar pie and Cheesecake. For a limtied time. Suggested serving.",
+      "name": "Gâteau 75e anniversaire - Nouveau / 75th Anniversary Cake - New",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ae7f65f5b5f61c5af614.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_400db5da955f",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "D\u00e9lice aux pommes - De retour / Apple Delight - It's back",
-      "description": "Succulente pomme garnie de sucre \u00e0 la cannelle, enrob\u00e9e de p\u00e2te feuillet\u00e9e et napp\u00e9e de notre sauce au sucre \u00e0 la cr\u00e8me. / Succulent apple filled with cinnamon sugar, wrapped in puff pastry and topped with our sugar cream sauce.",
+      "name": "Délice aux pommes - De retour / Apple Delight - It's back",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-bee9bd2ae4bbdb61c236.jpeg"
     },
@@ -62484,96 +62484,96 @@
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_5d687b5bbf92",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "Pique-assiette / Mixed Platter",
-      "description": "4 filets de poitrine de poulet croustillants, 4 b\u00e2tonnets de fromage, 4 ailes de poulet et frites de patates douces; servis avec 1 sauce \u00e0 filets au choix, 1 sauce marinara, 1 sauce \u00e0 ailes au choix, 1 mayonnaise aux poivrons rouges r\u00f4tis et 1 sauce BBQ St-Hubert. / 4 crispy chicken breast fillets, 4 cheese sticks, 4 chicken wings and sweet potato fries; served with 1 fillet sauce of your choice, 1 marinara sauce, 1 wing sauce of your choice, 1 roasted red pepper mayonnaise and 1 serving of St-Hubert BBQ sauce.",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "description": "",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-03a6bb5ec836b5906626.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_52f7bd04438a",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Repas Animalerie 8 morceaux - Les \u00e9conos / Zoo Meal (8 pieces) - The economeals",
-      "description": "8 tendres morceaux de poulet assaisonn\u00e9s croustillants en forme d'animaux.  Ce repas comprend : 8 morceaux en forme d'animaux, 1 \u00e0-c\u00f4t\u00e9 au choix, 2 trempettes au choix, 1 sauce BBQ St-Hubert, 1 pain et 1 salade de chou. Portion mod\u00e9r\u00e9e. Pr\u00e9sentation sugg\u00e9r\u00e9e. / 8 tender animal-shaped seasoned crispy chicken nuggets. This meal includes: 8 animal-shaped pieces, 1 side of your choice, 2 dipping sauces of your choice, 1 serving of St-Hubert BBQ sauce, 1 bun and 1 serving of coleslaw. Moderate serving. Suggested serving.",
+      "name": "Repas Animalerie 8 morceaux - Les éconos / Zoo Meal (8 pieces) - The economeals",
+      "description": "",
       "section": "EN VEDETTE / IN THE SPOTLIGHT",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-da4cd7d278b7d173387d.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_362cc72fdef2",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Sandwich \u00e0 la salade de poulet - Les \u00e9conos / Chicken Salad Sandwich - The economeals",
-      "description": "M\u00e9lange de salade de poulet, fromage suisse, laitue, tartinade de poivrons rouges r\u00f4tis, servis dans un pain ciabatta grill\u00e9. Ce repas comprend : 1 sandwich \u00e0 la salade de poulet, 1 \u00e0-c\u00f4t\u00e9 au choix, 1 sauce BBQ St-Hubert et 1 salade de chou. Portion mod\u00e9r\u00e9e. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Chicken salad, Swiss cheese, lettuce and roasted red pepper spread, served on a toasted ciabatta bread. This meal includes: 1 chicken salad sandwich, 1 side of your choice, 1 serving of St-Hubert BBQ sauce and 1 serving of coleslaw. Moderate serving. Suggested serving.",
+      "name": "Sandwich à la salade de poulet - Les éconos / Chicken Salad Sandwich - The economeals",
+      "description": "",
       "section": "EN VEDETTE / IN THE SPOTLIGHT",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-30915ff07366eed05264.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_2df917e04311",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "4 b\u00e2tonnets de fromage / 4 Cheese Sticks",
-      "description": "4 b\u00e2tonnets de fromage croustillants servis avec la sauce marinara. Pr\u00e9sentation sugg\u00e9r\u00e9e. / 4 crispy cheese sticks served with marinara sauce. Suggested serving.",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "name": "4 bâtonnets de fromage / 4 Cheese Sticks",
+      "description": "",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9489a01b982c864256c1.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_2b96ab5abd10",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "6 ailes de poulet / 6 Chicken Wings",
-      "description": "Une entr\u00e9e de 6 ailes de poulet tendres \u00e0 l\u2019int\u00e9rieur et croustillantes \u00e0 l\u2019ext\u00e9rieur. Inclut 1 sauce \u00e0 ailes de poulet au choix. / An appetizer of 6 chicken wings, tender on the inside, crispy on the outside with 1 dipping sauce of your choice.",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "description": "",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-95a17e013e7c5d8387e9.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_f64d003016ca",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "Soupe poulet et nouilles / Chicken Noodle Soup",
-      "description": "Des nouilles bien tendres, des l\u00e9gumes frais et de gros morceaux de notre fameux poulet r\u00f4ti. / Tender noodles, fresh vegetables and big chunks of our famous roasted chicken.",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "description": "",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-36e05a7289533f8e78a1.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_22ebfb5951c1",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade C\u00e9sar St-Hubert / St-Hubert Caesar Salad",
-      "description": "Laitue romaine, copeaux de poulet croustillants, cro\u00fbtons style maison, fromage parmesan et vinaigrette C\u00e9sar \u00e0 l'ail r\u00f4ti. Pr\u00e9sentation sugg\u00e9r\u00e9e. Notre vinaigrette C\u00e9sar contient l'allerg\u00e8ne poisson. / Romaine lettuce, crispy shavings of chicken, home style croutons, Parmesan cheese and roasted garlic Caesar salad dressing. Suggested serving. Our Caesar dressing contains a fish allergen.",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "name": "Salade César St-Hubert / St-Hubert Caesar Salad",
+      "description": "",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c18ed8a455f2c6b56f6c.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_0caa00080fa5",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "Salade maison / House Salad",
-      "description": "Laitue croquante, radis, concombre, oignons rouges, graines de citrouille r\u00f4ties et vinaigrette maison. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Crunchy lettuce, radishes, cucumber, red onions, roasted pumpkin seeds and house dressing. Suggested serving.",
-      "section": "Entr\u00e9es (pour une personne) / Appetizers (For One)",
+      "description": "",
+      "section": "Entrées (pour une personne) / Appetizers (For One)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c3d6c1efd9ac2968e975.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_6e55c0fa921e",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "8 b\u00e2tonnets de fromage / 8 Cheese Sticks",
-      "description": "8 b\u00e2tonnets de fromage croustillants servis avec la sauce marinara. Pr\u00e9sentation sugg\u00e9r\u00e9e. / 8 crispy cheese sticks served with marinara sauce. Suggested serving.",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "name": "8 bâtonnets de fromage / 8 Cheese Sticks",
+      "description": "",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f95ab77ca9331bd5423b.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_22fd6afb2762",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "12 ailes de poulet / 12 Chicken Wings",
-      "description": "Une entr\u00e9e de 12 ailes de poulet tendres \u00e0 l\u2019int\u00e9rieur et croustillantes \u00e0 l\u2019ext\u00e9rieur. Inclut 2 sauces \u00e0 ailes de poulet au choix. / An appetizer of 12 chicken wings, tender on the inside, crispy on the outside with 2 dipping sauces of your choice.",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "description": "",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f4e952c17c227c273383.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_16a7b798a783",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "16 ailes de poulet / 16 Chicken Wings",
-      "description": "Une entr\u00e9e \u00e0 partager de 16 ailes de poulet tendres \u00e0 l\u2019int\u00e9rieur et croustillantes \u00e0 l\u2019ext\u00e9rieur. Inclut 2 sauces \u00e0 ailes de poulet au choix. / 16 chicken wings, tender on the inside, crispy on the outside; 2 dipping sauces of your choice.",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "description": "",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0a44009dd096dfe57e49.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_912ec1b1b785",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
       "name": "24 ailes de poulet / 24 Chicken Wings",
-      "description": "Une entr\u00e9e \u00e0 partager de 24 ailes de poulet tendres \u00e0 l\u2019int\u00e9rieur et croustillantes \u00e0 l\u2019ext\u00e9rieur. Inclut 3 sauces \u00e0 ailes de poulet au choix. / 24 chicken wings, tender on the inside, crispy on the outside; 3 dipping sauces of your choice.",
-      "section": "Entr\u00e9es (\u00e0 partager) / Appetizers (To Share)",
+      "description": "",
+      "section": "Entrées (à partager) / Appetizers (To Share)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-fc597a2ce51b7ee8a1d6.jpeg"
     },
     {
@@ -62603,49 +62603,49 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_ff4d8cf8b395",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Bol St-Hub avec lani\u00e8res v\u00e9g\u00e9 croustillantes / St-Hub Bowl with crispy veggie strips",
-      "description": "Riz, laitue croquante, lani\u00e8res v\u00e9g\u00e9 croustillantes, l\u00e9gumes, edamames et fromage monterey jack, arros\u00e9s de notre vinaigrette maison et d\u2019une cr\u00e8me sure au cumin. Version originale ou avec sauce au choix: Whisky BBQ, tikka masala ou piri-piri. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Rice, crunchy lettuce, crispy veggie strips, vegetables, edamame and Monterey Jack cheese, drizzled with our house dressing and cumin sour cream. Original version or add your choice of sauce : Whisky BBQ, tikka masala or piri-piri. Suggested serving.",
+      "name": "Bol St-Hub avec lanières végé croustillantes / St-Hub Bowl with crispy veggie strips",
+      "description": "",
       "section": "Bols St-Hub / St-Hub Bowls",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-02bca0b2c2180a103bb4.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_dbb72d017f21",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Demi-c\u00f4tes lev\u00e9es de porc / Half Rack of Pork Ribs",
-      "description": "Tendres et charnues, nos c\u00f4tes lev\u00e9es sont longuement marin\u00e9es puis doucement cuites au four. Elles sont ensuite napp\u00e9es de la sauce de votre choix et d\u00e9licieusement caram\u00e9lis\u00e9es sur le grill. Ce repas comprend : 1 demi-c\u00f4tes lev\u00e9es (votre choix de sauce classique ou whisky BBQ), 1 \u00e0-c\u00f4t\u00e9 au choix, 1 pain, 1 sauce BBQ St-Hubert, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Tender and meaty, our ribs are marinated and slow-cooked in the oven. They\u2019re then topped with a sauce of your choice and perfectly caramelized on the grill. This meal includes: 1 half rack of ribs (your choice of classic or whisky BBQ sauce), 1 side of your choice, 1 bun, 1 serving of St-Hubert BBQ sauce, 1 serving of coleslaw. Suggested serving.",
-      "section": "C\u00f4tes lev\u00e9es / Ribs",
+      "name": "Demi-côtes levées de porc / Half Rack of Pork Ribs",
+      "description": "",
+      "section": "Côtes levées / Ribs",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-95bc1500c76b48950497.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_928053cb8e81",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "C\u00f4tes lev\u00e9es de porc enti\u00e8res / Full Rack of Pork Ribs",
-      "description": "Tendres et charnues, nos c\u00f4tes lev\u00e9es sont longuement marin\u00e9es puis doucement cuites au four. Elles sont ensuite napp\u00e9es de la sauce de votre choix et d\u00e9licieusement caram\u00e9lis\u00e9es sur le grill. Ce repas comprend : 1 c\u00f4te lev\u00e9e enti\u00e8re (votre choix de sauce classique ou whisky BBQ), 1 \u00e0-c\u00f4t\u00e9 au choix, 1 pain, 1 sauce BBQ St-Hubert, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Tender and meaty, our ribs are marinated and slow-cooked in the oven. They\u2019re then topped with a sauce of your choice and perfectly caramelized on the grill. This meal includes: 1 full rack of ribs (your choice of classic or whisky BBQ sauce), 1 side of your choice, 1 bun, 1 serving of St-Hubert BBQ sauce, 1 serving of coleslaw. Suggested serving.",
-      "section": "C\u00f4tes lev\u00e9es / Ribs",
+      "name": "Côtes levées de porc entières / Full Rack of Pork Ribs",
+      "description": "",
+      "section": "Côtes levées / Ribs",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-828d6a29221604dd8de2.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_e8c84236dea3",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Poutine aux c\u00f4tes lev\u00e9es / Rib poutine",
-      "description": "Frites, c\u00f4tes lev\u00e9es St-Hubert effiloch\u00e9es \u00e0 la main dans notre cuisine et enrob\u00e9es de notre sauce BBQ, fromage en grains, sauce \u00e0 poutine St-Hubert et sauce whisky BBQ. Pr\u00e9sentation sugg\u00e9r\u00e9e. C\u00f4tes lev\u00e9es de porc. / Fries, St-Hubert ribs hand-pulled in our kitchen and coated with our BBQ sauce, cheese curds, St-Hubert poutine sauce and whisky BBQ sauce. Suggested serving. Pork ribs.",
+      "name": "Poutine aux côtes levées / Rib poutine",
+      "description": "",
       "section": "Poutines",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-3162616a2d9fa887d55f.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_c9f450ccead8",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Demi-c\u00f4tes lev\u00e9es et cuisse / Half Rack of Ribs and Chicken Leg",
-      "description": "Nos tendres et g\u00e9n\u00e9reuses c\u00f4tes lev\u00e9es combin\u00e9es \u00e0 notre authentique poulet r\u00f4ti. Ce repas comprend : 1 demi-c\u00f4tes lev\u00e9es (votre choix de sauce classique ou whisky BBQ), 1 cuisse (votre choix de saveur classique, Piri-piri ou tikka masala), 1 \u00e0-c\u00f4t\u00e9 au choix, 1 pain, 1 sauce BBQ St-Hubert, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Our tender and meaty ribs combined with our authentic rotisserie chicken. This meal includes: 1 half rack of ribs (your choice of classic or whisky BBQ sauce), 1 chicken leg (choice of classic, Piri-piri or tikka masala), 1 side of your choice, 1 serving of St-Hubert BBQ sauce, 1 bun, 1 serving of coleslaw. Suggested serving.",
-      "section": "Combo (poulet et c\u00f4tes lev\u00e9es) / Combo (Chicken and Ribs)",
+      "name": "Demi-côtes levées et cuisse / Half Rack of Ribs and Chicken Leg",
+      "description": "",
+      "section": "Combo (poulet et côtes levées) / Combo (Chicken and Ribs)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e484aaa760cb2782e769.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_9a197e531ecc",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Demi-c\u00f4tes lev\u00e9es et poitrine / Half Rack of Ribs and Chicken Breast",
-      "description": "Nos tendres et g\u00e9n\u00e9reuses c\u00f4tes lev\u00e9es combin\u00e9es \u00e0 notre authentique poulet r\u00f4ti. Ce repas comprend : 1 demi-c\u00f4tes lev\u00e9es (votre choix de sauce classique ou whisky BBQ), 1 poitrine (votre choix de saveur classique, Piri-piri ou tikka masala), 1 \u00e0-c\u00f4t\u00e9 au choix, 1 pain, 1 sauce BBQ St-Hubert, 1 salade de chou. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Our tender and meaty ribs combined with our authentic rotisserie chicken. This meal includes: 1 half rack of ribs (your choice of classic or whisky BBQ sauce), 1 chicken breast (choice of classic, Piri-piri or tikka masala), 1 side of your choice, 1 serving of St-Hubert BBQ sauce, 1 bun, 1 serving of coleslaw. Suggested serving.",
-      "section": "Combo (poulet et c\u00f4tes lev\u00e9es) / Combo (Chicken and Ribs)",
+      "name": "Demi-côtes levées et poitrine / Half Rack of Ribs and Chicken Breast",
+      "description": "",
+      "section": "Combo (poulet et côtes levées) / Combo (Chicken and Ribs)",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-fc4fb970cf07ad6f622d.jpeg"
     },
     {
@@ -62699,40 +62699,40 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_30ef8a1a2e1f",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Wrap St-Hubert V\u00e9g\u00e9 / St-Hubert Veggie Wrap",
-      "description": "Lani\u00e8res v\u00e9g\u00e9 croustillantes, fromage suisse, laitue et mayonnaise dans une tortilla blanche. Ce repas comprend: 1 \u00e0-cot\u00e9 de votre choix, 1 sauce v\u00e9g\u00e9 St-Hubert et 1 salade de chou. / Crispy veggie strips, Swiss cheese, lettuce, mayonnaise in white tortilla. This meal includes: 1 side of your choice, 1 St-Hubert veggie sauce and 1 serving of coleslaw.",
-      "section": "Plats v\u00e9g\u00e9tariens / Vegetarian Options",
+      "name": "Wrap St-Hubert Végé / St-Hubert Veggie Wrap",
+      "description": "",
+      "section": "Plats végétariens / Vegetarian Options",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c560dd5b575db4403864.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_41f26a16329e",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade Bangkok avec lani\u00e8res v\u00e9g\u00e9 croustillantes / Bangkok Salad with crispy veggie strips",
-      "description": "Laitue croquante, lani\u00e8res v\u00e9g\u00e9 croustillantes, ananas, mandarines, nouilles chinoises croquantes, poivrons rouges, sauce tha\u00efe \u00e9pic\u00e9e et sucr\u00e9e et vinaigrette maison. / Crunchy lettuce, crispy veggie strips, pineapple, mandarins, crunchy Chinese crispy noodles, red peppers, sweet and spicy Thai sauce, and house dressing.",
+      "name": "Salade Bangkok avec lanières végé croustillantes / Bangkok Salad with crispy veggie strips",
+      "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-94701918aa87bef58856.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_16556a3820d3",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade maison avec lani\u00e8res v\u00e9g\u00e9 croustillantes / House Salad with crispy veggie strips",
-      "description": "Laitue croquante, lani\u00e8res v\u00e9g\u00e9 croustillantes, radis, concombre, oignons rouges, graines de citrouille r\u00f4ties et vinaigrette maison. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Crunchy lettuce, crispy veggie strips, radishes, cucumber, red onions, roasted pumpkin seeds and house dressing. Suggested serving.",
+      "name": "Salade maison avec lanières végé croustillantes / House Salad with crispy veggie strips",
+      "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-dfe11a51a0c845abaf66.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_ade1687431d4",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Lani\u00e8res v\u00e9g\u00e9 croustillantes / Crispy Veggie Strips",
-      "description": "Repas de lani\u00e8res v\u00e9g\u00e9 croustillantes incluant: 6 lani\u00e8res v\u00e9g\u00e9 croustillantes, 1 \u00e0-c\u00f4t\u00e9 de votre choix, 2 sauces \u00e0 lani\u00e8res au choix, 1 sauce v\u00e9g\u00e9 St-Hubert, 1 pain et 1 salade de chou. / Complete meal of tender and crispy veggie strips: 6 crispy veggie strips, 1 side of your choice, 2 strip dipping sauces of your choice, 1 serving of St-Hubert veggie sauce, 1 bun, and 1 serving of coleslaw.",
-      "section": "Plats v\u00e9g\u00e9tariens / Vegetarian Options",
+      "name": "Lanières végé croustillantes / Crispy Veggie Strips",
+      "description": "",
+      "section": "Plats végétariens / Vegetarian Options",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-17a1fc50807f16a9b58b.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_b3a17a81930c",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Poutine St-Hubert V\u00e9g\u00e9 / St-Hubert Veggie Poutine",
-      "description": "Frites dor\u00e9es, morceaux de lani\u00e8res v\u00e9g\u00e9 croustillantes, fromage en grains, sauce v\u00e9g\u00e9 St-Hubert, sauce \u00e0 c\u00f4tes lev\u00e9es et assaisonnements fum\u00e9s barbecue. / Fries, pieces of crispy veggie strips, cheese curds, St-Hubert veggie sauce, rib sauce, and smoked BBQ seasoning.",
+      "name": "Poutine St-Hubert Végé / St-Hubert Veggie Poutine",
+      "description": "",
       "section": "Poutines",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-417c014e3c24496cab72.jpeg"
     },
@@ -62763,8 +62763,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_10dc29158b11",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade C\u00e9sar St-Hubert avec poulet au choix / St-Hubert Caesar salad with your choice of chicken",
-      "description": "Laitue romaine, copeaux de poulet croustillants, cro\u00fbtons style maison, fromage parmesan et vinaigrette C\u00e9sar \u00e0 l'ail r\u00f4ti. Offerte avec un choix de poulet r\u00f4ti, poitrine de poulet grill\u00e9e ou filets de poulet croustillants. Pr\u00e9sentation sugg\u00e9r\u00e9e. / Romaine lettuce, crispy shavings of chicken, home style croutons, Parmesan cheese and roasted garlic Caesar salad dressing. \nServed with a choice of rotisserie chicken, grilled chicken breast or crispy chicken fillets. Suggested serving.",
+      "name": "Salade César St-Hubert avec poulet au choix / St-Hubert Caesar salad with your choice of chicken",
+      "description": "",
       "section": "Salades-repas / Meal Salads",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ad83af13d8594c171c02.jpeg"
     },
@@ -62795,16 +62795,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_b563982607f7",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Wrap-\u00e0-gogo / Wrap-A-Gogo",
-      "description": "Tortilla blanche garnie d'un filet de poulet croustillant, de laitue fris\u00e9e croquante, de fromage et de mayonnaise. Ce repas comprend: 1 Wrap-\u00e0-gogo, 1 accompagnement au choix, 1 sauce BBQ et 1 dessert au choix du menu enfants. / White tortilla garnished with a crispy chicken fillet, fresh lettuce, cheese and mayonnaise. This kid's meal includes: 1 Wrap-a-gogo, 1 side dish of your choice, 1 BBQ sauce, and 1 kids' dessert of your choice.",
+      "name": "Wrap-à-gogo / Wrap-A-Gogo",
+      "description": "",
       "section": "Menu enfants / Kid's Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c181e95b555d297f3583.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_519ce3ec7611",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Le Super h\u00e9ros (Haut de cuisse) / Super Hero (Chicken Thigh)",
-      "description": "Savoureux haut de cuisse de poulet cuite selon la m\u00e9thode classique. Ce repas pour enfant comprend :-1 haut de cuisse de poulet, 1 accompagnement au choix, 1 pain, 1 sauce BBQ et 1 dessert pour enfant au choix. / Delicious chicken thigh cooked the traditional way. This kids' meal includes: 1 chicken thigh, 1 side dish of your choice, 1 bun, 1 serving of BBQ sauce, and 1 kids' dessert of your choice.",
+      "name": "Le Super héros (Haut de cuisse) / Super Hero (Chicken Thigh)",
+      "description": "",
       "section": "Menu enfants / Kid's Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ebd4b6932599977eaa7a.jpeg"
     },
@@ -62819,16 +62819,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_f6a0f9c4c6b1",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "G\u00e2teau aux carottes / Carrot Cake",
-      "description": "G\u00e9n\u00e9reux g\u00e2teau aux carottes fra\u00eeches et \u00e0 l'ananas de quatre \u00e9tages, chacun recouvert d'un riche gla\u00e7age au fromage \u00e0 la cr\u00e8me authentique. Pr\u00e9sentation sugg\u00e9r\u00e9e. / A generous cake of fresh carrots and pineapple, with four layers, each covered with a rich, authentic cream cheese icing. Suggested serving.",
+      "name": "Gâteau aux carottes / Carrot Cake",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1b26011031ddbf01a1c4.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_bb7205604d20",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "G\u00e2teau au chocolat / Chocolate Cake",
-      "description": "Trois \u00e9tages de g\u00e9noise au chocolat entrelac\u00e9e d\u2019une riche cr\u00e8me au chocolat, garnie de brownies et de ganache.\nPr\u00e9sentation sugg\u00e9r\u00e9e. / Three layers of chocolate sponge cake interlaced with rich chocolate cream, topped with brownies and ganache.\nSuggested presentation.",
+      "name": "Gâteau au chocolat / Chocolate Cake",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-bd43396eb47d3f5f70f7.jpeg"
     },
@@ -62859,8 +62859,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_011e2bcb82a1",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "G\u00e2teau vanill\u00e9 avec sauce sucre \u00e0 la cr\u00e8me / Vanilla Cake with Sugar Cream Sauce",
-      "description": "Une portion de g\u00e2teau vanill\u00e9 servi avec notre d\u00e9licieuse sauce sucre \u00e0 la cr\u00e8me. / Moist vanilla cake drenched in our delicious sugar cream sauce.",
+      "name": "Gâteau vanillé avec sauce sucre à la crème / Vanilla Cake with Sugar Cream Sauce",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e5f3c20e969834699a7e.jpeg"
     },
@@ -62875,8 +62875,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_2429d370ae8d",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Biscuit tendre \u00e0 l\u2019avoine Tag on the Go/ Tag on the Go Soft Oatmeal Cookie",
-      "description": "Un biscuit sans noix ni arachides, source de fer et dose d'\u00e9nergie pr\u00e9f\u00e9r\u00e9e d'Alex Tagliani. / A nut- and peanut-free cookie, source of iron and Alex Tagliani's favourite source of energy.",
+      "name": "Biscuit tendre à l’avoine Tag on the Go/ Tag on the Go Soft Oatmeal Cookie",
+      "description": "",
       "section": "Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f680dc35d79004c93b44.jpeg"
     },
@@ -62939,16 +62939,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_0e3076abedaa",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade de chou cr\u00e9meuse - portion individuelle / Salade De Chou Traditionnelle Portion Individuelle",
-      "description": "Salade de chou cr\u00e9meuse - portion individuelle / Salade De Chou Traditionnelle Portion Individuelle",
+      "name": "Salade de chou crémeuse - portion individuelle / Salade De Chou Traditionnelle Portion Individuelle",
+      "description": "",
       "section": "Salade de chou / Coleslaw",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-dc2c356fbd429f80c128.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_632046063ac4",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Salade de chou cr\u00e9meuse - format familial / Creamy Coleslaw - Family Size",
-      "description": "Salade de chou cr\u00e9meuse de format familial de 24 oz. / A family size portion of creamy coleslaw - 24 oz.",
+      "name": "Salade de chou crémeuse - format familial / Creamy Coleslaw - Family Size",
+      "description": "",
       "section": "Salade de chou / Coleslaw",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-11d16ae03e2abc1af8cc.jpeg"
     },
@@ -62995,16 +62995,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_cc03edbb127a",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Pepsi Di\u00e8te / Diet Pepsi 591ml",
-      "description": "Bouteille 591 ml. / 591 mL bottle.",
+      "name": "Pepsi Diète / Diet Pepsi 591ml",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-16895dfb2404a3841f22.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_c56eb2227a4f",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Pepsi Z\u00e9ro Sucre / Pepsi Zero Sugar 591ml",
-      "description": "Bouteille 591 ml. / 591 mL bottle.",
+      "name": "Pepsi Zéro Sucre / Pepsi Zero Sugar 591ml",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-16cacc5cf448f4b1638c.jpeg"
     },
@@ -63027,8 +63027,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_89052fc451c5",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "7up Z\u00e9ro sucre / 7up Zero Sugar 591ml",
-      "description": "Bouteille 591 ml. / 591 mL bottle.",
+      "name": "7up Zéro sucre / 7up Zero Sugar 591ml",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-95eedbafd60b1c82e381.jpeg"
     },
@@ -63059,8 +63059,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_aa991bee2482",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Brisk Th\u00e9 Glac\u00e9 Citron / Brisk Lemon Iced Tea 591ml",
-      "description": "Bouteille 591 ml. / 591 mL bottle.",
+      "name": "Brisk Thé Glacé Citron / Brisk Lemon Iced Tea 591ml",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-055e6cbe3a5b3f21e84c.jpeg"
     },
@@ -63083,8 +63083,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_87d99e3ecbc2",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Bubly m\u00fbre / Blackberry Bubly",
-      "description": "Canette 355 ml. / 355 mL can.",
+      "name": "Bubly mûre / Blackberry Bubly",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-882ccfb094865b852f60.jpeg"
     },
@@ -63107,8 +63107,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_3b8ecdf12071",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Pepsi Di\u00e8te / Diet Pepsi 2L",
-      "description": "Bouteille 2L. / 2L bottle.",
+      "name": "Pepsi Diète / Diet Pepsi 2L",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ccaa7e4528b08160f36e.jpeg"
     },
@@ -63147,8 +63147,8 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_b9abf9ec57e1",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Pepsi Z\u00e9ro Sucre / Pepsi Zero Sugar 2L",
-      "description": "Bouteille 2L. / 2L bottle.",
+      "name": "Pepsi Zéro Sucre / Pepsi Zero Sugar 2L",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-654c0264ddcdc7302ab6.jpeg"
     },
@@ -63163,16 +63163,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_192bd590aa32",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Eau p\u00e9tillante Montellier / Montellier Sparkling Water",
-      "description": "Canette 355 ml. / 355 mL can.",
+      "name": "Eau pétillante Montellier / Montellier Sparkling Water",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7b5b2c61421ae932d4cc.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_ebcc4a6550c1",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Jus de l\u00e9gumes V-8 / V-8 Vegetable Juice",
-      "description": "Bouteille 354 ml. / 354 mL bottle.",
+      "name": "Jus de légumes V-8 / V-8 Vegetable Juice",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-dd4c51a5b6252edcbd07.jpeg"
     },
@@ -63187,16 +63187,16 @@
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_41fc0c8f4d8b",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Jus de pomme Oasis en bo\u00eete / Oasis Apple Juice Box",
-      "description": "Bo\u00eete 200 ml. / 200 mL box.",
+      "name": "Jus de pomme Oasis en boîte / Oasis Apple Juice Box",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-344b87f7b8d517e1ab74.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0_a1107205a49e",
       "restaurantId": "catalog-ss_ubereats_25ea6037985c6fbb0f2798f0",
-      "name": "Jus Pomme-Raisin Oasis en bo\u00eete / Oasis Grape-Apple Juice Box",
-      "description": "Bo\u00eete 200 ml. / 200 mL box.",
+      "name": "Jus Pomme-Raisin Oasis en boîte / Oasis Grape-Apple Juice Box",
+      "description": "",
       "section": "Boissons froides / Cold Beverages",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-b0e613514875c8a97be5.jpeg"
     },
@@ -65459,7 +65459,7 @@
     {
       "id": "catalog-ss_doordash_2518559_c9b201922762",
       "restaurantId": "catalog-ss_doordash_2518559",
-      "name": "Steak n\u2019 Bacon",
+      "name": "Steak n’ Bacon",
       "description": "",
       "section": "Wraps",
       "imageURL": "/images/menu/drink.jpg"
@@ -66099,8 +66099,8 @@
     {
       "id": "catalog-ss_skip_0ae76103c2ded4149c30e9bf_14234a33df07",
       "restaurantId": "catalog-ss_skip_0ae76103c2ded4149c30e9bf",
-      "name": "Steak n\u2019 Bacon (Wrap)",
-      "description": "Our Classic Steak & Cheese Wrap is made with Canadian seasoned steak, Maplewood Smoked bacon, topped with lettuce, tomatoes, spicy Chipotle sauce, our Peppercorn Ranch, and a double helping of Habanero Jack cheese for an added kick. [690 Cals]",
+      "name": "Steak n’ Bacon (Wrap)",
+      "description": "",
       "section": "Wraps",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f077d5a7a03d593b965b.jpeg"
     },
@@ -66427,8 +66427,8 @@
     {
       "id": "catalog-ss_skip_0ae76103c2ded4149c30e9bf_9adb7a2667cc",
       "restaurantId": "catalog-ss_skip_0ae76103c2ded4149c30e9bf",
-      "name": "Lay\u2019s Ketchup flavoured potato chips (Side)",
-      "description": "[210 Cals]",
+      "name": "Lay’s Ketchup flavoured potato chips (Side)",
+      "description": "",
       "section": "Sides",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9701a38d7d6d6ae9847f.jpeg"
     },
@@ -69443,7 +69443,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_70ae3bf461ef",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Edamame GF \u6bdb\u8c46",
+      "name": "Edamame GF 毛豆",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1e785fa791220e2ca304.jpg"
@@ -69451,15 +69451,15 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_d6be2631b787",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Avocado Salad \u725b\u6cb9\u679c\u6c99\u62c9",
-      "description": "Could be Gluten Free",
+      "name": "Avocado Salad 牛油果沙拉",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-4c062c3383422b554788.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_0bd256ef26ba",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Takoyaki \u7ae0\u9c7c\u5c0f\u4e38\u5b50",
+      "name": "Takoyaki 章鱼小丸子",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f8c547d4e038d21d1f6c.jpg"
@@ -69467,15 +69467,15 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_49474712f611",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Pot Sticker \u9e21\u8089\u714e\u997a",
-      "description": "10 Pieces",
+      "name": "Pot Sticker 鸡肉煎饺",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1c0df933d20fadb80723.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_e936ae6a0377",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Miso Soup \u65e5\u5f0f\u9171\u6c64",
+      "name": "Miso Soup 日式酱汤",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7eef1506eb66dc95fdad.jpeg"
@@ -69491,16 +69491,16 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_5205096b8710",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Wonton Soup Small \u5c0f\u9984\u9968\u6c64",
-      "description": "5 wontons",
+      "name": "Wonton Soup Small 小馄饨汤",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7f85b37d4311bcda6129.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_f4eb406d0b8f",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Wonton Soup Large \u5927\u9984\u9968\u6c64",
-      "description": "12 wontons",
+      "name": "Wonton Soup Large 大馄饨汤",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7f85b37d4311bcda6129.jpeg"
     },
@@ -69515,8 +69515,8 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_a0e27220195e",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Tom Yum Soup \u5c0f\u51ac\u9634\u529f\u6c64",
-      "description": "Vegan soup, little sour, little spicy.",
+      "name": "Tom Yum Soup 小冬阴功汤",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5d07f3a484ec46df9bc9.jpg"
     },
@@ -69531,7 +69531,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_92e16e1b9eba",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Green Onion Crepe \u8471\u6cb9\u997c",
+      "name": "Green Onion Crepe 葱油饼",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e3f7479f549507cabfed.jpg"
@@ -69547,15 +69547,15 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_dccef8033c65",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Japanese Pizza \u65e5\u5f0f\u6d77\u9c9c\u997c",
-      "description": "Contains seafood",
+      "name": "Japanese Pizza 日式海鲜饼",
+      "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-6d771da4e3d8fef4b966.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_fdc1cffa52a9",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Pot Stickers-5 Pieces \u9e21\u8089\u714e\u997a",
+      "name": "Pot Stickers-5 Pieces 鸡肉煎饺",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1c0df933d20fadb80723.jpg"
@@ -69563,7 +69563,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_5ebb2986920c",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Taro Tempura \u7d2b\u85af\u5929\u5987\u7f57",
+      "name": "Taro Tempura 紫薯天妇罗",
       "description": "",
       "section": "APPETIZER",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-22142649f5b190ca6d51.jpeg"
@@ -69595,7 +69595,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_87f609614127",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Teriyaki Chciekn Fried Rice \u7167\u70e7\u9e21\u8089\u7092\u996d",
+      "name": "Teriyaki Chciekn Fried Rice 照烧鸡肉炒饭",
       "description": "",
       "section": "Rice Dishes ",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-02ce0995de2339473625.jpg"
@@ -69603,7 +69603,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_727ee0724a16",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Pilaf Fried Rice \u9171\u6cb9\u7092\u996d",
+      "name": "Pilaf Fried Rice 酱油炒饭",
       "description": "",
       "section": "Rice Dishes ",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-2be8d183757b6f48262d.jpg"
@@ -69611,23 +69611,23 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_b58c7480e78d",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Yang Zhou Fried Rice \u626c\u5dde\u7092\u996d",
-      "description": "chicken, shrimp, sausage, egg, onions",
+      "name": "Yang Zhou Fried Rice 扬州炒饭",
+      "description": "",
       "section": "Rice Dishes ",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-30af9314530303196b7a.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_594243189c24",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Char Kway Tiao \u7092\u8d35\u96d5",
-      "description": "Could be Gluten Free",
+      "name": "Char Kway Tiao 炒贵雕",
+      "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-95dd8d30454ba134a11b.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_cd945456af62",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Lomein \u5e7f\u5f0f\u7092\u9762",
+      "name": "Lomein 广式炒面",
       "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0fc120948f0bf1673a00.jpg"
@@ -69635,15 +69635,15 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_6bc4df957c50",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Phai Thai Noodle \u6cf0\u5f0f\u7092\u7c73\u7c89",
-      "description": "Could be Gluten Free",
+      "name": "Phai Thai Noodle 泰式炒米粉",
+      "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-f1b3b915ff6dea976167.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_0a9224644760",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Shang Hai Noodle \u4e0a\u6d77\u7092\u9762",
+      "name": "Shang Hai Noodle 上海炒面",
       "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5e3498b40ede5d501a0d.jpeg"
@@ -69651,15 +69651,15 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_fcc0e6924bea",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Singapora Noodle \u661f\u5dde\u7c73\u7c89",
-      "description": "Could be Gluten Free",
+      "name": "Singapora Noodle 星州米粉",
+      "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-98d0bc9f684b738ed578.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_c3dc16c9c108",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Udon \u7092\u4e4c\u51ac\u9762",
+      "name": "Udon 炒乌冬面",
       "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-bedbb05a49d43a7036b9.jpg"
@@ -69667,7 +69667,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_5ccde52ed649",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Ramen \u65e5\u5f0f\u62c9\u9762",
+      "name": "Ramen 日式拉面",
       "description": "",
       "section": "Noodle Dishes",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-0a521f9222a4a8288584.jpg"
@@ -69675,7 +69675,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_55ac4fea69b6",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Sweet Sour Pork \u5495\u565c\u8089",
+      "name": "Sweet Sour Pork 咕噜肉",
       "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-ada09c2bcf79d861c991.jpeg"
@@ -69683,7 +69683,7 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_9252e39b534e",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "General Tao Chicken \u5de6\u5b97\u68e0\u9e21",
+      "name": "General Tao Chicken 左宗棠鸡",
       "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-425dd4e3359f887e64f5.jpeg"
@@ -69691,23 +69691,23 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_c58854859af0",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Green Curry \u7eff\u5496\u55b1",
-      "description": "Could be Gluten Free",
+      "name": "Green Curry 绿咖喱",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-3aac417a2f9464bd0610.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_4294b79d5b48",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Pinang Curry \u9ec4\u5496\u55b1",
-      "description": "Could be Gluten Free",
+      "name": "Pinang Curry 黄咖喱",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-036b8dcd20065858412d.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_f7da6e08939a",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Japanese Chicken Curry \u65e5\u5f0f\u5496\u55b1\u9e21",
+      "name": "Japanese Chicken Curry 日式咖喱鸡",
       "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-e392661b5689ec53be6b.jpg"
@@ -69715,8 +69715,8 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_4e72767368ae",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Tom Yum Stir with chicken \u51ac\u9634\u529f\u5c0f\u7092",
-      "description": "Could be Gluten Free",
+      "name": "Tom Yum Stir with chicken 冬阴功小炒",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-8d1d6d95f13a8a9c83be.jpg"
     },
@@ -69731,31 +69731,31 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_2f1674e1fe0c",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Broccoli Stir Fry \u897f\u5170\u82b1\u5c0f\u7092",
-      "description": "Could be Gluten Free",
+      "name": "Broccoli Stir Fry 西兰花小炒",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-23df566f63a4f44f0056.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_1314b5648ee4",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Katsu W/Curry Chicken \u65e5\u5f0f\u5496\u55b1\u9e21\u6392\u996d",
-      "description": "Creamy Japanese mild curry chicken, with breaded and deep fried chicken and steamed round rice.",
+      "name": "Katsu W/Curry Chicken 日式咖喱鸡排饭",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-381d65ff9fa1b8e21d6c.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_a87b1bafa5a4",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Kung Po Chicken \u5bab\u4fdd\u9e21\u4e01",
-      "description": "Veggies,peanuts,chicken",
+      "name": "Kung Po Chicken 宫保鸡丁",
+      "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-06140733a85f3046d925.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_cbbd71d1c63a",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Japanese Teriyaki Beef On Rice \u7167\u70e7\u725b\u8089\u996d",
+      "name": "Japanese Teriyaki Beef On Rice 照烧牛肉饭",
       "description": "",
       "section": "ENTRE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-79ae507b731ed7c90395.jpeg"
@@ -69763,151 +69763,151 @@
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_9b7ceceb2bb3",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Dry Pot Cauliflower & Broccoli\u5e72\u9505\u767d\u82b1\u83dc\u897f\u5170\u82b1",
-      "description": "A small steamed rice included",
+      "name": "Dry Pot Cauliflower & Broccoli干锅白花菜西兰花",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-496f811028b3a5af6591.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_0d7e2a8069f7",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Family Tofu\u5bb6\u5e38\u8c46\u8150",
-      "description": "Deep fried tofu stir. Including a side rice",
+      "name": "Family Tofu家常豆腐",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-536d727d0d85f4c8171b.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_3b0e073c21c3",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Garlic Muchrrom Baby Bok Choy\u849c\u84c9\u4e0a\u6d77\u9752",
-      "description": "A small steamed rice included",
+      "name": "Garlic Muchrrom Baby Bok Choy蒜蓉上海青",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-1c171633e32dd5d33c74.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_b2b87669948f",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Ma Po Tofu\u9ebb\u5a46\u8c46\u8150",
-      "description": "Including a side rice",
+      "name": "Ma Po Tofu麻婆豆腐",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9303ca486caa51eed9f5.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_64f778237193",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Delicious Eggplant \u9c7c\u9999\u8304\u5b50\u7172",
-      "description": "Including a side rice",
+      "name": "Delicious Eggplant 鱼香茄子煲",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a808cc2b66b36fc17b55.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_1420fa977b7f",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Green Bean Stir Fry \u5e72\u7178\u56db\u5b63\u8c46",
-      "description": "Garlic and soy based broth",
+      "name": "Green Bean Stir Fry 干煸四季豆",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a054ddc2709975c5b5a5.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_e968a3527a7c",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Crispy Pepper Tofu \u8106\u6912\u8c46\u8150",
-      "description": "Light Spicy, deep fried tofu and flavored pepper, contains peanuts. Including a side rice",
+      "name": "Crispy Pepper Tofu 脆椒豆腐",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-c15d85237617d771e15f.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_608349ed6ff1",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Egg And Tomato Stir \u756a\u8304\u7092\u9e21\u86cb",
-      "description": "A small steamed rice included",
+      "name": "Egg And Tomato Stir 番茄炒鸡蛋",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-babaa7afc4240d631311.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_fede98539a80",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Three Treasure\u5730\u4e09\u9c9c",
-      "description": "Potato, eggplant and baby bok choy\u3002Could be Gluten Free",
+      "name": "Three Treasure地三鲜",
+      "description": "",
       "section": "Vegan Menu",
       "imageURL": "/images/menu/chicken.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_44022c9ad05c",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Beef Flank Stew\u571f\u8c46\u7096\u725b\u8169",
-      "description": "A small steamed rice included",
+      "name": "Beef Flank Stew土豆炖牛腩",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-a8c31a4b9be65d242330.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_9bec5b7b886e",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Spicy Beef Stir\u8fa3\u7092\u80a5\u725b",
-      "description": "Sliced beef stirred to Asian medium spicy. Steamed round rice on side. Great pair for beer lovers. A small steamed rice included",
+      "name": "Spicy Beef Stir辣炒肥牛",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7fdde088d00def93f010.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_b9728573a656",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Black Pepper Beef\u9ed1\u6912\u725b\u67f3",
-      "description": "Option to change to chicken . A small steamed rice included",
+      "name": "Black Pepper Beef黑椒牛柳",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-dc840f6d774cdd37565c.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_5243aaa88321",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Crispy Pepper Chicken\u8106\u6912\u9e21",
-      "description": "A small steamed rice included \u3002 contain nuts",
+      "name": "Crispy Pepper Chicken脆椒鸡",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-8a15fb4f226197be4d2d.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_6f9ab858488a",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Dry Pot Chicken \u5e72\u9505\u9e21",
-      "description": "A small steamed rice included",
+      "name": "Dry Pot Chicken 干锅鸡",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-066197908329e496dce8.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_9ed9f116f2a2",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Dry Pot Fish \u5e72\u9505\u9c7c",
-      "description": "If you prefer not spicy, add message in comments area. A small steamed rice included",
+      "name": "Dry Pot Fish 干锅鱼",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-066197908329e496dce8.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_980f847a6a5e",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Shrimp & Egg \u867e\u4ec1\u7092\u9e21\u86cb",
-      "description": "A small steamed rice included",
+      "name": "Shrimp & Egg 虾仁炒鸡蛋",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-28b44b3a36a17343355e.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_d3c3ace95324",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Roasted Pork Belly\u7ea2\u70e7\u8089",
-      "description": "A small steamed rice included",
+      "name": "Roasted Pork Belly红烧肉",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-9820e9573de282f00af8.jpg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_a8785e4e0391",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Spicy Pork Belly\u5c0f\u7092\u8089",
-      "description": "Including a side rice",
+      "name": "Spicy Pork Belly小炒肉",
+      "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-7dc2f1c3fbf3730a3fd8.jpeg"
     },
     {
       "id": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c_728241f14495",
       "restaurantId": "catalog-ss_ubereats_5a1120fe6c90128085f44b6c",
-      "name": "Cumming Lamb w/fries \u5b5c\u7136\u7f8a\u8089",
+      "name": "Cumming Lamb w/fries 孜然羊肉",
       "description": "",
       "section": "VERY CHINESE MENU",
       "imageURL": "/images/menu/fries.jpg"
@@ -71267,7 +71267,7 @@
     {
       "id": "catalog-ss_ubereats_a424dc8dbb3b364d65a91e62_7f07db0de476",
       "restaurantId": "catalog-ss_ubereats_a424dc8dbb3b364d65a91e62",
-      "name": "Caff\u00e8 Mocha",
+      "name": "Caffè Mocha",
       "description": "",
       "section": "Barista",
       "imageURL": "/images/menu/chicken.jpg"
@@ -72811,7 +72811,7 @@
     {
       "id": "catalog-ss_skip_5fb688ca6cba58a0907839e2_7e914f1e5481",
       "restaurantId": "catalog-ss_skip_5fb688ca6cba58a0907839e2",
-      "name": "Canel\u00e9",
+      "name": "Canelé",
       "description": "",
       "section": "Sweets & Desserts",
       "imageURL": "https://menu-images-static.skipthedishes.com/images/resized/item-5e93cda90766d240474f.jpeg"
@@ -75795,8 +75795,8 @@
     {
       "id": "catalog-ss_ubereats_217d1d84633113b536d2d1b4_4de67c1d45f0",
       "restaurantId": "catalog-ss_ubereats_217d1d84633113b536d2d1b4",
-      "name": "10\u201d Cinnamon Pizza Pie",
-      "description": "Mix of sugar, butter and cinnamon topped with whipped cream",
+      "name": "10” Cinnamon Pizza Pie",
+      "description": "",
       "section": "Dessert",
       "imageURL": "/images/menu/dessert.jpg"
     },
@@ -77563,8 +77563,8 @@
     {
       "id": "catalog-ss_ubereats_5d936a739bbd85befa8c3e8b_4de67c1d45f0",
       "restaurantId": "catalog-ss_ubereats_5d936a739bbd85befa8c3e8b",
-      "name": "10\u201d Cinnamon Pizza Pie",
-      "description": "Mix of sugar, butter and cinnamon topped with whipped cream",
+      "name": "10” Cinnamon Pizza Pie",
+      "description": "",
       "section": "Dessert",
       "imageURL": "/images/menu/dessert.jpg"
     },
@@ -79107,7 +79107,7 @@
     {
       "id": "catalog-ss_ubereats_8b6bfb82d30268e22a241644_89dab0d44cec",
       "restaurantId": "catalog-ss_ubereats_8b6bfb82d30268e22a241644",
-      "name": "French Toast Sticks Kids\u2019 Meal, 3 PC (Cals: 480-800)",
+      "name": "French Toast Sticks Kids’ Meal, 3 PC (Cals: 480-800)",
       "description": "",
       "section": "Wendy's Kids' Meals",
       "imageURL": "/images/menu/burger.jpg"
@@ -79683,7 +79683,7 @@
     {
       "id": "catalog-ss_ubereats_768ae723aba59e73d1882fb4_89dab0d44cec",
       "restaurantId": "catalog-ss_ubereats_768ae723aba59e73d1882fb4",
-      "name": "French Toast Sticks Kids\u2019 Meal, 3 PC (Cals: 480-800)",
+      "name": "French Toast Sticks Kids’ Meal, 3 PC (Cals: 480-800)",
       "description": "",
       "section": "Wendy's Kids' Meals",
       "imageURL": "/images/menu/burger.jpg"
@@ -249809,7 +249809,7 @@
       "providerId": "prov_doordash",
       "title": "25% off up to four orders, capped at $8 each",
       "sourceUrl": "https://help.doordash.com/en-ca/consumers/article/evergreen-25tastyca-terms-and-conditions",
-      "terms": "Only customers sent this offer directly by DoorDash. $15 minimum; enter 25TASTYCA. Fees, tax and tips remain payable. Check the offer\u2019s availability and expiry in your account.",
+      "terms": "Only customers sent this offer directly by DoorDash. $15 minimum; enter 25TASTYCA. Fees, tax and tips remain payable. Check the offer’s availability and expiry in your account.",
       "expiresOn": null,
       "code": "25TASTYCA",
       "restaurantNameContains": "",
@@ -249825,7 +249825,7 @@
       "providerId": "prov_doordash",
       "title": "Buy one eligible chicken sandwich, get one free",
       "sourceUrl": "https://help.doordash.com/en-ca/consumers/article/doordash-wendys-promo-september-2026",
-      "terms": "Participating Wendy\u2019s locations only. Add two Classic or Spicy Chicken Sandwiches marked eligible in DoorDash. One pair per order; base item price only, while supplies last. Cannot combine; fees and taxes remain.",
+      "terms": "Participating Wendy’s locations only. Add two Classic or Spicy Chicken Sandwiches marked eligible in DoorDash. One pair per order; base item price only, while supplies last. Cannot combine; fees and taxes remain.",
       "expiresOn": "2026-09-27",
       "code": "",
       "restaurantNameContains": "Wendy",
@@ -249879,7 +249879,7 @@
       "id": "harvey-first-burger",
       "title": "Pickup only: first Original or Veggie burger for $3",
       "sourceUrl": "https://www.harveys.ca/en/downloadtheapp.html",
-      "terms": "First order through the Harvey\u2019s app with an account. Apply 3BURGER in the Coupons tab. Excludes delivery; taxes, cheese and bacon cost extra. Limited-time offer; cannot combine with other offers.",
+      "terms": "First order through the Harvey’s app with an account. Apply 3BURGER in the Coupons tab. Excludes delivery; taxes, cheese and bacon cost extra. Limited-time offer; cannot combine with other offers.",
       "restaurantNameContains": "Harvey",
       "verifiedAt": "2026-09-27T03:39:28.615846+00:00",
       "needsReview": false

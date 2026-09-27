@@ -10,6 +10,7 @@ import OrderPathStack from './OrderPathStack'
 import { useSponsoredTracking } from '@/hooks/home/useSponsoredEvents'
 import { cn } from '@/lib/utils'
 import { formatMoney } from '@/lib/money'
+import { formatDeliveryTime } from '@/lib/deliveryTime'
 import type { CoverageStatus } from '@/lib/restaurantAvailability'
 import { paths } from '@/routing/paths'
 import type { Provider, Restaurant, SponsoredMark } from '@/generated/data-model'
@@ -54,7 +55,7 @@ export default function RestaurantCard({
   const nativeScore = providerScores[restaurant.id]?.[0]
   const meta = [
     restaurant.rating.count > 0 ? `${restaurant.rating.average.toFixed(1)}${ratingSource ? ` on ${ratingSource}` : ''}` : null,
-    etaMin != null && etaMax != null ? `${etaMin}–${etaMax} min` : null,
+    etaMin != null && etaMax != null ? formatDeliveryTime(etaMin, etaMax) : null,
     distanceKm != null ? `${distanceKm.toFixed(1)} km away` : null,
     startingCents != null ? `From ${formatMoney(startingCents, currency)}` : null,
   ].filter(Boolean)
@@ -69,7 +70,7 @@ export default function RestaurantCard({
       )}
     >
       <div className="relative">
-        <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} className="h-36 w-full rounded-2xl transition-opacity group-hover:opacity-90" />
+        <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} imageURL={restaurant.imageURL} className="h-36 w-full rounded-2xl transition-opacity group-hover:opacity-90" />
         {sponsored && (
           <span className="absolute right-2 top-2 rounded-full bg-surface/90 px-2 py-0.5 text-[11px] font-medium text-content-secondary">
             {sponsored.label || 'Sponsored'}

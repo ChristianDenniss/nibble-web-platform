@@ -27,7 +27,6 @@ import {
 import { paths } from '@/routing/paths'
 import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-model'
 import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
-import { coverTone } from '@/lib/coverTone'
 
 const FASTEST_LIMIT = 8
 const RAIL_CARD_CLASS = 'w-full min-w-0 shrink-0 basis-full small:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]'
@@ -68,37 +67,6 @@ function HomeFeedView() {
     const bStatus = cardCoverageStatus(data, b.id)
     return coverageRank(aStatus) - coverageRank(bStatus) || aDistance - bDistance
   })
-  const cuisinePopularity = new Map(
-    data.cuisines.map((cuisine) => [
-      cuisine.id,
-      data.restaurants.reduce(
-        (total, restaurant) => total + (restaurant.cuisineIds.includes(cuisine.id) ? restaurant.rating.count : 0),
-        0,
-      ),
-    ]),
-  )
-  const cuisineCandidates = data.cuisines
-    .map((cuisine, originalOrder) => ({ cuisine, originalOrder }))
-    .sort((a, b) =>
-      (cuisinePopularity.get(b.cuisine.id) ?? 0) - (cuisinePopularity.get(a.cuisine.id) ?? 0)
-      || a.originalOrder - b.originalOrder,
-    )
-  const popularCuisines = [] as typeof data.cuisines
-  let previousCuisineTone: ReturnType<typeof coverTone> | undefined
-  while (cuisineCandidates.length > 0) {
-    const differentToneIndex = cuisineCandidates.findIndex(
-      ({ cuisine }) => coverTone(cuisine.id) !== previousCuisineTone,
-    )
-    const [next] = cuisineCandidates.splice(differentToneIndex < 0 ? 0 : differentToneIndex, 1)
-    if (!next) break
-    popularCuisines.push(next.cuisine)
-    previousCuisineTone = coverTone(next.cuisine.id)
-  }
-  const breakfastIndex = popularCuisines.findIndex((cuisine) => cuisine.slug === 'breakfast')
-  const homeCuisines = breakfastIndex < 0
-    ? popularCuisines.slice(0, -1)
-    : popularCuisines.slice(0, breakfastIndex)
-
   return (
     <div className="space-y-10 xl:-mx-6">
       <h1 className="sr-only">Home</h1>
@@ -107,20 +75,17 @@ function HomeFeedView() {
         {feed && <PromoBannerCarousel banners={banners} restaurantName={restaurantName} />}
 
         {data.cuisines.length > 0 && (
-          <section>
-            <SectionHeader title="Cuisines" to={paths.cuisines} />
-            <BrowseScroller label="Cuisines">
-              {homeCuisines.map((cuisine) => (
-                <CategoryTile
-                  key={cuisine.id}
-                  item={cuisine}
-                  to={paths.cuisine(cuisine.slug)}
-                  variant="compact"
-                  className="flex-none snap-start"
-                />
-              ))}
-            </BrowseScroller>
-          </section>
+          <BrowseScroller label="Cuisines">
+            {data.cuisines.map((cuisine) => (
+              <CategoryTile
+                key={cuisine.id}
+                item={cuisine}
+                to={paths.cuisine(cuisine.slug)}
+                variant="compact"
+                className="shrink-0"
+              />
+            ))}
+          </BrowseScroller>
         )}
 
         {sponsoredSections.map((section) => (
@@ -143,7 +108,7 @@ function HomeFeedView() {
       {data.restaurants.length > 0 && (
         <section>
           <SectionHeader title="All restaurants" />
-          <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-3">
             {restaurants.map((restaurant) => (
               <FeedCard key={restaurant.id} data={data} restaurant={restaurant} address={address} />
             ))}

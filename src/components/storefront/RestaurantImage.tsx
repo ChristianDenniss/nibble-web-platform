@@ -38,8 +38,8 @@ function backgroundFor(image: HTMLImageElement): string {
   }
 }
 
-export default function RestaurantImage({ restaurantId, name, className = '' }: { restaurantId: string; name: string; className?: string }) {
-  const src = artwork[restaurantId]?.file
+export default function RestaurantImage({ restaurantId, name, imageURL, className = '' }: { restaurantId: string; name: string; imageURL?: string; className?: string }) {
+  const src = artwork[restaurantId]?.file ?? imageURL
   const circle = artwork[restaurantId]?.circle
   const backgroundColor = artwork[restaurantId]?.backgroundColor
   const [failedSrc, setFailedSrc] = useState<string | null>(null)

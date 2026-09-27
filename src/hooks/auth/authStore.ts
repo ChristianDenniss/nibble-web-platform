@@ -5,6 +5,7 @@
  */
 import { useEffect, useSyncExternalStore } from 'react'
 import axios from 'axios'
+import { clearStorefrontPreload } from '@/hooks/storefront/useStorefront'
 
 export interface AuthAccount {
   id: string
@@ -51,12 +52,14 @@ export function loadSession(): Promise<void> {
 
 export async function login(email: string, password: string): Promise<AuthAccount> {
   const { data } = await axios.post<SessionResponse>('/api/v1/auth/login', { email, password })
+  clearStorefrontPreload()
   setAccount(data.account)
   return data.account as AuthAccount
 }
 
 export async function signUp(name: string, email: string, password: string): Promise<AuthAccount> {
   const { data } = await axios.post<SessionResponse>('/api/v1/auth/signup', { name, email, password })
+  clearStorefrontPreload()
   setAccount(data.account)
   return data.account as AuthAccount
 }

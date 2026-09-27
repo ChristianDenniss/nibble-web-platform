@@ -7,7 +7,7 @@ import RestaurantImage from '@/components/storefront/RestaurantImage'
 /**
  * StorePage — single restaurant: cover, meta, provider availability, menu sections.
  * No breadcrumb; the info tip beside the name opens StoreInfoModal (hours + allergen disclaimer).
- * Every section renders in one scrolling list; the sticky category row jumps to a section
+ * Every section renders in one scrolling list; the sticky tab bar jumps to a section
  * and tracks whichever section is currently under it (scroll-spy), never filters.
  */
 import { useEffect, useMemo, useRef, useState } from 'react'
@@ -19,8 +19,9 @@ import OrderPathStack from '@/components/storefront/OrderPathStack'
 import MenuItemCard from '@/components/storefront/MenuItemCard'
 import StoreInfoModal from '@/components/storefront/StoreInfoModal'
 import { currentAddress, restaurantCoverage, restaurantEta, restaurantProviders, useStorefront } from '@/hooks/storefront/useStorefront'
-import { useDragScroll } from '@/hooks/utils/useDragScroll'
 import { restaurantDistanceKm } from '@/lib/restaurantAvailability'
+import { formatDeliveryTime } from '@/lib/deliveryTime'
+import { useDragScroll } from '@/hooks/utils/useDragScroll'
 
 /** Live sticky-header height published by Header; the tab bar sticks directly below it. */
 const headerHeight = () =>
@@ -119,7 +120,7 @@ export default function StorePage() {
   useEffect(() => {
     const bar = tabBar.current
     const index = active ? sections.indexOf(active) : -1
-    const tab = index >= 0 ? bar?.children[index] as HTMLElement | undefined : undefined
+    const tab = index >= 0 ? (bar?.children[index] as HTMLElement | undefined) : undefined
     if (!bar || !tab) return
     bar.scrollTo({ left: tab.offsetLeft - (bar.clientWidth - tab.offsetWidth) / 2, behavior: 'smooth' })
   }, [active, sections])
@@ -150,7 +151,7 @@ export default function StorePage() {
 
   return (
     <div className="space-y-6">
-      <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} className="h-48 w-full rounded-2xl" />
+      <RestaurantImage restaurantId={restaurant.id} name={restaurant.name} imageURL={restaurant.imageURL} className="h-48 w-full rounded-2xl" />
       <div className="flex flex-col gap-3 small:flex-row small:items-end small:justify-between">
         <div>
           <div className="flex items-center gap-2">
@@ -177,7 +178,7 @@ export default function StorePage() {
             {eta && (
               <span className="inline-flex items-center gap-1">
                 <Clock size={14} />
-                {eta.min}–{eta.max} min
+                {formatDeliveryTime(eta.min, eta.max)}
               </span>
             )}
             <span className="inline-flex items-center gap-1">
@@ -195,10 +196,18 @@ export default function StorePage() {
 
       {sections.length > 0 && (
         <div ref={stickyBar} className="sticky top-(--app-header-height) z-20 -mx-5 border-b border-border bg-page px-5 pb-1.5 pt-2.5">
-          <div ref={dragTabBar} aria-label="Menu sections" className="scrollbar-none relative flex gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain pb-1">
-            {sections.map(name => (
-              <button key={name} type="button" aria-pressed={active === name} onClick={() => jumpTo(name)}
-                className={`shrink-0 whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors ${active === name ? 'bg-content text-page' : 'text-content hover:bg-surface-inset'}`}>
+          <div ref={dragTabBar} role="tablist" className="relative flex gap-1 overflow-x-auto overflow-y-hidden overscroll-x-contain scrollbar-thin pb-1">
+            {sections.map((name) => (
+              <button
+                key={name}
+                type="button"
+                role="tab"
+                aria-selected={active === name}
+                onClick={() => jumpTo(name)}
+                className={`shrink-0 cursor-pointer whitespace-nowrap rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
+                  active === name ? 'bg-content text-page' : 'text-content hover:bg-surface-inset'
+                }`}
+              >
                 {name}
               </button>
             ))}

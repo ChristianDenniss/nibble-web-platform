@@ -29,7 +29,9 @@ export default function StartupScreen({ onComplete }: { onComplete: () => void }
       navigate(`${paths.login}${mode === 'signup' ? '?mode=signup' : ''}`, {
         state: { from: location.pathname === paths.welcome ? paths.home : location.pathname + location.search },
       })
-    } else if (location.pathname === paths.welcome) navigate(paths.home, { replace: true })
+    } else if (location.pathname === paths.welcome) {
+      navigate(paths.welcome, { replace: true, state: { locationRequired: true, from: paths.home } })
+    }
     onComplete()
   }
 
