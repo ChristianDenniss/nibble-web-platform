@@ -29,7 +29,7 @@ import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-mo
 import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
 
 const FASTEST_LIMIT = 8
-const RAIL_CARD_CLASS = 'min-w-0'
+const RAIL_CARD_CLASS = 'w-full min-w-0 shrink-0 basis-full small:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]'
 
 export default function HomePage() {
   const { status } = useAuth()
@@ -69,10 +69,10 @@ function HomeFeedView() {
   })
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <h1 className="sr-only">Home</h1>
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         {feed && <PromoBannerCarousel banners={banners} restaurantName={restaurantName} />}
 
         {data.categories.length > 0 && (
