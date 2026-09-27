@@ -146,6 +146,7 @@ export default function StorePage() {
   const distance = restaurantDistanceKm(restaurant, address)
   const ratings: Record<string, { provider: string; sourceUrl: string }> = catalog.ratings
   const ratingSource = ratings[restaurant.id]
+  const providerScores: Record<string, { provider: string; sourceUrl: string; value: string | number; scale: number }[]> = catalog.providerScores
 
   return (
     <div className="space-y-6">
@@ -172,6 +173,7 @@ export default function StorePage() {
                 {ratingSource && <a className="underline" href={ratingSource.sourceUrl} target="_blank" rel="noopener noreferrer">{ratingSource.provider}</a>}
               </span>
             )}
+            {(providerScores[restaurant.id] ?? []).map(score => <a key={score.provider} href={score.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline">{score.provider} score: {score.value}/{score.scale}</a>)}
             {eta && (
               <span className="inline-flex items-center gap-1">
                 <Clock size={14} />

@@ -51,6 +51,8 @@ export default function RestaurantCard({
   const tracking = useSponsoredTracking<HTMLDivElement>(sponsored, surface)
   const ratings: Record<string, { provider: string }> = catalog.ratings
   const ratingSource = ratings[restaurant.id]?.provider
+  const providerScores: Record<string, { provider: string; value: string | number; scale: number }[]> = catalog.providerScores
+  const nativeScore = providerScores[restaurant.id]?.[0]
   const meta = [
     restaurant.rating.count > 0 ? `${restaurant.rating.average.toFixed(1)}${ratingSource ? ` on ${ratingSource}` : ''}` : null,
     etaMin != null && etaMax != null ? `${etaMin}–${etaMax} min` : null,
@@ -92,6 +94,7 @@ export default function RestaurantCard({
             {restaurant.rating.average.toFixed(1)}{ratingSource && <span className="font-normal"> · {ratingSource}</span>}
           </span>
         )}
+        {restaurant.rating.count === 0 && nativeScore && <span className="absolute bottom-2 left-2 rounded-full bg-surface px-2 py-0.5 text-xs font-semibold text-content">Skip score {nativeScore.value}/{nativeScore.scale}</span>}
       </div>
       <div className="flex flex-1 flex-col gap-1.5 pt-2.5">
         <h3 className="text-[15px] font-semibold leading-tight text-content">
