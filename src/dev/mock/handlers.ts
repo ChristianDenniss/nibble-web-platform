@@ -6,6 +6,9 @@ import type { InternalAxiosRequestConfig } from 'axios'
 import { resolveAuthMock, mockSessionAccount } from './auth'
 import { mockAccount, mockCatalog, mockCart, mockHomeFeed } from './catalog'
 
+let mockSmsSources = [{ phoneNumber: '+15065550100', providerId: 'prov_skip', label: 'Skip deal inbox', expiryPolicy: 'parsed', fixedExpiryHours: 24, active: true }]
+let mockSmsMessages = [{ externalId: 'SM_mock_001', fromNumber: '+15065550199', toNumber: '+15065550100', providerId: 'prov_skip', body: 'Use code XYZ123 for 40% off all orders TODAY only on Skip the Dishes', status: 'processed', promotionId: 'promo_skip_today', parseError: '', receivedAt: new Date().toISOString() }]
+
 export interface MockResult {
   status: number
   data: unknown
@@ -67,6 +70,19 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
   const path = pathOf(config)
   const method = (config.method ?? 'get').toLowerCase()
 
+  if (path === '/api/v1/sms/sources') {
+    if (method === 'get') return { status: 200, data: { sources: mockSmsSources } }
+    if (method === 'post') { const source = (typeof config.data === 'string' ? JSON.parse(config.data) : config.data) as typeof mockSmsSources[number]; mockSmsSources = [...mockSmsSources.filter((entry) => entry.phoneNumber !== source.phoneNumber), source]; return { status: 202, data: source } }
+  }
+  if (path === '/api/v1/sms/messages') {
+    if (method === 'get') return { status: 200, data: { messages: mockSmsMessages } }
+  }
+  const retryMessage = path.match(/^\/api\/v1\/sms\/messages\/([^/]+)\/retry$/)
+  if (retryMessage && method === 'post') {
+    mockSmsMessages = mockSmsMessages.map((message) => message.externalId === decodeURIComponent(retryMessage[1]) ? { ...message, status: 'processed', parseError: '' } : message)
+    return { status: 202, data: mockSmsMessages.find((message) => message.externalId === decodeURIComponent(retryMessage[1])) }
+  }
+
   const auth = resolveAuthMock(method, path, config.data)
   if (auth) return auth
 
@@ -83,6 +99,46 @@ export function resolveMock(config: InternalAxiosRequestConfig): MockResult | nu
 
   if (method === 'post' && (path === '/api/v1/cart/events' || path === '/cart/events')) {
     return { status: 202, data: { status: 'accepted' } }
+  }
+
+  if (method === 'post' && path === '/api/v1/compare') {
+    return {
+      status: 200,
+      data: {
+        compare_session_id: 'cmp_demo_koi_2026',
+        observed_at: '2026-09-26T20:00:00Z',
+        place: { id: 'pl_demo', name: 'Koi Sushi' },
+        paths_ranked: 3,
+        recommendation: {
+          purchase_option_id: 'ppo_skip_koi', rank: 1, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'high',
+          all_in: { amount_cents: 1847, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_skip',
+          provider_id: 'prov_skip', provider_name: 'SkipTheDishes', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
+          item_subtotal: { amount_cents: 1499, currency: 'CAD' },
+          fees: [{ kind: 'delivery', amount: { amount_cents: 299, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 149, currency: 'CAD' } }],
+          discounts: [{ scope: 'provider', label: 'Skip delivery credit', amount: { amount_cents: 100, currency: 'CAD' } }],
+          delivery_cost: { amount_cents: 299, currency: 'CAD' }, service_fee: { amount_cents: 149, currency: 'CAD' }, eta_minutes: 28,
+          handoff_url: 'https://www.skipthedishes.com/',
+          rationale_bullets: ['Lowest all-in total', 'Free pickup is not available for this demo', 'High-confidence quote observed'],
+        },
+        runners_up: [
+          {
+            purchase_option_id: 'ppo_doordash_koi', rank: 3, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'high',
+            all_in: { amount_cents: 2247, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_doordash',
+            provider_id: 'prov_doordash', provider_name: 'DoorDash', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
+            item_subtotal: { amount_cents: 1649, currency: 'CAD' }, fees: [{ kind: 'delivery', amount: { amount_cents: 399, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 199, currency: 'CAD' } }], discounts: [], eta_minutes: 32,
+            handoff_url: 'https://www.doordash.com/', rationale_bullets: ['Same dish, higher menu price', 'Standard delivery estimate'],
+          },
+          {
+            purchase_option_id: 'ppo_uber_koi', rank: 2, kind: 'lowest_all_in', headline: 'Delivery', confidence: 'medium',
+            all_in: { amount_cents: 2157, currency: 'CAD' }, fulfillment_mode: 'delivery', delivery_executor: 'third_party', channel_id: 'ch_ubereats',
+            provider_id: 'prov_ubereats', provider_name: 'Uber Eats', restaurant_id: 'rest_koi', menu_item_id: 'item_koi_tuna', item_name: 'Spicy Tuna Roll',
+            item_subtotal: { amount_cents: 1579, currency: 'CAD' }, fees: [{ kind: 'delivery', amount: { amount_cents: 499, currency: 'CAD' } }, { kind: 'service', amount: { amount_cents: 229, currency: 'CAD' } }], discounts: [{ scope: 'store', label: 'Koi Sushi loyalty offer', amount: { amount_cents: 150, currency: 'CAD' } }], eta_minutes: 30,
+            handoff_url: 'https://www.ubereats.com/', rationale_bullets: ['Lower menu price than DoorDash', 'Highest delivery cost today'],
+          },
+        ],
+        unavailable_paths: [],
+      },
+    }
   }
 
   if (method === 'get') {

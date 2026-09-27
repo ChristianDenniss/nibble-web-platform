@@ -26,6 +26,7 @@ interface Props {
   reason?: string
   distanceKm?: number | null
   coverage?: CoverageStatus
+  dealLabel?: string
   surface?: string
   className?: string
 }
@@ -42,6 +43,7 @@ export default function RestaurantCard({
   reason,
   distanceKm,
   coverage = 'unknown',
+  dealLabel,
   surface = 'home',
   className,
 }: Props) {
@@ -63,11 +65,19 @@ export default function RestaurantCard({
       )}
     >
       <div className="relative">
-        <CoverBlock
-          tone={coverTone(restaurant.id)}
-          label={restaurant.name.slice(0, 1)}
-          className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
-        />
+        {restaurant.imageURL ? (
+          <img
+            src={restaurant.imageURL}
+            alt=""
+            className="h-36 w-full rounded-2xl object-cover transition-opacity group-hover:opacity-90"
+          />
+        ) : (
+          <CoverBlock
+            tone={coverTone(restaurant.id)}
+            label={restaurant.name.slice(0, 1)}
+            className="h-36 rounded-2xl transition-opacity group-hover:opacity-90"
+          />
+        )}
         {sponsored && (
           <span className="absolute right-2 top-2 rounded-full bg-surface/90 px-2 py-0.5 text-[11px] font-medium text-content-secondary">
             {sponsored.label || 'Sponsored'}
@@ -95,6 +105,7 @@ export default function RestaurantCard({
           <p className="text-xs text-content-muted">{meta.join(' · ')}</p>
         )}
         {reason && <p className="text-xs font-medium text-accent">{reason}</p>}
+        {dealLabel && <p className="inline-flex w-fit rounded-full bg-status-success/10 px-2 py-0.5 text-xs font-semibold text-status-success">{dealLabel}</p>}
         <OrderPathStack restaurant={restaurant} providers={providers} providerStatus={providerStatus} className="relative z-10 mt-auto self-start pt-0.5" />
       </div>
     </div>

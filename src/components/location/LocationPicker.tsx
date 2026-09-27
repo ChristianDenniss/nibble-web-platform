@@ -104,14 +104,14 @@ export default function LocationPicker({
         {onUseCurrentLocation && (
           <Button
             type="button"
-            variant="secondary"
+            variant="primary"
             size="sm"
             onClick={onUseCurrentLocation}
             disabled={locating}
-            className="w-full shrink-0 justify-center gap-1.5 !h-9 px-2.5 py-0 text-sm leading-none small:w-auto small:whitespace-nowrap"
+            className="w-full shrink-0 justify-center gap-1.5 !h-9 !bg-[var(--brand-100)] !text-content px-2.5 py-0 text-sm leading-none hover:!bg-[var(--brand-200)] small:w-auto small:whitespace-nowrap"
           >
             <Locate size={14} className="shrink-0" />
-            {locating ? 'Finding you…' : 'Use current location'}
+            {locating ? 'Finding you…' : 'Current Location'}
           </Button>
         )}
       </div>

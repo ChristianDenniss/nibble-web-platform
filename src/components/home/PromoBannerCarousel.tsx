@@ -28,7 +28,7 @@ export default function PromoBannerCarousel({ banners, restaurantName }: Props) 
 
   return (
     <section aria-label="Promotions" className="relative">
-      <div ref={dragScroll} className="flex gap-4 overflow-x-auto overscroll-x-contain snap-x snap-mandatory pb-1 scrollbar-none">
+      <div ref={dragScroll} className="flex gap-4 overflow-x-auto overscroll-x-contain pb-1 scrollbar-none">
         {banners.map((banner) => (
           <BannerCard key={banner.id} banner={banner} restaurantName={restaurantName(banner.restaurantId)} />
         ))}
@@ -55,7 +55,7 @@ function BannerCard({ banner, restaurantName }: { banner: HomeBanner; restaurant
       to={to}
       onClick={tracking.onClick}
       className={cn(
-        'relative flex h-44 w-[85%] shrink-0 snap-start flex-col justify-between overflow-hidden rounded-2xl p-5 transition-opacity hover:opacity-95 small:w-[26rem]',
+        'relative flex h-44 w-[85%] shrink-0 flex-col justify-between overflow-hidden rounded-2xl p-5 transition-opacity hover:opacity-95 small:w-[26rem]',
         isSponsored ? 'bg-content text-surface' : 'bg-brand text-on-brand',
       )}
     >

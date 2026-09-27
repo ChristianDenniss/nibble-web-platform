@@ -18,6 +18,7 @@ import { useCartDraft } from '@/hooks/cart/useCartDraft'
 import { trackCartEvent } from '@/lib/cartAnalytics'
 import Button from '@/components/buttons/Button'
 import Modal from '@/components/modals/Modal'
+import { effectiveOffer } from '@/lib/deals'
 
 function providerURL(name: string) {
   const key = name.toLowerCase()
@@ -48,8 +49,10 @@ export default function CheckoutPage() {
   const restaurant = data.restaurants.find((entry) => entry.id === draft.lines[0]?.restaurantId)
   const handoffURL = restaurant?.appURL || (provider ? providerURL(provider.name) : '#')
   const subtotal = draft.lines.reduce((sum, line) => {
+    const item = data.items.find((entry) => entry.id === line.menuItemId)
     const offer = data.offers.find((entry) => entry.menuItemId === line.menuItemId && entry.providerId === line.providerId)
-    return sum + (offer?.price.amountCents ?? 0) * line.quantity
+    const effective = offer ? effectiveOffer(data.deals, offer, { item, restaurant }) : undefined
+    return sum + (effective?.price.amountCents ?? 0) * line.quantity
   }, 0)
   const currency = data.offers.find((offer) => offer.providerId === providerId)?.price.currency ?? 'CAD'
   const handoffDetails = {

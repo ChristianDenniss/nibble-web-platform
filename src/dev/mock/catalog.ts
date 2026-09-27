@@ -3,7 +3,8 @@
  * Types come from the generated model. Do not invent parallel shapes here.
  */
 import type {
-  Account,
+	Account,
+	ActivePromotion,
   Cart,
   Category,
   Cuisine,
@@ -31,10 +32,11 @@ function fredericton(address: string): Location {
 }
 
 export const mockAccount: Account = {
-  id: 'acct_dev',
-  name: 'Alex Morgan',
-  email: 'alex@example.com',
+  id: 'acct_aottgpvp_root',
+  name: 'Aottg',
+  email: 'aottgpvp@gmail.com',
   phone: '506-555-0148',
+  role: 'root',
   addresses: [
     {
       id: 'addr_home',
@@ -106,44 +108,46 @@ const EVERY_DAY = [0, 1, 2, 3, 4, 5, 6]
 const WEEKNIGHTS = [0, 1, 2, 3, 4]
 const WEEKEND_NIGHTS = [5, 6]
 
+const restaurantPhoto = (id: string) => `https://images.unsplash.com/photo-${id}?w=960&q=85&auto=format&fit=crop`
+
 function hours(service: RestaurantHours['service'], days: number[], opens: string, closes: string): RestaurantHours[] {
   return days.map((dayOfWeek) => ({ service, dayOfWeek, opens, closes }))
 }
 
 export const mockRestaurants: Restaurant[] = [
-  { id: 'rest_koi', name: 'Koi Sushi', location: fredericton('410 Queen St'), cuisineIds: ['cui_sushi'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.7, count: 1284 }, phone: '506-555-0110', appURL: appListing('koi-sushi'),
+  { id: 'rest_koi', name: 'Koi Sushi', imageURL: restaurantPhoto('1579871494447-9811cf80d66c'), location: fredericton('410 Queen St'), cuisineIds: ['cui_sushi'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.7, count: 1284 }, phone: '506-555-0110', appURL: appListing('koi-sushi'),
     hours: [...hours('store', [0, 2, 3, 4, 5, 6], '11:30', '21:30'), ...hours('delivery', [0, 2, 3, 4, 5, 6], '12:00', '21:00')] },
-  { id: 'rest_slice', name: 'River Slice', location: fredericton('394 King St'), cuisineIds: ['cui_pizza'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 892 }, phone: '506-555-0122', appURL: '',
+  { id: 'rest_slice', name: 'River Slice', imageURL: restaurantPhoto('1628840042765-356cda07504e'), location: fredericton('394 King St'), cuisineIds: ['cui_pizza'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 892 }, phone: '506-555-0122', appURL: '',
     hours: [
       ...hours('store', WEEKNIGHTS, '11:00', '23:00'), ...hours('store', WEEKEND_NIGHTS, '11:00', '02:00'),
       ...hours('delivery', WEEKNIGHTS, '11:00', '22:30'), ...hours('delivery', WEEKEND_NIGHTS, '11:00', '01:00'),
     ] },
-  { id: 'rest_stack', name: 'The Stack', location: fredericton('480 Queen St'), cuisineIds: ['cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.4, count: 2103 }, phone: '', appURL: appListing('the-stack'),
+  { id: 'rest_stack', name: 'The Stack', imageURL: restaurantPhoto('1568901346375-23c9450c58cd'), location: fredericton('480 Queen St'), cuisineIds: ['cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.4, count: 2103 }, phone: '', appURL: appListing('the-stack'),
     hours: [...hours('store', EVERY_DAY, '11:00', '22:00'), ...hours('delivery', EVERY_DAY, '16:00', '21:30')] },
-  { id: 'rest_salsa', name: 'Casa Salsa', location: fredericton('366 York St'), cuisineIds: ['cui_mexican'], categoryIds: ['cat_food'], rating: { average: 4.6, count: 674 }, phone: '506-555-0134', appURL: '',
+  { id: 'rest_salsa', name: 'Casa Salsa', imageURL: restaurantPhoto('1626700051175-6818013e1d4f'), location: fredericton('366 York St'), cuisineIds: ['cui_mexican'], categoryIds: ['cat_food'], rating: { average: 4.6, count: 674 }, phone: '506-555-0134', appURL: '',
     hours: [...hours('store', EVERY_DAY, '11:00', '21:00'), ...hours('delivery', EVERY_DAY, '11:30', '20:30')] },
-  { id: 'rest_masala', name: 'Masala Room', location: fredericton('1381 Regent St'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.8, count: 1540 }, phone: '506-555-0146', appURL: '',
+  { id: 'rest_masala', name: 'Masala Room', imageURL: restaurantPhoto('1603894584373-5ac82b2ae398'), location: fredericton('1381 Regent St'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.8, count: 1540 }, phone: '506-555-0146', appURL: '',
     hours: [
       ...hours('store', [1, 2, 3, 4, 5, 6], '11:30', '14:30'), ...hours('store', EVERY_DAY, '17:00', '22:00'),
       ...hours('delivery', EVERY_DAY, '17:00', '21:30'),
     ] },
-  { id: 'rest_brew', name: 'Campus Brew', location: { latitude: 45.9458, longitude: -66.6414, address: 'UNB Student Union Bldg', city: 'Fredericton', region: 'NB', postalCode: 'E3B 5A3' }, cuisineIds: ['cui_coffee', 'cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.3, count: 411 }, phone: '', appURL: appListing('campus-brew'),
+  { id: 'rest_brew', name: 'Campus Brew', imageURL: restaurantPhoto('1541167760496-1628856ab772'), location: { latitude: 45.9458, longitude: -66.6414, address: 'UNB Student Union Bldg', city: 'Fredericton', region: 'NB', postalCode: 'E3B 5A3' }, cuisineIds: ['cui_coffee', 'cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.3, count: 411 }, phone: '', appURL: appListing('campus-brew'),
     hours: [...hours('store', [1, 2, 3, 4, 5], '07:00', '18:00'), ...hours('delivery', [1, 2, 3, 4, 5], '09:00', '16:00')] },
-  { id: 'rest_green', name: 'Green Bowl', location: fredericton('565 Prospect St'), cuisineIds: ['cui_healthy'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 733 }, phone: '', appURL: '', hours: [] },
-  { id: 'rest_scoop', name: 'Late Scoop', location: fredericton('412 King St'), cuisineIds: ['cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.2, count: 256 }, phone: '', appURL: '',
+  { id: 'rest_green', name: 'Green Bowl', imageURL: restaurantPhoto('1512621776951-a57141f2eefd'), location: fredericton('565 Prospect St'), cuisineIds: ['cui_healthy'], categoryIds: ['cat_food'], rating: { average: 4.5, count: 733 }, phone: '', appURL: '', hours: [] },
+  { id: 'rest_scoop', name: 'Late Scoop', imageURL: restaurantPhoto('1563805042-7684c019e1cb'), location: fredericton('412 King St'), cuisineIds: ['cui_dessert'], categoryIds: ['cat_food', 'cat_convenience'], rating: { average: 4.2, count: 256 }, phone: '', appURL: '',
     hours: [...hours('store', EVERY_DAY, '18:00', '01:00'), ...hours('delivery', EVERY_DAY, '19:00', '00:30')] },
-  { id: 'rest_noodle', name: 'Northside Noodles', location: fredericton('75 Main St'), cuisineIds: ['cui_chinese', 'cui_thai'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.6, count: 987 }, phone: '506-555-0150', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '22:00'), ...hours('delivery', EVERY_DAY, '11:30', '21:30')] },
-  { id: 'rest_tandoor', name: 'Tandoori Junction', location: fredericton('120 Smythe St'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.1, count: 342 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '12:00', '22:00'), ...hours('delivery', EVERY_DAY, '12:00', '21:30')] },
-  { id: 'rest_harbor', name: 'Harbour Fish Co.', location: fredericton('225 Riverside Dr'), cuisineIds: ['cui_seafood'], categoryIds: ['cat_food'], rating: { average: 4.7, count: 621 }, phone: '506-555-0151', appURL: '', hours: [...hours('store', [2, 3, 4, 5, 6], '16:00', '22:00'), ...hours('delivery', [2, 3, 4, 5, 6], '16:30', '21:30')] },
-  { id: 'rest_deli', name: 'Queen Street Deli', location: fredericton('685 Queen St'), cuisineIds: ['cui_sandwiches', 'cui_breakfast'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.4, count: 508 }, phone: '', appURL: appListing('queen-street-deli'), hours: [...hours('store', WEEKNIGHTS, '07:00', '17:00'), ...hours('delivery', WEEKNIGHTS, '08:00', '16:00')] },
-  { id: 'rest_wings', name: 'Flight Night Wings', location: fredericton('890 Hanwell Rd'), cuisineIds: ['cui_wings', 'cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.3, count: 1180 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '01:00'), ...hours('delivery', EVERY_DAY, '11:00', '00:30')] },
-  { id: 'rest_veggie', name: 'The Greenhouse', location: fredericton('15 Knowledge Park Dr'), cuisineIds: ['cui_vegan', 'cui_healthy'], categoryIds: ['cat_food', 'cat_bakery'], rating: { average: 4.9, count: 266 }, phone: '506-555-0153', appURL: '', hours: [...hours('store', WEEKNIGHTS, '08:00', '20:00'), ...hours('delivery', WEEKNIGHTS, '09:00', '19:30')] },
-  { id: 'rest_donut', name: 'Maple Ring Donuts', location: fredericton('1010 Prospect St'), cuisineIds: ['cui_donuts', 'cui_coffee'], categoryIds: ['cat_food', 'cat_bakery'], rating: { average: 4.5, count: 799 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '06:00', '15:00'), ...hours('delivery', EVERY_DAY, '07:00', '14:00')] },
-  { id: 'rest_grocery', name: 'Market Basket', location: fredericton('1200 Woodstock Rd'), cuisineIds: [], categoryIds: ['cat_grocery', 'cat_convenience'], rating: { average: 4.0, count: 88 }, phone: '506-555-0155', appURL: '', hours: [...hours('store', EVERY_DAY, '07:00', '22:00'), ...hours('delivery', EVERY_DAY, '08:00', '21:00')] },
-  { id: 'rest_pharmacy', name: 'Riverbend Pharmacy', location: fredericton('1440 Regent St'), cuisineIds: [], categoryIds: ['cat_pharmacy', 'cat_baby'], rating: { average: 4.2, count: 64 }, phone: '506-555-0156', appURL: '', hours: [...hours('store', WEEKNIGHTS, '09:00', '20:00'), ...hours('delivery', WEEKNIGHTS, '10:00', '19:00')] },
-  { id: 'rest_paws', name: 'Paws & Pantry', location: fredericton('1600 Main St'), cuisineIds: [], categoryIds: ['cat_pets', 'cat_retail'], rating: { average: 4.6, count: 143 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '09:00', '19:00'), ...hours('delivery', EVERY_DAY, '10:00', '18:00')] },
-  { id: 'rest_blossom', name: 'Blossom & Stem', location: { ...fredericton('22 Brunswick St'), latitude: 45.985, longitude: -66.61 }, cuisineIds: [], categoryIds: ['cat_flowers', 'cat_gifts'], rating: { average: 4.8, count: 211 }, phone: '', appURL: '', hours: [...hours('store', WEEKNIGHTS, '09:00', '18:00'), ...hours('delivery', WEEKNIGHTS, '10:00', '17:00')] },
-  { id: 'rest_oromocto', name: 'Oromocto Smokehouse', location: { ...fredericton('85 Restigouche Rd'), latitude: 45.842, longitude: -66.48 }, cuisineIds: ['cui_bbq', 'cui_sandwiches'], categoryIds: ['cat_food'], rating: { average: 4.7, count: 355 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '21:00')] },
+  { id: 'rest_noodle', name: 'Northside Noodles', imageURL: restaurantPhoto('1569718212165-3a8278d5f624'), location: fredericton('75 Main St'), cuisineIds: ['cui_chinese', 'cui_thai'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.6, count: 987 }, phone: '506-555-0150', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '22:00'), ...hours('delivery', EVERY_DAY, '11:30', '21:30')] },
+  { id: 'rest_tandoor', name: 'Tandoori Junction', imageURL: restaurantPhoto('1532550907401-a500c9a57435'), location: fredericton('120 Smythe St'), cuisineIds: ['cui_indian'], categoryIds: ['cat_food'], rating: { average: 4.1, count: 342 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '12:00', '22:00'), ...hours('delivery', EVERY_DAY, '12:00', '21:30')] },
+  { id: 'rest_harbor', name: 'Harbour Fish Co.', imageURL: restaurantPhoto('1559847844-5315695dadae'), location: fredericton('225 Riverside Dr'), cuisineIds: ['cui_seafood'], categoryIds: ['cat_food'], rating: { average: 4.7, count: 621 }, phone: '506-555-0151', appURL: '', hours: [...hours('store', [2, 3, 4, 5, 6], '16:00', '22:00'), ...hours('delivery', [2, 3, 4, 5, 6], '16:30', '21:30')] },
+  { id: 'rest_deli', name: 'Queen Street Deli', imageURL: restaurantPhoto('1550507992-eb63ffee0847'), location: fredericton('685 Queen St'), cuisineIds: ['cui_sandwiches', 'cui_breakfast'], categoryIds: ['cat_food', 'cat_pickup'], rating: { average: 4.4, count: 508 }, phone: '', appURL: appListing('queen-street-deli'), hours: [...hours('store', WEEKNIGHTS, '07:00', '17:00'), ...hours('delivery', WEEKNIGHTS, '08:00', '16:00')] },
+  { id: 'rest_wings', name: 'Flight Night Wings', imageURL: restaurantPhoto('1527477396000-e27163b481c2'), location: fredericton('890 Hanwell Rd'), cuisineIds: ['cui_wings', 'cui_burgers'], categoryIds: ['cat_food'], rating: { average: 4.3, count: 1180 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '01:00'), ...hours('delivery', EVERY_DAY, '11:00', '00:30')] },
+  { id: 'rest_veggie', name: 'The Greenhouse', imageURL: restaurantPhoto('1512621776951-a57141f2eefd'), location: fredericton('15 Knowledge Park Dr'), cuisineIds: ['cui_vegan', 'cui_healthy'], categoryIds: ['cat_food', 'cat_bakery'], rating: { average: 4.9, count: 266 }, phone: '506-555-0153', appURL: '', hours: [...hours('store', WEEKNIGHTS, '08:00', '20:00'), ...hours('delivery', WEEKNIGHTS, '09:00', '19:30')] },
+  { id: 'rest_donut', name: 'Maple Ring Donuts', imageURL: restaurantPhoto('1551024506-0bccd828d307'), location: fredericton('1010 Prospect St'), cuisineIds: ['cui_donuts', 'cui_coffee'], categoryIds: ['cat_food', 'cat_bakery'], rating: { average: 4.5, count: 799 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '06:00', '15:00'), ...hours('delivery', EVERY_DAY, '07:00', '14:00')] },
+  { id: 'rest_grocery', name: 'Market Basket', imageURL: restaurantPhoto('1542838132-92c53300491e'), location: fredericton('1200 Woodstock Rd'), cuisineIds: [], categoryIds: ['cat_grocery', 'cat_convenience'], rating: { average: 4.0, count: 88 }, phone: '506-555-0155', appURL: '', hours: [...hours('store', EVERY_DAY, '07:00', '22:00'), ...hours('delivery', EVERY_DAY, '08:00', '21:00')] },
+  { id: 'rest_pharmacy', name: 'Riverbend Pharmacy', imageURL: restaurantPhoto('1584308666744-24d5c474f2ae'), location: fredericton('1440 Regent St'), cuisineIds: [], categoryIds: ['cat_pharmacy', 'cat_baby'], rating: { average: 4.2, count: 64 }, phone: '506-555-0156', appURL: '', hours: [...hours('store', WEEKNIGHTS, '09:00', '20:00'), ...hours('delivery', WEEKNIGHTS, '10:00', '19:00')] },
+  { id: 'rest_paws', name: 'Paws & Pantry', imageURL: restaurantPhoto('1589924691995-400dc9c4f2fc'), location: fredericton('1600 Main St'), cuisineIds: [], categoryIds: ['cat_pets', 'cat_retail'], rating: { average: 4.6, count: 143 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '09:00', '19:00'), ...hours('delivery', EVERY_DAY, '10:00', '18:00')] },
+  { id: 'rest_blossom', name: 'Blossom & Stem', imageURL: restaurantPhoto('1490750967868-88aa4486c946'), location: { ...fredericton('22 Brunswick St'), latitude: 45.985, longitude: -66.61 }, cuisineIds: [], categoryIds: ['cat_flowers', 'cat_gifts'], rating: { average: 4.8, count: 211 }, phone: '', appURL: '', hours: [...hours('store', WEEKNIGHTS, '09:00', '18:00'), ...hours('delivery', WEEKNIGHTS, '10:00', '17:00')] },
+  { id: 'rest_oromocto', name: 'Oromocto Smokehouse', imageURL: restaurantPhoto('1544025162-d76694265947'), location: { ...fredericton('85 Restigouche Rd'), latitude: 45.842, longitude: -66.48 }, cuisineIds: ['cui_bbq', 'cui_sandwiches'], categoryIds: ['cat_food'], rating: { average: 4.7, count: 355 }, phone: '', appURL: '', hours: [...hours('store', EVERY_DAY, '11:00', '21:00')] },
 ]
 
 /** External Unsplash photo, cropped for item thumbnails. Keep in sync with seed_storefront_demo.sql. */
@@ -305,6 +309,13 @@ export const mockOrders: Order[] = [
   },
 ]
 
+const mockDeals: ActivePromotion[] = [
+  {
+    promotion: { id: 'promo_skip_today', channelId: 'ch_skip', name: 'Skip today code', description: 'Use XYZ123 on Skip the Dishes today.', kind: 'percent_off', fulfillmentMode: '', value: { amountCents: 0, currency: 'CAD' }, valueBPS: 4000, startsAt: '2026-09-26T00:00:00-03:00', endsAt: '2026-09-26T23:59:59-03:00' },
+    targets: [],
+  },
+]
+
 export const mockCatalog = {
   account: mockAccount,
   providers: mockProviders,
@@ -312,7 +323,8 @@ export const mockCatalog = {
   cuisines: mockCuisines,
   restaurants: mockRestaurants,
   items: mockItems,
-  offers: mockOffers,
+	offers: mockOffers,
+	deals: mockDeals,
   cart: mockCart,
   orders: mockOrders,
 }

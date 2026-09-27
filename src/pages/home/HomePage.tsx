@@ -29,7 +29,7 @@ import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-mo
 import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
 
 const FASTEST_LIMIT = 8
-const RAIL_CARD_CLASS = 'w-[calc(100vw-3rem)] shrink-0 snap-start small:w-72'
+const RAIL_CARD_CLASS = 'w-[calc(100vw-3rem)] shrink-0 small:w-72'
 
 export default function HomePage() {
   const { status } = useAuth()
@@ -39,7 +39,10 @@ export default function HomePage() {
 }
 
 function HomeFeedView() {
-  const { loading, data, error } = useStorefront({ lightweight: true, includeRestaurants: true })
+  // Home cards need offers to render provider badges and ETA/price metadata.
+  // The lightweight bootstrap intentionally omits offers, so use the full
+  // storefront read model for this feed.
+  const { loading, data, error } = useStorefront({ includeRestaurants: true })
   const { feed } = useHomeFeed()
 
   if (loading) return <PageLoader />
@@ -80,7 +83,7 @@ function HomeFeedView() {
                 item={category}
                 to={searchPath(undefined, { category: category.slug })}
                 variant="compact"
-                className="shrink-0 snap-start"
+                className="shrink-0"
               />
             ))}
           </BrowseScroller>
@@ -107,7 +110,7 @@ function HomeFeedView() {
               item={cuisine}
               to={paths.cuisine(cuisine.slug)}
               variant="compact"
-              className="shrink-0 snap-start"
+                className="shrink-0"
             />
           ))}
         </BrowseScroller>

@@ -6,6 +6,7 @@ import PageLoader from '@/components/layout/PageLoader'
 import ErrorBoundary from '@/components/misc/ErrorBoundary'
 import { paths } from '@/routing/paths'
 import RequireAuth from '@/routing/RequireAuth'
+import RequireAdmin from '@/routing/RequireAdmin'
 
 const HomePage = lazy(() => import('@/pages/home/HomePage'))
 const LoginPage = lazy(() => import('@/pages/auth/LoginPage'))
@@ -34,6 +35,7 @@ const HealthPage = lazy(() => import('@/pages/health/HealthPage'))
 const ComparePage = lazy(() => import('@/pages/compare/ComparePage'))
 const SourceMenuPage = lazy(() => import('@/pages/source/SourceMenuPage'))
 const DevPagesPage = lazy(() => import('@/pages/dev/DevPagesPage'))
+const AdminPage = lazy(() => import('@/pages/admin/AdminPage'))
 const NotFoundPage = lazy(() => import('@/pages/not-found/NotFoundPage'))
 
 function StorefrontShell() {
@@ -91,6 +93,7 @@ export function App() {
           <Route path={paths.health} element={<HealthPage />} />
           <Route path={paths.compare} element={<ComparePage />} />
           <Route path={paths.sourceMenu} element={<SourceMenuPage />} />
+          <Route element={<RequireAdmin />}><Route path={paths.admin} element={<AdminPage />} /></Route>
           {import.meta.env.DEV && <Route path={paths.dev} element={<DevPagesPage />} />}
           <Route path="*" element={<NotFoundPage />} />
         </Route>

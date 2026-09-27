@@ -228,6 +228,7 @@ export interface RestaurantHours {
 export interface Restaurant {
   id: string
   name: string
+  imageURL?: string
   location: Location
   cuisineIds: string[]
   categoryIds: string[]
@@ -283,6 +284,7 @@ export interface Account {
   name: string
   email: string
   phone: string
+  role: string
   addresses: SavedAddress[]
   paymentMethods: PaymentMethod[]
 }
@@ -350,6 +352,13 @@ export interface PromotionTarget {
   dishId: string
   brandId: string
   legacyRestaurantId: string
+  region: string
+  country: string
+}
+
+export interface ActivePromotion {
+  promotion: Promotion
+  targets: PromotionTarget[]
 }
 
 export interface MembershipProduct {
@@ -453,4 +462,3 @@ export interface HomeFeed {
   banners: HomeBanner[]
   sections: HomeSection[]
 }
-

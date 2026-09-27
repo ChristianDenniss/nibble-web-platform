@@ -13,7 +13,7 @@ export interface CompareFormState {
   userId: string
 }
 
-const defaultForm: CompareFormState = {
+export const defaultCompareForm: CompareFormState = {
   placeId: 'pl_demo',
   dishId: 'dish_burger',
   quantity: 1,
@@ -23,7 +23,7 @@ const defaultForm: CompareFormState = {
 }
 
 export function useCompare() {
-  const [form, setForm] = useState<CompareFormState>(defaultForm)
+  const [form, setForm] = useState<CompareFormState>(defaultCompareForm)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [result, setResult] = useState<CompareResponseWire | null>(null)
@@ -58,5 +58,11 @@ export function useCompare() {
     }
   }, [form])
 
-  return { form, setForm, loading, error, result, runCompare }
+  const resetCompare = useCallback(() => {
+    setForm(defaultCompareForm)
+    setResult(null)
+    setError(null)
+  }, [])
+
+  return { form, setForm, loading, error, result, runCompare, resetCompare }
 }

@@ -191,18 +191,18 @@ export default function LocationMap({
 
       {pending && (
         <div
-          className="pointer-events-auto absolute inset-x-3 bottom-3 z-[1000] flex items-center gap-2 rounded-lg border border-border bg-surface/95 px-3 py-2 shadow-md backdrop-blur-sm"
+          className="pointer-events-auto absolute inset-x-3 bottom-3 z-[1000] flex items-center gap-2 rounded-lg border border-[var(--brand-200)] bg-[var(--brand-100)] px-3 py-2 shadow-md backdrop-blur-sm"
           role="group"
           aria-label="Confirm map pin"
         >
-          <p className="min-w-0 flex-1 text-sm text-content">
+          <p className="min-w-0 flex-1 text-sm text-content">
             {confirming ? 'Saving this address…' : 'Would you like to use this address?'}
           </p>
           <IconButton
             icon={Check}
             title="Use this address"
             size="sm"
-            className="shrink-0 text-accent hover:bg-accent/10"
+            className="shrink-0 text-accent hover:bg-brand/10 hover:text-status-success/70"
             disabled={confirming}
             onClick={confirmPreview}
           />
@@ -211,11 +211,12 @@ export default function LocationMap({
             title="Cancel"
             size="sm"
             disabled={confirming}
-            onClick={cancelPreview}
+            className="text-content-muted hover:bg-brand/10 hover:text-status-danger"
+            onClick={cancelPreview}
           />
         </div>
       )}
     </div>
   )
 }
-
+

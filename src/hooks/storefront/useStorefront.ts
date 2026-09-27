@@ -5,7 +5,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import axios from 'axios'
 import { extractAxiosError } from '@/errors'
-import type { Account, Cart, Category, Cuisine, Item, Offer, Order, Provider, Restaurant } from '@/generated/data-model'
+import type { Account, ActivePromotion, Cart, Category, Cuisine, Item, Offer, Order, Provider, Restaurant } from '@/generated/data-model'
 import { useAuth } from '@/hooks/auth/authStore'
 import {
   useDeliveryLocationState,
@@ -20,6 +20,7 @@ export interface StorefrontData {
   restaurants: Restaurant[]
   items: Item[]
   offers: Offer[]
+  deals: ActivePromotion[]
   cart: Cart
   orders: Order[]
   coverage?: Record<string, RestaurantCoverage>
@@ -113,6 +114,7 @@ export function useStorefront(options: UseStorefrontOptions = {}): StorefrontSta
             restaurants,
             items: response.data.items ?? [],
             offers: response.data.offers ?? [],
+            deals: response.data.deals ?? [],
             orders: response.data.orders ?? [],
           },
           error: null,
@@ -185,9 +187,13 @@ export function restaurantEta(data: StorefrontData, restaurantId: string): { min
 }
 
 export function restaurantProviders(data: StorefrontData, restaurantId: string) {
-  const ids = new Set(
-    data.offers.filter((offer) => offer.restaurantId === restaurantId).map((offer) => offer.providerId),
-  )
+  // Provider availability is a serviceability/purchase-path relationship,
+  // not a consequence of having an item price observation. Offers remain a
+  // fallback for screens where coverage has not loaded yet.
+  const ids = new Set([
+    ...data.offers.filter((offer) => offer.restaurantId === restaurantId).map((offer) => offer.providerId),
+    ...(data.coverage?.[restaurantId]?.paths.map((path) => path.providerId) ?? []),
+  ])
   return data.providers.filter((provider) => ids.has(provider.id))
 }
 

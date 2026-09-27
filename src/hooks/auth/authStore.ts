@@ -10,6 +10,7 @@ export interface AuthAccount {
   id: string
   name: string
   email: string
+  role: string
 }
 
 export type AuthStatus = 'loading' | 'authenticated' | 'guest'

@@ -1,6 +1,6 @@
 /**
  * Mock /api/v1/auth/* for the DEV adapter. The "cookie" is localStorage so reloads stay signed in.
- * Demo login: alex@example.com / nibble-demo (same as the seeded api-engine account).
+ * Demo login: aottgpvp@gmail.com / christian (same as the seeded root account).
  */
 import { mockAccount } from './catalog'
 import type { MockResult } from './handlers'
@@ -10,6 +10,7 @@ interface MockUser {
   name: string
   email: string
   password: string
+  role: string
 }
 
 interface MockAuthState {
@@ -18,12 +19,17 @@ interface MockAuthState {
 }
 
 const STORAGE_KEY = 'nibble.mockAuth'
-const DEMO_USER: MockUser = { id: mockAccount.id, name: mockAccount.name, email: mockAccount.email, password: 'nibble-demo' }
+const DEMO_USER: MockUser = { id: 'acct_aottgpvp_root', name: 'Aottg', email: 'aottgpvp@gmail.com', password: 'christian', role: 'root' }
 
 function read(): MockAuthState {
   try {
     const parsed = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? 'null') as MockAuthState | null
-    if (parsed) return parsed
+    if (parsed) {
+      const hasRoot = parsed.users.some((user) => user.email === DEMO_USER.email)
+      const users = hasRoot ? parsed.users : [...parsed.users, DEMO_USER]
+      const sessionUserId = parsed.sessionUserId === 'acct_dev' ? DEMO_USER.id : parsed.sessionUserId
+      return { ...parsed, users, sessionUserId }
+    }
   } catch {
     /* fall through to a fresh state */
   }
@@ -39,7 +45,7 @@ function write(state: MockAuthState) {
 }
 
 function publicAccount(user: MockUser) {
-  return { id: user.id, name: user.name, email: user.email }
+  return { id: user.id, name: user.name, email: user.email, role: user.role }
 }
 
 function body(data: unknown): Record<string, string> {
@@ -92,7 +98,7 @@ export function resolveAuthMock(method: string, path: string, data: unknown): Mo
     if (state.users.some((entry) => entry.email === normalized)) {
       return { status: 409, data: { error: 'an account with this email already exists' } }
     }
-    const user: MockUser = { id: `acct_mock_${Date.now().toString(16)}`, name: name.trim(), email: normalized, password }
+    const user: MockUser = { id: `acct_mock_${Date.now().toString(16)}`, name: name.trim(), email: normalized, password, role: 'user' }
     write({ sessionUserId: user.id, users: [...state.users, user] })
     return { status: 201, data: { account: publicAccount(user) } }
   }

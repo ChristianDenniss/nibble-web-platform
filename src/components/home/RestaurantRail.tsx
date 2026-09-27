@@ -19,7 +19,7 @@ export default function RestaurantRail({ title, subtitle, to, children }: Props)
       <SectionHeader title={title} to={to}>
         {subtitle}
       </SectionHeader>
-      <div ref={dragScroll} className="-mx-1 flex gap-3 overflow-x-auto overscroll-x-contain snap-x snap-mandatory px-1 pb-1 scrollbar-none max-small:-mx-5 max-small:scroll-px-5 max-small:px-5 small:gap-4">
+      <div ref={dragScroll} className="-mx-1 flex gap-3 overflow-x-auto overscroll-x-contain px-1 pb-1 scrollbar-none max-small:-mx-5 max-small:scroll-px-5 max-small:px-5 small:gap-4">
         {children}
       </div>
     </section>

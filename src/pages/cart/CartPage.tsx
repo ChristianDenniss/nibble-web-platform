@@ -12,6 +12,7 @@ import { formatMoney } from '@/lib/money'
 import { useStorefront } from '@/hooks/storefront/useStorefront'
 import { useCartDraft } from '@/hooks/cart/useCartDraft'
 import { paths } from '@/routing/paths'
+import { effectiveOffer } from '@/lib/deals'
 
 export default function CartPage() {
   const { loading, data, error } = useStorefront()
@@ -20,11 +21,11 @@ export default function CartPage() {
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Cart unavailable" description={error ?? undefined} />
 
-  const lines = draft.lines.map((line) => ({ line, item: data.items.find((entry) => entry.id === line.menuItemId), restaurant: data.restaurants.find((entry) => entry.id === line.restaurantId), offer: data.offers.find((entry) => entry.menuItemId === line.menuItemId && entry.providerId === line.providerId), provider: data.providers.find((entry) => entry.id === line.providerId) }))
+  const lines = draft.lines.map((line) => { const item = data.items.find((entry) => entry.id === line.menuItemId); const restaurant = data.restaurants.find((entry) => entry.id === line.restaurantId); const rawOffer = data.offers.find((entry) => entry.menuItemId === line.menuItemId && entry.providerId === line.providerId); return { line, item, restaurant, offer: rawOffer ? effectiveOffer(data.deals, rawOffer, { item, restaurant }) : undefined, provider: data.providers.find((entry) => entry.id === line.providerId) } })
   const subtotal = lines.reduce((sum, row) => sum + (row.offer?.price.amountCents ?? 0) * row.line.quantity, 0)
   const currency = lines[0]?.offer?.price.currency ?? 'CAD'
   const restaurantId = draft.lines[0]?.restaurantId
-  const suggestions = data.items.filter((item) => item.restaurantId === restaurantId && !draft.lines.some((line) => line.menuItemId === item.id)).map((item) => ({ item, offer: data.offers.filter((offer) => offer.menuItemId === item.id).sort((a, b) => a.price.amountCents - b.price.amountCents)[0] })).filter((entry) => entry.offer)
+  const suggestions = data.items.filter((item) => item.restaurantId === restaurantId && !draft.lines.some((line) => line.menuItemId === item.id)).map((item) => ({ item, offer: data.offers.filter((offer) => offer.menuItemId === item.id).map((offer) => effectiveOffer(data.deals, offer, { item, restaurant: data.restaurants.find((r) => r.id === item.restaurantId) })).sort((a, b) => a.price.amountCents - b.price.amountCents)[0] })).filter((entry) => entry.offer)
   const addSuggestion = (itemId: string, itemRestaurantId: string, providerId: string) => {
     draft.add({ id: `line_${itemId}`, restaurantId: itemRestaurantId, menuItemId: itemId, providerId, quantity: 1 })
   }

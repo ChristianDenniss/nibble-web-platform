@@ -2,7 +2,7 @@
  * LoginPage — email / password plus Google and Apple sign-in. Sign-up is a mode on this page.
  * Signed-in visitors are sent home; SSO failures come back here as `?error=<code>`.
  */
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import Button from '@/components/buttons/Button'
 import PageLoader from '@/components/layout/PageLoader'
@@ -13,6 +13,7 @@ import { extractAxiosError } from '@/errors'
 import { login, signUp, ssoStartUrl, useAuth, type SsoProvider } from '@/hooks/auth/authStore'
 import { useSsoProviders } from '@/hooks/auth/useSsoProviders'
 import { paths } from '@/routing/paths'
+import { notify } from '@/utils/notify'
 
 const SSO_ERRORS: Record<string, string> = {
   sso_unavailable: "That sign-in option isn't set up yet.",
@@ -39,33 +40,35 @@ export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [submitting, setSubmitting] = useState(false)
-  const [error, setError] = useState<string | null>(() => {
+  const ssoError = (() => {
     const code = searchParams.get('error')
     return code ? SSO_ERRORS[code] ?? SSO_ERRORS.sso_failed : null
-  })
+  })()
   const isSignup = mode === 'signup'
   const redirectTo = (location.state as { from?: string } | null)?.from ?? paths.home
+
+  useEffect(() => {
+    if (ssoError) notify.error(ssoError)
+  }, [ssoError])
 
   if (status === 'loading') return <PageLoader />
   if (status === 'authenticated' && !submitting) return <Navigate to={redirectTo} replace />
 
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault()
-    setError(null)
     setSubmitting(true)
     try {
       if (isSignup) await signUp(name, email, password)
       else await login(email, password)
       navigate(redirectTo, { replace: true })
     } catch (err: unknown) {
-      setError(extractAxiosError(err, isSignup ? 'Could not create your account.' : 'Could not log you in.'))
+      notify.error(extractAxiosError(err, isSignup ? 'Could not create your account.' : 'Could not log you in.'))
       setSubmitting(false)
     }
   }
 
   const switchMode = () => {
     setMode(isSignup ? 'login' : 'signup')
-    setError(null)
   }
 
   return (
@@ -79,12 +82,6 @@ export default function LoginPage() {
           ? 'Save addresses and see past orders. Checkout still happens on the provider you pick.'
           : 'Log in to pick up where you left off.'}
       </p>
-
-      {error && (
-        <p role="alert" className="mt-4 rounded-lg border border-status-danger/30 bg-status-danger/10 px-3 py-2 text-sm text-status-danger">
-          {error}
-        </p>
-      )}
 
       <form className="mt-6 space-y-4" onSubmit={(event) => { void submit(event) }}>
         {isSignup && (

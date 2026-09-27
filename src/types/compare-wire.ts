@@ -5,6 +5,17 @@ export interface CompareMoneyWire {
   currency: string
 }
 
+export interface CompareFeeWire {
+  kind: string
+  amount: CompareMoneyWire
+}
+
+export interface CompareDiscountWire {
+  scope: string
+  label: string
+  amount: CompareMoneyWire
+}
+
 export interface ComparePathRankWire {
   purchase_option_id: string
   rank: number
@@ -16,6 +27,18 @@ export interface ComparePathRankWire {
   delivery_executor?: string
   channel_id: string
   rationale_bullets?: string[]
+  provider_id?: string
+  provider_name?: string
+  restaurant_id?: string
+  menu_item_id?: string
+  item_name?: string
+  item_subtotal?: CompareMoneyWire
+  fees?: CompareFeeWire[]
+  discounts?: CompareDiscountWire[]
+  delivery_cost?: CompareMoneyWire
+  service_fee?: CompareMoneyWire
+  eta_minutes?: number
+  handoff_url?: string
 }
 
 export interface CompareUnavailableWire {

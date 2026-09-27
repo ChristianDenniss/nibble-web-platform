@@ -11,7 +11,10 @@ import { useCallback, type RefCallback, type RefObject } from 'react'
 
 const DRAG_THRESHOLD_PX = 6
 // How far (ms of release velocity) the rail keeps gliding after a flick before snapping.
-const MOMENTUM_MS = 220
+// Keep this deliberately modest: the rail should feel light and responsive, not runaway.
+const MOMENTUM_MS = 180
+const MOMENTUM_DURATION_MS = 360
+const VELOCITY_SAMPLE_MS = 90
 // A pause longer than this before release means the user stopped deliberately: no glide.
 const MOMENTUM_IDLE_MS = 80
 
@@ -39,15 +42,30 @@ function attachDragScroll(el: HTMLElement): () => void {
   let lastX = 0
   let lastTime = 0
   let velocity = 0
+  let velocitySamples: Array<{ x: number; time: number }> = []
+  let momentumFrame: number | null = null
+
+  const stopMomentum = () => {
+    if (momentumFrame !== null) {
+      cancelAnimationFrame(momentumFrame)
+      momentumFrame = null
+    }
+  }
 
   const onPointerDown = (e: PointerEvent) => {
     if (e.pointerType !== 'mouse' || e.button !== 0) return
     if (el.scrollWidth <= el.clientWidth) return
+    stopMomentum()
+    // A new drag should always start from the exact current position, without a
+    // snap animation fighting the pointer.
+    el.style.scrollSnapType = 'none'
+    el.style.scrollBehavior = 'auto'
     pointerId = e.pointerId
     startX = lastX = e.clientX
     lastTime = e.timeStamp
     startScroll = el.scrollLeft
     velocity = 0
+    velocitySamples = [{ x: e.clientX, time: e.timeStamp }]
   }
 
   const onPointerMove = (e: PointerEvent) => {
@@ -64,25 +82,65 @@ function attachDragScroll(el: HTMLElement): () => void {
       el.style.userSelect = 'none'
     }
     const dt = e.timeStamp - lastTime
-    if (dt > 0) velocity = (e.clientX - lastX) / dt
+    if (dt > 0) {
+      velocitySamples.push({ x: e.clientX, time: e.timeStamp })
+      velocitySamples = velocitySamples.filter((sample) => e.timeStamp - sample.time <= VELOCITY_SAMPLE_MS)
+      const oldest = velocitySamples[0]
+      velocity = oldest && e.timeStamp > oldest.time
+        ? (e.clientX - oldest.x) / (e.timeStamp - oldest.time)
+        : (e.clientX - lastX) / dt
+    }
     lastX = e.clientX
     lastTime = e.timeStamp
     el.scrollLeft = startScroll - dx
   }
 
+  const glide = (initialVelocity: number) => {
+    const start = el.scrollLeft
+    const distance = initialVelocity * MOMENTUM_MS
+    const startedAt = performance.now()
+
+    const tick = (now: number) => {
+      const progress = Math.min((now - startedAt) / MOMENTUM_DURATION_MS, 1)
+      // Ease-out cubic: the motion starts with the release velocity and gently
+      // loses speed instead of stopping in a second snap/smooth-scroll jump.
+      const easedProgress = 1 - (1 - progress) ** 3
+      el.scrollLeft = start - distance * easedProgress
+
+      if (progress < 1) {
+        momentumFrame = requestAnimationFrame(tick)
+      } else {
+        momentumFrame = null
+        el.style.scrollSnapType = ''
+        el.style.scrollBehavior = ''
+      }
+    }
+
+    momentumFrame = requestAnimationFrame(tick)
+  }
+
   const onPointerEnd = (e: PointerEvent) => {
     if (e.pointerId !== pointerId) return
     pointerId = null
-    if (!dragging) return
+    if (!dragging) {
+      // The pointer may have been pressed while a glide was running but never
+      // crossed the drag threshold. Restore the normal rail behavior for the
+      // next native scroll/click.
+      el.style.scrollSnapType = ''
+      el.style.scrollBehavior = ''
+      return
+    }
     dragging = false
     if (el.hasPointerCapture(e.pointerId)) el.releasePointerCapture(e.pointerId)
-    el.style.scrollSnapType = ''
-    el.style.scrollBehavior = ''
     el.style.cursor = ''
     el.style.userSelect = ''
-    const glide = e.timeStamp - lastTime > MOMENTUM_IDLE_MS ? 0 : velocity * MOMENTUM_MS
-    // Snap is restored first so the smooth scroll settles on a snap point.
-    el.scrollTo({ left: el.scrollLeft - glide, behavior: 'smooth' })
+    const releaseVelocity = e.timeStamp - lastTime > MOMENTUM_IDLE_MS ? 0 : velocity
+    if (releaseVelocity === 0) {
+      el.style.scrollSnapType = ''
+      el.style.scrollBehavior = ''
+    } else {
+      glide(releaseVelocity)
+    }
     // The click (if any) fires synchronously after pointerup; clear the flag once it has passed.
     suppressClick = true
     window.setTimeout(() => { suppressClick = false }, 0)
@@ -105,6 +163,7 @@ function attachDragScroll(el: HTMLElement): () => void {
   el.addEventListener('click', onClickCapture, true)
   el.addEventListener('dragstart', onDragStart)
   return () => {
+    stopMomentum()
     el.removeEventListener('pointerdown', onPointerDown)
     el.removeEventListener('pointermove', onPointerMove)
     el.removeEventListener('pointerup', onPointerEnd)

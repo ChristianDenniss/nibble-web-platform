@@ -30,6 +30,7 @@ export const paths = {
   compare: '/compare',
   sourceMenu: '/source-menu',
   dev: '/dev',
+  admin: '/admin',
 } as const
 
 export function searchPath(query?: string, extras?: { category?: string; cuisine?: string }): string {
