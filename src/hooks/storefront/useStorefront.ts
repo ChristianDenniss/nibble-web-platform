@@ -55,6 +55,16 @@ interface RestaurantPageResponse {
   data: Restaurant[]
 }
 
+function normalizeRestaurant(restaurant: Restaurant): Restaurant {
+  return {
+    ...restaurant,
+    // Older storefront rows may not have relationship arrays populated yet.
+    // Keep the wire model tolerant so one incomplete row cannot crash Home.
+    cuisineIds: restaurant.cuisineIds ?? [],
+    categoryIds: restaurant.categoryIds ?? [],
+  }
+}
+
 function applyDeliveryLocation(data: StorefrontData, delivery: DeliveryLocationState): StorefrontData {
   const addresses = delivery.sessionAddress
     ? [delivery.sessionAddress, ...data.account.addresses.filter((address) => address.id !== delivery.sessionAddress?.id)]
@@ -103,7 +113,9 @@ export function useStorefront(options: UseStorefrontOptions = {}): StorefrontSta
     Promise.all([bootstrapRequest, restaurantsRequest])
       .then(([response, restaurantsResponse]) => {
         if (cancelled) return
-        const restaurants = restaurantsResponse?.data.data ?? response.data.restaurants ?? []
+        const restaurants = (response.data.restaurants?.length
+          ? response.data.restaurants
+          : restaurantsResponse?.data.data ?? []).map(normalizeRestaurant)
         setState({
           loading: false,
           data: {
@@ -151,7 +163,10 @@ export function useStorefront(options: UseStorefrontOptions = {}): StorefrontSta
     axios.get<{ restaurants: RestaurantCoverage[] }>(`/api/v1/serviceability/restaurants?${params.toString()}`)
       .then((response) => {
         if (cancelled) return
-        setCoverage(Object.fromEntries(response.data.restaurants.map((entry) => [entry.restaurantId, entry])))
+        setCoverage(Object.fromEntries(response.data.restaurants.map((entry) => [
+          entry.restaurantId,
+          { ...entry, paths: entry.paths ?? [] },
+        ])))
       })
       .catch(() => {
         if (!cancelled) setCoverage({})
