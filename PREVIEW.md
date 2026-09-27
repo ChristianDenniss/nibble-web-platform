@@ -4,7 +4,7 @@ Run `npm run demo` and open http://localhost:5174/ . The npm command name is int
 
 For a standalone build: `npm run build:demo`, then `npm run preview -- --port 4173`. This explicitly includes the local catalog adapter. A normal production build does not enable that adapter; it expects the API.
 
-The welcome, login, header, home carousel, category/cuisine rails and restaurant-card design come from upstream main (`fb77d61`). The menu add buttons, shared cart, and whole-cart comparison are connected to collected menus.
+The welcome, login, header, home carousel, category/cuisine rails and restaurant-card design come from upstream main (`2f532f4`). The menu add buttons, shared cart, and whole-cart comparison are connected to collected menus.
 
 ## Coverage
 
