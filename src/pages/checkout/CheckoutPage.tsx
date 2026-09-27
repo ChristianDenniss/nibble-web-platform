@@ -19,6 +19,10 @@ import { trackCartEvent } from '@/lib/cartAnalytics'
 import Button from '@/components/buttons/Button'
 import Modal from '@/components/modals/Modal'
 import { effectiveOffer } from '@/lib/deals'
+import { estimateFees } from '@/catalog/feeEstimates'
+import { cartTotals } from '@/catalog/cartTotals'
+import CartCostBreakdown from '@/components/storefront/CartCostBreakdown'
+import catalog from '@/catalog/catalog.json'
 
 function providerURL(name: string) {
   const key = name.toLowerCase()
@@ -48,17 +52,25 @@ export default function CheckoutPage() {
   const provider = data.providers.find((entry) => entry.id === providerId)
   const restaurant = data.restaurants.find((entry) => entry.id === draft.lines[0]?.restaurantId)
   const handoffURL = restaurant?.appURL || (provider ? providerURL(provider.name) : '#')
+  let subtotalComplete = true
   const subtotal = draft.lines.reduce((sum, line) => {
     const item = data.items.find((entry) => entry.id === line.menuItemId)
     const offer = data.offers.find((entry) => entry.menuItemId === line.menuItemId && entry.providerId === line.providerId)
     const effective = offer ? effectiveOffer(data.deals, offer, { item, restaurant }) : undefined
-    return sum + (effective?.price.amountCents ?? 0) * line.quantity
+    if (effective?.price.amountCents == null) {
+      subtotalComplete = false
+      return sum
+    }
+    return sum + effective.price.amountCents * line.quantity
   }, 0)
+  const pricedSubtotal = subtotalComplete ? subtotal : null
   const currency = data.offers.find((offer) => offer.providerId === providerId)?.price.currency ?? 'CAD'
+  const fees = estimateFees(providerId ?? '', pricedSubtotal)
+  const checkoutTotals = cartTotals(pricedSubtotal, providerId ?? '', restaurant?.name ?? '', fees.delivery, fees.service, catalog.promotions, [], new Date(), true)
   const handoffDetails = {
     providerId,
     restaurantId: restaurant?.id,
-    totalCents: subtotal,
+    totalCents: checkoutTotals.total ?? subtotal,
     currency,
     addressId: address?.id,
     targetURL: handoffURL,
@@ -109,10 +121,8 @@ export default function CheckoutPage() {
       </div>
 
       <section className="rounded-xl border border-border bg-surface p-5">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-content-secondary">Estimated subtotal</span>
-          <span className="font-semibold text-accent">{formatMoney(subtotal)}</span>
-        </div>
+        <h2 className="text-sm font-semibold text-content">Estimated order total</h2>
+        <CartCostBreakdown totals={checkoutTotals} subtotal={pricedSubtotal} pickupOnly={false} />
         <p className="mt-3 text-xs text-content-muted">
           Final total, fees, and payment method are confirmed after we send you to {provider?.name ?? 'the provider'}.
         </p>
@@ -128,7 +138,7 @@ export default function CheckoutPage() {
             You are leaving Nibble to finish this order with {provider?.name ?? 'the provider'}.
           </p>
           <div className="rounded-lg border border-border bg-surface-inset p-4 text-sm">
-            <div className="flex justify-between gap-4"><span className="text-content-secondary">Estimated total</span><span className="font-semibold text-content">{formatMoney(subtotal, currency)}</span></div>
+            <div className="flex justify-between gap-4"><span className="text-content-secondary">Estimated total</span><span className="font-semibold text-content">{checkoutTotals.total === null ? 'Unavailable' : formatMoney(checkoutTotals.total, currency)}</span></div>
             <div className="mt-2 flex justify-between gap-4"><span className="text-content-secondary">Delivery address</span><span className="text-right font-medium text-content">{address ? formatLocation(address.location) : 'No address selected'}</span></div>
           </div>
           <p className="text-xs text-content-muted">The provider will confirm final fees, taxes, availability, and payment.</p>

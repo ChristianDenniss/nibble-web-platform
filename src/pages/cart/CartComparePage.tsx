@@ -1,5 +1,4 @@
 import { estimateFees } from '@/catalog/feeEstimates'
-import { restaurantPromotions } from '@/catalog/promotions'
 import CartCostBreakdown from '@/components/storefront/CartCostBreakdown'
 import { cartTotals } from '@/catalog/cartTotals'
 import { useEffect, useState } from 'react'
@@ -37,7 +36,7 @@ export default function CartComparePage() {
   const rows = compareCart(cart.lines, providers, data.offers, catalog.provenance)
   const costRows = rows.map(row => {
     const fees = estimateFees(row.provider.id, row.subtotal, row.pickupOnly)
-    return { ...row, totals: cartTotals(row.subtotal, row.provider.id, restaurant?.name ?? '', fees.delivery, fees.service, restaurantPromotions(catalog.promotions), [], now) }
+    return { ...row, totals: cartTotals(row.subtotal, row.provider.id, restaurant?.name ?? '', fees.delivery, fees.service, catalog.promotions, [], now, true) }
   }).sort((a, b) => (a.totals.total ?? Infinity) - (b.totals.total ?? Infinity))
   const comparable = costRows.filter(row => !row.startingPrice && !row.pickupOnly && row.totals.total !== null)
   const best = comparable.length >= 2 ? Math.min(...comparable.map(row => row.totals.total!)) : null

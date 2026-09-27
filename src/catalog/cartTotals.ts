@@ -15,9 +15,9 @@ export function feeCents(value: string): number | null {
 }
 
 /** Estimates assume taxable prepared food and fees in New Brunswick; no tip. */
-export function cartTotals(subtotal: number | null, providerId: string, restaurantName: string, delivery: number | null, service: number | null, promotions: Promotion[], confirmed: string[], now = new Date()) {
+export function cartTotals(subtotal: number | null, providerId: string, restaurantName: string, delivery: number | null, service: number | null, promotions: Promotion[], confirmed: string[], now = new Date(), assumeEligible = false) {
   const available = availablePromotions(promotions, [providerId], restaurantName, now)
-  const candidates = available.filter(p => confirmed.includes(p.id) && rules[p.id] && subtotal !== null && subtotal >= p.minimumCents)
+  const candidates = available.filter(p => (confirmed.includes(p.id) || assumeEligible) && rules[p.id] && subtotal !== null && subtotal >= p.minimumCents)
   const options = [null, ...candidates].map(promo => {
     const rule = promo ? rules[promo.id] : {}
     const discount = subtotal === null ? 0 : Math.min(subtotal, rule.fixed ?? Math.min(Math.round(subtotal * (rule.percent ?? 0) / 100), rule.cap ?? Infinity))
@@ -27,7 +27,7 @@ export function cartTotals(subtotal: number | null, providerId: string, restaura
     const total = taxable === null || deliveryFee === null || service === null ? null : taxable + tax!
     return { promo, discount, delivery: deliveryFee, service, tax, total, savings: discount + (rule.deliveryFree ? delivery ?? 0 : 0) }
   })
-  // Never stack conditional offers. Choose the largest saving among confirmed offers.
+  // Never stack offers. Choose the largest saving among confirmed or assumed-eligible offers.
   options.sort((a, b) => b.savings - a.savings)
   return { ...options[0], available }
 }
