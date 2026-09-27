@@ -1,122 +1,290 @@
 {
   "bigmac": {
     "file": "/images/menu/bigmac.png",
-    "url": "https://www.mcdonalds.at/wp-content/uploads/2021/09/web-neu-1500x1500-core-big-mac-1-480x480.png",
-    "illustrative": true
+    "url": "https://www.mcdonalds.at/wp-content/uploads/2021/09/web-neu-1500x1500-core-big-mac-1.png",
+    "illustrative": true,
+    "width": 1500,
+    "height": 1500
   },
   "mcchicken": {
     "file": "/images/menu/mcchicken.jpg",
-    "url": "https://s7d1.scene7.com/is/image/mcdonaldsstage/mcchicken-7?dpr=off&hei=480&wid=424",
-    "illustrative": true
+    "url": "https://s7d1.scene7.com/is/image/mcdonaldsstage/mcchicken-7?dpr=off&hei=1400&wid=1400",
+    "illustrative": true,
+    "width": 1400,
+    "height": 1400
   },
   "nuggets": {
     "file": "/images/menu/nuggets.jpg",
-    "url": "https://cdn.hercampus.com/SH6M70M3/as/q2xyha-6heiqo-et3x6u/Alex_Frank-ChickenNuggets2?auto=webp&dpr=1&fit=crop&height=400&width=600",
-    "illustrative": true
+    "url": "https://cdn.hercampus.com/SH6M70M3/as/q2xyha-6heiqo-et3x6u/Alex_Frank-ChickenNuggets2?auto=webp&dpr=1&fit=crop&height=1000&width=1500",
+    "illustrative": true,
+    "width": 1500,
+    "height": 1000
   },
   "fries": {
     "file": "/images/menu/fries.jpg",
-    "url": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 2400
   },
   "drink": {
     "file": "/images/menu/drink.jpg",
-    "url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1067
   },
   "dessert": {
     "file": "/images/menu/dessert.jpg",
-    "url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 2846
   },
   "coffee": {
     "file": "/images/menu/coffee.jpg",
-    "url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 895
   },
   "wrap": {
     "file": "/images/menu/wrap.jpg",
-    "url": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1626700051175-6818013e1d4f?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 2000
   },
   "taco-cutout": {
     "file": "/images/menu/taco-cutout.png",
     "url": "https://www.tacoboyz.com/wp-content/uploads/2017/10/taco-cutout.png",
-    "illustrative": true
+    "illustrative": true,
+    "width": 599,
+    "height": 350
   },
   "burrito-cutout": {
     "file": "/images/menu/burrito-cutout.png",
     "url": "https://www.tacoboyz.com/wp-content/uploads/2017/10/burrito-cutout.png",
-    "illustrative": true
+    "illustrative": true,
+    "width": 599,
+    "height": 467
   },
   "churros-stuffed": {
     "file": "/images/menu/churros-stuffed.png",
-    "url": "https://www.tacoboyz.com/wp-content/uploads/2017/12/churros-stuffed-768x648.png",
-    "illustrative": true
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2017/12/churros-stuffed.png",
+    "illustrative": true,
+    "width": 800,
+    "height": 675
   },
   "nachos": {
     "file": "/images/menu/nachos.jpg",
-    "url": "https://www.tacoboyz.com/wp-content/uploads/2022/05/NACHOS-768x403.jpg",
-    "illustrative": true
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2022/05/NACHOS.jpg",
+    "illustrative": true,
+    "width": 2020,
+    "height": 1060
   },
   "burrito-bowl": {
     "file": "/images/menu/burrito-bowl.png",
-    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Burrito-Bowl-768x1366.png",
-    "illustrative": true
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Burrito-Bowl.png",
+    "illustrative": true,
+    "width": 768,
+    "height": 1366
   },
   "quesadilla": {
     "file": "/images/menu/quesadilla.png",
-    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Quesadilla-768x1366.png",
-    "illustrative": true
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Quesadilla.png",
+    "illustrative": true,
+    "width": 768,
+    "height": 1366
   },
   "taco-pocket": {
     "file": "/images/menu/taco-pocket.png",
-    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Taco-Pocket-768x1366.png",
-    "illustrative": true
+    "url": "https://www.tacoboyz.com/wp-content/uploads/2024/09/Taco-Pocket.png",
+    "illustrative": true,
+    "width": 768,
+    "height": 1366
   },
   "pizza": {
     "file": "/images/menu/pizza.jpg",
-    "url": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1628840042765-356cda07504e?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1600
   },
   "burger": {
     "file": "/images/menu/burger.jpg",
-    "url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1329
   },
   "salad": {
     "file": "/images/menu/salad.jpg",
-    "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1067
   },
   "wings": {
     "file": "/images/menu/wings.jpg",
-    "url": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1527477396000-e27163b481c2?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1089
   },
   "sandwich": {
     "file": "/images/menu/sandwich.jpg",
-    "url": "https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1550507992-eb63ffee0847?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1067
   },
   "chicken": {
     "file": "/images/menu/chicken.jpg",
-    "url": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1532550907401-a500c9a57435?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1068
   },
   "soup": {
     "file": "/images/menu/soup.jpg",
-    "url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1067
   },
   "fish": {
     "file": "/images/menu/fish.jpg",
-    "url": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=85&auto=format&fit=crop",
-    "illustrative": true
+    "url": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=1600&q=90&auto=format&fit=crop",
+    "illustrative": true,
+    "width": 1600,
+    "height": 1082
   },
   "water": {
     "file": "/images/menu/water.jpg",
     "url": "https://cdn3.didevelop.com/public/cdn/533_09156af830eb29605c45534bf0cb48a3.jpg",
-    "illustrative": true
+    "illustrative": true,
+    "width": 533,
+    "height": 532
+  },
+  "dish-ef62f0a48a650415": {
+    "file": "/images/menu/dish-ef62f0a48a650415.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_75327b33aac14bdcb0cf421630afc773~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_75327b33aac14bdcb0cf421630afc773~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-82ca46e6d424d5ef": {
+    "file": "/images/menu/dish-82ca46e6d424d5ef.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_461fbe7a76994dccb5c647b3d1e86a26~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_461fbe7a76994dccb5c647b3d1e86a26~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1102,
+    "height": 774
+  },
+  "dish-d20b3233dfbcd2c8": {
+    "file": "/images/menu/dish-d20b3233dfbcd2c8.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_7bd9e70f3b4d49f5a9741c5cc7ab92f1~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_7bd9e70f3b4d49f5a9741c5cc7ab92f1~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-adc18485392a0249": {
+    "file": "/images/menu/dish-adc18485392a0249.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_e9b3df0046d445ebabc2422c499650f9~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_e9b3df0046d445ebabc2422c499650f9~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-40cbfbf0a9ed21a9": {
+    "file": "/images/menu/dish-40cbfbf0a9ed21a9.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_4c9578edd4f740538e537a77b044218e~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_4c9578edd4f740538e537a77b044218e~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-50b7d8833bd724fa": {
+    "file": "/images/menu/dish-50b7d8833bd724fa.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_72e20773117c46a498ed4cc7343c4c3a~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_72e20773117c46a498ed4cc7343c4c3a~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-5a89d78672dee1ae": {
+    "file": "/images/menu/dish-5a89d78672dee1ae.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_2f5f334050314498aa49f522b77ca5eb~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_2f5f334050314498aa49f522b77ca5eb~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-b2c15bcccecfaa48": {
+    "file": "/images/menu/dish-b2c15bcccecfaa48.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_3f0027a854444222913b638a7d4136ac~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_3f0027a854444222913b638a7d4136ac~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-05e176dca8f54da3": {
+    "file": "/images/menu/dish-05e176dca8f54da3.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_8d0b931af13f4dae87148cd6febbdbc4~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_8d0b931af13f4dae87148cd6febbdbc4~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 800,
+    "height": 1200
+  },
+  "dish-f08df2ea2c3a8373": {
+    "file": "/images/menu/dish-f08df2ea2c3a8373.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_e753b6bccace4cf293094fe56883b4ae~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_e753b6bccace4cf293094fe56883b4ae~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-460a8f4a4eca6a57": {
+    "file": "/images/menu/dish-460a8f4a4eca6a57.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_0baad64830364d9897abd8f2613dd32d~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_0baad64830364d9897abd8f2613dd32d~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-b0c11cbadef37734": {
+    "file": "/images/menu/dish-b0c11cbadef37734.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_146a7c13f68d4fbc8922dc97659ca654~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_146a7c13f68d4fbc8922dc97659ca654~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-81ad6eee0f167d6b": {
+    "file": "/images/menu/dish-81ad6eee0f167d6b.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_36ab66115a494b4584abd1b0ec136fd1~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_36ab66115a494b4584abd1b0ec136fd1~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-431753e0e6e02955": {
+    "file": "/images/menu/dish-431753e0e6e02955.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_3405464da2b845e68b000168719a1a49~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_3405464da2b845e68b000168719a1a49~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
+  },
+  "dish-bf30d7b5f6d96392": {
+    "file": "/images/menu/dish-bf30d7b5f6d96392.jpg",
+    "url": "https://static.wixstatic.com/media/f21ad0_e4f69571aabf471dab8fb7d2aadf05b9~mv2.jpg/v1/fit/w_1200,h_1200,q_90/f21ad0_e4f69571aabf471dab8fb7d2aadf05b9~mv2.jpg",
+    "sourceUrl": "https://www.lunapizza.ca/order-online",
+    "illustrative": false,
+    "width": 1200,
+    "height": 800
   }
 }

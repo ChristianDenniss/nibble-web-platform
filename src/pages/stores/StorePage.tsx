@@ -1,3 +1,6 @@
+import catalog from '@/catalog/catalog.json'
+import PromotionList from '@/components/storefront/PromotionList'
+import MerchantOrdering from '@/components/storefront/MerchantOrdering'
 import { useCartDraft } from '@/hooks/cart/useCartDraft'
 import { paths } from '@/routing/paths'
 import ItemImage from '@/components/storefront/ItemImage'
@@ -141,6 +144,8 @@ export default function StorePage() {
   const eta = restaurantEta(data, restaurant.id)
   const address = currentAddress(data)
   const distance = restaurantDistanceKm(restaurant, address)
+  const ratings: Record<string, { provider: string; sourceUrl: string }> = catalog.ratings
+  const ratingSource = ratings[restaurant.id]
 
   return (
     <div className="space-y-6">
@@ -163,7 +168,8 @@ export default function StorePage() {
             {restaurant.rating.count > 0 && (
               <span className="inline-flex items-center gap-1">
                 <Star size={14} className="text-status-warning" />
-                {restaurant.rating.average.toFixed(1)} ({restaurant.rating.count.toLocaleString()})
+                {restaurant.rating.average.toFixed(1)} / 5 ({restaurant.rating.count.toLocaleString()})
+                {ratingSource && <a className="underline" href={ratingSource.sourceUrl} target="_blank" rel="noopener noreferrer">{ratingSource.provider}</a>}
               </span>
             )}
             {eta && (
@@ -181,6 +187,9 @@ export default function StorePage() {
         </div>
         <OrderPathStack restaurant={restaurant} providers={providers} providerStatus={providerStatus} size="md" className="self-start small:self-auto" />
       </div>
+
+      <MerchantOrdering restaurantId={restaurant.id} />
+      <PromotionList providerIds={[...providers.map(provider => provider.id), ...(restaurant.appURL ? ['prov_direct'] : [])]} restaurantName={restaurant.name} />
 
       {sections.length > 0 && (
         <div ref={stickyBar} className="sticky top-(--app-header-height) z-20 -mx-5 border-b border-border bg-page px-5 pb-1.5 pt-2.5">
@@ -230,7 +239,7 @@ export default function StorePage() {
         ))}
       </div>
       {!!cart.lines.length && <div className="sticky bottom-4 z-30 flex items-center justify-between gap-3 rounded-xl border border-border bg-surface p-4 shadow-xl"><span className="font-semibold">{cart.lines.reduce((n, line) => n + line.quantity, 0)} items in your cart</span><Link to={paths.cart} className="rounded-lg bg-brand px-4 py-3 text-sm font-semibold text-on-brand">Review cart</Link></div>}
-      <p className="text-xs text-content-muted">Photos are illustrative; portions and presentation may vary.</p>
+      <p className="text-xs text-content-muted">Some photos are illustrative; portions and presentation may vary. Available menu entries and options can differ by ordering service.</p>
       <StoreInfoModal open={infoOpen} onClose={() => setInfoOpen(false)} restaurant={restaurant} />
     </div>
   )

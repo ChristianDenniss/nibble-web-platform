@@ -34,8 +34,25 @@ test('empty and mixed-restaurant carts cannot be quoted', () => {
     assert.ok(compareCart(lines, providers, catalog.offers, catalog.provenance).every(r => !r.complete && r.subtotal === null && !r.lowest))
   }
 })
-test('all 12 menus have local item photos and only traceable collected prices', () => {
-  assert.equal(catalog.restaurants.length, 12)
+test('all collected menus have local item photos and only traceable collected prices', () => {
+  assert.ok(catalog.restaurants.length >= 42)
   for (const item of catalog.items) assert.ok(existsSync(new URL(`../public${item.imageURL}`, import.meta.url)), item.name)
-  for (const offer of catalog.offers) assert.match(catalog.provenance[offer.id].sourceUrl, /^https:\/\/(www\.)?(ubereats|doordash|skipthedishes)\.com\//)
+  for (const offer of catalog.offers) assert.match(catalog.provenance[offer.id].sourceUrl, /^https:\/\/(www\.)?((ubereats|doordash|skipthedishes)\.com|lunapizza\.ca)\//)
+})
+
+test('pickup menus cannot win a delivery comparison', () => {
+  const cart = [line('McDonald', 'Big Mac', 1)]
+  const offers = providers.slice(0, 2).map((p, i) => ({ id: p.id, providerId: p.id, menuItemId: cart[0].menuItemId, restaurantId: cart[0].restaurantId, price: { amountCents: i ? 200 : 100, currency: 'CAD' } }))
+  const rows = compareCart(cart, providers, offers, { prov_ubereats: { startingPrice: false, fulfillmentMode: 'pickup' }, prov_doordash: { startingPrice: false } })
+  assert.ok(rows.every(row => !row.lowest))
+})
+
+test('direct menu has a separate branch, traceable pickup prices and real dish images', () => {
+  const rid = 'catalog-direct-luna-king'
+  assert.match(catalog.restaurants.find(r => r.id === rid).location.address, /379 King/)
+  assert.equal(catalog.items.filter(i => i.restaurantId === rid).length, 61)
+  const offers = catalog.offers.filter(o => o.restaurantId === rid)
+  assert.equal(offers.length, 60)
+  assert.ok(offers.every(o => o.price.amountCents > 0 && catalog.provenance[o.id].fulfillmentMode === 'pickup'))
+  assert.ok(catalog.items.some(i => i.restaurantId === rid && i.imageURL.includes('/dish-')))
 })

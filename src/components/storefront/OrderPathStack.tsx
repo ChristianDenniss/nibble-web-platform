@@ -6,7 +6,7 @@
  * Must not render inside a link: the tiles are buttons and the popover can hold links.
  */
 import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react'
-import { Phone } from 'lucide-react'
+import { Globe, Phone } from 'lucide-react'
 import ProviderLogo from '@/components/brand/ProviderLogo'
 import type { Provider, Restaurant } from '@/generated/data-model'
 import { cn } from '@/lib/utils'
@@ -41,7 +41,6 @@ const SIZES = {
   },
 } as const
 
-const APP_STORE_ICON = '/images/ordering/app-store.svg'
 
 export default function OrderPathStack({ restaurant, providers, providerStatus, size = 'sm', className }: Props) {
   const [openKey, setOpenKey] = useState<string | null>(null)
@@ -122,7 +121,7 @@ function labelFor(path: OrderPath, restaurantName: string): string {
   if (path.kind === 'provider') return path.status && path.status !== 'covered'
     ? `${providerDisplayName(path.provider)} coverage unavailable or unconfirmed`
     : `Available on ${providerDisplayName(path.provider)}`
-  if (path.kind === 'app') return `${restaurantName} has its own app`
+  if (path.kind === 'app') return `${restaurantName} restaurant ordering website or app`
   return `${restaurantName} takes phone orders`
 }
 
@@ -135,7 +134,7 @@ function PathTile({ path, className }: { path: OrderPath; className?: string }) 
   return (
     <span className={cn('inline-flex shrink-0 items-center justify-center bg-white p-1 ring-1 ring-border', className)}>
       {path.kind === 'app' ? (
-        <img src={APP_STORE_ICON} alt="" className="size-full object-contain" />
+        <Globe className="size-full text-content-secondary" aria-hidden="true" />
       ) : (
         <Phone className="size-full text-content-secondary" strokeWidth={2.25} aria-hidden="true" />
       )}
@@ -175,13 +174,13 @@ function PathDetails({ path, restaurantName, badgeTile }: { path: OrderPath; res
   if (path.kind === 'app') {
     return (
       <div className="flex flex-col items-start gap-2">
-        <p className="text-content-secondary">This restaurant takes orders in its own app</p>
+        <p className="text-content-secondary">Open the restaurant’s ordering website or app; confirm the location and fulfillment options.</p>
         <Badge>
           {tile}
-          {restaurantName} app
+          {restaurantName}
         </Badge>
         <a href={path.url} target="_blank" rel="noopener noreferrer" className={action}>
-          Get the app
+          Open restaurant ordering
         </a>
       </div>
     )

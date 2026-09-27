@@ -1,3 +1,4 @@
+import PromotionList from '@/components/storefront/PromotionList'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Check, Copy, ExternalLink, MapPin, Trophy } from 'lucide-react'
@@ -23,11 +24,15 @@ export default function CartComparePage() {
   if (loading) return <PageLoader />
   if (!data) return <EmptyState title="Cart unavailable" description={error ?? undefined} />
   if (!cart.lines.length) return <EmptyState title="Nothing to compare" action={<Link to={paths.home} className="text-accent">Browse restaurants</Link>} />
-  const rows = compareCart(cart.lines, data.providers, data.offers, catalog.provenance)
   const restaurant = data.restaurants.find(entry => entry.id === cart.lines[0].restaurantId)
+  const ordering: Record<string, { orderUrl: string; note: string }> = catalog.merchantOrdering
+  const merchant = restaurant ? ordering[restaurant.id] : undefined
+  const directOnly = restaurant?.id.startsWith('catalog-direct-')
+  const providers = data.providers.filter(provider => directOnly ? provider.id === 'prov_direct' : provider.id !== 'prov_direct' || !!merchant)
+  const rows = compareCart(cart.lines, providers, data.offers, catalog.provenance)
   const chosen = rows.find(row => row.provider.id === selected)
   const links: Record<string, Record<string, string>> = catalog.links
-  const url = restaurant && chosen ? links[restaurant.id]?.[chosen.provider.id] : undefined
+  const url = chosen?.provider.id === 'prov_direct' ? merchant?.orderUrl : restaurant && chosen ? links[restaurant.id]?.[chosen.provider.id] : undefined
   const cartText = [restaurant?.name, restaurant?.location.address, '', ...cart.lines.map(line => `${line.quantity} × ${data.items.find(item => item.id === line.menuItemId)?.name ?? line.menuItemId}`)].join('\n')
   return <div className="space-y-6">
     <Breadcrumb items={[{ label: 'Cart', href: paths.cart }, { label: 'Best cart prices' }]} />
@@ -35,11 +40,13 @@ export default function CartComparePage() {
     <p className="text-sm text-content-secondary">The same cart across delivery apps. Compare listed item prices; delivery, service fees, tax, and promotions are confirmed in the app.</p>
     <div className="grid gap-6 small:grid-cols-[minmax(0,1fr)_18rem]">
       <section className="space-y-3">{rows.map(row => {
-        const providerLink = restaurant ? links[restaurant.id]?.[row.provider.id] : undefined
+        const providerLink = row.provider.id === 'prov_direct' ? merchant?.orderUrl : restaurant ? links[restaurant.id]?.[row.provider.id] : undefined
         return <article key={row.provider.id} aria-label={`${row.provider.name} cart`} className={`rounded-xl border bg-surface p-4 ${row.lowest ? 'border-accent ring-1 ring-accent/20' : 'border-border'}`}>
-          <div className="flex flex-wrap items-center gap-3"><ProviderLogo provider={row.provider} className="size-10 rounded-lg" /><div className="min-w-0 flex-1"><h2 className="font-semibold">{row.provider.name}</h2>{row.lowest && <span className="rounded-full bg-status-success/15 px-2 py-0.5 text-[11px] font-semibold text-status-success">Lowest item subtotal</span>}<p className="mt-1 text-xs text-content-muted">{row.complete ? 'All items priced' : `${row.missing} item prices to confirm`}</p></div><div className="text-right"><p className="text-lg font-semibold text-accent">{row.subtotal !== null ? `${row.startingPrice ? 'From ' : ''}${formatMoney(row.subtotal)}` : 'Confirm in app'}</p><p className="text-[11px] text-content-muted">Items only · fees additional</p></div></div>
-          <details className="mt-4 border-t border-border pt-3"><summary className="cursor-pointer text-sm font-medium text-content-secondary">Your cart on {row.provider.name}</summary><ul className="mt-3 space-y-3">{cart.lines.map((line, i) => { const item = data.items.find(item => item.id === line.menuItemId);return <li key={line.id} className="flex items-center gap-2"><ItemImage src={item?.imageURL ?? ''} alt={item?.name ?? 'Item'} seed={line.id} className="size-11 shrink-0 rounded-lg" /><span className="min-w-0 flex-1 text-xs">{line.quantity} × {item?.name}</span><span className="text-xs font-semibold">{row.matched[i] ? formatMoney(row.matched[i].price.amountCents * line.quantity) : 'Confirm in app'}</span></li> })}</ul></details>
-          <div className="mt-3 space-y-1 text-xs text-content-muted"><p className="flex justify-between gap-3"><span>Delivery & service fees</span><span>Confirm in app</span></p><p className="flex justify-between gap-3"><span>Tax & promotions</span><span>Confirm in app</span></p></div>
+          <div className="flex flex-wrap items-center gap-3"><ProviderLogo provider={row.provider} className="size-10 rounded-lg" /><div className="min-w-0 flex-1"><h2 className="font-semibold">{row.provider.name}</h2>{row.lowest && <span className="rounded-full bg-status-success/15 px-2 py-0.5 text-[11px] font-semibold text-status-success">Lowest item subtotal</span>}<p className="mt-1 text-xs text-content-muted">{row.complete ? 'All items priced' : `${row.missing} item prices to confirm`}</p></div><div className="text-right"><p className="text-lg font-semibold text-accent">{row.subtotal !== null ? `${row.startingPrice ? 'From ' : ''}${formatMoney(row.subtotal)}` : 'Confirm at checkout'}</p><p className="text-[11px] text-content-muted">{row.provider.id === 'prov_direct' && directOnly ? 'Pickup menu · options additional' : 'Items only · fees additional'}</p></div></div>
+          <details className="mt-4 border-t border-border pt-3"><summary className="cursor-pointer text-sm font-medium text-content-secondary">Your cart on {row.provider.name}</summary><ul className="mt-3 space-y-3">{cart.lines.map((line, i) => { const item = data.items.find(item => item.id === line.menuItemId);return <li key={line.id} className="flex items-center gap-2"><ItemImage src={item?.imageURL ?? ''} alt={item?.name ?? 'Item'} seed={line.id} className="size-11 shrink-0 rounded-lg" /><span className="min-w-0 flex-1 text-xs">{line.quantity} × {item?.name}</span><span className="text-xs font-semibold">{row.matched[i] ? formatMoney(row.matched[i].price.amountCents * line.quantity) : 'Confirm at checkout'}</span></li> })}</ul></details>
+          <div className="mt-3 space-y-1 text-xs text-content-muted"><p className="flex justify-between gap-3"><span>Delivery & service fees</span><span>Confirm at checkout</span></p><p className="flex justify-between gap-3"><span>Tax & promotions</span><span>Confirm at checkout</span></p></div>
+          {row.provider.id === 'prov_direct' && merchant && <p className="mt-3 text-xs text-content-secondary">{merchant.note}</p>}
+          <PromotionList providerIds={[row.provider.id]} restaurantName={restaurant?.name ?? ''} />
           {providerLink ? <button onClick={() => { setSelected(row.provider.id);setCopied(false);setCopyError(false) }} className="mt-4 text-sm font-semibold text-accent">Continue with {row.provider.name} →</button> : <p className="mt-4 text-xs text-content-muted">A restaurant listing for this provider is not available yet.</p>}
         </article>
       })}</section>

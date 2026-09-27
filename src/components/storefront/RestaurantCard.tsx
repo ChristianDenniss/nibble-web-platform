@@ -1,3 +1,4 @@
+import catalog from '@/catalog/catalog.json'
 /**
  * RestaurantCard — store tile: cover, name, rating · ETA · starting price, and the order-path icon stack.
  * Sponsored tiles carry a visible "Sponsored" tag and report impressions/clicks.
@@ -48,8 +49,10 @@ export default function RestaurantCard({
   className,
 }: Props) {
   const tracking = useSponsoredTracking<HTMLDivElement>(sponsored, surface)
+  const ratings: Record<string, { provider: string }> = catalog.ratings
+  const ratingSource = ratings[restaurant.id]?.provider
   const meta = [
-    restaurant.rating.count > 0 ? restaurant.rating.average.toFixed(1) : null,
+    restaurant.rating.count > 0 ? `${restaurant.rating.average.toFixed(1)}${ratingSource ? ` on ${ratingSource}` : ''}` : null,
     etaMin != null && etaMax != null ? `${etaMin}–${etaMax} min` : null,
     distanceKm != null ? `${distanceKm.toFixed(1)} km away` : null,
     startingCents != null ? `From ${formatMoney(startingCents, currency)}` : null,
@@ -86,7 +89,7 @@ export default function RestaurantCard({
         {restaurant.rating.count > 0 && (
           <span className="absolute bottom-2 left-2 inline-flex items-center gap-1 rounded-full bg-surface px-2 py-0.5 text-xs font-semibold text-content">
             <Star size={12} className="text-status-warning" />
-            {restaurant.rating.average.toFixed(1)}
+            {restaurant.rating.average.toFixed(1)}{ratingSource && <span className="font-normal"> · {ratingSource}</span>}
           </span>
         )}
       </div>

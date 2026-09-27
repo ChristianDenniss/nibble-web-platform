@@ -42,6 +42,7 @@ export const mockProviders: Provider[] = [
   { id: 'prov_ubereats', name: 'Uber Eats' },
   { id: 'prov_doordash', name: 'DoorDash' },
   { id: 'prov_skip', name: 'SkipTheDishes' },
+  { id: 'prov_direct', name: 'Restaurant website' },
 ]
 export const mockCategories: Category[] = [{ id: 'cat_food', slug: 'food', name: 'Food', description: 'Restaurants near you' }]
 export const mockCuisines: Cuisine[] = ['Burgers', 'Mexican', 'Pizza', 'Shawarma', 'Chicken'].map(name => ({ id: `cui_${name.toLowerCase()}`, slug: name.toLowerCase(), name }))
