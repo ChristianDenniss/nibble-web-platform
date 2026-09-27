@@ -1,3 +1,4 @@
+import FloatingFoodDoodles from '@/components/brand/FloatingFoodDoodles'
 /**
  * AuthLayout — centered chrome for login / sign-up. No storefront search or cart.
  */
@@ -12,7 +13,8 @@ interface AuthLayoutProps {
 
 export default function AuthLayout({ children }: AuthLayoutProps) {
   return (
-    <div className="flex min-h-screen flex-col bg-page text-content">
+    <div className="relative isolate flex min-h-screen flex-col bg-page text-content">
+      <FloatingFoodDoodles />
       <header className="border-b border-border bg-surface/90 backdrop-blur-sm">
         <div className="mx-auto flex h-16 w-full max-w-6xl items-center px-5">
           <Link to={paths.home} aria-label="Nibble home" className="flex items-center gap-2.5">

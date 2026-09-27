@@ -62,8 +62,13 @@ function AuthShell() {
 }
 
 export function App() {
-  const [started, setStarted] = useState(false)
-  const finishStartup = useCallback(() => setStarted(true), [])
+  const [started, setStarted] = useState(() => {
+    try { return sessionStorage.getItem('nibble.startupComplete') === '1' } catch { return false }
+  })
+  const finishStartup = useCallback(() => {
+    try { sessionStorage.setItem('nibble.startupComplete', '1') } catch { /* Continue without storage. */ }
+    setStarted(true)
+  }, [])
   if (!started) return <ErrorBoundary><StartupScreen onComplete={finishStartup} /></ErrorBoundary>
   return (
     <ErrorBoundary>

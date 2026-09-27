@@ -1,3 +1,4 @@
+import FloatingFoodDoodles from '@/components/brand/FloatingFoodDoodles'
 /**
  * AppLayout — storefront chrome: sticky top bar, scrolling document, legal footer.
  * Not a dashboard shell (no left rail). Lives in `components/layout/`.
@@ -29,7 +30,8 @@ export default function AppLayout({ children }: AppLayoutProps) {
       mobileNavOpen,
       setMobileNavOpen,
     }}>
-      <div className="flex min-h-dvh flex-col bg-page text-content">
+      <div className="relative isolate flex min-h-dvh flex-col bg-page text-content">
+        <FloatingFoodDoodles />
         <Header />
         <main id="main-content" className="mx-auto w-full max-w-6xl flex-1 px-5 py-8">
           {children}
