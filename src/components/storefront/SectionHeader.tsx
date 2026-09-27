@@ -15,7 +15,7 @@ export default function SectionHeader({ title, to, actionLabel = 'See all', chil
   return (
     <div className="mb-3 flex items-end justify-between gap-3">
       <div>
-        <h2 className="text-lg font-semibold tracking-tight text-content">{title}</h2>
+        <h2 className="text-xl font-semibold tracking-tight text-content">{title}</h2>
         {children}
       </div>
       {to && (

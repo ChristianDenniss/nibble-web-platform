@@ -24,12 +24,13 @@ import {
   useStorefront,
   type StorefrontData,
 } from '@/hooks/storefront/useStorefront'
-import { paths, searchPath } from '@/routing/paths'
+import { paths } from '@/routing/paths'
 import type { HomeSection, Restaurant, SponsoredMark } from '@/generated/data-model'
 import { restaurantDistanceKm, type CoverageStatus } from '@/lib/restaurantAvailability'
+import { coverTone } from '@/lib/coverTone'
 
 const FASTEST_LIMIT = 8
-const RAIL_CARD_CLASS = 'min-w-0'
+const RAIL_CARD_CLASS = 'w-full min-w-0 shrink-0 basis-full small:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]'
 
 export default function HomePage() {
   const { status } = useAuth()
@@ -67,26 +68,60 @@ function HomeFeedView() {
     const bStatus = cardCoverageStatus(data, b.id)
     return coverageRank(aStatus) - coverageRank(bStatus) || aDistance - bDistance
   })
+  const cuisinePopularity = new Map(
+    data.cuisines.map((cuisine) => [
+      cuisine.id,
+      data.restaurants.reduce(
+        (total, restaurant) => total + (restaurant.cuisineIds.includes(cuisine.id) ? restaurant.rating.count : 0),
+        0,
+      ),
+    ]),
+  )
+  const cuisineCandidates = data.cuisines
+    .filter((cuisine) => cuisine.slug !== 'bbq')
+    .map((cuisine, originalOrder) => ({ cuisine, originalOrder }))
+    .sort((a, b) =>
+      (cuisinePopularity.get(b.cuisine.id) ?? 0) - (cuisinePopularity.get(a.cuisine.id) ?? 0)
+      || a.originalOrder - b.originalOrder,
+    )
+  const popularCuisines = [] as typeof data.cuisines
+  let previousCuisineTone: ReturnType<typeof coverTone> | undefined
+  while (cuisineCandidates.length > 0) {
+    const differentToneIndex = cuisineCandidates.findIndex(
+      ({ cuisine }) => coverTone(cuisine.id) !== previousCuisineTone,
+    )
+    const [next] = cuisineCandidates.splice(differentToneIndex < 0 ? 0 : differentToneIndex, 1)
+    if (!next) break
+    popularCuisines.push(next.cuisine)
+    previousCuisineTone = coverTone(next.cuisine.id)
+  }
+  const breakfastIndex = popularCuisines.findIndex((cuisine) => cuisine.slug === 'breakfast')
+  const displayedCuisines = breakfastIndex < 0
+    ? popularCuisines
+    : popularCuisines.slice(0, breakfastIndex + 1)
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10 xl:-mx-6">
       <h1 className="sr-only">Home</h1>
 
-      <div className="space-y-5">
+      <div className="space-y-6">
         {feed && <PromoBannerCarousel banners={banners} restaurantName={restaurantName} />}
 
-        {data.categories.length > 0 && (
-          <BrowseScroller label="Categories">
-            {data.categories.map((category) => (
-              <CategoryTile
-                key={category.id}
-                item={category}
-                to={searchPath(undefined, { category: category.slug })}
-                variant="compact"
-                className="shrink-0"
-              />
-            ))}
-          </BrowseScroller>
+        {data.cuisines.length > 0 && (
+          <section>
+            <SectionHeader title="Cuisines" />
+            <BrowseScroller label="Cuisines">
+              {displayedCuisines.map((cuisine) => (
+                <CategoryTile
+                  key={cuisine.id}
+                  item={cuisine}
+                  to={paths.cuisine(cuisine.slug)}
+                  variant="compact"
+                  className="shrink-0"
+                />
+              ))}
+            </BrowseScroller>
+          </section>
         )}
 
         {sponsoredSections.map((section) => (
@@ -102,20 +137,6 @@ function HomeFeedView() {
         </RestaurantRail>
       )}
 
-      {data.cuisines.length > 0 && (
-        <BrowseScroller label="Cuisines">
-          {data.cuisines.map((cuisine) => (
-            <CategoryTile
-              key={cuisine.id}
-              item={cuisine}
-              to={paths.cuisine(cuisine.slug)}
-              variant="compact"
-                className="shrink-0"
-            />
-          ))}
-        </BrowseScroller>
-      )}
-
       {organicSections.map((section) => (
         <FeedRail key={section.kind} data={data} section={section} />
       ))}
@@ -123,7 +144,7 @@ function HomeFeedView() {
       {data.restaurants.length > 0 && (
         <section>
           <SectionHeader title="All restaurants" />
-          <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-5 small:grid-cols-2 xl:grid-cols-4">
             {restaurants.map((restaurant) => (
               <FeedCard key={restaurant.id} data={data} restaurant={restaurant} address={address} />
             ))}
@@ -139,6 +160,18 @@ function FeedRail({ data, section }: { data: StorefrontData; section: HomeSectio
     ({ restaurant }) => cardCoverageStatus(data, restaurant.id) !== 'unavailable',
   )
   if (items.length === 0) return null
+  if (section.kind === 'recommended') {
+    const masalaIndex = items.findIndex(({ restaurant }) => restaurant.id === 'rest_masala')
+    const stackIndex = items.findIndex(({ restaurant }) => restaurant.id === 'rest_stack')
+    if (masalaIndex >= 0 && stackIndex >= 0) {
+      const masala = items[masalaIndex]
+      const stack = items[stackIndex]
+      if (masala && stack) {
+        items[masalaIndex] = stack
+        items[stackIndex] = masala
+      }
+    }
+  }
   return (
     <RestaurantRail
       title={section.title}
